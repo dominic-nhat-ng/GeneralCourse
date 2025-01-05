@@ -1,0 +1,73 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11f vlog 2022.4 2022.10, Oct 18 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/nhat/General_Course/Adder_Standard/sim
+T_opt
+Z2 !s110 1736082613
+Vc`0V=z6XA>aI@h@N?oig;0
+04 9 4 work testbench fast 0
+=1-8cc84b040fef-677a84b5-ccd04-94ee
+R0
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2022.4;75
+vFull_Adder
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 3`VP2eBG<EGUDm=LhPa0O2
+I^P[?077EUeM?2nl;0Od3`3
+S1
+R1
+w1736082451
+8../rtl/FullAdder.v
+F../rtl/FullAdder.v
+!i122 0
+L0 1 10
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2022.4;75
+r1
+!s85 0
+31
+Z7 !s108 1736082613.000000
+Z8 !s107 ../tb/testbench.sv|../rtl/FullAdder.v|
+Z9 !s90 -sv|-f|compile.f|
+!i113 0
+Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@full_@adder
+vtestbench
+R4
+R2
+!i10b 1
+!s100 53AM?;O[2`C1T7M5;j<S?2
+I?dP=Ee=`0XUK7PEX06Akz2
+S1
+R1
+w1736082596
+8../tb/testbench.sv
+F../tb/testbench.sv
+!i122 0
+L0 1 43
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R3
