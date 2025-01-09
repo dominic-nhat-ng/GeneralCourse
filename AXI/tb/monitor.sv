@@ -35,6 +35,8 @@ class axi_monitor extends uvm_monitor;
             collect_write_address(item);
             collect_write_data(item);
             collect_write_response(item);
+            //collect_read_address(item);
+            //collect_read_data(item);
             // send item to scoreboard
             
             // read phase
@@ -47,13 +49,11 @@ class axi_monitor extends uvm_monitor;
 
         
     endtask
-    /*---------MONITORING ADDRESS----------*/ 
+    /*---------MONITORING WRITE ADDRESS----------*/ 
     task collect_write_address(transaction item);
         forever begin
-
-            wait(intf.awready && intf.awvalid);
-            //repeat(2) @(negedge intf.clk);
-            repeat(2) @(posedge intf.clk);
+            @(posedge intf.awready);
+            @(posedge intf.clk);
             item.awid = intf.awid;          
             item.awlen = intf.awlen;        
             item.awsize = intf.awsize;      
@@ -64,11 +64,10 @@ class axi_monitor extends uvm_monitor;
             `uvm_info("WRITE ADDRESS", $sformatf("Captured awaddr: %h at time: %t", item.awaddr, $time), UVM_NONE)
         end
     endtask
-    /*---------MONITORING DATA-----------*/
+    /*---------MONITORING WRITE DATA-----------*/
     task collect_write_data(transaction item);
-        //@(posedge intf.clk);
         forever begin
-            wait(intf.wready && intf.wvalid);
+            @(posedge intf.wready);
             @(negedge intf.clk);
             item.wdata = intf.wdata;
             item.wready = intf.wready;
@@ -79,7 +78,7 @@ class axi_monitor extends uvm_monitor;
             `uvm_info("WRITE DATA", $sformatf("Captured wdata: %h, wlast: %0b", item.wdata, item.wlast), UVM_NONE)
         end
     endtask
-    /*---------MONITORING RESPONSE--------*/
+    /*---------MONITORING WRITE RESPONSE--------*/
     task collect_write_response(transaction item);
         forever begin
             @(posedge intf.bvalid);
@@ -88,6 +87,18 @@ class axi_monitor extends uvm_monitor;
             item.bresp = intf.bresp;
             item.bvalid = intf.bvalid;
             `uvm_info("WRITE RESPONSE", $sformatf("Captured bresp: %h, bvalid: %0b", item.bresp, item.bvalid), UVM_NONE)
+        end
+    endtask
+
+    /*---------MONITORING READ ADDRESS----------*/
+    task collect_read_address(transaction item);
+        forever begin
+
+        end
+    endtask
+    /*---------MONITORING READ DATA-----------*/
+    task collect_read_data(transaction item);
+        forever begin
         end
     endtask
 endclass

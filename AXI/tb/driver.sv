@@ -30,7 +30,6 @@ class axi_driver extends uvm_driver#(transaction);
     int count_data;
     task write_fixed_mode(transaction trans);
         `uvm_info("DRV", "Write Transaction in Fixed Mode Started", UVM_NONE);
-        $display("-------------------------------------------------------");
         intf.awid = 0;
         intf.awvalid = 1;
         intf.awlen = 7;
@@ -70,7 +69,6 @@ class axi_driver extends uvm_driver#(transaction);
 
     task read_fixed_mode(transaction trans);
         `uvm_info("DRV", "Read Transaction in Fixed Mode Started", UVM_NONE)
-        $display("-------------------------------------------------------");
         intf.arid = trans.arid;
         intf.arlen = 7;
         intf.arsize = 2;
@@ -147,4 +145,3 @@ class axi_driver extends uvm_driver#(transaction);
 
 
 endclass
-

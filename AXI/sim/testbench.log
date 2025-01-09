@@ -1,12 +1,9 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 18:42:28 on Jan 09,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 23:22:25 on Jan 09,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Warning: ../rtl/top.sv(756): (vopt-2182) 'retaddr' might be read before written in always_comb or always @* block.
-# ** Warning: ../rtl/top.sv(1090): (vopt-2182) 'rdretaddr' might be read before written in always_comb or always @* block.
-# ** Note: (vopt-143) Recognized 5 FSMs in module "axi_slave(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2022.4 linux_x86_64 Oct 18 2022
 # //
@@ -95,47 +92,30 @@
 # ==========================================
 # UVM_INFO ../tb/sequence.sv(50) @ 0: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
 # UVM_INFO ../tb/driver.sv(32) @ 30: uvm_test_top.environment.agent.driver [DRV] Write Transaction in Fixed Mode Started
-# -------------------------------------------------------
-# UVM_INFO ../tb/monitor.sv(79) @ 100: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: fa6eff6b, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 110: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  110
-# UVM_INFO ../tb/monitor.sv(79) @ 120: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 965d8080, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 150: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  150
-# UVM_INFO ../tb/monitor.sv(79) @ 180: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 965d8080, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 190: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  190
-# UVM_INFO ../tb/monitor.sv(79) @ 200: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 59867797, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 230: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  230
-# UVM_INFO ../tb/monitor.sv(79) @ 260: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 59867797, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 270: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  270
-# UVM_INFO ../tb/monitor.sv(79) @ 280: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 78bd75f2, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 310: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  310
-# UVM_INFO ../tb/monitor.sv(79) @ 340: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 78bd75f2, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 350: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  350
-# UVM_INFO ../tb/monitor.sv(79) @ 360: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 959fb708, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 390: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  390
-# UVM_INFO ../tb/monitor.sv(79) @ 420: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 959fb708, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 430: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  430
-# UVM_INFO ../tb/monitor.sv(79) @ 440: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 58d3054e, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 470: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  470
-# UVM_INFO ../tb/monitor.sv(79) @ 500: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 58d3054e, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 510: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  510
-# UVM_INFO ../tb/monitor.sv(79) @ 520: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 60159914, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 550: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  550
-# UVM_INFO ../tb/monitor.sv(79) @ 580: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 60159914, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 590: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  590
-# UVM_INFO ../tb/monitor.sv(79) @ 600: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 16abbacf, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 630: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  630
-# UVM_INFO ../tb/monitor.sv(79) @ 660: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 16abbacf, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 670: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  670
-# UVM_INFO ../tb/monitor.sv(79) @ 680: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 16abbacf, wlast: 1
-# UVM_INFO ../tb/monitor.sv(90) @ 690: uvm_test_top.environment.agent.monitor [WRITE RESPONSE] Captured bresp: 0, bvalid: 1
-# UVM_INFO ../tb/driver.sv(72) @ 730: uvm_test_top.environment.agent.driver [DRV] Read Transaction in Fixed Mode Started
-# -------------------------------------------------------
+# UVM_INFO ../tb/monitor.sv(64) @ 90: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                   90
+# UVM_INFO ../tb/monitor.sv(78) @ 100: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: fa6eff6b, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 170: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  170
+# UVM_INFO ../tb/monitor.sv(78) @ 180: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 965d8080, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 250: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  250
+# UVM_INFO ../tb/monitor.sv(78) @ 260: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 59867797, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 330: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  330
+# UVM_INFO ../tb/monitor.sv(78) @ 340: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 78bd75f2, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 410: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  410
+# UVM_INFO ../tb/monitor.sv(78) @ 420: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 959fb708, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 490: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  490
+# UVM_INFO ../tb/monitor.sv(78) @ 500: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 58d3054e, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 570: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  570
+# UVM_INFO ../tb/monitor.sv(78) @ 580: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 60159914, wlast: 0
+# UVM_INFO ../tb/monitor.sv(64) @ 650: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  650
+# UVM_INFO ../tb/monitor.sv(78) @ 660: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 16abbacf, wlast: 0
+# UVM_INFO ../tb/monitor.sv(89) @ 690: uvm_test_top.environment.agent.monitor [WRITE RESPONSE] Captured bresp: 0, bvalid: 1
+# UVM_INFO ../tb/driver.sv(71) @ 730: uvm_test_top.environment.agent.driver [DRV] Read Transaction in Fixed Mode Started
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1230: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   43
+# UVM_INFO :   28
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -148,10 +128,10 @@
 # [SEQ]     1
 # [TEST_DONE]     1
 # [Test class]     1
-# [WRITE ADDRESS]    15
-# [WRITE DATA]    16
+# [WRITE ADDRESS]     8
+# [WRITE DATA]     8
 # [WRITE RESPONSE]     1
 # ** Note: $finish    : /home/nhat/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 1230 ns  Iteration: 63  Instance: /testbench
-# End time: 18:42:31 on Jan 09,2025, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 3
+# End time: 23:22:26 on Jan 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
