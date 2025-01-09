@@ -1,0 +1,7 @@
+# vsim -debugDB -l testbench .log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*; run -all;" 
+# Start time: 15:13:33 on Jan 09,2025
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 15:13:33 on Jan 09,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
