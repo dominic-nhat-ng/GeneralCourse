@@ -1,0 +1,78 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/nhat/General_Course/09/sim
+T_opt
+!s110 1736938251
+VVkbOEF?am15gozBGRQGnc0
+04 9 4 work testbench fast 0
+=1-8cc84b040fef-6787930b-59c01-20e73
+R0
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2022.4;75
+R1
+vcounter
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1736953580
+!i10b 1
+!s100 QZI]FB^VhMYE@50P4E>kY0
+Ibi7AD2RO<K=A^b;[@YmNi1
+S1
+R1
+w1736938249
+8../rtl/top.v
+F../rtl/top.v
+!i122 11
+L0 1 24
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2022.4;75
+r1
+!s85 0
+31
+Z7 !s108 1736953580.000000
+!s107 ../tb/testbench.sv|../rtl/top.v|
+Z8 !s90 -sv|+incdir+../tb|-f|./compile.f|
+!i113 0
+Z9 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 !s92 -sv +incdir+../tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtestbench
+R3
+R4
+!i10b 1
+!s100 OMa]mV^d>V6W=I9LnE6TO2
+IzJSA[@O6Gi:3<WEzJzcYC3
+S1
+R1
+w1736937901
+8../tb/testbench.sv
+F../tb/testbench.sv
+!i122 11
+L0 3 107
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z11 !s107 ../tb/testbench.sv|../rtl/top.v|
+R8
+!i113 0
+R9
+R10
+R2

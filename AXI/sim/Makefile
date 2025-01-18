@@ -40,7 +40,7 @@ build_cov:
 	vlog +cover=bcesft -f compile.f
 
 run:
-	vsim -debugDB -l $(TESTNAME).log -voptargs=+acc -assertdebug -c "testbench" -do "log -r /*;run -all;"
+	vsim -debugDB -l $(TESTNAME).log -voptargs=+acc -assertdebug -c  "testbench" -do "log -r /*;run -all;"
 
 run_cov:
 	vsim -coverage -l $(TESTNAME).log -c -voptargs="+cover=bcesft" -assertdebug -do "coverage save -onexit $(TESTNAME).ucdb; log -r /*; run -all" $(TESTNAME)

@@ -1,0 +1,10 @@
+Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 22:06:20 on Jan 15,2025
+vlog -sv "+incdir+../tb" -f ./compile.f 
+-- Compiling module counter
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+End time: 22:06:20 on Jan 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

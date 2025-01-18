@@ -15,7 +15,6 @@ class transaction extends uvm_sequence_item;
   operation_mode op;
   //////WRITE ADDRESS
   bit 				awready; // doesn't need to randomize
-  rand bit [3:0]	awid;
   rand bit [3:0]	awlen;
   rand bit [2:0]	awsize;
   rand bit [31:0]	awaddr;
@@ -25,8 +24,7 @@ class transaction extends uvm_sequence_item;
   ///////WRITE DATA
   bit				wready;
   rand bit			wvalid;
-  rand bit [3:0]	wid;
-  rand bit [31:0]	wdata;
+  rand bit [31:0]	wdata[$];
   rand bit [3:0]	wstrb;
   rand bit 			wlast;
   
@@ -57,7 +55,6 @@ class transaction extends uvm_sequence_item;
   `uvm_field_int(resetn, UVM_ALL_ON)
   /////////WRITE ADDRESS BUS
   `uvm_field_int(awready, UVM_ALL_ON)
-  `uvm_field_int(awid, UVM_ALL_ON)
   `uvm_field_int(awlen, UVM_ALL_ON)
   `uvm_field_int(awsize, UVM_ALL_ON)
   `uvm_field_int(awaddr, UVM_ALL_ON)
@@ -66,8 +63,7 @@ class transaction extends uvm_sequence_item;
   ///////// WRITE DATA BUS
   `uvm_field_int(wvalid, UVM_ALL_ON)
   `uvm_field_int(wready, UVM_ALL_ON)
-  `uvm_field_int(wid, UVM_ALL_ON)
-  `uvm_field_int(wdata, UVM_ALL_ON)
+  `uvm_field_queue_int(wdata, UVM_ALL_ON)
   `uvm_field_int(wstrb, UVM_ALL_ON)
   `uvm_field_int(wlast, UVM_ALL_ON)
   

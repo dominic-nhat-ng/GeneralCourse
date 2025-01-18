@@ -1,6 +1,6 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 23:22:25 on Jan 09,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 18:05:45 on Jan 18,2025
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -25,7 +25,6 @@
 # Loading mtiUvm.questa_uvm_pkg(fast)
 # Loading work.testbench(fast)
 # Loading work.axi_if(fast__2)
-# Loading work.axi_slave(fast)
 # Loading /home/nhat/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
@@ -53,9 +52,10 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_test...
-# UVM_INFO ../tb/monitor.sv(10) @ 0: uvm_test_top.environment.agent.monitor [MONITOR] Constructor Executed
+# UVM_INFO ../tb/monitor.sv(12) @ 0: uvm_test_top.environment.agent.monitor [MONITOR] Constructor Executed
 # UVM_INFO ../tb/driver.sv(16) @ 0: uvm_test_top.environment.agent.driver [Connect interface] Driver Connected to interface
-# UVM_INFO ../tb/monitor.sv(20) @ 0: uvm_test_top.environment.agent.monitor [Connect interface] Monitor connected interface
+# UVM_INFO ../tb/monitor.sv(22) @ 0: uvm_test_top.environment.agent.monitor [Connect interface] Monitor connected interface
+# UVM_INFO ../tb/driver_slave.sv(19) @ 0: uvm_test_top.environment.agent_slave.driver_slave [Connect interface] Driver Connected to interface
 # UVM_INFO ../tb/test.sv(27) @ 0: uvm_test_top [Test class] Elaboration phase
 # --------------------------------------------------------------
 # Name                       Type                    Size  Value
@@ -89,49 +89,243 @@
 #         num_last_rsps      integral                32    'd1  
 #     scoreboard             axi_scoreboard          -     @489 
 # --------------------------------------------------------------
-# ==========================================
-# UVM_INFO ../tb/sequence.sv(50) @ 0: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
-# UVM_INFO ../tb/driver.sv(32) @ 30: uvm_test_top.environment.agent.driver [DRV] Write Transaction in Fixed Mode Started
-# UVM_INFO ../tb/monitor.sv(64) @ 90: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                   90
-# UVM_INFO ../tb/monitor.sv(78) @ 100: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: fa6eff6b, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 170: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  170
-# UVM_INFO ../tb/monitor.sv(78) @ 180: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 965d8080, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 250: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  250
-# UVM_INFO ../tb/monitor.sv(78) @ 260: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 59867797, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 330: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  330
-# UVM_INFO ../tb/monitor.sv(78) @ 340: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 78bd75f2, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 410: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  410
-# UVM_INFO ../tb/monitor.sv(78) @ 420: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 959fb708, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 490: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  490
-# UVM_INFO ../tb/monitor.sv(78) @ 500: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 58d3054e, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 570: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  570
-# UVM_INFO ../tb/monitor.sv(78) @ 580: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 60159914, wlast: 0
-# UVM_INFO ../tb/monitor.sv(64) @ 650: uvm_test_top.environment.agent.monitor [WRITE ADDRESS] Captured awaddr: 00000014 at time:                  650
-# UVM_INFO ../tb/monitor.sv(78) @ 660: uvm_test_top.environment.agent.monitor [WRITE DATA] Captured wdata: 16abbacf, wlast: 0
-# UVM_INFO ../tb/monitor.sv(89) @ 690: uvm_test_top.environment.agent.monitor [WRITE RESPONSE] Captured bresp: 0, bvalid: 1
-# UVM_INFO ../tb/driver.sv(71) @ 730: uvm_test_top.environment.agent.driver [DRV] Read Transaction in Fixed Mode Started
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1230: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../tb/sequence.sv(48) @ 0: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000030
+# Slave: Received write data 0000005e
+# Slave: Received write data 00000023
+# Slave: Received write data 00000023
+# Slave: Received write data 00000064
+# Slave: Received write data 00000050
+# Slave: Received write data 0000002f
+# Slave: Received write data 00000024
+# Slave: Received write data 00000027
+# UVM_INFO ../tb/sequence.sv(48) @ 570: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000027
+# Slave: Received write address 0000005e
+# Slave: Received write data 00000078
+# Slave: Received write data 0000003a
+# Slave: Received write data 00000066
+# Slave: Received write data 00000024
+# Slave: Received write data 00000002
+# Slave: Received write data 0000004d
+# Slave: Received write data 00000076
+# Slave: Received write data 00000056
+# UVM_INFO ../tb/sequence.sv(48) @ 1110: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000075
+# Slave: Received write data 00000056
+# Slave: Received write data 00000022
+# Slave: Received write data 0000006a
+# Slave: Received write data 00000044
+# Slave: Received write data 0000006f
+# Slave: Received write data 00000064
+# Slave: Received write data 00000070
+# Slave: Received write data 00000064
+# Slave: Received write data 00000012
+# UVM_INFO ../tb/sequence.sv(48) @ 1650: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000012
+# Slave: Received write address 0000005a
+# Slave: Received write data 0000000d
+# Slave: Received write data 00000025
+# Slave: Received write data 00000044
+# Slave: Received write data 0000006d
+# Slave: Received write data 0000006d
+# Slave: Received write data 0000007a
+# Slave: Received write data 00000023
+# Slave: Received write data 00000075
+# UVM_INFO ../tb/sequence.sv(48) @ 2190: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 0000004e
+# Slave: Received write data 00000075
+# Slave: Received write data 00000072
+# Slave: Received write data 00000012
+# Slave: Received write data 00000059
+# Slave: Received write data 0000002c
+# Slave: Received write data 0000003b
+# Slave: Received write data 0000000b
+# Slave: Received write data 00000061
+# Slave: Received write data 00000038
+# UVM_INFO ../tb/sequence.sv(48) @ 2730: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000038
+# Slave: Received write address 00000059
+# Slave: Received write data 0000002f
+# Slave: Received write data 00000073
+# Slave: Received write data 00000019
+# Slave: Received write data 0000000b
+# Slave: Received write data 00000075
+# Slave: Received write data 00000018
+# Slave: Received write data 0000004d
+# Slave: Received write data 00000038
+# UVM_INFO ../tb/sequence.sv(48) @ 3270: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000023
+# Slave: Received write data 00000038
+# Slave: Received write data 0000001e
+# Slave: Received write data 0000005d
+# Slave: Received write data 00000071
+# Slave: Received write data 0000005e
+# Slave: Received write data 00000013
+# Slave: Received write data 00000025
+# Slave: Received write data 00000032
+# Slave: Received write data 0000007e
+# UVM_INFO ../tb/sequence.sv(48) @ 3810: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 0000007e
+# Slave: Received write address 0000007d
+# Slave: Received write data 0000006e
+# Slave: Received write data 00000010
+# Slave: Received write data 00000040
+# Slave: Received write data 0000004b
+# Slave: Received write data 00000067
+# Slave: Received write data 0000007c
+# Slave: Received write data 00000028
+# Slave: Received write data 00000050
+# UVM_INFO ../tb/sequence.sv(48) @ 4350: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000028
+# Slave: Received write data 00000050
+# Slave: Received write data 0000005d
+# Slave: Received write data 00000012
+# Slave: Received write data 00000033
+# Slave: Received write data 0000006b
+# Slave: Received write data 00000037
+# Slave: Received write data 00000061
+# Slave: Received write data 0000001c
+# Slave: Received write data 0000005b
+# UVM_INFO ../tb/sequence.sv(48) @ 4890: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 0000005b
+# Slave: Received write address 00000017
+# Slave: Received write data 00000009
+# Slave: Received write data 00000047
+# Slave: Received write data 00000019
+# Slave: Received write data 00000068
+# Slave: Received write data 0000001f
+# Slave: Received write data 0000007e
+# Slave: Received write data 00000030
+# Slave: Received write data 0000003f
+# UVM_INFO ../tb/sequence.sv(48) @ 5430: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000045
+# Slave: Received write data 0000003f
+# Slave: Received write data 00000042
+# Slave: Received write data 0000003e
+# Slave: Received write data 0000000e
+# Slave: Received write data 0000003e
+# Slave: Received write data 00000002
+# Slave: Received write data 0000002a
+# Slave: Received write data 00000066
+# Slave: Received write data 00000049
+# UVM_INFO ../tb/sequence.sv(48) @ 5970: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000049
+# Slave: Received write address 0000006b
+# Slave: Received write data 00000021
+# Slave: Received write data 00000076
+# Slave: Received write data 00000040
+# Slave: Received write data 0000004b
+# Slave: Received write data 00000022
+# Slave: Received write data 00000009
+# Slave: Received write data 0000001a
+# Slave: Received write data 00000005
+# UVM_INFO ../tb/sequence.sv(48) @ 6510: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000065
+# Slave: Received write data 00000005
+# Slave: Received write data 0000006c
+# Slave: Received write data 0000000f
+# Slave: Received write data 00000052
+# Slave: Received write data 00000037
+# Slave: Received write data 00000019
+# Slave: Received write data 00000051
+# Slave: Received write data 00000056
+# Slave: Received write data 00000076
+# UVM_INFO ../tb/sequence.sv(48) @ 7050: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000076
+# Slave: Received write address 0000005b
+# Slave: Received write data 00000061
+# Slave: Received write data 00000006
+# Slave: Received write data 00000059
+# Slave: Received write data 00000062
+# Slave: Received write data 00000026
+# Slave: Received write data 0000006b
+# Slave: Received write data 0000007f
+# Slave: Received write data 00000013
+# UVM_INFO ../tb/sequence.sv(48) @ 7590: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000070
+# Slave: Received write data 00000013
+# Slave: Received write data 00000069
+# Slave: Received write data 00000036
+# Slave: Received write data 00000004
+# Slave: Received write data 00000016
+# Slave: Received write data 0000001d
+# Slave: Received write data 00000042
+# Slave: Received write data 0000005f
+# Slave: Received write data 0000002d
+# UVM_INFO ../tb/sequence.sv(48) @ 8130: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 0000002d
+# Slave: Received write address 00000009
+# Slave: Received write data 0000003c
+# Slave: Received write data 00000013
+# Slave: Received write data 0000001a
+# Slave: Received write data 00000015
+# Slave: Received write data 0000002b
+# Slave: Received write data 0000004d
+# Slave: Received write data 00000025
+# Slave: Received write data 00000040
+# UVM_INFO ../tb/sequence.sv(48) @ 8670: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000059
+# Slave: Received write data 00000040
+# Slave: Received write data 00000038
+# Slave: Received write data 00000009
+# Slave: Received write data 0000003d
+# Slave: Received write data 00000031
+# Slave: Received write data 00000070
+# Slave: Received write data 00000079
+# Slave: Received write data 00000041
+# Slave: Received write data 00000029
+# UVM_INFO ../tb/sequence.sv(48) @ 9210: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000029
+# Slave: Received write address 00000062
+# Slave: Received write data 00000007
+# Slave: Received write data 0000006c
+# Slave: Received write data 0000005b
+# Slave: Received write data 00000051
+# Slave: Received write data 00000072
+# Slave: Received write data 00000078
+# Slave: Received write data 00000017
+# Slave: Received write data 00000066
+# UVM_INFO ../tb/sequence.sv(48) @ 9750: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write address 00000032
+# Slave: Received write data 00000066
+# Slave: Received write data 00000077
+# Slave: Received write data 00000016
+# Slave: Received write data 00000059
+# Slave: Received write data 00000010
+# Slave: Received write data 00000074
+# Slave: Received write data 00000020
+# Slave: Received write data 00000008
+# Slave: Received write data 00000019
+# UVM_INFO ../tb/sequence.sv(48) @ 10290: uvm_test_top.environment.agent.sequencer@@seq [SEQ] Sending fixed mode transaction to DRV
+# Slave: Received write data 00000019
+# Slave: Received write address 00000046
+# Slave: Received write data 00000009
+# Slave: Received write data 00000048
+# Slave: Received write data 00000023
+# Slave: Received write data 0000007c
+# Slave: Received write data 0000005f
+# Slave: Received write data 00000047
+# Slave: Received write data 0000004f
+# Slave: Received write data 0000001a
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 10830: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   28
+# UVM_INFO :   29
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [Connect interface]     2
-# [DRV]     2
+# [Connect interface]     3
 # [MONITOR]     1
 # [Questa UVM]     2
 # [RNTST]     1
-# [SEQ]     1
+# [SEQ]    20
 # [TEST_DONE]     1
 # [Test class]     1
-# [WRITE ADDRESS]     8
-# [WRITE DATA]     8
-# [WRITE RESPONSE]     1
 # ** Note: $finish    : /home/nhat/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 1230 ns  Iteration: 63  Instance: /testbench
-# End time: 23:22:26 on Jan 09,2025, Elapsed time: 0:00:01
+#    Time: 10830 ns  Iteration: 61  Instance: /testbench
+# End time: 18:05:48 on Jan 18,2025, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 1

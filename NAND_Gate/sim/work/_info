@@ -2,7 +2,7 @@ m255
 K4
 z2
 Z0 !s99 nomlopt
-!s11f MIXED_VERSIONS
+!s11f vlog 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
 !i10d 8192
@@ -11,20 +11,20 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 d/home/nhat/General_Course/NAND_Gate/sim
 T_opt
-Z2 !s110 1736084652
-VXdDb`z2ajFMaRl[3TYCSN3
+!s110 1737017655
+VYQl>_HmGm]LJ5aD3oH]eQ1
 04 9 4 work testbench fast 0
-=1-8cc84b040fef-677a8cac-c0148-b9dc
+=1-8cc84b040fef-6788c937-52d80-128c8
 R0
 !s12b OEM100
 !s124 OEM10U2 
 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
-Z3 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;2022.4;75
 vnandgate
-Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R2
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1737017654
 !i10b 1
 !s100 kEk8e[MmG=MV^cgiE?[D`0
 Ig0=N>CiE6eE]VT3mN0I`l1
@@ -33,22 +33,22 @@ R1
 w1736084480
 8../rtl/nand.v
 F../rtl/nand.v
-!i122 1
+!i122 0
 L0 1 8
 Z5 VDg1SIo80bB@j0V0VzS_@n1
 Z6 OL;L;2022.4;75
 r1
 !s85 0
 31
-Z7 !s108 1736084652.000000
+Z7 !s108 1737017654.000000
 Z8 !s107 ../tb/testbench.sv|../rtl/nand.v|
 Z9 !s90 -sv|-f|compile.f|
 !i113 0
 Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
-vtestbench
-R4
 R2
+vtestbench
+R3
+R4
 !i10b 1
 !s100 bYiXK]f[5PE<GF[_gUG5d1
 I?C[VVCNf6642BOO?kd[BK2
@@ -57,7 +57,7 @@ R1
 w1736084648
 8../tb/testbench.sv
 F../tb/testbench.sv
-!i122 1
+!i122 0
 L0 1 24
 R5
 R6
@@ -69,4 +69,4 @@ R8
 R9
 !i113 0
 R10
-R3
+R2

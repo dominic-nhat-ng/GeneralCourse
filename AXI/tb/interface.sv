@@ -1,4 +1,3 @@
-
 interface axi_if(input logic clk);
   
   ////////write address channel (aw)
@@ -55,7 +54,8 @@ interface axi_if(input logic clk);
   logic [31:0] next_addrwr;
   logic [31:0] next_addrrd;
   
+
   
- 
+  
   
 endinterface 

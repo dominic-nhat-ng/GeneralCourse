@@ -1,5 +1,5 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 20:44:12 on Jan 05,2025
+# Start time: 15:54:15 on Jan 16,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
@@ -32,5 +32,5 @@
 # 1  1 |  0  
 # ** Note: $finish    : ../tb/testbench.sv(19)
 #    Time: 4 ns  Iteration: 0  Instance: /testbench
-# End time: 20:44:13 on Jan 05,2025, Elapsed time: 0:00:01
+# End time: 15:54:15 on Jan 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

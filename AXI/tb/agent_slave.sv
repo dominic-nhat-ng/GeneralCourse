@@ -14,6 +14,13 @@ class axi_agent_slave extends uvm_agent;
         sequencer_slave = axi_sequencer_slave::type_id::create("sequencer_slave", this);
         driver_slave = axi_driver_slave::type_id::create("driver_slave", this);
         monitor_slave = axi_monitor_slave::type_id::create("monitor_slave", this);
+    
+    
+    endfunction
+
+    virtual function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
+        driver_slave.seq_item_port.connect(sequencer_slave.seq_item_export);
     endfunction
 
 endclass

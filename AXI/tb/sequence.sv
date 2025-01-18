@@ -13,17 +13,13 @@ class axi_sequence extends uvm_sequence #(transaction);
         item.resetn = $urandom_range(0, 1);
 
         // WRITE ADDRESS
-        item.awid = $urandom_range(0, 15);
         item.awlen = $urandom_range(0, 15);
         item.awsize = $urandom_range(0, 7);
-        item.awaddr = $urandom;
-        item.awburst = $urandom_range(0, 3);
+        item.awaddr = $urandom_range(1, 127);
         item.awvalid = $urandom_range(0, 1);
 
         // WRITE DATA
         item.wvalid = $urandom_range(0, 1);
-        item.wid = $urandom_range(0, 15);
-        item.wdata = $urandom;
         item.wstrb = $urandom_range(0, 15);
         item.wlast = $urandom_range(0, 1);
 
@@ -32,7 +28,7 @@ class axi_sequence extends uvm_sequence #(transaction);
 
         // READ ADDRESS
         item.arid = $urandom_range(0, 15);
-        item.araddr = $urandom;
+        item.araddr = $urandom_range(1, 127);
         item.arlen = $urandom_range(0, 15);
         item.arsize = $urandom_range(0, 7);
         item.arburst = $urandom_range(0, 3);
@@ -44,19 +40,25 @@ class axi_sequence extends uvm_sequence #(transaction);
         return item;
     endfunction
 
-    virtual task body();
-        item = transaction::type_id::create("item");
-        $display("==========================================");
-        `uvm_info("SEQ", "Sending fixed mode transaction to DRV", UVM_NONE)
-        start_item(item);
-        assert(randomize_all(item));
-        item.op = fixed;
-        item.awlen <= 7;
-        item.awburst <= 0;
-        item.awsize <= 2;
-        item.wid <=0;
 
-        finish_item(item);
+    virtual task body();
+        for(int i = 0; i < 20; i++) begin
+            item = transaction::type_id::create("item");
+            //$display("==========================================");
+            `uvm_info("SEQ", "Sending fixed mode transaction to DRV", UVM_NONE)
+            assert(randomize_all(item));
+            start_item(item);
+            item.op = fixed;
+            item.awburst = 0;
+            item.wstrb = 1'b1111;
+            item.awsize = 2;
+            item.awlen = 7;
+            for(int i = 0; i < item.awlen + 1; i++) begin
+                item.wdata.push_back($urandom_range(1, 127));
+            end
+            //item.print();
+            finish_item(item);
+        end
     endtask
 
 endclass
