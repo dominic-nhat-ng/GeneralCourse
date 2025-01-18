@@ -20,13 +20,6 @@ class axi_driver extends uvm_driver#(transaction);
     /*-------------RESET DUT---------------------*/
 
 
-    task write_error_mode(transaction trans);
-
-    endtask
-
-    task read_error_mode(transaction trans);
-
-    endtask
     // Drive all signal into DUT
     extern task drive_logic(transaction trans);
     extern task reset_dut();
@@ -80,7 +73,7 @@ task axi_driver::drive_logic(transaction trans);
         fork
             axi_driver::write_fixed_address(trans);
             axi_driver::write_fixed_data(trans);
-            //axi_driver::write_fixed_response(trans);
+            axi_driver::write_fixed_response(trans);
             //axi_driver::read_fixed_mode(trans);
         join
     end
@@ -94,10 +87,6 @@ task axi_driver::drive_logic(transaction trans);
         axi_driver::read_wrap_mode(trans);
     end
 
-    else if (trans.op == error) begin
-        axi_driver::write_error_mode(trans);
-        axi_driver::read_error_mode(trans);
-    end
 
 endtask
 
@@ -117,7 +106,7 @@ task axi_driver::write_fixed_data(transaction trans);
     intf.wid = 4'b01;
     intf.wlast = 1'b0;
     intf.wstrb = trans.wstrb;
-    repeat(2) @(posedge intf.clk);
+    @(posedge intf.clk);
     
     intf.wvalid = 1;
     for(int i = 0; i < trans.awlen + 1; i++) begin
@@ -133,8 +122,8 @@ task axi_driver::write_fixed_response(transaction trans);
     intf.bready = 0;
     repeat(2) @(posedge intf.clk);
     intf.bready = 1;
-    @(negedge intf.bvalid);
-    intf.bready = 0;
+    //@(negedge intf.bvalid);
+    //intf.bready = 0;
 
 endtask
 

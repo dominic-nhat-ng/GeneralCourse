@@ -24,8 +24,8 @@ class axi_driver_slave extends uvm_driver#(transaction);
             slave_write_address();
             slave_write_data();
             slave_write_response();
-            slave_read_address();
-            slave_read_data();
+            //slave_read_address();
+            //slave_read_data();
         join_any
     endtask
     
@@ -53,8 +53,9 @@ endtask
 task axi_driver_slave::slave_write_data();
     forever begin
         @(posedge intf.clk);
-        if (intf.wvalid) begin
+        if(intf.wvalid) begin
             @(posedge intf.clk);
+            #1;
             intf.wready = 1'b1;
             $display("Slave: Received write data %h", intf.wdata);
             @(posedge intf.clk);
@@ -65,7 +66,14 @@ endtask
 
 task axi_driver_slave::slave_write_response();
     forever begin
-        @(posedge intf.clk);
+        intf.bvalid = 1'b0;
+        intf.bid = 4'b01;
+        @(negedge intf.clk iff intf.wvalid == 1'b1 && intf.wready == 1'b1 && intf.wlast == 1'b1) begin
+            intf.bvalid = 1'b1;
+            intf.bresp = 2'b0;
+            
+        
+        end
     end
 endtask
 

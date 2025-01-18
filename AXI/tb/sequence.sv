@@ -47,12 +47,13 @@ class axi_sequence extends uvm_sequence #(transaction);
             //$display("==========================================");
             `uvm_info("SEQ", "Sending fixed mode transaction to DRV", UVM_NONE)
             assert(randomize_all(item));
+            `uvm_info("SEQ", $sformatf("Sending fixed mode transaction to DRV with awlen: %d", item.awlen), UVM_MEDIUM)
             start_item(item);
             item.op = fixed;
             item.awburst = 0;
             item.wstrb = 1'b1111;
             item.awsize = 2;
-            item.awlen = 7;
+            //item.awlen = 7;
             for(int i = 0; i < item.awlen + 1; i++) begin
                 item.wdata.push_back($urandom_range(1, 127));
             end
