@@ -22,8 +22,8 @@ class axi_driver_slave extends uvm_driver#(transaction);
     virtual task run_phase(uvm_phase phase);
         fork
             slave_write_address();
-            slave_write_data();
-            slave_write_response();
+            //slave_write_data();
+            //slave_write_response();
             //slave_read_address();
             //slave_read_data();
         join_any
@@ -69,8 +69,11 @@ task axi_driver_slave::slave_write_response();
         intf.bvalid = 1'b0;
         intf.bid = 4'b01;
         @(negedge intf.clk iff intf.wvalid == 1'b1 && intf.wready == 1'b1 && intf.wlast == 1'b1) begin
+            @(posedge intf.clk);
             intf.bvalid = 1'b1;
             intf.bresp = 2'b0;
+            @(posedge intf.clk);
+            intf.bvalid = 1'b0;
             
         
         end

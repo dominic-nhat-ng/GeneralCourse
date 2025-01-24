@@ -11,7 +11,7 @@ sequence - sequence item
 class axi_test extends uvm_test; // uvm_test is a base test class 
     `uvm_component_utils(axi_test)
     axi_env environment;
-    axi_sequence seq;
+    sequence_fixed seq_fixed;
 
     function new (string name = "axi_test", uvm_component parent = null);
         super.new(name, parent);
@@ -20,7 +20,7 @@ class axi_test extends uvm_test; // uvm_test is a base test class
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         environment = axi_env::type_id::create("environment", this);
-        seq = axi_sequence::type_id::create("seq", this);
+        seq_fixed = sequence_fixed::type_id::create("seq", this);
     endfunction
 
     virtual function void end_of_elaboration();
@@ -32,7 +32,8 @@ class axi_test extends uvm_test; // uvm_test is a base test class
         super.run_phase(phase);
         //$display("Loop %d", i);
         phase.raise_objection(this);
-        seq.start(environment.agent.sequencer);
+        seq_fixed.start(environment.agent.sequencer);
+        //repeat(2) seq_fixed.start(environment.agent.sequencer);
         phase.drop_objection(this);
 
     endtask

@@ -19,6 +19,7 @@ class transaction extends uvm_sequence_item;
   rand bit [2:0]	awsize;
   rand bit [31:0]	awaddr;
   rand bit [1:0]	awburst;
+  rand bit [3:0]    awid;
   rand bit 			awvalid;
   
   ///////WRITE DATA
@@ -59,6 +60,7 @@ class transaction extends uvm_sequence_item;
   `uvm_field_int(awsize, UVM_ALL_ON)
   `uvm_field_int(awaddr, UVM_ALL_ON)
   `uvm_field_int(awburst, UVM_ALL_ON)
+  `uvm_field_int(awid, UVM_ALL_ON)
   
   ///////// WRITE DATA BUS
   `uvm_field_int(wvalid, UVM_ALL_ON)

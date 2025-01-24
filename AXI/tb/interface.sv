@@ -51,8 +51,8 @@ interface axi_if(input logic clk);
   logic resetn;
   
   //////////////////
-  logic [31:0] next_addrwr;
-  logic [31:0] next_addrrd;
+  //logic [31:0] next_addrwr;
+  //logic [31:0] next_addrrd;
   
 
   

@@ -13,10 +13,12 @@ class axi_sequence extends uvm_sequence #(transaction);
         item.resetn = $urandom_range(0, 1);
 
         // WRITE ADDRESS
-        item.awlen = $urandom_range(0, 15);
+        item.awlen = $urandom_range(0, 7);
+        item.awid = $urandom;
         item.awsize = $urandom_range(0, 7);
         item.awaddr = $urandom_range(1, 127);
         item.awvalid = $urandom_range(0, 1);
+        item.awburst = $urandom_range(0, 2);
 
         // WRITE DATA
         item.wvalid = $urandom_range(0, 1);
@@ -41,26 +43,6 @@ class axi_sequence extends uvm_sequence #(transaction);
     endfunction
 
 
-    virtual task body();
-        for(int i = 0; i < 20; i++) begin
-            item = transaction::type_id::create("item");
-            //$display("==========================================");
-            `uvm_info("SEQ", "Sending fixed mode transaction to DRV", UVM_NONE)
-            assert(randomize_all(item));
-            `uvm_info("SEQ", $sformatf("Sending fixed mode transaction to DRV with awlen: %d", item.awlen), UVM_MEDIUM)
-            start_item(item);
-            item.op = fixed;
-            item.awburst = 0;
-            item.wstrb = 1'b1111;
-            item.awsize = 2;
-            //item.awlen = 7;
-            for(int i = 0; i < item.awlen + 1; i++) begin
-                item.wdata.push_back($urandom_range(1, 127));
-            end
-            //item.print();
-            finish_item(item);
-        end
-    endtask
 
 endclass
 
@@ -72,6 +54,24 @@ class sequence_fixed extends axi_sequence;
         super.new(name);
     endfunction
 
+    virtual task body();
+        item = transaction::type_id::create("item");
+        
+        start_item(item);
+        assert(randomize_all(item));
+
+        item.op = fixed;
+        item.awburst = 0;
+        item.wstrb = 4'b1111;
+        item.awsize = 2;
+        //item.awlen = 7;
+        for(int i = 0; i < item.awlen + 1; i++) begin
+            item.wdata.push_back($urandom_range(1, 127));
+        end
+        //item.print();
+        finish_item(item);
+        //end
+    endtask
 endclass
 
 /*--------------Verification with Increase sequence---------------------*/
