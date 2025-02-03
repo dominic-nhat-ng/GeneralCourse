@@ -4,7 +4,7 @@ class apb_scoreboard extends uvm_scoreboard;
     uvm_analysis_imp#(transaction, apb_scoreboard) received_data;
 
     transaction exp_queue[$];
-    bit [31:0] sc_mem [0:31];
+    bit [31:0] sc_mem [0:31] = '{default:12};
     bit all_tests_passed = 1;
     //standard constructor
     function new(string name ="apb_scoreboard", uvm_component parent);
@@ -30,24 +30,29 @@ class apb_scoreboard extends uvm_scoreboard;
         super.run_phase(phase);
         // $display("scoreboard run_phase");
         forever begin
-            // $display("scoreboard run_phase forever loop");
-            // $display("scoreboard run_phase with exp_queue size = %0d", exp_queue.size());
             wait(exp_queue.size() > 0);
 
 
             expdata = exp_queue.pop_front();
-            `uvm_info("APB_SCOREBOARD",$sformatf("------ :: WRITE DATA       :: ------"),UVM_LOW)
-            sc_mem[expdata.P_addr] = expdata.P_wdata;
-            if(sc_mem[expdata.P_addr] == expdata.P_rdata) begin
-                `uvm_info("APB_SCOREBOARD",$sformatf("------ :: READ DATA Match :: ------"),UVM_LOW)
+
+            if (expdata.type_trans == transaction::WRITE) begin
+                sc_mem[expdata.P_addr] = expdata.P_wdata;
+                `uvm_info("APB_SCOREBOARD",$sformatf("------ :: WRITE DATA       :: ------"),UVM_LOW)
                 `uvm_info("",$sformatf("Addr: %0h",expdata.P_addr),UVM_LOW)
-                `uvm_info("",$sformatf("Expected data: %0h----Actual data: %0h", sc_mem[expdata.P_addr], expdata.P_rdata), UVM_LOW)
+                `uvm_info("",$sformatf("Data: %0h",expdata.P_wdata),UVM_LOW)
             end
             else begin
-                `uvm_error("APB_SCOREBOARD","------ :: READ DATA MisMatch :: ------")
-                `uvm_info("",$sformatf("Addr: %0h",expdata.P_addr),UVM_LOW)
-                `uvm_info("",$sformatf("Expected data: %0h----Actual data: %0h", sc_mem[expdata.P_addr], expdata.P_rdata), UVM_LOW)
-                all_tests_passed = 0;
+                if(sc_mem[expdata.P_addr] == expdata.P_rdata) begin
+                    `uvm_info("APB_SCOREBOARD",$sformatf("------ :: READ DATA Match :: ------"),UVM_LOW)
+                    `uvm_info("",$sformatf("Addr: %0h",expdata.P_addr),UVM_LOW)
+                    `uvm_info("",$sformatf("Expected data: %0h----Actual data: %0h", sc_mem[expdata.P_addr], expdata.P_rdata), UVM_LOW)
+                end
+                else begin
+                    `uvm_error("APB_SCOREBOARD","------ :: READ DATA MisMatch :: ------")
+                    `uvm_info("",$sformatf("Addr: %0h",expdata.P_addr),UVM_LOW)
+                    `uvm_info("",$sformatf("Expected data: %0h----Actual data: %0h", sc_mem[expdata.P_addr], expdata.P_rdata), UVM_LOW)
+                    all_tests_passed = 0;
+                end
             end
         end
 

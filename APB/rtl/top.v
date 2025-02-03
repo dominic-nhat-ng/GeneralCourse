@@ -14,7 +14,7 @@ module AMBA_APB(P_clk,P_rst,P_addr,P_selx,P_enable,P_write,P_wdata,P_ready,P_slv
   output reg  P_slverr;
   output reg [31:0]P_rdata;
   //memory decleration
-  reg [31:0]mem[31:0];
+  reg [31:0]mem[31:0] = '{default:12};
   //state declaration communication
   parameter [1:0] idle=2'b00;
   parameter [1:0] setup=2'b01;

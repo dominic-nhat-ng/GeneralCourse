@@ -52,10 +52,12 @@ module testbench;
     );
 
     initial begin
-        run_test("apb_test");
+        run_test("random_test");
+        // run_test("write_test");
+        // run_test("read_test");
     end
-    initial begin
-        $monitor("value stored at mem[%h]: %h", apb_ip.P_addr, apb_ip.P_wdata);
-    end
+    // initial begin
+    //     $monitor("value stored at mem[%h]: %h", apb_ip.P_addr, apb_ip.P_wdata);
+    // end
 endmodule
 

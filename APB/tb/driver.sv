@@ -31,8 +31,11 @@ class apb_driver extends uvm_driver#(transaction);
         forever begin
             //repeat(2) @(posedge intf.clk);
             seq_item_port.get_next_item(data);
-            write_logic(data);
-            read_logic(data);
+            if (data.type_trans == transaction::WRITE)
+                write_logic(data);
+            else
+                read_logic(data);
+
             seq_item_port.item_done();
         end
     endtask

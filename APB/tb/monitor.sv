@@ -29,16 +29,17 @@ class apb_monitor extends uvm_monitor;
         forever begin
             apb = transaction::type_id::create("apb", this);
             @(posedge intf.P_ready);
+            apb.type_trans = intf.P_write ? transaction::WRITE : transaction::READ;
+            if(apb.type_trans == transaction::WRITE) begin
+                apb.P_wdata = intf.P_wdata;
+                apb.P_addr = intf.P_addr;
 
-            apb.P_addr = intf.P_addr;
-            apb.P_wdata = intf.P_wdata;
-
-            @(posedge intf.P_ready);
-            apb.P_rdata = intf.P_rdata;
-
+            end else begin
+                apb.P_addr = intf.P_addr;
+                apb.P_rdata = intf.P_rdata;
+            end
             transfer_item.write(apb);
             apb.print();
-
         end
     endtask
 
