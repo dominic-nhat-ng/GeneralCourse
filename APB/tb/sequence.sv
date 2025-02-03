@@ -9,7 +9,7 @@ class apb_sequence extends uvm_sequence #(transaction);
     endfunction
 
     function transaction randomize_all(transaction tx);
-        tx.P_addr = $urandom_range(0, 31);
+        tx.P_addr = $urandom_range(0, 50);
         tx.P_wdata = $urandom();
         tx.type_trans = transaction::P_type'($urandom_range(0, 1));
         return tx;

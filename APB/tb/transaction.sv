@@ -6,13 +6,6 @@ class transaction extends uvm_sequence_item;
     rand bit [31:0] P_wdata;
     typedef enum {READ, WRITE} P_type;
     rand P_type type_trans;
-
-    //bit P_selx;
-    //bit P_enable;
-    //bit P_write;
-
-    //bit P_ready;
-    //bit P_slverr;
     bit [31:0] P_rdata;
 
     // Constructor

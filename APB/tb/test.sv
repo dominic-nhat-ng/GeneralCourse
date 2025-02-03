@@ -68,7 +68,7 @@ class write_test extends apb_test;
 
     // Start the sequences
     phase.raise_objection(this);
-    repeat(10) seq_write.start(environment.agent.seqcer);
+    repeat(100) seq_write.start(environment.agent.seqcer);
     phase.drop_objection(this);
   endtask
 endclass
@@ -115,7 +115,7 @@ class read_test extends apb_test;
 
         // Start the sequences
         phase.raise_objection(this);
-        repeat(10) seq_read.start(environment.agent.seqcer);
+        repeat(100) seq_read.start(environment.agent.seqcer);
         phase.drop_objection(this);
     endtask
 

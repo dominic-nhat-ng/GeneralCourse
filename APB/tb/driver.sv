@@ -54,16 +54,29 @@ endtask
 
 task apb_driver::write_logic(transaction tx);
     //@(posedge intf.clk);
-    intf.P_addr <= tx.P_addr;
-    intf.P_selx <= 1'b1;
-    intf.P_write <= 1'b1;
-    intf.P_wdata <= tx.P_wdata;
-    @(posedge intf.clk);
-    intf.P_enable = 1'b1;
-    @(posedge intf.P_ready);
-    @(posedge intf.clk);
-    intf.P_enable = 1'b0;
-    intf.P_selx <= 1'b0;
+    if (tx.P_addr <= 31) begin
+        intf.P_addr <= tx.P_addr;
+        intf.P_selx <= 1'b1;
+        intf.P_write <= 1'b1;
+        intf.P_wdata <= tx.P_wdata;
+        @(posedge intf.clk);
+        intf.P_enable = 1'b1;
+        @(posedge intf.P_ready);
+        @(posedge intf.clk);
+        intf.P_enable = 1'b0;
+        intf.P_selx <= 1'b0;
+    end else begin
+        intf.P_addr <= tx.P_addr;
+        intf.P_selx <= 1'b1;
+        intf.P_write <= 1'b1;
+        intf.P_wdata <= 32'hxxxx_xxxx;
+        @(posedge intf.clk);
+        intf.P_enable = 1'b1;
+        @(posedge intf.P_ready);
+        @(posedge intf.clk);
+        intf.P_enable = 1'b0;
+        intf.P_selx <= 1'b0;
+    end
     //repeat(5) @(posedge intf.clk);
     @(posedge intf.clk);
 endtask
@@ -79,6 +92,4 @@ task apb_driver::read_logic(transaction tx);
     intf.P_enable <= 1'b0;
     intf.P_selx <= 1'b0;
     @(posedge intf.clk);
-
-
 endtask
