@@ -1,54 +1,64 @@
-class adder_scoreboard extends uvm_scoreboard;
-  `uvm_component_utils(adder_scoreboard) // reg class to uvm factory
+class apb_scoreboard extends uvm_scoreboard;
+    `uvm_component_utils(apb_scoreboard) // reg class to uvm factory
   
-  uvm_analysis_imp#(adder_sequence_item, adder_scoreboard) item_collected_export;
+    uvm_analysis_imp#(transaction, apb_scoreboard) received_data;
 
-  adder_sequence_item tx_q[$];
-
-  //standard constructor
-  function new(string name ="dff_scoreboard", uvm_component parent);
-    super.new(name, parent);
-    `uvm_info("scoreboard Class", "constructor", UVM_MEDIUM)
-  endfunction
+    transaction exp_queue[$];
+    bit [31:0] sc_mem [0:31];
+    bit all_tests_passed = 1;
+    //standard constructor
+    function new(string name ="apb_scoreboard", uvm_component parent);
+        super.new(name, parent);
+        `uvm_info(get_type_name(), "constructor", UVM_MEDIUM)
+        received_data = new("received_data", this);
+    endfunction
   
     //build phase
-  function void build_phase(uvm_phase phase);
-    super.build_phase(phase);
-    item_collected_export = new("item_collected_export", this);
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        $display("scoreboard build_phase");
+    endfunction
+    
+    // receive the pkg from monitor and pushes into queue
+    virtual function void write (transaction data);
+        // `uvm_info ("write", $sformatf("Data received = 0x%0h", data.P_addr), UVM_MEDIUM)
+        exp_queue.push_back(data);
+    endfunction
 
-  endfunction
-  
-  virtual function void write(adder_sequence_item tx);
-    tx_q.push_back(tx);
-  endfunction
-  
-  task run_phase(uvm_phase phase);
-    adder_sequence_item scb_item;
+    virtual task run_phase(uvm_phase phase);
+        transaction expdata;
+        super.run_phase(phase);
+        // $display("scoreboard run_phase");
+        forever begin
+            // $display("scoreboard run_phase forever loop");
+            // $display("scoreboard run_phase with exp_queue size = %0d", exp_queue.size());
+            wait(exp_queue.size() > 0);
 
-    forever begin
-        wait(tx_q.size > 0);
 
-        scb_item = tx_q.pop_front();
-      `uvm_info("INPUT", $sformatf("a = %0d, b = %0d, cin = %0d", scb_item.a, scb_item.b, scb_item.cin), UVM_LOW);
-      `uvm_info("OUTPUT", $sformatf("cout = %0d, sum = %0d", scb_item.cout, scb_item.sum), UVM_LOW);
-
-        $display("----------------------------------------------------------------------------------------------------------");
-        // Check if the adder logic matches the expected result
-        if (scb_item.a + scb_item.b + scb_item.cin == {scb_item.cout, scb_item.sum}) begin
-      	
-//           `uvm_info("DEBUG", $sformatf("a = %0d, b = %0d, cin = %0d", tx.a, tx.b, tx.cin), UVM_LOW);
-
-          `uvm_info("RESULT", $sformatf("Matched: a = %0d, b = %0d, cin = %0d, cout = %0d, sum = %0d",
-                                          scb_item.a, scb_item.b, scb_item.cin, scb_item.cout, scb_item.sum), UVM_LOW);
-        end else begin
-          `uvm_error("RESULT", $sformatf("NOT Matched: a = %0d, b = %0d, cin = %0d, cout = %0d, sum = %0d",
-                                           scb_item.a, scb_item.b, scb_item.cin, scb_item.cout, scb_item.sum));
+            expdata = exp_queue.pop_front();
+            `uvm_info("APB_SCOREBOARD",$sformatf("------ :: WRITE DATA       :: ------"),UVM_LOW)
+            sc_mem[expdata.P_addr] = expdata.P_wdata;
+            if(sc_mem[expdata.P_addr] == expdata.P_rdata) begin
+                `uvm_info("APB_SCOREBOARD",$sformatf("------ :: READ DATA Match :: ------"),UVM_LOW)
+                `uvm_info("",$sformatf("Addr: %0h",expdata.P_addr),UVM_LOW)
+                `uvm_info("",$sformatf("Expected data: %0h----Actual data: %0h", sc_mem[expdata.P_addr], expdata.P_rdata), UVM_LOW)
+            end
+            else begin
+                `uvm_error("APB_SCOREBOARD","------ :: READ DATA MisMatch :: ------")
+                `uvm_info("",$sformatf("Addr: %0h",expdata.P_addr),UVM_LOW)
+                `uvm_info("",$sformatf("Expected data: %0h----Actual data: %0h", sc_mem[expdata.P_addr], expdata.P_rdata), UVM_LOW)
+                all_tests_passed = 0;
+            end
         end
-        $display("----------------------------------------------------------------------------------------------------------");
-    end
-endtask
 
-  
-  
+    endtask
+
+    function void report_phase(uvm_phase phase);
+        super.report_phase(phase);
+        if (all_tests_passed) begin
+            `uvm_info(get_type_name(), "All tests passed", UVM_MEDIUM)
+        end else begin
+            `uvm_error(get_type_name(), "Some tests failed")
+        end
+    endfunction
 endclass
-

@@ -1,39 +1,38 @@
-class adder_env extends uvm_env; // uvm_test is a base test class 
+class apb_env extends uvm_env; // uvm_test is a base test class 
   
-  `uvm_component_utils(adder_env) // register class to the factory
+    `uvm_component_utils(apb_env) // register class to the factory
   
   // standard constructor
   
-  adder_agent agent;
-  adder_scoreboard scb;
+    apb_agent agent;
+    apb_scoreboard scb;
   
-  function new (string name = "adder_env", uvm_component parent);
+    function new (string name = "apb_env", uvm_component parent);
+        
+        super.new(name, parent);
+        `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
     
-    super.new(name, parent);
-    `uvm_info("Environment class", "Constructor", UVM_MEDIUM);
-    
-  endfunction
+    endfunction
   
-  // build phase
   
-  function void build_phase(uvm_phase phase);
+    function void build_phase(uvm_phase phase);
     
-    super.build_phase(phase);
+        super.build_phase(phase);
     
-    agent = adder_agent::type_id::create("agent", this);
-    scb = adder_scoreboard::type_id::create("scb", this);
+        agent = apb_agent::type_id::create("agent", this);
+        scb = apb_scoreboard::type_id::create("scb", this);
     
     
-  endfunction
+    endfunction
   
   //connect phase
-  function void connect_phase(uvm_phase phase);
+    function void connect_phase(uvm_phase phase);
     
-    super.connect_phase(phase);
-    `uvm_info("Environment Class", "Connect phase", UVM_MEDIUM);
-    agent.monitor.item_collected_port.connect(scb.item_collected_export);
+        super.connect_phase(phase);
+        `uvm_info(get_type_name(), "Connect phase", UVM_MEDIUM);
+        agent.monitor.transfer_item.connect(scb.received_data);
     
-  endfunction
+    endfunction
   
   
 endclass

@@ -1,0 +1,48 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /testbench/intf
+=== Design Unit: work.apb_intf
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        206        94       112    45.63%
+
+=================================================================================
+=== Instance: /testbench/apb_ip
+=== Design Unit: work.AMBA_APB
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        14        13         1    92.85%
+    Conditions                       6         3         3    50.00%
+    FSM States                       3         3         0   100.00%
+    FSM Transitions                  4         3         1    75.00%
+    Statements                      18        18         0   100.00%
+    Toggles                        214       102       112    47.66%
+
+=================================================================================
+=== Instance: /testbench
+=== Design Unit: work.testbench
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11        11         0   100.00%
+    Toggles                          4         3         1    75.00%
+
+=================================================================================
+=== Instance: /testbench_sv_unit
+=== Design Unit: work.testbench_sv_unit
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Assertions                       1         1         0   100.00%
+    Branches                       125        24       101    19.20%
+    Conditions                      16         0        16     0.00%
+    Statements                     190       112        78    58.94%
+
+
+TOTAL ASSERTION COVERAGE: 100.00%  ASSERTIONS: 1
+
+Total Coverage By Instance (filtered view): 60.90%
+

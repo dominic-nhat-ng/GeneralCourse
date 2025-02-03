@@ -1,25 +1,33 @@
 // Sequence creates stimulus and drive them to the driver via sequencer
-class adder_sequence extends uvm_sequence #(adder_sequence_item); 
-  // registration
-  `uvm_object_utils(adder_sequence) 
-  adder_sequence_item tx;
+class apb_sequence extends uvm_sequence #(transaction); 
+    `uvm_object_utils(apb_sequence) 
+    transaction tx;
   
-  function new (string name = "adder_sequence");
-    super.new(name);
-    `uvm_info("Sequence class", "Constructor", UVM_MEDIUM);
-  endfunction
-  
-  task body();
-      forever begin
-      tx = adder_sequence_item::type_id::create("tx");
-      `uvm_info("ADDER SEQUENCE", "Base sequence: Inside body", UVM_LOW);
+    function new (string name = "apb_sequence");
+        super.new(name);
+        `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
+    endfunction
 
-      wait_for_grant();
-      tx.a = $urandom;
-      tx.b = $urandom;
-      tx.cin = $urandom;
-      send_request(tx);
-      wait_for_item_done();
-      end
-  endtask
+    function transaction randomize_all(transaction tx);
+        tx.P_addr = $urandom_range(0, 31);
+        tx.P_wdata = $urandom();
+        return tx;
+    endfunction
+
+    virtual task body();
+        tx = transaction::type_id::create("tx");
+
+        start_item(tx);
+        assert(randomize_all(tx));
+        finish_item(tx);
+
+        `uvm_info(get_type_name(), "Sequence generate done", UVM_MEDIUM)
+    endtask
+  
+endclass
+
+class sequence_write extends uvm_sequence #(transaction);
+endclass
+
+class sequence_read extends uvm_sequence #(transaction);
 endclass

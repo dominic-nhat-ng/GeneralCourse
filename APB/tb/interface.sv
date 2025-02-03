@@ -1,14 +1,16 @@
 
-interface add_intf(input logic clk);
-  // interface has all dut signals
-  // declare with logic type
-  // clock is generating and incoming from (testbench.sv) top
-  // it is iput for interface 
-  logic rst;
-  logic [7:0] a;
-  logic [7:0] b;
-  logic cin;
-  logic [7:0] sum;
-  logic cout;
-  
+interface apb_intf(input logic clk, input logic rst);
+
+    //input of dut
+    logic [31:0] P_addr;
+    logic P_selx;
+    logic P_enable;
+    logic P_write;
+    logic [31:0] P_wdata;
+
+    //output of dut
+    logic P_ready;
+    logic P_slverr;
+    logic [31:0] P_rdata;
+
 endinterface

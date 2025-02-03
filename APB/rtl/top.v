@@ -28,38 +28,41 @@ module AMBA_APB(P_clk,P_rst,P_addr,P_selx,P_enable,P_write,P_wdata,P_ready,P_slv
     else
       present_state <= next_state;
   end
-  always @(*) begin
-  //next_state =present_state;
+always @(*) begin
+  next_state = present_state; // Default assignment to avoid latches
+
   case (present_state)
-    idle:begin
-      if (P_selx   & !P_enable) 	
-				next_state = setup;
-      P_ready=0;
+    idle: begin
+      P_ready = 0;
+      if (P_selx & !P_enable) 	
+        next_state = setup;
     end
 
-    setup:begin if (!P_enable | !P_selx) 
-						next_state = idle; 
-              else begin
-						next_state =access;
-                       
-                if(P_write ==1) begin
-                  mem[P_addr]= P_wdata;
-                  P_ready=1;
-                  P_slverr=0;
-                   end
-                 else begin
-                   P_rdata=mem[P_addr];
-                   P_ready=1;
-                   P_slverr=0;
-                 end
-               end
+    setup: begin
+      if (!P_enable | !P_selx) 
+        next_state = idle; 
+      else begin
+        next_state = access;
+        if (P_write == 1) begin
+          mem[P_addr] = P_wdata;
+          P_ready = 1;
+          P_slverr = 0;
+        end else begin
+          P_rdata = mem[P_addr];
+          P_ready = 1;
+          P_slverr = 0;
+        end
+      end
     end
-    access :begin
+
+    access: begin
       if (!P_enable | !P_selx) begin
-					    next_state = idle;
-                        P_ready =0;
-             end
+        next_state = idle;
+        P_ready = 0;
+      end
     end
-	endcase 
+
+    default: next_state = idle; // Handle unexpected states
+  endcase
 end
 endmodule

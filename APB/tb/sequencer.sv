@@ -1,10 +1,10 @@
-class adder_sequencer extends uvm_sequencer#(adder_sequence_item); // uvm_test is a base test class 
+class apb_sequencer extends uvm_sequencer#(transaction); // uvm_test is a base test class 
   
-  `uvm_component_utils(adder_sequencer) // register class to the factory
+  `uvm_component_utils(apb_sequencer) // register class to the factory
   
-  function new (string name = "adder_sequencer", uvm_component parent);
+  function new (string name = "apb_sequencer", uvm_component parent);
     super.new(name, parent);
-    `uvm_info("Sequencer class", "Constructor", UVM_MEDIUM);
+    `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
   endfunction
 
   function void build_phase(uvm_phase phase);

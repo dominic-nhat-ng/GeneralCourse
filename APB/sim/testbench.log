@@ -1,0 +1,1521 @@
+# vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
+# Start time: 13:45:40 on Feb 03,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.apb_intf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading work.apb_intf(fast__2)
+# Loading work.AMBA_APB(fast)
+# Loading /home/nhat/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO ../tb/test.sv(23) @ 0: uvm_test_top [apb_test] Constructor
+# UVM_INFO @ 0: reporter [RNTST] Running test apb_test...
+# UVM_INFO ../tb/environment.sv(13) @ 0: uvm_test_top.env [apb_env] Constructor
+# UVM_INFO ../tb/sequence.sv(8) @ 0: reporter@@apb_sequence [apb_sequence] Constructor
+# UVM_INFO ../tb/agent.sv(14) @ 0: uvm_test_top.env.agent [apb_agent] Constructor
+# UVM_INFO ../tb/scoreboard.sv(12) @ 0: uvm_test_top.env.scb [apb_scoreboard] constructor
+# UVM_INFO ../tb/driver.sv(10) @ 0: uvm_test_top.env.agent.driver [apb_driver] Constructor
+# UVM_INFO ../tb/monitor.sv(13) @ 0: uvm_test_top.env.agent.monitor [apb_monitor] Constructor executed
+# UVM_INFO ../tb/sequencer.sv(7) @ 0: uvm_test_top.env.agent.seqcer [apb_sequencer] Constructor
+# UVM_INFO ../tb/driver.sv(21) @ 0: uvm_test_top.env.agent.driver [apb_driver] Driver connected to interface
+# UVM_INFO ../tb/monitor.sv(23) @ 0: uvm_test_top.env.agent.monitor [apb_monitor] Build phase completed
+# scoreboard build_phase
+# UVM_INFO ../tb/agent.sv(32) @ 0: uvm_test_top.env.agent [apb_agent]  connect phase
+# UVM_INFO ../tb/environment.sv(32) @ 0: uvm_test_top.env [apb_env] Connect phase
+# UVM_INFO ../tb/test.sv(51) @ 0: uvm_test_top [apb_test] elab phase
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               apb_test                -     @471 
+#   env                      apb_env                 -     @478 
+#     agent                  apb_agent               -     @489 
+#       driver               apb_driver              -     @512 
+#         rsp_port           uvm_analysis_port       -     @527 
+#         seq_item_port      uvm_seq_item_pull_port  -     @519 
+#       monitor              apb_monitor             -     @535 
+#         transfer_item      uvm_analysis_port       -     @652 
+#       seqcer               apb_sequencer           -     @542 
+#         rsp_export         uvm_analysis_export     -     @549 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @643 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     scb                    apb_scoreboard          -     @496 
+#       received_data        uvm_analysis_imp        -     @503 
+# --------------------------------------------------------------
+# UVM_INFO ../tb/test.sv(58) @ 0: uvm_test_top [apb_test] run_phase
+# value stored at mem[00000000]: 00000000
+# UVM_INFO ../tb/driver.sv(49) @ 30: uvm_test_top.env.agent.driver [apb_driver] reset completed
+# value stored at mem[0000000d]: e9b24a51
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @669      
+#   P_addr   integral     32    'hd       
+#   P_wdata  integral     32    'he9b24a51
+#   P_rdata  integral     32    'he9b24a51
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 110: uvm_test_top.env.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 110: uvm_test_top.env.scb [] Expected data: e9b24a51----Actual data: e9b24a51
+# UVM_INFO ../tb/sequence.sv(24) @ 150: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001b]: f8cb1ae9
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @701      
+#   P_addr   integral     32    'h1b      
+#   P_wdata  integral     32    'hf8cb1ae9
+#   P_rdata  integral     32    'hf8cb1ae9
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 230: uvm_test_top.env.scb [] Addr: 1b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 230: uvm_test_top.env.scb [] Expected data: f8cb1ae9----Actual data: f8cb1ae9
+# UVM_INFO ../tb/sequence.sv(24) @ 270: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001d]: 8c0db1b4
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @710      
+#   P_addr   integral     32    'h1d      
+#   P_wdata  integral     32    'h8c0db1b4
+#   P_rdata  integral     32    'h8c0db1b4
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 350: uvm_test_top.env.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 350: uvm_test_top.env.scb [] Expected data: 8c0db1b4----Actual data: 8c0db1b4
+# UVM_INFO ../tb/sequence.sv(24) @ 390: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000b]: 3498c73c
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @718      
+#   P_addr   integral     32    'hb       
+#   P_wdata  integral     32    'h3498c73c
+#   P_rdata  integral     32    'h3498c73c
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 470: uvm_test_top.env.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 470: uvm_test_top.env.scb [] Expected data: 3498c73c----Actual data: 3498c73c
+# UVM_INFO ../tb/sequence.sv(24) @ 510: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: d652318b
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @726      
+#   P_addr   integral     32    'h2       
+#   P_wdata  integral     32    'hd652318b
+#   P_rdata  integral     32    'hd652318b
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 590: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 590: uvm_test_top.env.scb [] Expected data: d652318b----Actual data: d652318b
+# UVM_INFO ../tb/sequence.sv(24) @ 630: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000004]: 56e64a52
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @734      
+#   P_addr   integral     32    'h4       
+#   P_wdata  integral     32    'h56e64a52
+#   P_rdata  integral     32    'h56e64a52
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 710: uvm_test_top.env.scb [] Addr: 4
+# UVM_INFO ../tb/scoreboard.sv(44) @ 710: uvm_test_top.env.scb [] Expected data: 56e64a52----Actual data: 56e64a52
+# UVM_INFO ../tb/sequence.sv(24) @ 750: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000e]: 82b72647
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @742      
+#   P_addr   integral     32    'he       
+#   P_wdata  integral     32    'h82b72647
+#   P_rdata  integral     32    'h82b72647
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 830: uvm_test_top.env.scb [] Addr: e
+# UVM_INFO ../tb/scoreboard.sv(44) @ 830: uvm_test_top.env.scb [] Expected data: 82b72647----Actual data: 82b72647
+# UVM_INFO ../tb/sequence.sv(24) @ 870: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000007]: 8da89f79
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @750      
+#   P_addr   integral     32    'h7       
+#   P_wdata  integral     32    'h8da89f79
+#   P_rdata  integral     32    'h8da89f79
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 950: uvm_test_top.env.scb [] Addr: 7
+# UVM_INFO ../tb/scoreboard.sv(44) @ 950: uvm_test_top.env.scb [] Expected data: 8da89f79----Actual data: 8da89f79
+# UVM_INFO ../tb/sequence.sv(24) @ 990: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001d]: 9b8db038
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @758      
+#   P_addr   integral     32    'h1d      
+#   P_wdata  integral     32    'h9b8db038
+#   P_rdata  integral     32    'h9b8db038
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1070: uvm_test_top.env.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1070: uvm_test_top.env.scb [] Expected data: 9b8db038----Actual data: 9b8db038
+# UVM_INFO ../tb/sequence.sv(24) @ 1110: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000009]: cd6dbd2f
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @766      
+#   P_addr   integral     32    'h9       
+#   P_wdata  integral     32    'hcd6dbd2f
+#   P_rdata  integral     32    'hcd6dbd2f
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1190: uvm_test_top.env.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1190: uvm_test_top.env.scb [] Expected data: cd6dbd2f----Actual data: cd6dbd2f
+# UVM_INFO ../tb/sequence.sv(24) @ 1230: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001a]: 219d26cb
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @774      
+#   P_addr   integral     32    'h1a      
+#   P_wdata  integral     32    'h219d26cb
+#   P_rdata  integral     32    'h219d26cb
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1310: uvm_test_top.env.scb [] Addr: 1a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1310: uvm_test_top.env.scb [] Expected data: 219d26cb----Actual data: 219d26cb
+# UVM_INFO ../tb/sequence.sv(24) @ 1350: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000018]: 3200583e
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @782      
+#   P_addr   integral     32    'h18      
+#   P_wdata  integral     32    'h3200583e
+#   P_rdata  integral     32    'h3200583e
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1430: uvm_test_top.env.scb [] Addr: 18
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1430: uvm_test_top.env.scb [] Expected data: 3200583e----Actual data: 3200583e
+# UVM_INFO ../tb/sequence.sv(24) @ 1470: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000000]: 098c230e
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @790     
+#   P_addr   integral     32    'h0      
+#   P_wdata  integral     32    'h98c230e
+#   P_rdata  integral     32    'h98c230e
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1550: uvm_test_top.env.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1550: uvm_test_top.env.scb [] Expected data: 98c230e----Actual data: 98c230e
+# UVM_INFO ../tb/sequence.sv(24) @ 1590: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: c0e11c98
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @798      
+#   P_addr   integral     32    'h2       
+#   P_wdata  integral     32    'hc0e11c98
+#   P_rdata  integral     32    'hc0e11c98
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1670: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1670: uvm_test_top.env.scb [] Expected data: c0e11c98----Actual data: c0e11c98
+# UVM_INFO ../tb/sequence.sv(24) @ 1710: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: 7f9e21d1
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @806      
+#   P_addr   integral     32    'h2       
+#   P_wdata  integral     32    'h7f9e21d1
+#   P_rdata  integral     32    'h7f9e21d1
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1790: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1790: uvm_test_top.env.scb [] Expected data: 7f9e21d1----Actual data: 7f9e21d1
+# UVM_INFO ../tb/sequence.sv(24) @ 1830: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000007]: ca809651
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @814      
+#   P_addr   integral     32    'h7       
+#   P_wdata  integral     32    'hca809651
+#   P_rdata  integral     32    'hca809651
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 1910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 1910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 1910: uvm_test_top.env.scb [] Addr: 7
+# UVM_INFO ../tb/scoreboard.sv(44) @ 1910: uvm_test_top.env.scb [] Expected data: ca809651----Actual data: ca809651
+# UVM_INFO ../tb/sequence.sv(24) @ 1950: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000a]: 12db1cc0
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @822      
+#   P_addr   integral     32    'ha       
+#   P_wdata  integral     32    'h12db1cc0
+#   P_rdata  integral     32    'h12db1cc0
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2030: uvm_test_top.env.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2030: uvm_test_top.env.scb [] Expected data: 12db1cc0----Actual data: 12db1cc0
+# UVM_INFO ../tb/sequence.sv(24) @ 2070: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000005]: 12859408
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @830      
+#   P_addr   integral     32    'h5       
+#   P_wdata  integral     32    'h12859408
+#   P_rdata  integral     32    'h12859408
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2150: uvm_test_top.env.scb [] Addr: 5
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2150: uvm_test_top.env.scb [] Expected data: 12859408----Actual data: 12859408
+# UVM_INFO ../tb/sequence.sv(24) @ 2190: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001f]: 166111af
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @838      
+#   P_addr   integral     32    'h1f      
+#   P_wdata  integral     32    'h166111af
+#   P_rdata  integral     32    'h166111af
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2270: uvm_test_top.env.scb [] Addr: 1f
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2270: uvm_test_top.env.scb [] Expected data: 166111af----Actual data: 166111af
+# UVM_INFO ../tb/sequence.sv(24) @ 2310: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000e]: b2161e75
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @846      
+#   P_addr   integral     32    'he       
+#   P_wdata  integral     32    'hb2161e75
+#   P_rdata  integral     32    'hb2161e75
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2390: uvm_test_top.env.scb [] Addr: e
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2390: uvm_test_top.env.scb [] Expected data: b2161e75----Actual data: b2161e75
+# UVM_INFO ../tb/sequence.sv(24) @ 2430: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000006]: 11d1a9ac
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @854      
+#   P_addr   integral     32    'h6       
+#   P_wdata  integral     32    'h11d1a9ac
+#   P_rdata  integral     32    'h11d1a9ac
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2510: uvm_test_top.env.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2510: uvm_test_top.env.scb [] Expected data: 11d1a9ac----Actual data: 11d1a9ac
+# UVM_INFO ../tb/sequence.sv(24) @ 2550: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000015]: 2acc96c6
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @862      
+#   P_addr   integral     32    'h15      
+#   P_wdata  integral     32    'h2acc96c6
+#   P_rdata  integral     32    'h2acc96c6
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2630: uvm_test_top.env.scb [] Addr: 15
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2630: uvm_test_top.env.scb [] Expected data: 2acc96c6----Actual data: 2acc96c6
+# UVM_INFO ../tb/sequence.sv(24) @ 2670: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000005]: 077e508b
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @870     
+#   P_addr   integral     32    'h5      
+#   P_wdata  integral     32    'h77e508b
+#   P_rdata  integral     32    'h77e508b
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2750: uvm_test_top.env.scb [] Addr: 5
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2750: uvm_test_top.env.scb [] Expected data: 77e508b----Actual data: 77e508b
+# UVM_INFO ../tb/sequence.sv(24) @ 2790: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: 0fb19b71
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @878     
+#   P_addr   integral     32    'h2      
+#   P_wdata  integral     32    'hfb19b71
+#   P_rdata  integral     32    'hfb19b71
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2870: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2870: uvm_test_top.env.scb [] Expected data: fb19b71----Actual data: fb19b71
+# UVM_INFO ../tb/sequence.sv(24) @ 2910: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001d]: 5fbc5ed0
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @886      
+#   P_addr   integral     32    'h1d      
+#   P_wdata  integral     32    'h5fbc5ed0
+#   P_rdata  integral     32    'h5fbc5ed0
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 2990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 2990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 2990: uvm_test_top.env.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 2990: uvm_test_top.env.scb [] Expected data: 5fbc5ed0----Actual data: 5fbc5ed0
+# UVM_INFO ../tb/sequence.sv(24) @ 3030: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000f]: 44518579
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @894      
+#   P_addr   integral     32    'hf       
+#   P_wdata  integral     32    'h44518579
+#   P_rdata  integral     32    'h44518579
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3110: uvm_test_top.env.scb [] Addr: f
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3110: uvm_test_top.env.scb [] Expected data: 44518579----Actual data: 44518579
+# UVM_INFO ../tb/sequence.sv(24) @ 3150: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000b]: 8ec33232
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @902      
+#   P_addr   integral     32    'hb       
+#   P_wdata  integral     32    'h8ec33232
+#   P_rdata  integral     32    'h8ec33232
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3230: uvm_test_top.env.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3230: uvm_test_top.env.scb [] Expected data: 8ec33232----Actual data: 8ec33232
+# UVM_INFO ../tb/sequence.sv(24) @ 3270: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000016]: 413de4ad
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @910      
+#   P_addr   integral     32    'h16      
+#   P_wdata  integral     32    'h413de4ad
+#   P_rdata  integral     32    'h413de4ad
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3350: uvm_test_top.env.scb [] Addr: 16
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3350: uvm_test_top.env.scb [] Expected data: 413de4ad----Actual data: 413de4ad
+# UVM_INFO ../tb/sequence.sv(24) @ 3390: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000005]: 8cb24283
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @918      
+#   P_addr   integral     32    'h5       
+#   P_wdata  integral     32    'h8cb24283
+#   P_rdata  integral     32    'h8cb24283
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3470: uvm_test_top.env.scb [] Addr: 5
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3470: uvm_test_top.env.scb [] Expected data: 8cb24283----Actual data: 8cb24283
+# UVM_INFO ../tb/sequence.sv(24) @ 3510: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000000]: d9efb4d7
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @926      
+#   P_addr   integral     32    'h0       
+#   P_wdata  integral     32    'hd9efb4d7
+#   P_rdata  integral     32    'hd9efb4d7
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3590: uvm_test_top.env.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3590: uvm_test_top.env.scb [] Expected data: d9efb4d7----Actual data: d9efb4d7
+# UVM_INFO ../tb/sequence.sv(24) @ 3630: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000009]: 76ecc033
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @934      
+#   P_addr   integral     32    'h9       
+#   P_wdata  integral     32    'h76ecc033
+#   P_rdata  integral     32    'h76ecc033
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3710: uvm_test_top.env.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3710: uvm_test_top.env.scb [] Expected data: 76ecc033----Actual data: 76ecc033
+# UVM_INFO ../tb/sequence.sv(24) @ 3750: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000006]: 949907e2
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @942      
+#   P_addr   integral     32    'h6       
+#   P_wdata  integral     32    'h949907e2
+#   P_rdata  integral     32    'h949907e2
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3830: uvm_test_top.env.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3830: uvm_test_top.env.scb [] Expected data: 949907e2----Actual data: 949907e2
+# UVM_INFO ../tb/sequence.sv(24) @ 3870: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000011]: 629e839b
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @950      
+#   P_addr   integral     32    'h11      
+#   P_wdata  integral     32    'h629e839b
+#   P_rdata  integral     32    'h629e839b
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 3950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 3950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 3950: uvm_test_top.env.scb [] Addr: 11
+# UVM_INFO ../tb/scoreboard.sv(44) @ 3950: uvm_test_top.env.scb [] Expected data: 629e839b----Actual data: 629e839b
+# UVM_INFO ../tb/sequence.sv(24) @ 3990: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001a]: 66a1521e
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @958      
+#   P_addr   integral     32    'h1a      
+#   P_wdata  integral     32    'h66a1521e
+#   P_rdata  integral     32    'h66a1521e
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4070: uvm_test_top.env.scb [] Addr: 1a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4070: uvm_test_top.env.scb [] Expected data: 66a1521e----Actual data: 66a1521e
+# UVM_INFO ../tb/sequence.sv(24) @ 4110: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000d]: 5d92e1ad
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @966      
+#   P_addr   integral     32    'hd       
+#   P_wdata  integral     32    'h5d92e1ad
+#   P_rdata  integral     32    'h5d92e1ad
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4190: uvm_test_top.env.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4190: uvm_test_top.env.scb [] Expected data: 5d92e1ad----Actual data: 5d92e1ad
+# UVM_INFO ../tb/sequence.sv(24) @ 4230: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000c]: 9aa31fb0
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @974      
+#   P_addr   integral     32    'hc       
+#   P_wdata  integral     32    'h9aa31fb0
+#   P_rdata  integral     32    'h9aa31fb0
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4310: uvm_test_top.env.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4310: uvm_test_top.env.scb [] Expected data: 9aa31fb0----Actual data: 9aa31fb0
+# UVM_INFO ../tb/sequence.sv(24) @ 4350: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: a9b459c5
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @982      
+#   P_addr   integral     32    'h2       
+#   P_wdata  integral     32    'ha9b459c5
+#   P_rdata  integral     32    'ha9b459c5
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4430: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4430: uvm_test_top.env.scb [] Expected data: a9b459c5----Actual data: a9b459c5
+# UVM_INFO ../tb/sequence.sv(24) @ 4470: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000003]: 13ca1f04
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @990      
+#   P_addr   integral     32    'h3       
+#   P_wdata  integral     32    'h13ca1f04
+#   P_rdata  integral     32    'h13ca1f04
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4550: uvm_test_top.env.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4550: uvm_test_top.env.scb [] Expected data: 13ca1f04----Actual data: 13ca1f04
+# UVM_INFO ../tb/sequence.sv(24) @ 4590: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001c]: d167defb
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @998      
+#   P_addr   integral     32    'h1c      
+#   P_wdata  integral     32    'hd167defb
+#   P_rdata  integral     32    'hd167defb
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4670: uvm_test_top.env.scb [] Addr: 1c
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4670: uvm_test_top.env.scb [] Expected data: d167defb----Actual data: d167defb
+# UVM_INFO ../tb/sequence.sv(24) @ 4710: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000d]: f95ea87b
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1006     
+#   P_addr   integral     32    'hd       
+#   P_wdata  integral     32    'hf95ea87b
+#   P_rdata  integral     32    'hf95ea87b
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4790: uvm_test_top.env.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4790: uvm_test_top.env.scb [] Expected data: f95ea87b----Actual data: f95ea87b
+# UVM_INFO ../tb/sequence.sv(24) @ 4830: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001c]: f8ef4f38
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1014     
+#   P_addr   integral     32    'h1c      
+#   P_wdata  integral     32    'hf8ef4f38
+#   P_rdata  integral     32    'hf8ef4f38
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 4910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 4910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 4910: uvm_test_top.env.scb [] Addr: 1c
+# UVM_INFO ../tb/scoreboard.sv(44) @ 4910: uvm_test_top.env.scb [] Expected data: f8ef4f38----Actual data: f8ef4f38
+# UVM_INFO ../tb/sequence.sv(24) @ 4950: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000a]: 1420a436
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1022     
+#   P_addr   integral     32    'ha       
+#   P_wdata  integral     32    'h1420a436
+#   P_rdata  integral     32    'h1420a436
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5030: uvm_test_top.env.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5030: uvm_test_top.env.scb [] Expected data: 1420a436----Actual data: 1420a436
+# UVM_INFO ../tb/sequence.sv(24) @ 5070: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001b]: e73e8f11
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1030     
+#   P_addr   integral     32    'h1b      
+#   P_wdata  integral     32    'he73e8f11
+#   P_rdata  integral     32    'he73e8f11
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5150: uvm_test_top.env.scb [] Addr: 1b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5150: uvm_test_top.env.scb [] Expected data: e73e8f11----Actual data: e73e8f11
+# UVM_INFO ../tb/sequence.sv(24) @ 5190: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000004]: 4074b972
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1038     
+#   P_addr   integral     32    'h4       
+#   P_wdata  integral     32    'h4074b972
+#   P_rdata  integral     32    'h4074b972
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5270: uvm_test_top.env.scb [] Addr: 4
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5270: uvm_test_top.env.scb [] Expected data: 4074b972----Actual data: 4074b972
+# UVM_INFO ../tb/sequence.sv(24) @ 5310: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000c]: 2bf76f42
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1046     
+#   P_addr   integral     32    'hc       
+#   P_wdata  integral     32    'h2bf76f42
+#   P_rdata  integral     32    'h2bf76f42
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5390: uvm_test_top.env.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5390: uvm_test_top.env.scb [] Expected data: 2bf76f42----Actual data: 2bf76f42
+# UVM_INFO ../tb/sequence.sv(24) @ 5430: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000005]: a01a078a
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1054     
+#   P_addr   integral     32    'h5       
+#   P_wdata  integral     32    'ha01a078a
+#   P_rdata  integral     32    'ha01a078a
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5510: uvm_test_top.env.scb [] Addr: 5
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5510: uvm_test_top.env.scb [] Expected data: a01a078a----Actual data: a01a078a
+# UVM_INFO ../tb/sequence.sv(24) @ 5550: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000012]: 8d528f5b
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1062     
+#   P_addr   integral     32    'h12      
+#   P_wdata  integral     32    'h8d528f5b
+#   P_rdata  integral     32    'h8d528f5b
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5630: uvm_test_top.env.scb [] Addr: 12
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5630: uvm_test_top.env.scb [] Expected data: 8d528f5b----Actual data: 8d528f5b
+# UVM_INFO ../tb/sequence.sv(24) @ 5670: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001d]: caac3fe1
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1070     
+#   P_addr   integral     32    'h1d      
+#   P_wdata  integral     32    'hcaac3fe1
+#   P_rdata  integral     32    'hcaac3fe1
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5750: uvm_test_top.env.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5750: uvm_test_top.env.scb [] Expected data: caac3fe1----Actual data: caac3fe1
+# UVM_INFO ../tb/sequence.sv(24) @ 5790: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000007]: fa211036
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1078     
+#   P_addr   integral     32    'h7       
+#   P_wdata  integral     32    'hfa211036
+#   P_rdata  integral     32    'hfa211036
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5870: uvm_test_top.env.scb [] Addr: 7
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5870: uvm_test_top.env.scb [] Expected data: fa211036----Actual data: fa211036
+# UVM_INFO ../tb/sequence.sv(24) @ 5910: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000013]: 4e698bf3
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1086     
+#   P_addr   integral     32    'h13      
+#   P_wdata  integral     32    'h4e698bf3
+#   P_rdata  integral     32    'h4e698bf3
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 5990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 5990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 5990: uvm_test_top.env.scb [] Addr: 13
+# UVM_INFO ../tb/scoreboard.sv(44) @ 5990: uvm_test_top.env.scb [] Expected data: 4e698bf3----Actual data: 4e698bf3
+# UVM_INFO ../tb/sequence.sv(24) @ 6030: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000f]: 7b718243
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1094     
+#   P_addr   integral     32    'hf       
+#   P_wdata  integral     32    'h7b718243
+#   P_rdata  integral     32    'h7b718243
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6110: uvm_test_top.env.scb [] Addr: f
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6110: uvm_test_top.env.scb [] Expected data: 7b718243----Actual data: 7b718243
+# UVM_INFO ../tb/sequence.sv(24) @ 6150: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000003]: 49acd2ef
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1102     
+#   P_addr   integral     32    'h3       
+#   P_wdata  integral     32    'h49acd2ef
+#   P_rdata  integral     32    'h49acd2ef
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6230: uvm_test_top.env.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6230: uvm_test_top.env.scb [] Expected data: 49acd2ef----Actual data: 49acd2ef
+# UVM_INFO ../tb/sequence.sv(24) @ 6270: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000013]: 035b233d
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @1110    
+#   P_addr   integral     32    'h13     
+#   P_wdata  integral     32    'h35b233d
+#   P_rdata  integral     32    'h35b233d
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6350: uvm_test_top.env.scb [] Addr: 13
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6350: uvm_test_top.env.scb [] Expected data: 35b233d----Actual data: 35b233d
+# UVM_INFO ../tb/sequence.sv(24) @ 6390: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000003]: 3cb23282
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1118     
+#   P_addr   integral     32    'h3       
+#   P_wdata  integral     32    'h3cb23282
+#   P_rdata  integral     32    'h3cb23282
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6470: uvm_test_top.env.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6470: uvm_test_top.env.scb [] Expected data: 3cb23282----Actual data: 3cb23282
+# UVM_INFO ../tb/sequence.sv(24) @ 6510: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000000]: cca31a8e
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1126     
+#   P_addr   integral     32    'h0       
+#   P_wdata  integral     32    'hcca31a8e
+#   P_rdata  integral     32    'hcca31a8e
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6590: uvm_test_top.env.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6590: uvm_test_top.env.scb [] Expected data: cca31a8e----Actual data: cca31a8e
+# UVM_INFO ../tb/sequence.sv(24) @ 6630: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000006]: d5bc8fe6
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1134     
+#   P_addr   integral     32    'h6       
+#   P_wdata  integral     32    'hd5bc8fe6
+#   P_rdata  integral     32    'hd5bc8fe6
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6710: uvm_test_top.env.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6710: uvm_test_top.env.scb [] Expected data: d5bc8fe6----Actual data: d5bc8fe6
+# UVM_INFO ../tb/sequence.sv(24) @ 6750: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000c]: 44703eaf
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1142     
+#   P_addr   integral     32    'hc       
+#   P_wdata  integral     32    'h44703eaf
+#   P_rdata  integral     32    'h44703eaf
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6830: uvm_test_top.env.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6830: uvm_test_top.env.scb [] Expected data: 44703eaf----Actual data: 44703eaf
+# UVM_INFO ../tb/sequence.sv(24) @ 6870: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000000]: f02ed39c
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1150     
+#   P_addr   integral     32    'h0       
+#   P_wdata  integral     32    'hf02ed39c
+#   P_rdata  integral     32    'hf02ed39c
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 6950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 6950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 6950: uvm_test_top.env.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(44) @ 6950: uvm_test_top.env.scb [] Expected data: f02ed39c----Actual data: f02ed39c
+# UVM_INFO ../tb/sequence.sv(24) @ 6990: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000016]: 05a5b8af
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @1158    
+#   P_addr   integral     32    'h16     
+#   P_wdata  integral     32    'h5a5b8af
+#   P_rdata  integral     32    'h5a5b8af
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7070: uvm_test_top.env.scb [] Addr: 16
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7070: uvm_test_top.env.scb [] Expected data: 5a5b8af----Actual data: 5a5b8af
+# UVM_INFO ../tb/sequence.sv(24) @ 7110: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000013]: 015f9d38
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @1166    
+#   P_addr   integral     32    'h13     
+#   P_wdata  integral     32    'h15f9d38
+#   P_rdata  integral     32    'h15f9d38
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7190: uvm_test_top.env.scb [] Addr: 13
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7190: uvm_test_top.env.scb [] Expected data: 15f9d38----Actual data: 15f9d38
+# UVM_INFO ../tb/sequence.sv(24) @ 7230: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000003]: 204ea244
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1174     
+#   P_addr   integral     32    'h3       
+#   P_wdata  integral     32    'h204ea244
+#   P_rdata  integral     32    'h204ea244
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7310: uvm_test_top.env.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7310: uvm_test_top.env.scb [] Expected data: 204ea244----Actual data: 204ea244
+# UVM_INFO ../tb/sequence.sv(24) @ 7350: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000c]: 92f79d3c
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1182     
+#   P_addr   integral     32    'hc       
+#   P_wdata  integral     32    'h92f79d3c
+#   P_rdata  integral     32    'h92f79d3c
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7430: uvm_test_top.env.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7430: uvm_test_top.env.scb [] Expected data: 92f79d3c----Actual data: 92f79d3c
+# UVM_INFO ../tb/sequence.sv(24) @ 7470: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000016]: f7b8eaf9
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1190     
+#   P_addr   integral     32    'h16      
+#   P_wdata  integral     32    'hf7b8eaf9
+#   P_rdata  integral     32    'hf7b8eaf9
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7550: uvm_test_top.env.scb [] Addr: 16
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7550: uvm_test_top.env.scb [] Expected data: f7b8eaf9----Actual data: f7b8eaf9
+# UVM_INFO ../tb/sequence.sv(24) @ 7590: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001b]: 51213305
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1198     
+#   P_addr   integral     32    'h1b      
+#   P_wdata  integral     32    'h51213305
+#   P_rdata  integral     32    'h51213305
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7670: uvm_test_top.env.scb [] Addr: 1b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7670: uvm_test_top.env.scb [] Expected data: 51213305----Actual data: 51213305
+# UVM_INFO ../tb/sequence.sv(24) @ 7710: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000b]: b023e8c1
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1206     
+#   P_addr   integral     32    'hb       
+#   P_wdata  integral     32    'hb023e8c1
+#   P_rdata  integral     32    'hb023e8c1
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7790: uvm_test_top.env.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7790: uvm_test_top.env.scb [] Expected data: b023e8c1----Actual data: b023e8c1
+# UVM_INFO ../tb/sequence.sv(24) @ 7830: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001d]: a6445775
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1214     
+#   P_addr   integral     32    'h1d      
+#   P_wdata  integral     32    'ha6445775
+#   P_rdata  integral     32    'ha6445775
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 7910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 7910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 7910: uvm_test_top.env.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 7910: uvm_test_top.env.scb [] Expected data: a6445775----Actual data: a6445775
+# UVM_INFO ../tb/sequence.sv(24) @ 7950: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000004]: 42a8e862
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1222     
+#   P_addr   integral     32    'h4       
+#   P_wdata  integral     32    'h42a8e862
+#   P_rdata  integral     32    'h42a8e862
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8030: uvm_test_top.env.scb [] Addr: 4
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8030: uvm_test_top.env.scb [] Expected data: 42a8e862----Actual data: 42a8e862
+# UVM_INFO ../tb/sequence.sv(24) @ 8070: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000010]: eef7bfa5
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1230     
+#   P_addr   integral     32    'h10      
+#   P_wdata  integral     32    'heef7bfa5
+#   P_rdata  integral     32    'heef7bfa5
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8150: uvm_test_top.env.scb [] Addr: 10
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8150: uvm_test_top.env.scb [] Expected data: eef7bfa5----Actual data: eef7bfa5
+# UVM_INFO ../tb/sequence.sv(24) @ 8190: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000003]: 5ba04fcd
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1238     
+#   P_addr   integral     32    'h3       
+#   P_wdata  integral     32    'h5ba04fcd
+#   P_rdata  integral     32    'h5ba04fcd
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8270: uvm_test_top.env.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8270: uvm_test_top.env.scb [] Expected data: 5ba04fcd----Actual data: 5ba04fcd
+# UVM_INFO ../tb/sequence.sv(24) @ 8310: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001a]: 7cd2dd30
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1246     
+#   P_addr   integral     32    'h1a      
+#   P_wdata  integral     32    'h7cd2dd30
+#   P_rdata  integral     32    'h7cd2dd30
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8390: uvm_test_top.env.scb [] Addr: 1a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8390: uvm_test_top.env.scb [] Expected data: 7cd2dd30----Actual data: 7cd2dd30
+# UVM_INFO ../tb/sequence.sv(24) @ 8430: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000009]: 904a8905
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1254     
+#   P_addr   integral     32    'h9       
+#   P_wdata  integral     32    'h904a8905
+#   P_rdata  integral     32    'h904a8905
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8510: uvm_test_top.env.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8510: uvm_test_top.env.scb [] Expected data: 904a8905----Actual data: 904a8905
+# UVM_INFO ../tb/sequence.sv(24) @ 8550: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000e]: a9da5171
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1262     
+#   P_addr   integral     32    'he       
+#   P_wdata  integral     32    'ha9da5171
+#   P_rdata  integral     32    'ha9da5171
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8630: uvm_test_top.env.scb [] Addr: e
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8630: uvm_test_top.env.scb [] Expected data: a9da5171----Actual data: a9da5171
+# UVM_INFO ../tb/sequence.sv(24) @ 8670: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001f]: d613fef3
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1270     
+#   P_addr   integral     32    'h1f      
+#   P_wdata  integral     32    'hd613fef3
+#   P_rdata  integral     32    'hd613fef3
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8750: uvm_test_top.env.scb [] Addr: 1f
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8750: uvm_test_top.env.scb [] Expected data: d613fef3----Actual data: d613fef3
+# UVM_INFO ../tb/sequence.sv(24) @ 8790: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000019]: 9c6ac9b3
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1278     
+#   P_addr   integral     32    'h19      
+#   P_wdata  integral     32    'h9c6ac9b3
+#   P_rdata  integral     32    'h9c6ac9b3
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8870: uvm_test_top.env.scb [] Addr: 19
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8870: uvm_test_top.env.scb [] Expected data: 9c6ac9b3----Actual data: 9c6ac9b3
+# UVM_INFO ../tb/sequence.sv(24) @ 8910: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000008]: ab7aafd4
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1286     
+#   P_addr   integral     32    'h8       
+#   P_wdata  integral     32    'hab7aafd4
+#   P_rdata  integral     32    'hab7aafd4
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 8990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 8990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 8990: uvm_test_top.env.scb [] Addr: 8
+# UVM_INFO ../tb/scoreboard.sv(44) @ 8990: uvm_test_top.env.scb [] Expected data: ab7aafd4----Actual data: ab7aafd4
+# UVM_INFO ../tb/sequence.sv(24) @ 9030: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000003]: f17400bc
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1294     
+#   P_addr   integral     32    'h3       
+#   P_wdata  integral     32    'hf17400bc
+#   P_rdata  integral     32    'hf17400bc
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9110: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9110: uvm_test_top.env.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9110: uvm_test_top.env.scb [] Expected data: f17400bc----Actual data: f17400bc
+# UVM_INFO ../tb/sequence.sv(24) @ 9150: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000d]: 901a93b1
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1302     
+#   P_addr   integral     32    'hd       
+#   P_wdata  integral     32    'h901a93b1
+#   P_rdata  integral     32    'h901a93b1
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9230: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9230: uvm_test_top.env.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9230: uvm_test_top.env.scb [] Expected data: 901a93b1----Actual data: 901a93b1
+# UVM_INFO ../tb/sequence.sv(24) @ 9270: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000008]: 08eb3622
+# ---------------------------------------
+# Name       Type         Size  Value    
+# ---------------------------------------
+# apb        transaction  -     @1310    
+#   P_addr   integral     32    'h8      
+#   P_wdata  integral     32    'h8eb3622
+#   P_rdata  integral     32    'h8eb3622
+# ---------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9350: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9350: uvm_test_top.env.scb [] Addr: 8
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9350: uvm_test_top.env.scb [] Expected data: 8eb3622----Actual data: 8eb3622
+# UVM_INFO ../tb/sequence.sv(24) @ 9390: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: 95093209
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1318     
+#   P_addr   integral     32    'h2       
+#   P_wdata  integral     32    'h95093209
+#   P_rdata  integral     32    'h95093209
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9470: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9470: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9470: uvm_test_top.env.scb [] Expected data: 95093209----Actual data: 95093209
+# UVM_INFO ../tb/sequence.sv(24) @ 9510: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000005]: 6ba48448
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1326     
+#   P_addr   integral     32    'h5       
+#   P_wdata  integral     32    'h6ba48448
+#   P_rdata  integral     32    'h6ba48448
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9590: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9590: uvm_test_top.env.scb [] Addr: 5
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9590: uvm_test_top.env.scb [] Expected data: 6ba48448----Actual data: 6ba48448
+# UVM_INFO ../tb/sequence.sv(24) @ 9630: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000013]: a2cf5864
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1334     
+#   P_addr   integral     32    'h13      
+#   P_wdata  integral     32    'ha2cf5864
+#   P_rdata  integral     32    'ha2cf5864
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9710: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9710: uvm_test_top.env.scb [] Addr: 13
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9710: uvm_test_top.env.scb [] Expected data: a2cf5864----Actual data: a2cf5864
+# UVM_INFO ../tb/sequence.sv(24) @ 9750: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000006]: ae1cf618
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1342     
+#   P_addr   integral     32    'h6       
+#   P_wdata  integral     32    'hae1cf618
+#   P_rdata  integral     32    'hae1cf618
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9830: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9830: uvm_test_top.env.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9830: uvm_test_top.env.scb [] Expected data: ae1cf618----Actual data: ae1cf618
+# UVM_INFO ../tb/sequence.sv(24) @ 9870: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000017]: 315fc118
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1350     
+#   P_addr   integral     32    'h17      
+#   P_wdata  integral     32    'h315fc118
+#   P_rdata  integral     32    'h315fc118
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 9950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 9950: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 9950: uvm_test_top.env.scb [] Addr: 17
+# UVM_INFO ../tb/scoreboard.sv(44) @ 9950: uvm_test_top.env.scb [] Expected data: 315fc118----Actual data: 315fc118
+# UVM_INFO ../tb/sequence.sv(24) @ 9990: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000008]: abb12199
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1358     
+#   P_addr   integral     32    'h8       
+#   P_wdata  integral     32    'habb12199
+#   P_rdata  integral     32    'habb12199
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10070: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10070: uvm_test_top.env.scb [] Addr: 8
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10070: uvm_test_top.env.scb [] Expected data: abb12199----Actual data: abb12199
+# UVM_INFO ../tb/sequence.sv(24) @ 10110: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000000]: c3b4f8a5
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1366     
+#   P_addr   integral     32    'h0       
+#   P_wdata  integral     32    'hc3b4f8a5
+#   P_rdata  integral     32    'hc3b4f8a5
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10190: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10190: uvm_test_top.env.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10190: uvm_test_top.env.scb [] Expected data: c3b4f8a5----Actual data: c3b4f8a5
+# UVM_INFO ../tb/sequence.sv(24) @ 10230: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000006]: 1dce7e37
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1374     
+#   P_addr   integral     32    'h6       
+#   P_wdata  integral     32    'h1dce7e37
+#   P_rdata  integral     32    'h1dce7e37
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10310: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10310: uvm_test_top.env.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10310: uvm_test_top.env.scb [] Expected data: 1dce7e37----Actual data: 1dce7e37
+# UVM_INFO ../tb/sequence.sv(24) @ 10350: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000d]: a350ced0
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1382     
+#   P_addr   integral     32    'hd       
+#   P_wdata  integral     32    'ha350ced0
+#   P_rdata  integral     32    'ha350ced0
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10430: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10430: uvm_test_top.env.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10430: uvm_test_top.env.scb [] Expected data: a350ced0----Actual data: a350ced0
+# UVM_INFO ../tb/sequence.sv(24) @ 10470: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001e]: 49b759d9
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1390     
+#   P_addr   integral     32    'h1e      
+#   P_wdata  integral     32    'h49b759d9
+#   P_rdata  integral     32    'h49b759d9
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10550: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10550: uvm_test_top.env.scb [] Addr: 1e
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10550: uvm_test_top.env.scb [] Expected data: 49b759d9----Actual data: 49b759d9
+# UVM_INFO ../tb/sequence.sv(24) @ 10590: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000b]: f5371252
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1398     
+#   P_addr   integral     32    'hb       
+#   P_wdata  integral     32    'hf5371252
+#   P_rdata  integral     32    'hf5371252
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10670: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10670: uvm_test_top.env.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10670: uvm_test_top.env.scb [] Expected data: f5371252----Actual data: f5371252
+# UVM_INFO ../tb/sequence.sv(24) @ 10710: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000a]: 2c5c9ca4
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1406     
+#   P_addr   integral     32    'ha       
+#   P_wdata  integral     32    'h2c5c9ca4
+#   P_rdata  integral     32    'h2c5c9ca4
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10790: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10790: uvm_test_top.env.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10790: uvm_test_top.env.scb [] Expected data: 2c5c9ca4----Actual data: 2c5c9ca4
+# UVM_INFO ../tb/sequence.sv(24) @ 10830: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000011]: fecd9c52
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1414     
+#   P_addr   integral     32    'h11      
+#   P_wdata  integral     32    'hfecd9c52
+#   P_rdata  integral     32    'hfecd9c52
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 10910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 10910: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 10910: uvm_test_top.env.scb [] Addr: 11
+# UVM_INFO ../tb/scoreboard.sv(44) @ 10910: uvm_test_top.env.scb [] Expected data: fecd9c52----Actual data: fecd9c52
+# UVM_INFO ../tb/sequence.sv(24) @ 10950: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000002]: 77656c80
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1422     
+#   P_addr   integral     32    'h2       
+#   P_wdata  integral     32    'h77656c80
+#   P_rdata  integral     32    'h77656c80
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11030: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11030: uvm_test_top.env.scb [] Addr: 2
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11030: uvm_test_top.env.scb [] Expected data: 77656c80----Actual data: 77656c80
+# UVM_INFO ../tb/sequence.sv(24) @ 11070: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000a]: c075334c
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1430     
+#   P_addr   integral     32    'ha       
+#   P_wdata  integral     32    'hc075334c
+#   P_rdata  integral     32    'hc075334c
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11150: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11150: uvm_test_top.env.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11150: uvm_test_top.env.scb [] Expected data: c075334c----Actual data: c075334c
+# UVM_INFO ../tb/sequence.sv(24) @ 11190: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000009]: 2aaf1d59
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1438     
+#   P_addr   integral     32    'h9       
+#   P_wdata  integral     32    'h2aaf1d59
+#   P_rdata  integral     32    'h2aaf1d59
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11270: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11270: uvm_test_top.env.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11270: uvm_test_top.env.scb [] Expected data: 2aaf1d59----Actual data: 2aaf1d59
+# UVM_INFO ../tb/sequence.sv(24) @ 11310: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000000f]: 23aa0b0e
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1446     
+#   P_addr   integral     32    'hf       
+#   P_wdata  integral     32    'h23aa0b0e
+#   P_rdata  integral     32    'h23aa0b0e
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11390: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11390: uvm_test_top.env.scb [] Addr: f
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11390: uvm_test_top.env.scb [] Expected data: 23aa0b0e----Actual data: 23aa0b0e
+# UVM_INFO ../tb/sequence.sv(24) @ 11430: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001f]: 5ab00cd1
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1454     
+#   P_addr   integral     32    'h1f      
+#   P_wdata  integral     32    'h5ab00cd1
+#   P_rdata  integral     32    'h5ab00cd1
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11510: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11510: uvm_test_top.env.scb [] Addr: 1f
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11510: uvm_test_top.env.scb [] Expected data: 5ab00cd1----Actual data: 5ab00cd1
+# UVM_INFO ../tb/sequence.sv(24) @ 11550: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001d]: ee522e6d
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1462     
+#   P_addr   integral     32    'h1d      
+#   P_wdata  integral     32    'hee522e6d
+#   P_rdata  integral     32    'hee522e6d
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11630: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11630: uvm_test_top.env.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11630: uvm_test_top.env.scb [] Expected data: ee522e6d----Actual data: ee522e6d
+# UVM_INFO ../tb/sequence.sv(24) @ 11670: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000005]: fad9fb49
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1470     
+#   P_addr   integral     32    'h5       
+#   P_wdata  integral     32    'hfad9fb49
+#   P_rdata  integral     32    'hfad9fb49
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11750: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11750: uvm_test_top.env.scb [] Addr: 5
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11750: uvm_test_top.env.scb [] Expected data: fad9fb49----Actual data: fad9fb49
+# UVM_INFO ../tb/sequence.sv(24) @ 11790: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[0000001a]: 6b7fa8c1
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1478     
+#   P_addr   integral     32    'h1a      
+#   P_wdata  integral     32    'h6b7fa8c1
+#   P_rdata  integral     32    'h6b7fa8c1
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11870: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11870: uvm_test_top.env.scb [] Addr: 1a
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11870: uvm_test_top.env.scb [] Expected data: 6b7fa8c1----Actual data: 6b7fa8c1
+# UVM_INFO ../tb/sequence.sv(24) @ 11910: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# value stored at mem[00000016]: f02cd205
+# ----------------------------------------
+# Name       Type         Size  Value     
+# ----------------------------------------
+# apb        transaction  -     @1486     
+#   P_addr   integral     32    'h16      
+#   P_wdata  integral     32    'hf02cd205
+#   P_rdata  integral     32    'hf02cd205
+# ----------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(39) @ 11990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: WRITE DATA       :: ------
+# UVM_INFO ../tb/scoreboard.sv(42) @ 11990: uvm_test_top.env.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(43) @ 11990: uvm_test_top.env.scb [] Addr: 16
+# UVM_INFO ../tb/scoreboard.sv(44) @ 11990: uvm_test_top.env.scb [] Expected data: f02cd205----Actual data: f02cd205
+# UVM_INFO ../tb/sequence.sv(24) @ 12030: reporter@@apb_sequence [apb_sequence] Sequence generate done
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 12030: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../tb/scoreboard.sv(59) @ 12030: uvm_test_top.env.scb [apb_scoreboard] All tests passed
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  520
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# []   200
+# [APB_SCOREBOARD]   200
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [apb_agent]     2
+# [apb_driver]     3
+# [apb_env]     2
+# [apb_monitor]     2
+# [apb_scoreboard]     2
+# [apb_sequence]   101
+# [apb_sequencer]     1
+# [apb_test]     3
+# ** Note: $finish    : /home/nhat/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 12030 ns  Iteration: 61  Instance: /testbench
+# End time: 13:45:42 on Feb 03,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
