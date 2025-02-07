@@ -113,6 +113,9 @@ module axi_slave(
       end  
      endcase
     end
+  
+  
+  
   ////////////////////fsm for write data channel
   
   
@@ -296,8 +299,7 @@ module axi_slave(
         mem[awaddrt + 1] = wdatat[23:16];
         mem[awaddrt + 2] = wdatat[31:24];
         addr = awaddrt + 3;
-      end
- 
+      end 
       4'b1110: begin 
         mem[awaddrt] = wdatat[15:8];
         mem[awaddrt + 1] = wdatat[23:16];
@@ -1170,5 +1172,3 @@ module axi_slave(
 endmodule
  
  
-//////////////////////////////////////////////
-

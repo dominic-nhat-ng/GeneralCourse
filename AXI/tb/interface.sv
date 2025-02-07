@@ -1,7 +1,8 @@
 interface axi_if(input logic clk);
   
   ////////write address channel (aw)
-  
+
+  logic resetn;
   logic awvalid;  /// master is sending new address  
   logic awready;  /// slave is ready to accept request
   logic [3:0] awid; ////// unique ID for each transaction
@@ -38,8 +39,9 @@ interface axi_if(input logic clk);
   
   /////////// read data channel (r)
   
-  logic rvalid; //// master is sending new data
+  
   logic rready; //// slave is ready to accept new data 
+  logic rvalid; //// master is sending new data
   logic [3:0] rid; /// unique id for transaction
   logic [31:0] rdata; //// data 
  // logic [3:0] rstrb; //// lane having valid data
@@ -48,14 +50,8 @@ interface axi_if(input logic clk);
   
   ////////////////
   
-  logic resetn;
   
   //////////////////
-  //logic [31:0] next_addrwr;
-  //logic [31:0] next_addrrd;
-  
-
-  
-  
-  
+  // logic [31:0] next_addrwr;
+  // logic [31:0] next_addrrd;
 endinterface 

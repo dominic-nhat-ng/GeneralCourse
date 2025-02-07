@@ -7,5 +7,6 @@ class axi_sequencer extends uvm_sequencer#(transaction); // uvm_test is a base t
     endfunction
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
+        
     endfunction
 endclass

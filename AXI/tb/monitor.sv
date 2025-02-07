@@ -42,7 +42,7 @@ class axi_monitor extends uvm_monitor;
         join_any
  //       item.print();
 
-        `uvm_info("MONITOR SUMMARY", $sformatf("Transaction captured: awaddr: %h, wdata: %h, bresp: %h", item.awaddr, item.wdata[$], item.bresp), UVM_NONE)
+        // `uvm_info("MONITOR SUMMARY", $sformatf("Transaction captured: awaddr: %h, wdata: %h, bresp: %h", item.awaddr, item.wdata[$], item.bresp), UVM_NONE)
             
 
 
@@ -56,9 +56,9 @@ class axi_monitor extends uvm_monitor;
             item.awlen = intf.awlen;        
             item.awsize = intf.awsize;      
             item.awburst = intf.awburst;    
-            item.awvalid = intf.awvalid;    
+            // item.awvalid = intf.awvalid;    
             item.awaddr = intf.awaddr;      
-            item.awready = intf.awready;    
+            // item.awready = intf.awready;    
             //`uvm_info("WRITE ADDRESS", $sformatf("Captured awaddr: %h at time: %t", item.awaddr, $time), UVM_NONE)
         end
         $display("End write address");
@@ -70,9 +70,9 @@ class axi_monitor extends uvm_monitor;
             @(negedge intf.clk);
             item.wdata.push_back(intf.wdata);
             item.wready = intf.wready;
-            item.wlast = intf.wlast;
+            // item.wlast = intf.wlast;
             item.wstrb = intf.wstrb;
-            item.wvalid = intf.wvalid;
+            // item.wvalid = intf.wvalid;
             //`uvm_info("WRITE DATA", $sformatf("Captured wdata: %h, wlast: %0b", item.wdata[$], item.wlast), UVM_NONE)
         end
         $display("End write data");
@@ -81,12 +81,12 @@ class axi_monitor extends uvm_monitor;
     task collect_write_response(transaction item);
         forever begin
             @(posedge intf.bvalid);
-            item.bready = intf.bready;
+            // item.bready = intf.bready;
             item.bid = intf.bid;
-            item.bresp = intf.bresp;
-            item.bvalid = intf.bvalid;
+            // item.bresp = intf.bresp;
+            // item.bvalid = intf.bvalid;
             //`uvm_info("WRITE RESPONSE", $sformatf("Captured bresp: %h, bvalid: %0b", item.bresp, item.bvalid), UVM_NONE)
-            item.print();
+            //item.print();
         end
         $display("End write response");
     endtask
@@ -101,7 +101,7 @@ class axi_monitor extends uvm_monitor;
             item.arlen = intf.arlen;
             item.arsize = intf.arsize;
             item.arburst = intf.arburst;
-            item.arvalid = intf.arvalid;
+            // item.arvalid = intf.arvalid;
             //`uvm_info("READ ADDRESS", $sformatf("Captured araddr: %h", item.araddr), UVM_NONE)
         end
         $display("End read address");
@@ -113,7 +113,7 @@ class axi_monitor extends uvm_monitor;
             @(posedge intf.clk);
             item.rid = intf.rid;
             item.rdata = intf.rdata;
-            item.rlast = intf.rlast;
+            // item.rlast = intf.rlast;
             //item. = intf.rvalid;
             //`uvm_info("READ DATA", $sformatf("Captured rdata: %h", item.rdata), UVM_NONE)
             //item.print();

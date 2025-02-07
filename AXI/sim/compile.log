@@ -1,9 +1,9 @@
 Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
-Start time: 01:10:53 on Jan 24,2025
+Start time: 16:50:20 on Feb 06,2025
 vlog -sv -f compile.f 
 -- Compiling module axi_slave
-** Warning: ../rtl/top.sv(756): (vlog-2182) 'retaddr' might be read before written in always_comb or always @* block.
-** Warning: ../rtl/top.sv(1090): (vlog-2182) 'rdretaddr' might be read before written in always_comb or always @* block.
+** Warning: ../rtl/top.sv(758): (vlog-2182) 'retaddr' might be read before written in always_comb or always @* block.
+** Warning: ../rtl/top.sv(1092): (vlog-2182) 'rdretaddr' might be read before written in always_comb or always @* block.
 ** Note: (vlog-2286) ../tb/testbench.sv(4): Using implicit +incdir+/home/nhat/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 -- Compiling package testbench_sv_unit
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -11,6 +11,7 @@ vlog -sv -f compile.f
 -- Compiling module testbench
 
 Top level modules:
+	axi_slave
 	testbench
-End time: 01:10:53 on Jan 24,2025, Elapsed time: 0:00:00
+End time: 16:50:21 on Feb 06,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 2

@@ -1,147 +1,93 @@
+`timescale 1ns/1ns
+import uvm_pkg::*;
 
-class axi_driver extends uvm_driver#(transaction);
-    `uvm_component_utils(axi_driver)
-    
-    virtual axi_if intf;
-    transaction trans;
-    function new(string name = "axi_driver", uvm_component parent = null);
-        super.new(name, parent);
-    endfunction
+`include "uvm_macros.svh"
+`include "interface.sv"
+`include "transaction.sv"
+`include "sequence.sv"
+//`include "sequencer_slave.sv"
+`include "sequencer.sv"
+//`include "driver_slave.sv"
+`include "driver.sv"
+//`include "monitor_slave.sv"
+`include "monitor.sv"
+//`include "agent_slave.sv"
+`include "agent.sv"
+`include "scoreboard.sv"
+`include "environment.sv"
+`include "test.sv"
+module testbench;
 
-    function void build_phase(uvm_phase phase);
-        super.build_phase(phase);
-        if (! uvm_config_db #(virtual axi_if) :: get (this, "", "intf", intf)) begin
-            `uvm_fatal ("Can't connect interface", "Didn't get handle to virtual interface if_name")
+    // Declare clock signal
+    bit clk;
+
+    initial begin
+        clk = 0;
+        forever #10 clk = ~clk;
+
     end
-        else
-            `uvm_info("Connect interface", "Driver Connected to interface", UVM_NONE)
-        
-    endfunction
+    // Instantiate the AXI interface
+    axi_if intf(.clk(clk));
 
-    /*-------------RESET DUT---------------------*/
-    task reset_dut();
-        intf.resetn <= 0;
-        repeat(2) @(posedge intf.clk);
-        intf.resetn <= 1;
-
-    endtask
-    // fixed type
-    //
-    int count_data;
-    task write_fixed_mode(transaction trans);
-        `uvm_info("DRV", "Write Transaction in Fixed Mode Started", UVM_NONE);
-        intf.awid = 0;
-        intf.awvalid = 1;
-        intf.awlen = 7;
-        intf.awsize = 2;
-        intf.awburst = trans.awburst;
-        intf.awaddr = trans.awaddr;
-
-        intf.wvalid = 1;
-        intf.wid = trans.wid;
-        intf.wdata = trans.wdata;
-        intf.wstrb = 4'b1111;
-
-        //intf.arvalid = 0;
-        intf.rready = 0;
-        intf.bready = 0;
-
-        //@(posedge intf.clk);
-
-        @(posedge intf.wready);
-        @(posedge intf.clk);
-
-        for(int i = 0; i < trans.awlen; i++) begin
-            intf.wdata = $urandom;
-            @(posedge intf.wready);
-            @(posedge intf.clk);
-        end
-        intf.awvalid = 0;
-        intf.wvalid = 0;
-        intf.wlast = 1;
-        intf.bready = 1;
-        @(negedge intf.bvalid);
-        intf.wlast = 0;
-        intf.bready = 0;
-
-
-    endtask
-
-    task read_fixed_mode(transaction trans);
-        `uvm_info("DRV", "Read Transaction in Fixed Mode Started", UVM_NONE)
-        intf.arid = 0;
-        intf.arlen = 7;
-        intf.arsize = 2;
-        intf.araddr = trans.araddr;
-        intf.arburst = 0;
-        intf.arvalid = 1'b1;
-        intf.rready = 1'b1;
-        //$display("Interface arlen: %d", intf.arlen);
-        for(int i = 0; i < intf.arlen; i++) begin
-            @(posedge intf.arready);
-            @(posedge intf.clk);
-        end
-
-        @(negedge intf.rlast);
-        intf.arvalid = 1'b0;
-        intf.rready = 1'b0;
-    endtask
-
-    task write_incr_mode(transaction trans);
-
-    endtask
-
-    task read_incr_mode(transaction trans);
-
-    endtask
-
-    task write_wrap_mode(transaction trans);
-
-    endtask
-
-    task read_wrap_mode(transaction trans);
-
-    endtask
-
-    task write_error_mode(transaction trans);
-
-    endtask
-
-    task read_error_mode(transaction trans);
-
-    endtask
-    // Drive all signal into DUT
-    task drive_logic(transaction trans);
-        if (trans.op == fixed) begin
-            write_fixed_mode(trans);
-            read_fixed_mode(trans);
-        end
-        else if (trans.op == increase) begin
-            write_incr_mode(trans);
-            read_incr_mode(trans);
-        end
-
-        else if (trans.op == wrap) begin
-            write_wrap_mode(trans);
-            read_wrap_mode(trans);
-        end
-
-        else if (trans.op == error) begin
-            write_error_mode(trans);
-            read_error_mode(trans);
-        end
-
-    endtask
-    virtual task run_phase(uvm_phase phase);
-        super.run_phase(phase);
-        forever begin
-            seq_item_port.get_next_item(trans);
-            reset_dut();
-            drive_logic(trans);
-            //trans.print();
-            seq_item_port.item_done();
-        end
-    endtask
+    initial begin
+        uvm_config_db#(virtual axi_if)::set(null, "*", "intf", intf);
+    end
+    // Instantiate the DUT
+      axi_slave dut (
+          // Clock and reset
+          .clk(intf.clk),
+          .resetn(intf.resetn),
+  
+          // Write address channel
+          .awvalid(intf.awvalid),
+          .awready(intf.awready),
+          .awid(intf.awid),
+          .awlen(intf.awlen),
+          .awsize(intf.awsize),
+          .awaddr(intf.awaddr),
+          .awburst(intf.awburst),
+  
+          // Write data channel
+          .wvalid(intf.wvalid),
+          .wready(intf.wready),
+          .wid(intf.wid),
+          .wdata(intf.wdata),
+          .wstrb(intf.wstrb),
+          .wlast(intf.wlast),
+  
+          // Write response channel
+          .bready(intf.bready),
+          .bvalid(intf.bvalid),
+          .bid(intf.bid),
+          .bresp(intf.bresp),
+  
+          // Read address channel
+          .arvalid(intf.arvalid),
+          .arready(intf.arready),
+          .arid(intf.arid),
+          .arlen(intf.arlen),
+          .arsize(intf.arsize),
+          .araddr(intf.araddr),
+          .arburst(intf.arburst),
+  
+          // Read data channel
+          .rvalid(intf.rvalid),
+          .rready(intf.rready),
+          .rid(intf.rid),
+          .rdata(intf.rdata),
+          //.rstrb(intf.rstrb),
+          .rlast(intf.rlast),
+          .rresp(intf.rresp)
+      );
 
 
-endclass
+    initial begin
+        fork
+            $dumpvars(0, testbench); // Include all variables in the testbench
+            // Run the test
+            run_test("axi_test");
+        join
+    end
+
+
+endmodule
