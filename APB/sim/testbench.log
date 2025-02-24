@@ -1,0 +1,1402 @@
+# vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
+# Start time: 00:32:37 on Feb 24,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.apb_intf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading work.apb_intf(fast__2)
+# Loading work.AMBA_APB(fast)
+# Loading /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
+# log -r /*
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO ../tb/test.sv(23) @ 0: uvm_test_top [apb_test] Constructor
+# UVM_INFO ../tb/test.sv(133) @ 0: uvm_test_top [random_test] Constructor
+# UVM_INFO @ 0: reporter [RNTST] Running test random_test...
+# UVM_INFO ../tb/environment.sv(13) @ 0: uvm_test_top.environment [apb_env] Constructor
+# UVM_INFO ../tb/sequence.sv(8) @ 0: reporter@@random_sequence [apb_sequence] Constructor
+# UVM_INFO ../tb/sequence.sv(71) @ 0: reporter@@random_sequence [random_sequence] Constructor
+# UVM_INFO ../tb/agent.sv(14) @ 0: uvm_test_top.environment.agent [apb_agent] Constructor
+# UVM_INFO ../tb/scoreboard.sv(12) @ 0: uvm_test_top.environment.scb [apb_scoreboard] constructor
+# UVM_INFO ../tb/driver.sv(10) @ 0: uvm_test_top.environment.agent.driver [apb_driver] Constructor
+# UVM_INFO ../tb/monitor.sv(13) @ 0: uvm_test_top.environment.agent.monitor [apb_monitor] Constructor executed
+# UVM_INFO ../tb/sequencer.sv(7) @ 0: uvm_test_top.environment.agent.seqcer [apb_sequencer] Constructor
+# UVM_INFO ../tb/driver.sv(21) @ 0: uvm_test_top.environment.agent.driver [apb_driver] Driver connected to interface
+# UVM_INFO ../tb/monitor.sv(23) @ 0: uvm_test_top.environment.agent.monitor [apb_monitor] Build phase completed
+# scoreboard build_phase
+# UVM_INFO ../tb/agent.sv(32) @ 0: uvm_test_top.environment.agent [apb_agent]  connect phase
+# UVM_INFO ../tb/environment.sv(32) @ 0: uvm_test_top.environment [apb_env] Connect phase
+# UVM_INFO ../tb/test.sv(149) @ 0: uvm_test_top [random_test] elab phase
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               random_test             -     @471 
+#   environment              apb_env                 -     @478 
+#     agent                  apb_agent               -     @489 
+#       driver               apb_driver              -     @512 
+#         rsp_port           uvm_analysis_port       -     @527 
+#         seq_item_port      uvm_seq_item_pull_port  -     @519 
+#       monitor              apb_monitor             -     @535 
+#         transfer_item      uvm_analysis_port       -     @652 
+#       seqcer               apb_sequencer           -     @542 
+#         rsp_export         uvm_analysis_export     -     @549 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @643 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     scb                    apb_scoreboard          -     @496 
+#       received_data        uvm_analysis_imp        -     @503 
+# --------------------------------------------------------------
+# UVM_INFO ../tb/test.sv(155) @ 0: uvm_test_top [random_test] run_phase
+# UVM_INFO ../tb/driver.sv(52) @ 30: uvm_test_top.environment.agent.driver [apb_driver] reset completed
+# UVM_INFO ../tb/sequence.sv(79) @ 30: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @669 
+#   P_addr      integral     32    'h7  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 50: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 50: uvm_test_top.environment.scb [] Addr: 7
+# UVM_INFO ../tb/scoreboard.sv(60) @ 50: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 90: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @701 
+#   P_addr      integral     32    'h1d 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 110: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 110: uvm_test_top.environment.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(60) @ 110: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 150: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @710 
+#   P_addr      integral     32    'h2b 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 170: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 170: uvm_test_top.environment.scb [] Addr: 2b
+# UVM_INFO ../tb/sequence.sv(79) @ 210: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @718 
+#   P_addr      integral     32    'h1b 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 230: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 230: uvm_test_top.environment.scb [] Addr: 1b
+# UVM_INFO ../tb/scoreboard.sv(60) @ 230: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 270: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @726      
+#   P_addr      integral     32    'h17      
+#   P_wdata     integral     32    'hd652318b
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 290: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 290: uvm_test_top.environment.scb [] Addr: 17
+# UVM_INFO ../tb/scoreboard.sv(47) @ 290: uvm_test_top.environment.scb [] Data: d652318b
+# UVM_INFO ../tb/sequence.sv(79) @ 330: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @734      
+#   P_addr      integral     32    'h13      
+#   P_wdata     integral     32    'h56e64a52
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 350: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 350: uvm_test_top.environment.scb [] Addr: 13
+# UVM_INFO ../tb/scoreboard.sv(47) @ 350: uvm_test_top.environment.scb [] Data: 56e64a52
+# UVM_INFO ../tb/sequence.sv(79) @ 390: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @742 
+#   P_addr      integral     32    'h2f 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 410: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 410: uvm_test_top.environment.scb [] Addr: 2f
+# UVM_INFO ../tb/sequence.sv(79) @ 450: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @750 
+#   P_addr      integral     32    'h2b 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 470: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 470: uvm_test_top.environment.scb [] Addr: 2b
+# UVM_INFO ../tb/sequence.sv(79) @ 510: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @758      
+#   P_addr      integral     32    'he       
+#   P_wdata     integral     32    'h9b8db038
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 530: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 530: uvm_test_top.environment.scb [] Addr: e
+# UVM_INFO ../tb/scoreboard.sv(47) @ 530: uvm_test_top.environment.scb [] Data: 9b8db038
+# UVM_INFO ../tb/sequence.sv(79) @ 570: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @766 
+#   P_addr      integral     32    'h24 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 590: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 590: uvm_test_top.environment.scb [] Addr: 24
+# UVM_INFO ../tb/sequence.sv(79) @ 630: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @774 
+#   P_addr      integral     32    'h2f 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 650: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 650: uvm_test_top.environment.scb [] Addr: 2f
+# UVM_INFO ../tb/sequence.sv(79) @ 690: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @782      
+#   P_addr      integral     32    'h17      
+#   P_wdata     integral     32    'h3200583e
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 710: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 710: uvm_test_top.environment.scb [] Addr: 17
+# UVM_INFO ../tb/scoreboard.sv(47) @ 710: uvm_test_top.environment.scb [] Data: 3200583e
+# UVM_INFO ../tb/sequence.sv(79) @ 750: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @790 
+#   P_addr      integral     32    'hc  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 770: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 770: uvm_test_top.environment.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(60) @ 770: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 810: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @798      
+#   P_addr      integral     32    'h18      
+#   P_wdata     integral     32    'hc0e11c98
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 830: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 830: uvm_test_top.environment.scb [] Addr: 18
+# UVM_INFO ../tb/scoreboard.sv(47) @ 830: uvm_test_top.environment.scb [] Data: c0e11c98
+# UVM_INFO ../tb/sequence.sv(79) @ 870: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @806 
+#   P_addr      integral     32    'h9  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 890: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 890: uvm_test_top.environment.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(60) @ 890: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 930: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @814 
+#   P_addr      integral     32    'hc  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 950: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 950: uvm_test_top.environment.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(60) @ 950: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 990: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @822 
+#   P_addr      integral     32    'h2e 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 1010: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 1010: uvm_test_top.environment.scb [] Addr: 2e
+# UVM_INFO ../tb/sequence.sv(79) @ 1050: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @830 
+#   P_addr      integral     32    'h2a 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 1070: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 1070: uvm_test_top.environment.scb [] Addr: 2a
+# UVM_INFO ../tb/sequence.sv(79) @ 1110: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @838      
+#   P_addr      integral     32    'hc       
+#   P_wdata     integral     32    'h166111af
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 1130: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 1130: uvm_test_top.environment.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(47) @ 1130: uvm_test_top.environment.scb [] Data: 166111af
+# UVM_INFO ../tb/sequence.sv(79) @ 1170: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @846      
+#   P_addr      integral     32    'h13      
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h56e64a52
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 1190: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 1190: uvm_test_top.environment.scb [] Addr: 13
+# UVM_INFO ../tb/scoreboard.sv(60) @ 1190: uvm_test_top.environment.scb [] Expected data: 56e64a52----Actual data: 56e64a52
+# UVM_INFO ../tb/sequence.sv(79) @ 1230: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @854 
+#   P_addr      integral     32    'hd  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 1250: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 1250: uvm_test_top.environment.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(60) @ 1250: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 1290: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @862 
+#   P_addr      integral     32    'h1c 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 1310: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 1310: uvm_test_top.environment.scb [] Addr: 1c
+# UVM_INFO ../tb/scoreboard.sv(60) @ 1310: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 1350: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# ------------------------------------------
+# Name          Type         Size  Value    
+# ------------------------------------------
+# apb           transaction  -     @870     
+#   P_addr      integral     32    'ha      
+#   P_wdata     integral     32    'h77e508b
+#   P_rdata     integral     32    'h0      
+#   type_trans  P_type       32    WRITE    
+# ------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 1370: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 1370: uvm_test_top.environment.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(47) @ 1370: uvm_test_top.environment.scb [] Data: 77e508b
+# UVM_INFO ../tb/sequence.sv(79) @ 1410: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# ------------------------------------------
+# Name          Type         Size  Value    
+# ------------------------------------------
+# apb           transaction  -     @878     
+#   P_addr      integral     32    'hc      
+#   P_wdata     integral     32    'hfb19b71
+#   P_rdata     integral     32    'h0      
+#   type_trans  P_type       32    WRITE    
+# ------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 1430: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 1430: uvm_test_top.environment.scb [] Addr: c
+# UVM_INFO ../tb/scoreboard.sv(47) @ 1430: uvm_test_top.environment.scb [] Data: fb19b71
+# UVM_INFO ../tb/sequence.sv(79) @ 1470: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @886      
+#   P_addr      integral     32    'h15      
+#   P_wdata     integral     32    'h5fbc5ed0
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 1490: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 1490: uvm_test_top.environment.scb [] Addr: 15
+# UVM_INFO ../tb/scoreboard.sv(47) @ 1490: uvm_test_top.environment.scb [] Data: 5fbc5ed0
+# UVM_INFO ../tb/sequence.sv(79) @ 1530: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @894      
+#   P_addr      integral     32    'h6       
+#   P_wdata     integral     32    'h44518579
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 1550: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 1550: uvm_test_top.environment.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(47) @ 1550: uvm_test_top.environment.scb [] Data: 44518579
+# UVM_INFO ../tb/sequence.sv(79) @ 1590: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @902 
+#   P_addr      integral     32    'hb  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 1610: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 1610: uvm_test_top.environment.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(60) @ 1610: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 1650: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @910 
+#   P_addr      integral     32    'h2c 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 1670: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 1670: uvm_test_top.environment.scb [] Addr: 2c
+# UVM_INFO ../tb/sequence.sv(79) @ 1710: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @918 
+#   P_addr      integral     32    'h20 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 1730: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 1730: uvm_test_top.environment.scb [] Addr: 20
+# UVM_INFO ../tb/sequence.sv(79) @ 1770: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @926 
+#   P_addr      integral     32    'h2b 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 1790: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 1790: uvm_test_top.environment.scb [] Addr: 2b
+# UVM_INFO ../tb/sequence.sv(79) @ 1830: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @934      
+#   P_addr      integral     32    'h4       
+#   P_wdata     integral     32    'h76ecc033
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 1850: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 1850: uvm_test_top.environment.scb [] Addr: 4
+# UVM_INFO ../tb/scoreboard.sv(47) @ 1850: uvm_test_top.environment.scb [] Data: 76ecc033
+# UVM_INFO ../tb/sequence.sv(79) @ 1890: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# ------------------------------------------
+# Name          Type         Size  Value    
+# ------------------------------------------
+# apb           transaction  -     @942     
+#   P_addr      integral     32    'ha      
+#   P_wdata     integral     32    'h0      
+#   P_rdata     integral     32    'h77e508b
+#   type_trans  P_type       32    READ     
+# ------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 1910: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 1910: uvm_test_top.environment.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(60) @ 1910: uvm_test_top.environment.scb [] Expected data: 77e508b----Actual data: 77e508b
+# UVM_INFO ../tb/sequence.sv(79) @ 1950: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @950 
+#   P_addr      integral     32    'h10 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 1970: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 1970: uvm_test_top.environment.scb [] Addr: 10
+# UVM_INFO ../tb/scoreboard.sv(60) @ 1970: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 2010: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @958 
+#   P_addr      integral     32    'h9  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 2030: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 2030: uvm_test_top.environment.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(60) @ 2030: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 2070: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @966 
+#   P_addr      integral     32    'h1c 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 2090: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 2090: uvm_test_top.environment.scb [] Addr: 1c
+# UVM_INFO ../tb/scoreboard.sv(60) @ 2090: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 2130: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @974      
+#   P_addr      integral     32    'h10      
+#   P_wdata     integral     32    'h9aa31fb0
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 2150: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 2150: uvm_test_top.environment.scb [] Addr: 10
+# UVM_INFO ../tb/scoreboard.sv(47) @ 2150: uvm_test_top.environment.scb [] Data: 9aa31fb0
+# UVM_INFO ../tb/sequence.sv(79) @ 2190: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @982 
+#   P_addr      integral     32    'h1  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 2210: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 2210: uvm_test_top.environment.scb [] Addr: 1
+# UVM_INFO ../tb/scoreboard.sv(60) @ 2210: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 2250: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @990      
+#   P_addr      integral     32    'hb       
+#   P_wdata     integral     32    'h13ca1f04
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 2270: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 2270: uvm_test_top.environment.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(47) @ 2270: uvm_test_top.environment.scb [] Data: 13ca1f04
+# UVM_INFO ../tb/sequence.sv(79) @ 2310: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @998 
+#   P_addr      integral     32    'h32 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 2330: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 2330: uvm_test_top.environment.scb [] Addr: 32
+# UVM_INFO ../tb/sequence.sv(79) @ 2370: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1006     
+#   P_addr      integral     32    'h17      
+#   P_wdata     integral     32    'hf95ea87b
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 2390: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 2390: uvm_test_top.environment.scb [] Addr: 17
+# UVM_INFO ../tb/scoreboard.sv(47) @ 2390: uvm_test_top.environment.scb [] Data: f95ea87b
+# UVM_INFO ../tb/sequence.sv(79) @ 2430: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1014
+#   P_addr      integral     32    'h20 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 2450: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 2450: uvm_test_top.environment.scb [] Addr: 20
+# UVM_INFO ../tb/sequence.sv(79) @ 2490: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1022     
+#   P_addr      integral     32    'h6       
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h44518579
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 2510: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 2510: uvm_test_top.environment.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(60) @ 2510: uvm_test_top.environment.scb [] Expected data: 44518579----Actual data: 44518579
+# UVM_INFO ../tb/sequence.sv(79) @ 2550: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1030
+#   P_addr      integral     32    'h30 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 2570: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 2570: uvm_test_top.environment.scb [] Addr: 30
+# UVM_INFO ../tb/sequence.sv(79) @ 2610: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1038
+#   P_addr      integral     32    'h0  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 2630: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 2630: uvm_test_top.environment.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(60) @ 2630: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 2670: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1046     
+#   P_addr      integral     32    'h18      
+#   P_wdata     integral     32    'h2bf76f42
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 2690: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 2690: uvm_test_top.environment.scb [] Addr: 18
+# UVM_INFO ../tb/scoreboard.sv(47) @ 2690: uvm_test_top.environment.scb [] Data: 2bf76f42
+# UVM_INFO ../tb/sequence.sv(79) @ 2730: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1054     
+#   P_addr      integral     32    'hb       
+#   P_wdata     integral     32    'ha01a078a
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 2750: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 2750: uvm_test_top.environment.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(47) @ 2750: uvm_test_top.environment.scb [] Data: a01a078a
+# UVM_INFO ../tb/sequence.sv(79) @ 2790: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1062
+#   P_addr      integral     32    'h31 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 2810: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 2810: uvm_test_top.environment.scb [] Addr: 31
+# UVM_INFO ../tb/sequence.sv(79) @ 2850: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1070
+#   P_addr      integral     32    'h2a 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 2870: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 2870: uvm_test_top.environment.scb [] Addr: 2a
+# UVM_INFO ../tb/sequence.sv(79) @ 2910: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1078
+#   P_addr      integral     32    'h14 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 2930: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 2930: uvm_test_top.environment.scb [] Addr: 14
+# UVM_INFO ../tb/scoreboard.sv(60) @ 2930: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 2970: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1086
+#   P_addr      integral     32    'h2c 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 2990: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 2990: uvm_test_top.environment.scb [] Addr: 2c
+# UVM_INFO ../tb/sequence.sv(79) @ 3030: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1094     
+#   P_addr      integral     32    'h7       
+#   P_wdata     integral     32    'h7b718243
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3050: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3050: uvm_test_top.environment.scb [] Addr: 7
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3050: uvm_test_top.environment.scb [] Data: 7b718243
+# UVM_INFO ../tb/sequence.sv(79) @ 3090: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1102     
+#   P_addr      integral     32    'h3       
+#   P_wdata     integral     32    'h49acd2ef
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3110: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3110: uvm_test_top.environment.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3110: uvm_test_top.environment.scb [] Data: 49acd2ef
+# UVM_INFO ../tb/sequence.sv(79) @ 3150: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1110
+#   P_addr      integral     32    'h32 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 3170: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 3170: uvm_test_top.environment.scb [] Addr: 32
+# UVM_INFO ../tb/sequence.sv(79) @ 3210: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1118
+#   P_addr      integral     32    'h27 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 3230: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 3230: uvm_test_top.environment.scb [] Addr: 27
+# UVM_INFO ../tb/sequence.sv(79) @ 3270: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1126     
+#   P_addr      integral     32    'h9       
+#   P_wdata     integral     32    'hcca31a8e
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3290: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3290: uvm_test_top.environment.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3290: uvm_test_top.environment.scb [] Data: cca31a8e
+# UVM_INFO ../tb/sequence.sv(79) @ 3330: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1134
+#   P_addr      integral     32    'h20 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 3350: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 3350: uvm_test_top.environment.scb [] Addr: 20
+# UVM_INFO ../tb/sequence.sv(79) @ 3390: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1142     
+#   P_addr      integral     32    'h9       
+#   P_wdata     integral     32    'h44703eaf
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3410: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3410: uvm_test_top.environment.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3410: uvm_test_top.environment.scb [] Data: 44703eaf
+# UVM_INFO ../tb/sequence.sv(79) @ 3450: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1150     
+#   P_addr      integral     32    'h19      
+#   P_wdata     integral     32    'hf02ed39c
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3470: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3470: uvm_test_top.environment.scb [] Addr: 19
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3470: uvm_test_top.environment.scb [] Data: f02ed39c
+# UVM_INFO ../tb/sequence.sv(79) @ 3510: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# ------------------------------------------
+# Name          Type         Size  Value    
+# ------------------------------------------
+# apb           transaction  -     @1158    
+#   P_addr      integral     32    'ha      
+#   P_wdata     integral     32    'h0      
+#   P_rdata     integral     32    'h77e508b
+#   type_trans  P_type       32    READ     
+# ------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 3530: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 3530: uvm_test_top.environment.scb [] Addr: a
+# UVM_INFO ../tb/scoreboard.sv(60) @ 3530: uvm_test_top.environment.scb [] Expected data: 77e508b----Actual data: 77e508b
+# UVM_INFO ../tb/sequence.sv(79) @ 3570: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1166
+#   P_addr      integral     32    'h1a 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 3590: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 3590: uvm_test_top.environment.scb [] Addr: 1a
+# UVM_INFO ../tb/scoreboard.sv(60) @ 3590: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 3630: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1174
+#   P_addr      integral     32    'h22 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 3650: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 3650: uvm_test_top.environment.scb [] Addr: 22
+# UVM_INFO ../tb/sequence.sv(79) @ 3690: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1182
+#   P_addr      integral     32    'h1e 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 3710: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 3710: uvm_test_top.environment.scb [] Addr: 1e
+# UVM_INFO ../tb/scoreboard.sv(60) @ 3710: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 3750: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1190     
+#   P_addr      integral     32    'hd       
+#   P_wdata     integral     32    'hf7b8eaf9
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3770: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3770: uvm_test_top.environment.scb [] Addr: d
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3770: uvm_test_top.environment.scb [] Data: f7b8eaf9
+# UVM_INFO ../tb/sequence.sv(79) @ 3810: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1198
+#   P_addr      integral     32    'h2d 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 3830: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 3830: uvm_test_top.environment.scb [] Addr: 2d
+# UVM_INFO ../tb/sequence.sv(79) @ 3870: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1206     
+#   P_addr      integral     32    'h15      
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h5fbc5ed0
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 3890: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 3890: uvm_test_top.environment.scb [] Addr: 15
+# UVM_INFO ../tb/scoreboard.sv(60) @ 3890: uvm_test_top.environment.scb [] Expected data: 5fbc5ed0----Actual data: 5fbc5ed0
+# UVM_INFO ../tb/sequence.sv(79) @ 3930: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1214     
+#   P_addr      integral     32    'h1f      
+#   P_wdata     integral     32    'ha6445775
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 3950: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 3950: uvm_test_top.environment.scb [] Addr: 1f
+# UVM_INFO ../tb/scoreboard.sv(47) @ 3950: uvm_test_top.environment.scb [] Data: a6445775
+# UVM_INFO ../tb/sequence.sv(79) @ 3990: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1222     
+#   P_addr      integral     32    'h4       
+#   P_wdata     integral     32    'h42a8e862
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 4010: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 4010: uvm_test_top.environment.scb [] Addr: 4
+# UVM_INFO ../tb/scoreboard.sv(47) @ 4010: uvm_test_top.environment.scb [] Data: 42a8e862
+# UVM_INFO ../tb/sequence.sv(79) @ 4050: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1230     
+#   P_addr      integral     32    'h9       
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h44703eaf
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4070: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4070: uvm_test_top.environment.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4070: uvm_test_top.environment.scb [] Expected data: 44703eaf----Actual data: 44703eaf
+# UVM_INFO ../tb/sequence.sv(79) @ 4110: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1238
+#   P_addr      integral     32    'h30 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 4130: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 4130: uvm_test_top.environment.scb [] Addr: 30
+# UVM_INFO ../tb/sequence.sv(79) @ 4170: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1246
+#   P_addr      integral     32    'h2b 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 4190: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 4190: uvm_test_top.environment.scb [] Addr: 2b
+# UVM_INFO ../tb/sequence.sv(79) @ 4230: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1254
+#   P_addr      integral     32    'h1  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4250: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4250: uvm_test_top.environment.scb [] Addr: 1
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4250: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 4290: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1262     
+#   P_addr      integral     32    'h9       
+#   P_wdata     integral     32    'ha9da5171
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 4310: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 4310: uvm_test_top.environment.scb [] Addr: 9
+# UVM_INFO ../tb/scoreboard.sv(47) @ 4310: uvm_test_top.environment.scb [] Data: a9da5171
+# UVM_INFO ../tb/sequence.sv(79) @ 4350: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1270
+#   P_addr      integral     32    'h1c 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4370: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4370: uvm_test_top.environment.scb [] Addr: 1c
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4370: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 4410: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1278
+#   P_addr      integral     32    'h2c 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 4430: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 4430: uvm_test_top.environment.scb [] Addr: 2c
+# UVM_INFO ../tb/sequence.sv(79) @ 4470: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1286
+#   P_addr      integral     32    'h28 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 4490: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 4490: uvm_test_top.environment.scb [] Addr: 28
+# UVM_INFO ../tb/sequence.sv(79) @ 4530: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1294     
+#   P_addr      integral     32    'hb       
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'ha01a078a
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4550: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4550: uvm_test_top.environment.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4550: uvm_test_top.environment.scb [] Expected data: a01a078a----Actual data: a01a078a
+# UVM_INFO ../tb/sequence.sv(79) @ 4590: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1302
+#   P_addr      integral     32    'h14 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4610: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4610: uvm_test_top.environment.scb [] Addr: 14
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4610: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 4650: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# ------------------------------------------
+# Name          Type         Size  Value    
+# ------------------------------------------
+# apb           transaction  -     @1310    
+#   P_addr      integral     32    'h6      
+#   P_wdata     integral     32    'h8eb3622
+#   P_rdata     integral     32    'h0      
+#   type_trans  P_type       32    WRITE    
+# ------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 4670: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 4670: uvm_test_top.environment.scb [] Addr: 6
+# UVM_INFO ../tb/scoreboard.sv(47) @ 4670: uvm_test_top.environment.scb [] Data: 8eb3622
+# UVM_INFO ../tb/sequence.sv(79) @ 4710: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1318     
+#   P_addr      integral     32    'hf       
+#   P_wdata     integral     32    'h95093209
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 4730: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 4730: uvm_test_top.environment.scb [] Addr: f
+# UVM_INFO ../tb/scoreboard.sv(47) @ 4730: uvm_test_top.environment.scb [] Data: 95093209
+# UVM_INFO ../tb/sequence.sv(79) @ 4770: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1326     
+#   P_addr      integral     32    'h4       
+#   P_wdata     integral     32    'h6ba48448
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 4790: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 4790: uvm_test_top.environment.scb [] Addr: 4
+# UVM_INFO ../tb/scoreboard.sv(47) @ 4790: uvm_test_top.environment.scb [] Data: 6ba48448
+# UVM_INFO ../tb/sequence.sv(79) @ 4830: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1334
+#   P_addr      integral     32    'h32 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 4850: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 4850: uvm_test_top.environment.scb [] Addr: 32
+# UVM_INFO ../tb/sequence.sv(79) @ 4890: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1342     
+#   P_addr      integral     32    'h17      
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'hf95ea87b
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4910: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4910: uvm_test_top.environment.scb [] Addr: 17
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4910: uvm_test_top.environment.scb [] Expected data: f95ea87b----Actual data: f95ea87b
+# UVM_INFO ../tb/sequence.sv(79) @ 4950: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1350
+#   P_addr      integral     32    'h8  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 4970: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 4970: uvm_test_top.environment.scb [] Addr: 8
+# UVM_INFO ../tb/scoreboard.sv(60) @ 4970: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 5010: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1358     
+#   P_addr      integral     32    'hf       
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h95093209
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5030: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5030: uvm_test_top.environment.scb [] Addr: f
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5030: uvm_test_top.environment.scb [] Expected data: 95093209----Actual data: 95093209
+# UVM_INFO ../tb/sequence.sv(79) @ 5070: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1366     
+#   P_addr      integral     32    'h1c      
+#   P_wdata     integral     32    'hc3b4f8a5
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 5090: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 5090: uvm_test_top.environment.scb [] Addr: 1c
+# UVM_INFO ../tb/scoreboard.sv(47) @ 5090: uvm_test_top.environment.scb [] Data: c3b4f8a5
+# UVM_INFO ../tb/sequence.sv(79) @ 5130: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1374
+#   P_addr      integral     32    'h2a 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 5150: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 5150: uvm_test_top.environment.scb [] Addr: 2a
+# UVM_INFO ../tb/sequence.sv(79) @ 5190: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1382     
+#   P_addr      integral     32    'h1f      
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'ha6445775
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5210: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5210: uvm_test_top.environment.scb [] Addr: 1f
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5210: uvm_test_top.environment.scb [] Expected data: a6445775----Actual data: a6445775
+# UVM_INFO ../tb/sequence.sv(79) @ 5250: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1390
+#   P_addr      integral     32    'h22 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 5270: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 5270: uvm_test_top.environment.scb [] Addr: 22
+# UVM_INFO ../tb/sequence.sv(79) @ 5310: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1398     
+#   P_addr      integral     32    'h18      
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h2bf76f42
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5330: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5330: uvm_test_top.environment.scb [] Addr: 18
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5330: uvm_test_top.environment.scb [] Expected data: 2bf76f42----Actual data: 2bf76f42
+# UVM_INFO ../tb/sequence.sv(79) @ 5370: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1406
+#   P_addr      integral     32    'h22 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 5390: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 5390: uvm_test_top.environment.scb [] Addr: 22
+# UVM_INFO ../tb/sequence.sv(79) @ 5430: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1414
+#   P_addr      integral     32    'h1a 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5450: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5450: uvm_test_top.environment.scb [] Addr: 1a
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5450: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 5490: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1422
+#   P_addr      integral     32    'h26 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 5510: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 5510: uvm_test_top.environment.scb [] Addr: 26
+# UVM_INFO ../tb/sequence.sv(79) @ 5550: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1430     
+#   P_addr      integral     32    'h14      
+#   P_wdata     integral     32    'hc075334c
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 5570: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 5570: uvm_test_top.environment.scb [] Addr: 14
+# UVM_INFO ../tb/scoreboard.sv(47) @ 5570: uvm_test_top.environment.scb [] Data: c075334c
+# UVM_INFO ../tb/sequence.sv(79) @ 5610: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1438
+#   P_addr      integral     32    'h2a 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 5630: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 5630: uvm_test_top.environment.scb [] Addr: 2a
+# UVM_INFO ../tb/sequence.sv(79) @ 5670: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1446
+#   P_addr      integral     32    'h30 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    WRITE
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(40) @ 5690: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(41) @ 5690: uvm_test_top.environment.scb [] Addr: 30
+# UVM_INFO ../tb/sequence.sv(79) @ 5730: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1454
+#   P_addr      integral     32    'h28 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'h0  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_ERROR ../tb/scoreboard.sv(52) @ 5750: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Invalid Address :: ------
+# UVM_INFO ../tb/scoreboard.sv(53) @ 5750: uvm_test_top.environment.scb [] Addr: 28
+# UVM_INFO ../tb/sequence.sv(79) @ 5790: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1462     
+#   P_addr      integral     32    'h3       
+#   P_wdata     integral     32    'h0       
+#   P_rdata     integral     32    'h49acd2ef
+#   type_trans  P_type       32    READ      
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5810: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5810: uvm_test_top.environment.scb [] Addr: 3
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5810: uvm_test_top.environment.scb [] Expected data: 49acd2ef----Actual data: 49acd2ef
+# UVM_INFO ../tb/sequence.sv(79) @ 5850: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1470
+#   P_addr      integral     32    'h1d 
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5870: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5870: uvm_test_top.environment.scb [] Addr: 1d
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5870: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO ../tb/sequence.sv(79) @ 5910: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# -------------------------------------------
+# Name          Type         Size  Value     
+# -------------------------------------------
+# apb           transaction  -     @1478     
+#   P_addr      integral     32    'hb       
+#   P_wdata     integral     32    'h6b7fa8c1
+#   P_rdata     integral     32    'h0       
+#   type_trans  P_type       32    WRITE     
+# -------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(45) @ 5930: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: WRITE DATA  :: ------
+# UVM_INFO ../tb/scoreboard.sv(46) @ 5930: uvm_test_top.environment.scb [] Addr: b
+# UVM_INFO ../tb/scoreboard.sv(47) @ 5930: uvm_test_top.environment.scb [] Data: 6b7fa8c1
+# UVM_INFO ../tb/sequence.sv(79) @ 5970: reporter@@random_sequence [random_sequence] Sequence RANDOM generated done
+# --------------------------------------
+# Name          Type         Size  Value
+# --------------------------------------
+# apb           transaction  -     @1486
+#   P_addr      integral     32    'h0  
+#   P_wdata     integral     32    'h0  
+#   P_rdata     integral     32    'hc  
+#   type_trans  P_type       32    READ 
+# --------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(58) @ 5990: uvm_test_top.environment.scb [APB_SCOREBOARD] ------ :: READ DATA Match :: ------
+# UVM_INFO ../tb/scoreboard.sv(59) @ 5990: uvm_test_top.environment.scb [] Addr: 0
+# UVM_INFO ../tb/scoreboard.sv(60) @ 5990: uvm_test_top.environment.scb [] Expected data: c----Actual data: c
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 6030: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# 
+# 
+# 
+# 
+# 
+# UVM_INFO ../tb/scoreboard.sv(77) @ 6030: uvm_test_top.environment.scb [apb_scoreboard] -------------------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(78) @ 6030: uvm_test_top.environment.scb [apb_scoreboard] ||>>>>>>>>>>>>>>>>>  All tests passed  <<<<<<<<<<<<<<||
+# UVM_INFO ../tb/scoreboard.sv(79) @ 6030: uvm_test_top.environment.scb [apb_scoreboard] -------------------------------------------------------
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  358
+# UVM_WARNING :    0
+# UVM_ERROR :   33
+# UVM_FATAL :    0
+# ** Report counts by id
+# []   167
+# [APB_SCOREBOARD]   100
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [apb_agent]     2
+# [apb_driver]     3
+# [apb_env]     2
+# [apb_monitor]     2
+# [apb_scoreboard]     4
+# [apb_sequence]     1
+# [apb_sequencer]     1
+# [apb_test]     1
+# [random_sequence]   101
+# [random_test]     3
+# ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 6030 ns  Iteration: 61  Instance: /testbench
+# End time: 00:32:38 on Feb 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

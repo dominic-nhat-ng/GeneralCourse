@@ -40,7 +40,7 @@ class BlockingGetPortB extends uvm_component;
         repeat(m_num_req) begin
             m_get_port.get(pkt);
             `uvm_info(get_type_name(), "Component A just gave me the packet", UVM_LOW)
-            pkt.print();
+            //pkt.print();
         end
         phase.drop_objection(this);
     endtask

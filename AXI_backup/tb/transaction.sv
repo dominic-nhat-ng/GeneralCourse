@@ -56,14 +56,28 @@ class transaction extends uvm_sequence_item;
   
   `uvm_object_utils_end
 
-  function transaction randomize_custom();
-        if (!std::randomize(awlen, awsize, awaddr, awburst, awid, wstrb, arid, araddr, arlen, arsize, arburst)) begin
-            `uvm_error("RANDOMIZE", "Randomization failed")
-        end
+    function transaction randomize_custom();
+        
+        awlen   = $urandom_range(0, 15);
+        awsize  = $urandom_range(0, 7);
+        awaddr  = $urandom_range(0, 1023);
+        awburst = $urandom_range(0, 3);
+        awid    = $urandom_range(0, 15);
+        wstrb   = $urandom();
+
+        arid    = $urandom_range(0, 15);
+        araddr  = $urandom_range(0, 1023);
+        arlen   = $urandom_range(0, 15);
+        arsize  = $urandom_range(0, 7);
+        arburst = $urandom_range(0, 3);
+        rid     = $urandom_range(0, 15);
+        
+        rresp   = $urandom_range(0, 3);
+
         for (int i = 0; i<awlen+1; i++) begin
             wdata.push_back($urandom());
         end
 
-    return this;
-  endfunction
+        return this;
+    endfunction
 endclass

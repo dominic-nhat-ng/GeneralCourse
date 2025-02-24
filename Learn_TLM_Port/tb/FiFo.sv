@@ -10,7 +10,7 @@ class Fifo_ComponentA extends uvm_component;
         super.build_phase(phase);
         m_put_port = new("m_put_port", this);
     endfunction
-    int m_num_tx = 2;
+    int m_num_tx = 2; 
     virtual task run_phase(uvm_phase phase);
         phase.raise_objection(this);
         repeat(m_num_tx) begin

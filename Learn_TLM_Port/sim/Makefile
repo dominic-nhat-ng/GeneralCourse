@@ -1,9 +1,3 @@
-# Compiler and Simulator Settings
-QUESTA_BIN = $(QUESTA_HOME)/bin
-VLOG       = $(QUESTA_BIN)/vlog
-VSIM       = $(QUESTA_BIN)/vsim
-
-# Project Directories
 RTL_DIR    = ../rtl
 TB_DIR     = ../tb
 SIM_DIR    = .
@@ -13,9 +7,9 @@ RTL_FILES  = $(shell cat $(SIM_DIR)/rtl.f)
 TB_FILES   = $(shell cat $(SIM_DIR)/tb.f)
 COMPILE_FLAGS = -sv +incdir+$(TB_DIR)
 RADIX = unsigned
-TESTNAME = "testbench"
 
-# UVM Settings
+TESTNAME ?= test_example
+
 UVM_HOME   = $(QUESTA_HOME)/uvm-1.2
 UVM_FLAGS  = -uvm
 
@@ -28,13 +22,12 @@ build:
 	vlog -sv -f compile.f | tee compile.log
 
 run:
-	vsim -debugDB -l $(TESTNAME).log -voptargs=+acc -assertdebug -c "testbench" -do "log -r /*;run -all;"
+	vsim -debugDB -voptargs=+acc -assertdebug -c testbench -do "log -r /*; run -all;" +UVM_TESTNAME=$(TESTNAME)
 
 wave:
 	vsim -i -view vsim.wlf -do "add wave vsim:/testbench/*; radix -$(RADIX)" &
 
-
 clean:
 	@echo "Cleaning simulation files..."
-	rm -rf work transcript vsim.wlf *.log  *.dbg dump.vcd *.ini
+	rm -rf work transcript logs vsim.wlf *.log  *.dbg dump.vcd *.ini
 

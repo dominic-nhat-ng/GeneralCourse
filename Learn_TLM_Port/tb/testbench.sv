@@ -3,15 +3,16 @@ import uvm_pkg::*;
 `include "uvm_macros.svh"
 `include "transaction.sv"
 `include "test.sv"
+
 module testbench;
     initial begin
-        //run_test("test_BlockingPutPort");
-        //run_test("test_NonBlockingPutPort");
-        //run_test("test_PortExportImp");
-        //run_test("test_BlockingGetPort");
-        //run_test("test_NonBlockingGetPort");
-        run_test("test_fifo");
-        //run_test("test_example");
+        string test_name;
+
+        if (!$value$plusargs("UVM_TESTNAME=%s", test_name)) begin
+            test_name = "test_example"; // Chạy test mặc định nếu không có argument
+        end
+
+        $display("Running test: %s", test_name);
+        run_test(test_name);
     end
 endmodule
-

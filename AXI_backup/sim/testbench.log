@@ -1,6 +1,6 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 23:36:17 on Feb 21,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 09:43:23 on Feb 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -24,7 +24,7 @@
 # Loading work.testbench_sv_unit(fast)
 # Loading mtiUvm.questa_uvm_pkg(fast)
 # Loading work.testbench(fast)
-# Loading work.axi_if(fast__1)
+# Loading work.axi_if(fast__2)
 # Loading /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
@@ -52,6 +52,10 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_test...
+# UVM_INFO ../tb/driver.sv(18) @ 0: uvm_test_top.environment.master_agent.master_driver [Connect interface] Driver Connected to interface
+# UVM_INFO ../tb/monitor.sv(16) @ 0: uvm_test_top.environment.master_agent.master_monitor [Connect interface] Monitor connected interface
+# UVM_INFO ../tb/driver_slave.sv(20) @ 0: uvm_test_top.environment.slave_agent.slave_driver [Connect interface] Driver slave Connected to interface
+# UVM_INFO ../tb/monitor_slave.sv(14) @ 0: uvm_test_top.environment.slave_agent.slave_monitor [Connect interface] Monitor slave Connected to interface
 # UVM_INFO ../tb/test.sv(17) @ 0: uvm_test_top [Test class] Elaboration phase
 # --------------------------------------------------------------
 # Name                       Type                    Size  Value
@@ -72,24 +76,69 @@
 #         num_last_rsps      integral                32    'd1  
 #     scoreboard             axi_scoreboard          -     @489 
 #     slave_agent            slave_axi_agent         -     @496 
-#       slave_driver         slave_axi_driver        -     @656 
-#         rsp_port           uvm_analysis_port       -     @671 
-#         seq_item_port      uvm_seq_item_pull_port  -     @663 
-#       slave_monitor        slave_axi_monitor       -     @679 
+#       slave_driver         slave_axi_driver        -     @658 
+#         rsp_port           uvm_analysis_port       -     @673 
+#         seq_item_port      uvm_seq_item_pull_port  -     @665 
+#       slave_monitor        slave_axi_monitor       -     @681 
 # --------------------------------------------------------------
+# UVM_INFO ../tb/driver.sv(46) @ 30: uvm_test_top.environment.master_agent.master_driver [RESET DUT] Reset done in master side
+# UVM_INFO ../tb/driver_slave.sv(44) @ 30: uvm_test_top.environment.slave_agent.slave_driver [RESET DUT] Reset done in slave side
+# UVM_INFO ../tb/sequence.sv(15) @ 30: uvm_test_top.environment.master_agent.sequencer@@seq [axi_sequence] Item generated done
+# ------------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                              
+# ------------------------------------------------------------------------------------------------------
+# item                           transaction   -     @693                                               
+#   awlen                        integral      4     'hd                                                
+#   awsize                       integral      3     'h1                                                
+#   awaddr                       integral      32    'h350                                              
+#   awburst                      integral      2     'h2                                                
+#   awid                         integral      4     'h0                                                
+#   wdata                        da(integral)  14    -                                                  
+#     [0]                        integral      32    'h443ace02                                         
+#     [1]                        integral      32    'h58b0363                                          
+#     [2]                        integral      32    'h68b69ebd                                         
+#     [3]                        integral      32    'hd7b862eb                                         
+#     [4]                        integral      32    'h638896b0                                         
+#     ...                        ...           ...   ...                                                
+#     [9]                        integral      32    'h893979f7                                         
+#     [10]                       integral      32    'h22e4d059                                         
+#     [11]                       integral      32    'h1b1d8b0a                                         
+#     [12]                       integral      32    'hc0e21518                                         
+#     [13]                       integral      32    'h251f2eaa                                         
+#   wstrb                        integral      4     'hd                                                
+#   bid                          integral      4     'h0                                                
+#   arid                         integral      4     'hd                                                
+#   araddr                       integral      32    'hcb                                               
+#   arlen                        integral      4     'h3                                                
+#   arsize                       integral      3     'h3                                                
+#   arburst                      integral      2     'h1                                                
+#   rid                          integral      4     'h7                                                
+#   rdata                        integral      32    'h0                                                
+#   rresp                        integral      2     'h1                                                
+#   begin_time                   time          64    30                                                 
+#   depth                        int           32    'd2                                                
+#   parent sequence (name)       string        3     seq                                                
+#   parent sequence (full name)  string        51    uvm_test_top.environment.master_agent.sequencer.seq
+#   sequencer                    string        47    uvm_test_top.environment.master_agent.sequencer    
+# ------------------------------------------------------------------------------------------------------
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 30: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    4
+# UVM_INFO :   12
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [Connect interface]     4
 # [Questa UVM]     2
+# [RESET DUT]     2
 # [RNTST]     1
+# [TEST_DONE]     1
 # [Test class]     1
+# [axi_sequence]     1
 # ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 0 ns  Iteration: 215  Instance: /testbench
-# End time: 23:36:20 on Feb 21,2025, Elapsed time: 0:00:03
+#    Time: 30 ns  Iteration: 65  Instance: /testbench
+# End time: 09:43:25 on Feb 22,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1

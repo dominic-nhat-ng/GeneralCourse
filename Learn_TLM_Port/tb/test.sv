@@ -4,7 +4,8 @@
 `include "BlockingGetPort.sv"
 `include "NonBlockingGetPort.sv"
 `include "FiFo.sv"
-//`include "Example.sv"
+`include "Example.sv"
+`include "AnalysisPort.sv"
 class testbase extends uvm_test;
     `uvm_component_utils(testbase)
 
@@ -174,28 +175,46 @@ class test_fifo extends testbase;
     endtask
 endclass
 
-//class test_example extends testbase;
-//    `uvm_component_utils(test_example)
-//    ExampleEnv environment_ex;
-//
-//    function new(string name = "test_example", uvm_component parent=null);
-//        super.new(name, parent);
-//    endfunction
-//
-//    virtual function void build_phase(uvm_phase phase);
-//        super.build_phase(phase);
-//        environment_ex = ExampleEnv::type_id::create("environment_ex", this);
-//    endfunction
-//
-//    virtual function void end_of_elaboration_phase(uvm_phase phase);
-//        super.end_of_elaboration_phase(phase);
-//        uvm_top.print_topology();
-//    endfunction
-//endclass
+class test_example extends testbase;
+    `uvm_component_utils(test_example)
+    ExampleEnv environment_ex;
+
+    function new(string name = "test_example", uvm_component parent=null);
+        super.new(name, parent);
+    endfunction
+
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        environment_ex = ExampleEnv::type_id::create("environment_ex", this);
+    endfunction
+
+    virtual function void end_of_elaboration_phase(uvm_phase phase);
+        super.end_of_elaboration_phase(phase);
+        uvm_top.print_topology();
+    endfunction
+endclass
 
 class test_AnalysisPort extends testbase;
+    `uvm_component_utils(test_AnalysisPort)
+
+    AnalysisEnv analysis_environment;
+
+    function new(string name ="test_AnalysisPort", uvm_component parent=null);
+        super.new(name, parent);
+    endfunction
+
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        analysis_environment = AnalysisEnv::type_id::create("analysis_environment", this);
+    endfunction
+
+    virtual function void end_of_elaboration_phase(uvm_phase phase);
+        super.end_of_elaboration_phase(phase);
+        uvm_top.print_topology();
+    endfunction
 
 endclass
+
 
 class test_Sockets extends testbase;
 

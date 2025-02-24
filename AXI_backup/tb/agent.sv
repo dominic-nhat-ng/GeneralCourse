@@ -18,7 +18,7 @@ class master_axi_agent extends uvm_agent;
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
-
+        master_driver.seq_item_port.connect(sequencer.seq_item_export);
     endfunction
 
 endclass
