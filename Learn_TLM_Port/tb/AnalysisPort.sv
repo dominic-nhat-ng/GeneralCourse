@@ -27,8 +27,8 @@ endclass
 
 class sender extends uvm_component;
     `uvm_component_utils(sender)
-    uvm_blocking_put_export #(packet)   m_put_export;
-    uvm_analysis_port #(packet)         m_analysis_port;
+    uvm_blocking_put_imp #(packet, sender)      m_put_export;
+    uvm_analysis_port #(packet)                 m_analysis_port;
 
     function new(string name="sender", uvm_component parent=null);
         super.new(name, parent);

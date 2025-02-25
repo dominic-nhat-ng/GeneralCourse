@@ -1,0 +1,308 @@
+vsim -debugDB -voptargs=+acc -assertdebug -c testbench -do "log -r /*; run -all;" +UVM_TESTNAME=test_example
+Reading pref.tcl
+
+# 2022.4
+
+# vsim -debugDB -voptargs="+acc" -assertdebug -c testbench -do "log -r /*; run -all;" "+UVM_TESTNAME=test_example" 
+# Start time: 15:02:13 on Feb 25,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
+# log -r /*
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# Running test: test_example
+# UVM_INFO @ 0: reporter [RNTST] Running test test_example...
+# UVM_INFO ../tb/Example.sv(174) @ 0: uvm_test_top.environment_ex [TEST] Create 6 packets in total
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# -------------------------------------------------------------
+# Name                     Type                     Size  Value
+# -------------------------------------------------------------
+# uvm_test_top             test_example             -     @466 
+#   environment_ex         ExampleEnv               -     @473 
+#     cmpA                 ExComponentA             -     @480 
+#       m_put_port         uvm_blocking_put_port    -     @533 
+#       m_tlm_fifo         uvm_tlm_fifo #(T)        -     @494 
+#         get_ap           uvm_analysis_port        -     @525 
+#         get_peek_export  uvm_get_peek_imp         -     @509 
+#         put_ap           uvm_analysis_port        -     @517 
+#         put_export       uvm_put_imp              -     @501 
+#       subcom1            ExSubcomp1               -     @541 
+#         m_put_port       uvm_blocking_put_port    -     @555 
+#       subcom2            ExSubcomp2               -     @548 
+#         m_get_port       uvm_blocking_get_port    -     @571 
+#         m_put_port       uvm_blocking_put_port    -     @563 
+#     cmpB                 ExComponentB             -     @487 
+#       m_put_export       uvm_blocking_put_export  -     @625 
+#       m_tlm_fifo         uvm_tlm_fifo #(T)        -     @586 
+#         get_ap           uvm_analysis_port        -     @617 
+#         get_peek_export  uvm_get_peek_imp         -     @601 
+#         put_ap           uvm_analysis_port        -     @609 
+#         put_export       uvm_put_imp              -     @593 
+#       subcomp3           ExSubcomp3               -     @579 
+#         m_get_port       uvm_blocking_get_port    -     @633 
+# -------------------------------------------------------------
+# 
+# UVM_INFO ../tb/Example.sv(20) @ 50: uvm_test_top.environment_ex.cmpA.subcom1 [ExSubcomp1] Subcomponent 1 sent data to Fifo in Component A
+# UVM_INFO ../tb/Example.sv(47) @ 100: uvm_test_top.environment_ex.cmpA.subcom2 [ExSubcomp2] Packet received from Component A, forward it
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @641 
+#   addr    integral  8     'h20 
+#   data    integral  8     'h7  
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(20) @ 100: uvm_test_top.environment_ex.cmpA.subcom1 [ExSubcomp1] Subcomponent 1 sent data to Fifo in Component A
+# UVM_INFO ../tb/Example.sv(20) @ 150: uvm_test_top.environment_ex.cmpA.subcom1 [ExSubcomp1] Subcomponent 1 sent data to Fifo in Component A
+# UVM_INFO ../tb/Example.sv(89) @ 150: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 160: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 170: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 180: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 190: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(116) @ 200: uvm_test_top.environment_ex.cmpB.subcomp3 [ExSubcomp3] Packet received from component A
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @641 
+#   addr    integral  8     'h20 
+#   data    integral  8     'h7  
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(47) @ 200: uvm_test_top.environment_ex.cmpA.subcom2 [ExSubcomp2] Packet received from Component A, forward it
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @645 
+#   addr    integral  8     'h36 
+#   data    integral  8     'h5  
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(20) @ 200: uvm_test_top.environment_ex.cmpA.subcom1 [ExSubcomp1] Subcomponent 1 sent data to Fifo in Component A
+# UVM_INFO ../tb/Example.sv(89) @ 200: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 210: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 220: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 230: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 240: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(20) @ 250: uvm_test_top.environment_ex.cmpA.subcom1 [ExSubcomp1] Subcomponent 1 sent data to Fifo in Component A
+# UVM_INFO ../tb/Example.sv(89) @ 250: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 260: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 270: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 280: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(89) @ 290: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(47) @ 300: uvm_test_top.environment_ex.cmpA.subcom2 [ExSubcomp2] Packet received from Component A, forward it
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @649 
+#   addr    integral  8     'h4  
+#   data    integral  8     'hfb 
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(154) @ 300: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 300: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 310: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 310: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 320: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 320: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 330: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 330: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 340: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 340: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(20) @ 350: uvm_test_top.environment_ex.cmpA.subcom1 [ExSubcomp1] Subcomponent 1 sent data to Fifo in Component A
+# UVM_INFO ../tb/Example.sv(154) @ 350: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 350: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 360: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 360: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 370: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 370: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 380: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 380: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 390: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 390: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(116) @ 400: uvm_test_top.environment_ex.cmpB.subcomp3 [ExSubcomp3] Packet received from component A
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @645 
+#   addr    integral  8     'h36 
+#   data    integral  8     'h5  
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(47) @ 400: uvm_test_top.environment_ex.cmpA.subcom2 [ExSubcomp2] Packet received from Component A, forward it
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @653 
+#   addr    integral  8     'h25 
+#   data    integral  8     'h61 
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(154) @ 400: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 400: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 410: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 410: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 420: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 420: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 430: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 430: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 440: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 440: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 450: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 450: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 460: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 460: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 470: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 470: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 480: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 480: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(154) @ 490: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(89) @ 490: uvm_test_top.environment_ex.cmpA [ExComponentA] TLM fifo is now full
+# UVM_INFO ../tb/Example.sv(47) @ 500: uvm_test_top.environment_ex.cmpA.subcom2 [ExSubcomp2] Packet received from Component A, forward it
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @657 
+#   addr    integral  8     'h96 
+#   data    integral  8     'h20 
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(154) @ 500: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 510: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 520: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 530: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 540: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 550: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 560: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 570: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 580: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 590: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(116) @ 600: uvm_test_top.environment_ex.cmpB.subcomp3 [ExSubcomp3] Packet received from component A
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @649 
+#   addr    integral  8     'h4  
+#   data    integral  8     'hfb 
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(154) @ 600: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 610: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 620: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 630: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 640: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 650: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 660: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 670: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 680: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 690: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(47) @ 700: uvm_test_top.environment_ex.cmpA.subcom2 [ExSubcomp2] Packet received from Component A, forward it
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @661 
+#   addr    integral  8     'h9f 
+#   data    integral  8     'h5  
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(154) @ 700: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 710: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 720: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 730: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 740: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 750: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 760: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 770: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 780: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 790: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(116) @ 800: uvm_test_top.environment_ex.cmpB.subcomp3 [ExSubcomp3] Packet received from component A
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @653 
+#   addr    integral  8     'h25 
+#   data    integral  8     'h61 
+# -------------------------------
+# UVM_INFO ../tb/Example.sv(154) @ 800: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 810: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 820: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 830: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 840: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 850: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 860: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 870: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 880: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 890: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 900: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 910: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 920: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 930: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 940: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 950: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 960: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 970: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 980: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(154) @ 990: uvm_test_top.environment_ex.cmpB [ExComponentB] ComponentB: TLM fifo is now full!!! 
+# UVM_INFO ../tb/Example.sv(116) @ 1000: uvm_test_top.environment_ex.cmpB.subcomp3 [ExSubcomp3] Packet received from component A
+# -------------------------------
+# Name      Type      Size  Value
+# -------------------------------
+# m_num_tx  packet    -     @657 
+#   addr    integral  8     'h96 
+#   data    integral  8     'h20 
+# -------------------------------
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  128
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [ExComponentA]    35
+# [ExComponentB]    70
+# [ExSubcomp1]     6
+# [ExSubcomp2]     6
+# [ExSubcomp3]     5
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1 us  Iteration: 55  Instance: /testbench
+# End time: 15:02:13 on Feb 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

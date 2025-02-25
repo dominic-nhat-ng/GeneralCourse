@@ -1,5 +1,5 @@
-# vsim -debugDB -voptargs="+acc" -assertdebug -c testbench -do "log -r /*; run -all;" "+UVM_TESTNAME=test_AnalysisPort" 
-# Start time: 00:02:48 on Feb 25,2025
+# vsim -debugDB -voptargs="+acc" -assertdebug -c testbench -do "log -r /*; run -all;" "+UVM_TESTNAME=test_Sockets" 
+# Start time: 15:02:15 on Feb 25,2025
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2022.4 linux_x86_64 Oct 18 2022
@@ -46,28 +46,115 @@
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# Running test: test_AnalysisPort
-# UVM_INFO @ 0: reporter [RNTST] Running test test_AnalysisPort...
-# UVM_INFO ../tb/AnalysisPort.sv(111) @ 0: uvm_test_top.analysis_environment [AnalysisEnv] Connecting producer's put_port to sender's put_export
-# UVM_INFO ../tb/AnalysisPort.sv(113) @ 0: uvm_test_top.analysis_environment [AnalysisEnv] Connecting sender's analysis port to consumers
-# UVM_ERROR @ 0: uvm_test_top.analysis_environment.sender_inst.m_put_export [Connection Error] connection count of 0 does not meet required minimum of 1
-# UVM_ERROR @ 0: uvm_test_top.analysis_environment.producer_inst.m_put_port [Connection Error] connection count of 0 does not meet required minimum of 1
-# UVM_FATAL @ 0: reporter [BUILDERR] stopping due to build errors
+# Running test: test_Sockets
+# UVM_INFO @ 0: reporter [RNTST] Running test test_Sockets...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# -----------------------------------------------------------
+# Name                Type                        Size  Value
+# -----------------------------------------------------------
+# uvm_test_top        test_Sockets                -     @466 
+#   environment       sockets_env                 -     @473 
+#     init            initiator                   -     @480 
+#       initiSocket   uvm_tlm_b_initiator_socket  -     @494 
+#     tgt             target                      -     @487 
+#       targetSocket  uvm_tlm_b_target_socket     -     @502 
+# -----------------------------------------------------------
+# 
+# UVM_INFO ../tb/Sockets.sv(23) @ 0: uvm_test_top.environment.init [initiator] Packet sent to target
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @510 
+#   addr  integral  8     'ha9 
+#   data  integral  8     'h9f 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(45) @ 0: uvm_test_top.environment.tgt [target] Packet Received from initiator
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @510 
+#   addr  integral  8     'ha9 
+#   data  integral  8     'h9f 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(23) @ 0: uvm_test_top.environment.init [initiator] Packet sent to target
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @514 
+#   addr  integral  8     'h61 
+#   data  integral  8     'h42 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(45) @ 0: uvm_test_top.environment.tgt [target] Packet Received from initiator
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @514 
+#   addr  integral  8     'h61 
+#   data  integral  8     'h42 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(23) @ 0: uvm_test_top.environment.init [initiator] Packet sent to target
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @518 
+#   addr  integral  8     'hcd 
+#   data  integral  8     'hfc 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(45) @ 0: uvm_test_top.environment.tgt [target] Packet Received from initiator
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @518 
+#   addr  integral  8     'hcd 
+#   data  integral  8     'hfc 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(23) @ 0: uvm_test_top.environment.init [initiator] Packet sent to target
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @522 
+#   addr  integral  8     'hf8 
+#   data  integral  8     'h83 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(45) @ 0: uvm_test_top.environment.tgt [target] Packet Received from initiator
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @522 
+#   addr  integral  8     'hf8 
+#   data  integral  8     'h83 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(23) @ 0: uvm_test_top.environment.init [initiator] Packet sent to target
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @526 
+#   addr  integral  8     'h95 
+#   data  integral  8     'hba 
+# -----------------------------
+# UVM_INFO ../tb/Sockets.sv(45) @ 0: uvm_test_top.environment.tgt [target] Packet Received from initiator
+# -----------------------------
+# Name    Type      Size  Value
+# -----------------------------
+# pkt     packet    -     @526 
+#   addr  integral  8     'h95 
+#   data  integral  8     'hba 
+# -----------------------------
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    5
+# UVM_INFO :   14
 # UVM_WARNING :    0
-# UVM_ERROR :    2
-# UVM_FATAL :    1
+# UVM_ERROR :    0
+# UVM_FATAL :    0
 # ** Report counts by id
-# [AnalysisEnv]     2
-# [BUILDERR]     1
-# [Connection Error]     2
 # [Questa UVM]     2
 # [RNTST]     1
-# ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
-#    Time: 0 ns  Iteration: 21  Region: /uvm_pkg::uvm_phase::m_run_phases
-# End time: 00:02:49 on Feb 25,2025, Elapsed time: 0:00:01
+# [UVMTOP]     1
+# [initiator]     5
+# [target]     5
+# ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 215  Instance: /testbench
+# End time: 15:02:15 on Feb 25,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

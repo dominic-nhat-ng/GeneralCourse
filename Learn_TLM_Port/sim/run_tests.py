@@ -12,7 +12,9 @@ tests = [
     "test_BlockingGetPort",
     "test_NonBlockingGetPort",
     "test_fifo",
-    "test_example"
+    "test_example",
+    "test_AnalysisPort",
+    "test_Sockets"
 ]
 
 for test in tests:
