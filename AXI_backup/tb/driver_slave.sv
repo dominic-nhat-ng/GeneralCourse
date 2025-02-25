@@ -28,7 +28,8 @@ class slave_axi_driver extends uvm_driver;
     extern task slave_write_response();
     extern task slave_read_address();
     extern task slave_read_data();
-
+    extern function write_mem();
+    extern function read_mem();
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         reset_dut();
@@ -38,6 +39,8 @@ class slave_axi_driver extends uvm_driver;
     endtask
 
 endclass
+
+/*--------------------drive logic---------------------*/
 
 task slave_axi_driver::reset_dut();
     wait(intf.resetn);
@@ -57,7 +60,6 @@ endtask
 task slave_axi_driver::slave_write_address();
     intf.awready        = 1'b0;
     @(posedge intf.awvalid);
-    `uvm_info(get_type_name(), "posedge awvalid detected", UVM_LOW)
     @(posedge intf.clk);
     intf.awready        = 1'b1;
     @(posedge intf.clk);
@@ -71,14 +73,20 @@ task slave_axi_driver::slave_write_data();
         @(posedge intf.wvalid);
         @(posedge intf.clk);
         intf.wready     = 1'b1;
-        @(posedge intf.clk);
+        repeat(2) @(posedge intf.clk);
         intf.wready     = 1'b0;
-        @(posedge intf.clk);
     end
 endtask
 
 task slave_axi_driver::slave_write_response();
-
+    @(posedge intf.clk);
+    intf.bvalid         = 1'b0;
+    intf.bid            = intf.awid;
+    intf.bresp          = 2'b00;
+    @(negedge intf.wlast);
+    intf.bvalid         = 1'b1;
+    @(negedge intf.bready);
+    intf.bvalid         = 1'b0;
 endtask
 
 task slave_axi_driver::slave_read_address();
@@ -88,3 +96,11 @@ endtask
 task slave_axi_driver::slave_read_data();
 
 endtask
+
+function slave_axi_driver::write_mem();
+
+endfunction
+
+function slave_axi_driver::read_mem();
+
+endfunction

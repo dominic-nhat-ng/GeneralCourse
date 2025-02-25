@@ -41,6 +41,8 @@ class master_axi_driver extends uvm_driver #(transaction);
     endtask
 endclass
 
+/*----------------------drive logic---------------------------*/
+
 task master_axi_driver::reset_dut();
     wait(intf.resetn);
     `uvm_info("RESET DUT", "Reset done in master side", UVM_LOW)
@@ -76,7 +78,6 @@ task master_axi_driver::write_data(transaction item);
     intf.wid        = item.wid;
     intf.wstrb      = item.wstrb;
     intf.wlast      = 1'b0;
-    intf.wdata      = 32'h0000_0000;
     @(negedge intf.awready);
     foreach(item.wdata[i]) begin
         intf.wvalid     =   1'b1;
@@ -86,12 +87,19 @@ task master_axi_driver::write_data(transaction item);
         end
         @(negedge intf.wready);
         intf.wvalid     =   1'b0;
+        @(posedge intf.clk);
     end
     intf.wlast      = 1'b0;
 endtask
 
 task master_axi_driver::write_response(transaction item);
-
+    @(posedge intf.clk);
+    intf.bready     = 1'b0;
+    @(posedge intf.bvalid);
+    @(posedge intf.clk);
+    intf.bready     = 1'b1;
+    repeat(2) @(posedge intf.clk);
+    intf.bready     = 1'b0;
 endtask
 
 task master_axi_driver::read_address(transaction item);
