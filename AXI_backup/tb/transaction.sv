@@ -10,6 +10,7 @@ class transaction extends uvm_sequence_item;
   rand bit [3:0]    awid;
   
   ///////WRITE DATA
+  rand bit [3:0]    wid;
   rand bit [31:0]	wdata[$];
   rand bit [3:0]	wstrb;
   
@@ -40,6 +41,7 @@ class transaction extends uvm_sequence_item;
   ///////// WRITE DATA BUS
   `uvm_field_queue_int(wdata, UVM_ALL_ON)
   `uvm_field_int(wstrb, UVM_ALL_ON)
+  `uvm_field_int(wid, UVM_ALL_ON)
   
   //////////// WRITE RESPONSE
   `uvm_field_int(bid, UVM_ALL_ON)
@@ -64,6 +66,7 @@ class transaction extends uvm_sequence_item;
         awburst = $urandom_range(0, 3);
         awid    = $urandom_range(0, 15);
         wstrb   = $urandom();
+        wid     = awid;
 
         arid    = $urandom_range(0, 15);
         araddr  = $urandom_range(0, 1023);

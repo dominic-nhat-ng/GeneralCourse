@@ -32,9 +32,9 @@ class slave_axi_driver extends uvm_driver;
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         reset_dut();
-
-        slave_drive_logic();
-
+        forever begin
+            slave_drive_logic();
+        end
     endtask
 
 endclass
@@ -55,11 +55,26 @@ task slave_axi_driver::slave_drive_logic();
 endtask
 
 task slave_axi_driver::slave_write_address();
-
+    intf.awready        = 1'b0;
+    @(posedge intf.awvalid);
+    `uvm_info(get_type_name(), "posedge awvalid detected", UVM_LOW)
+    @(posedge intf.clk);
+    intf.awready        = 1'b1;
+    @(posedge intf.clk);
+    intf.awready        = 1'b0;
+    @(posedge intf.clk);
 endtask
 
 task slave_axi_driver::slave_write_data();
-
+    intf.wready         = 1'b0;
+    forever begin
+        @(posedge intf.wvalid);
+        @(posedge intf.clk);
+        intf.wready     = 1'b1;
+        @(posedge intf.clk);
+        intf.wready     = 1'b0;
+        @(posedge intf.clk);
+    end
 endtask
 
 task slave_axi_driver::slave_write_response();

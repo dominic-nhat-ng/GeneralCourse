@@ -57,11 +57,37 @@ task master_axi_driver::drive_logic(transaction item);
 endtask
 
 task master_axi_driver::write_address(transaction item);
-    
+    @(posedge intf.clk);
+    intf.awvalid    = 1'b1;
+    intf.awaddr     = item.awaddr;
+    intf.awlen      = item.awlen;
+    intf.awsize     = item.awsize;
+    intf.awburst    = item.awburst;
+    intf.awid       = item.awid;
+    @(posedge intf.awready);
+    @(posedge intf.clk);
+    intf.awvalid = 1'b0;
+    @(posedge intf.clk);
 endtask
 
 task master_axi_driver::write_data(transaction item);
-
+    @(posedge intf.clk);
+    intf.wvalid     = 1'b0;
+    intf.wid        = item.wid;
+    intf.wstrb      = item.wstrb;
+    intf.wlast      = 1'b0;
+    intf.wdata      = 32'h0000_0000;
+    @(negedge intf.awready);
+    foreach(item.wdata[i]) begin
+        intf.wvalid     =   1'b1;
+        intf.wdata      =   item.wdata[i];
+        if(i == item.awlen) begin
+            intf.wlast  =   1'b1;
+        end
+        @(negedge intf.wready);
+        intf.wvalid     =   1'b0;
+    end
+    intf.wlast      = 1'b0;
 endtask
 
 task master_axi_driver::write_response(transaction item);

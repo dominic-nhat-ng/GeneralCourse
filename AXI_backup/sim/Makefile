@@ -59,7 +59,7 @@ wave:
 
 clean:
 	@echo "Cleaning simulation files..."
-	rm -rf work transcript vsim.wlf *.log dump.vcd *.ucdb *.dbg *.vstf
+	rm -rf work coverage transcript vsim.wlf *.log dump.vcd *.ucdb *.dbg *.vstf *.ini
 
 help:
 	@echo "make help: Show this instruction"
