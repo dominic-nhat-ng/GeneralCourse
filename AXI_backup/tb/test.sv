@@ -21,7 +21,7 @@ class axi_test extends uvm_test; // uvm_test is a base test class
     virtual task run_phase(uvm_phase phase);
         //super.run_phase(phase);
         phase.raise_objection(this);
-        seq.start(environment.master_agent.sequencer);
+        repeat(3) seq.start(environment.master_agent.sequencer);
         phase.drop_objection(this);
 
     endtask

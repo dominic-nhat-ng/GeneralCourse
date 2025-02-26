@@ -103,11 +103,31 @@ task master_axi_driver::write_response(transaction item);
 endtask
 
 task master_axi_driver::read_address(transaction item);
+    intf.arid       = item.arid;
+    intf.araddr     = item.araddr;
+    intf.arlen      = item.arlen;
+    intf.arsize     = item.arsize;
+    intf.arburst    = item.arburst;
+    @(posedge intf.clk);
+    intf.arvalid    = 1'b1;
+    @(posedge intf.arready);
+    @(posedge intf.clk);
+    intf.arvalid    = 1'b0;
+    @(posedge intf.clk);
 
 endtask
 
 task master_axi_driver::read_data(transaction item);
-
+    @(posedge intf.clk);
+    intf.rready     = 1'b0;
+    for(int i =0; i<=intf.arlen; i++) begin
+        @(posedge intf.rvalid);
+        @(posedge intf.clk);
+        intf.rready         = 1'b1;
+        repeat(2) @(posedge intf.clk);
+        intf.rready         = 1'b0;
+        //@(posedge intf.clk);
+    end
 endtask
 
 

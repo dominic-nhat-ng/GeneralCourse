@@ -38,7 +38,6 @@ interface axi_if(input logic clk, input logic resetn);
   logic rvalid;             
   logic [3:0] rid;          
   logic [31:0] rdata;       
-  logic [3:0] rstrb;        
   logic rlast;              
   logic [1:0] rresp;        
   
