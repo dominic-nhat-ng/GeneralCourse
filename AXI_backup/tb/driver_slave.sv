@@ -107,10 +107,8 @@ task slave_axi_driver::slave_write_response();
 endtask
 
 task slave_axi_driver::slave_read_address();
-    @(posedge intf.clk);
-    intf.arvalid    = 1'b0;
     forever begin
-        intf.arready        = 1'b0;
+        intf.arready    = 1'b0;
         @(posedge intf.arvalid);
         @(posedge intf.clk);
         intf.arready        = 1'b1;
@@ -121,21 +119,25 @@ task slave_axi_driver::slave_read_address();
 endtask
 
 task slave_axi_driver::slave_read_data();
-    @(posedge intf.clk);
-    intf.rid        = intf.arid;
-    intf.rlast      = 1'b0;
-    @(negedge intf.arvalid);
-    for(int i = 0; i <= intf.arlen; i++) begin
-        intf.rvalid        = 1'b1;
-        intf.rdata          = mem[intf.araddr + i];
-        if(i == intf.arlen) begin
-            intf.rlast      = 1'b1;
-        end
-        @(negedge intf.rready);
-        intf.rvalid         = 1'b0;
+    forever begin
         @(posedge intf.clk);
+        intf.rid        = intf.arid;
+        intf.rlast      = 1'b0;
+        $display("Pull down edge arvalid detected");
+        @(negedge intf.arvalid);
+        for(int i = 0; i <= intf.arlen; i++) begin
+            intf.rvalid        = 1'b1;
+            intf.rdata          = mem[intf.araddr + i];
+            if(i == intf.arlen) begin
+                intf.rlast      = 1'b1;
+            end
+            @(negedge intf.rready);
+            intf.rvalid         = 1'b0;
+            @(posedge intf.clk);
+            $display("Read data at Slave side: %0t", $time);
+        end
+        intf.rlast          = 1'b0;
     end
-    intf.rlast          = 1'b0;
 endtask
 
 function slave_axi_driver::write_mem();
