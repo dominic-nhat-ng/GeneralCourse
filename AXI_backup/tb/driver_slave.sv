@@ -28,8 +28,8 @@ class slave_axi_driver extends uvm_driver;
     extern task slave_write_response();
     extern task slave_read_address();
     extern task slave_read_data();
-    extern function write_mem();
-    extern function read_mem();
+    extern function void write_mem(input bit [31:0] addr, input bit [31:0] data, input bit [3:0] strb);
+    extern function bit [31:0] read_mem(input bit[31:0] addr);
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         reset_dut();
@@ -65,6 +65,7 @@ task slave_axi_driver::slave_write_address();
         intf.awready        = 1'b1;
         @(posedge intf.clk);
         intf.awready        = 1'b0;
+        intf.bid            = intf.awid;
         @(posedge intf.clk);
     end
 endtask
@@ -76,7 +77,9 @@ task slave_axi_driver::slave_write_data();
         @(posedge intf.clk);
         if (intf.awaddr <= 1023) begin
             intf.wready     = 1'b1;
-            repeat(2) @(posedge intf.clk);
+            @(posedge intf.clk);
+            write_mem(intf.awaddr, intf.wdata, intf.wstrb);
+            @(posedge intf.clk);
             intf.wready     = 1'b0;
         end
         else begin
@@ -91,7 +94,6 @@ task slave_axi_driver::slave_write_response();
     forever begin
 
         intf.bvalid         = 1'b0;
-        intf.bid            = intf.awid;
         intf.bresp          = 2'b00;
         @(negedge intf.wlast);
         intf.bvalid         = 1'b1;
@@ -121,29 +123,62 @@ endtask
 task slave_axi_driver::slave_read_data();
     forever begin
         @(posedge intf.clk);
-        intf.rid        = intf.arid;
+        $display("Time at this point: %0t", $time);
         intf.rlast      = 1'b0;
-        $display("Pull down edge arvalid detected");
+        intf.rresp      = 2'b00;
+        //$display("Pull down edge arvalid detected");
         @(negedge intf.arvalid);
+        intf.rid        = intf.arid;
         for(int i = 0; i <= intf.arlen; i++) begin
+            bit [31:0] data_out;
             intf.rvalid        = 1'b1;
-            intf.rdata          = mem[intf.araddr + i];
+            data_out            = read_mem(intf.araddr);
+            intf.rdata          = data_out;
             if(i == intf.arlen) begin
                 intf.rlast      = 1'b1;
             end
             @(negedge intf.rready);
             intf.rvalid         = 1'b0;
             @(posedge intf.clk);
-            $display("Read data at Slave side: %0t", $time);
+            //$display("Read data at Slave side: %0t", $time);
         end
         intf.rlast          = 1'b0;
+        if(intf.araddr > 1023) begin
+            intf.rresp          = 2'b10;
+        end else begin
+            intf.rresp          = 2'b00;
+
+        end
     end
 endtask
 
-function slave_axi_driver::write_mem();
+function void slave_axi_driver::write_mem(input bit [31:0] addr, input bit [31:0] data, input bit [3:0] strb);
+    if(addr < 1020) begin
+        if (strb[0]) mem[addr]          = data[7:0];
+        if (strb[1]) mem[addr + 1]      = data[15:8];
+        if (strb[2]) mem[addr + 2]      = data[23:16];
+        if (strb[3]) mem[addr + 3]      = data[31:24];
+        `uvm_info("WRITE MEM", $sformatf("Write data %h with strobe %b at address %0d", data, strb, addr), UVM_MEDIUM)
+    end
+    else begin
+        `uvm_error("WRITE MEM", $sformatf("Address %0d out of range!", addr))
+    end
 
 endfunction
 
-function slave_axi_driver::read_mem();
+function bit [31:0] slave_axi_driver::read_mem(bit [31:0] addr);
+    bit [31:0] data_out;
+    if (addr < 1020) begin
+        data_out[7:0]       = mem[addr];
+        data_out[15:8]      = mem[addr + 1];
+        data_out[23:16]     = mem[addr + 2];
+        data_out[31:24]     = mem[addr + 3];
+        `uvm_info("READ MEM", $sformatf("Read data %h from address %0d", data_out, addr), UVM_MEDIUM)
+        return data_out;
+    end
+    else begin 
+        `uvm_error("READ MEM", $sformatf("Address %0d out of range!", addr))
+        return 32'hxxxx_xxxx;
+    end
 
 endfunction

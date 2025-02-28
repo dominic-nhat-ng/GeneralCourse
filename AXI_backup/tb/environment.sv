@@ -16,7 +16,11 @@ class axi_environment extends uvm_env;
         master_agent = master_axi_agent::type_id::create("master_agent", this);
     endfunction
 
+    virtual function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
+        master_agent.master_monitor.monitor_analysis_port.connect(scoreboard.scoreboard_analyasis_imp);
 
+    endfunction
 endclass
 
 

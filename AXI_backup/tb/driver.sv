@@ -35,6 +35,7 @@ class master_axi_driver extends uvm_driver #(transaction);
             item = transaction::type_id::create("item");
             seq_item_port.get_next_item(item);
             drive_logic(item);
+            item.print();
             seq_item_port.item_done();
         end
 
@@ -116,7 +117,7 @@ task master_axi_driver::read_address(transaction item);
     @(posedge intf.clk);
     intf.arvalid    =   1'b0;
     @(posedge intf.clk);
-    $display("Read address at Master side %0t", $time);
+    //$display("Read address at Master side %0t", $time);
 
 endtask
 
@@ -127,9 +128,11 @@ task master_axi_driver::read_data(transaction item);
         @(posedge intf.rvalid);
         @(posedge intf.clk);
         intf.rready         = 1'b1;
-        repeat(2) @(posedge intf.clk);
+        @(posedge intf.clk);
+        item.rdata.push_back(intf.rdata);
+        @(posedge intf.clk);
         intf.rready         = 1'b0;
-        $display("Read data at Master side %0t and arlen is: %0d", $time, intf.arlen);
+        //$display("Read data at Master side %0t and arlen is: %0d", $time, intf.arlen);
         //@(posedge intf.clk);
     end
 endtask

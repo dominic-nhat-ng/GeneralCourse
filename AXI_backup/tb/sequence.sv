@@ -13,7 +13,7 @@ class axi_sequence extends uvm_sequence #(transaction);
         start_item(item);
         assert(item.randomize_custom());
         `uvm_info(get_type_name(), "Item generated done", UVM_LOW)
-        item.print();
+        //item.print();
         finish_item(item);
     endtask
 endclass

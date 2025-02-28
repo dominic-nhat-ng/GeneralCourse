@@ -16,6 +16,7 @@ class transaction extends uvm_sequence_item;
   
   // ////WRITE RESPONSE
   bit [3:0]			bid;
+  bit [1:0]         bresp;
   
   //////READ ADDRESS
   rand bit [3:0]	arid;
@@ -26,7 +27,7 @@ class transaction extends uvm_sequence_item;
   
   //////READ DATA
   bit [3:0]			rid;
-  bit [31:0]		rdata;
+  bit [31:0]		rdata[$];
   bit [1:0]			rresp;
   
   `uvm_object_utils_begin(transaction)
@@ -45,6 +46,7 @@ class transaction extends uvm_sequence_item;
   
   //////////// WRITE RESPONSE
   `uvm_field_int(bid, UVM_ALL_ON)
+  `uvm_field_int(bresp, UVM_ALL_ON)
   ///////////// READ ADDRESS BUS
   `uvm_field_int(arid, UVM_ALL_ON)
   `uvm_field_int(araddr, UVM_ALL_ON)
@@ -53,7 +55,7 @@ class transaction extends uvm_sequence_item;
   `uvm_field_int(arburst, UVM_ALL_ON)
   ///////// READ DATA BUS
   `uvm_field_int(rid, UVM_ALL_ON)
-  `uvm_field_int(rdata, UVM_ALL_ON)
+  `uvm_field_queue_int(rdata, UVM_ALL_ON)
   `uvm_field_int(rresp, UVM_ALL_ON)
   
   `uvm_object_utils_end
@@ -77,7 +79,7 @@ class transaction extends uvm_sequence_item;
         
         rresp   = $urandom_range(0, 3);
 
-        for (int i = 0; i<awlen+1; i++) begin
+        for (int i = 0; i<=awlen; i++) begin
             wdata.push_back($urandom());
         end
 
