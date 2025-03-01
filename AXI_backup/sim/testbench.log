@@ -1,5 +1,5 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 22:42:46 on Feb 28,2025
+# Start time: 16:46:46 on Mar 01,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
@@ -52,417 +52,74 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_test...
-# UVM_INFO ../tb/driver.sv(18) @ 0: uvm_test_top.environment.master_agent.master_driver [Connect interface] Driver Connected to interface
+# UVM_INFO ../tb/driver.sv(19) @ 0: uvm_test_top.environment.master_agent.master_driver [Connect interface] Driver Connected to interface
 # UVM_INFO ../tb/monitor.sv(17) @ 0: uvm_test_top.environment.master_agent.master_monitor [Connect interface] Monitor connected interface
 # UVM_INFO ../tb/driver_slave.sv(20) @ 0: uvm_test_top.environment.slave_agent.slave_driver [Connect interface] Driver slave Connected to interface
 # UVM_INFO ../tb/monitor_slave.sv(14) @ 0: uvm_test_top.environment.slave_agent.slave_monitor [Connect interface] Monitor slave Connected to interface
 # UVM_INFO ../tb/test.sv(17) @ 0: uvm_test_top [Test class] Elaboration phase
-# -------------------------------------------------------------------
-# Name                            Type                    Size  Value
-# -------------------------------------------------------------------
-# uvm_test_top                    axi_test                -     @471 
-#   environment                   axi_environment         -     @478 
-#     master_agent                master_axi_agent        -     @503 
-#       master_driver             master_axi_driver       -     @511 
-#         rsp_port                uvm_analysis_port       -     @526 
-#         seq_item_port           uvm_seq_item_pull_port  -     @518 
-#       master_monitor            master_axi_monitor      -     @534 
-#         monitor_analysis_port   uvm_analysis_port       -     @652 
-#       sequencer                 axi_sequencer           -     @541 
-#         rsp_export              uvm_analysis_export     -     @548 
-#         seq_item_export         uvm_seq_item_pull_imp   -     @642 
-#         arbitration_queue       array                   0     -    
-#         lock_queue              array                   0     -    
-#         num_last_reqs           integral                32    'd1  
-#         num_last_rsps           integral                32    'd1  
-#     scoreboard                  axi_scoreboard          -     @489 
-#       scoreboard_analyasis_imp  uvm_analysis_imp        -     @665 
-#     slave_agent                 slave_axi_agent         -     @496 
-#       slave_driver              slave_axi_driver        -     @674 
-#         rsp_port                uvm_analysis_port       -     @689 
-#         seq_item_port           uvm_seq_item_pull_port  -     @681 
-#       slave_monitor             slave_axi_monitor       -     @697 
-# -------------------------------------------------------------------
-# UVM_INFO ../tb/driver.sv(49) @ 30: uvm_test_top.environment.master_agent.master_driver [RESET DUT] Reset done in master side
+# ------------------------------------------------------------------
+# Name                           Type                    Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top                   axi_test                -     @471 
+#   environment                  axi_environment         -     @478 
+#     master_agent               master_axi_agent        -     @503 
+#       master_driver            master_axi_driver       -     @511 
+#         driver_put_port        uvm_blocking_put_port   -     @651 
+#         rsp_port               uvm_analysis_port       -     @526 
+#         seq_item_port          uvm_seq_item_pull_port  -     @518 
+#       master_monitor           master_axi_monitor      -     @534 
+#         monitor_analysis_port  uvm_analysis_port       -     @660 
+#       sequencer                axi_sequencer           -     @541 
+#         rsp_export             uvm_analysis_export     -     @548 
+#         seq_item_export        uvm_seq_item_pull_imp   -     @642 
+#         arbitration_queue      array                   0     -    
+#         lock_queue             array                   0     -    
+#         num_last_reqs          integral                32    'd1  
+#         num_last_rsps          integral                32    'd1  
+#     scoreboard                 axi_scoreboard          -     @489 
+#       driver_port              uvm_blocking_put_imp    -     @681 
+#       monitor_port             uvm_analysis_imp        -     @673 
+#     slave_agent                slave_axi_agent         -     @496 
+#       slave_driver             slave_axi_driver        -     @690 
+#         rsp_port               uvm_analysis_port       -     @705 
+#         seq_item_port          uvm_seq_item_pull_port  -     @697 
+#       slave_monitor            slave_axi_monitor       -     @713 
+# ------------------------------------------------------------------
+# UVM_INFO ../tb/driver.sv(52) @ 30: uvm_test_top.environment.master_agent.master_driver [RESET DUT] Reset done in master side
 # UVM_INFO ../tb/driver_slave.sv(47) @ 30: uvm_test_top.environment.slave_agent.slave_driver [RESET DUT] Reset done in slave side
 # UVM_INFO ../tb/sequence.sv(15) @ 30: uvm_test_top.environment.master_agent.sequencer@@seq [axi_sequence] Item generated done
-# Time at this point: 50
-# UVM_INFO ../tb/driver_slave.sv(176) @ 90: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 203
-# Start colelct data
-# UVM_INFO ../tb/driver_slave.sv(161) @ 130: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 443ace02 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(176) @ 170: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 203
-# UVM_INFO ../tb/driver_slave.sv(161) @ 210: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 058b0363 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(176) @ 250: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 203
-# UVM_INFO ../tb/driver_slave.sv(161) @ 290: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 68b69ebd with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(176) @ 330: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 203
-# UVM_INFO ../tb/driver_slave.sv(161) @ 370: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data d7b862eb with strobe 1101 at address 848
-# Time at this point: 430
-# UVM_INFO ../tb/driver_slave.sv(161) @ 450: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 638896b0 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 530: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 11d1d79c with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 610: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data efc93645 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 690: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 2789c069 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 770: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 86b05505 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 850: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 893979f7 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 930: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 22e4d059 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1010: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 1b1d8b0a with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1090: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data c0e21518 with strobe 1101 at address 848
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1170: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 251f2eaa with strobe 1101 at address 848
-# Item at monitor
-# -----------------------------------------
-# Name       Type          Size  Value     
-# -----------------------------------------
-# item       transaction   -     @741      
-#   awlen    integral      4     'hd       
-#   awsize   integral      3     'h1       
-#   awaddr   integral      32    'h350     
-#   awburst  integral      2     'h2       
-#   awid     integral      4     'h0       
-#   wdata    da(integral)  14    -         
-#     [0]    integral      32    'h443ace02
-#     [1]    integral      32    'h58b0363 
-#     [2]    integral      32    'h68b69ebd
-#     [3]    integral      32    'hd7b862eb
-#     [4]    integral      32    'h638896b0
-#     ...    ...           ...   ...       
-#     [9]    integral      32    'h893979f7
-#     [10]   integral      32    'h22e4d059
-#     [11]   integral      32    'h1b1d8b0a
-#     [12]   integral      32    'hc0e21518
-#     [13]   integral      32    'h251f2eaa
-#   wstrb    integral      4     'hd       
-#   wid      integral      4     'h0       
-#   bid      integral      4     'h0       
-#   bresp    integral      2     'h0       
-#   arid     integral      4     'hd       
-#   araddr   integral      32    'hcb      
-#   arlen    integral      4     'h3       
-#   arsize   integral      3     'h3       
-#   arburst  integral      2     'h1       
-#   rid      integral      4     'h0       
-#   rdata    da(integral)  4     -         
-#     [0]    integral      32    'h0       
-#     [1]    integral      32    'h0       
-#     [2]    integral      32    'h0       
-#     [3]    integral      32    'h0       
-#   rresp    integral      2     'h0       
-# -----------------------------------------
-# UVM_INFO ../tb/scoreboard.sv(15) @ 1210: uvm_test_top.environment.scoreboard [axi_scoreboard] Received item
-# ------------------------------------------------------------------------------------------------------
-# Name                           Type          Size  Value                                              
-# ------------------------------------------------------------------------------------------------------
-# item                           transaction   -     @709                                               
-#   awlen                        integral      4     'hd                                                
-#   awsize                       integral      3     'h1                                                
-#   awaddr                       integral      32    'h350                                              
-#   awburst                      integral      2     'h2                                                
-#   awid                         integral      4     'h0                                                
-#   wdata                        da(integral)  14    -                                                  
-#     [0]                        integral      32    'h443ace02                                         
-#     [1]                        integral      32    'h58b0363                                          
-#     [2]                        integral      32    'h68b69ebd                                         
-#     [3]                        integral      32    'hd7b862eb                                         
-#     [4]                        integral      32    'h638896b0                                         
-#     ...                        ...           ...   ...                                                
-#     [9]                        integral      32    'h893979f7                                         
-#     [10]                       integral      32    'h22e4d059                                         
-#     [11]                       integral      32    'h1b1d8b0a                                         
-#     [12]                       integral      32    'hc0e21518                                         
-#     [13]                       integral      32    'h251f2eaa                                         
-#   wstrb                        integral      4     'hd                                                
-#   wid                          integral      4     'h0                                                
-#   bid                          integral      4     'h0                                                
-#   bresp                        integral      2     'h0                                                
-#   arid                         integral      4     'hd                                                
-#   araddr                       integral      32    'hcb                                               
-#   arlen                        integral      4     'h3                                                
-#   arsize                       integral      3     'h3                                                
-#   arburst                      integral      2     'h1                                                
-#   rid                          integral      4     'h7                                                
-#   rdata                        da(integral)  4     -                                                  
-#     [0]                        integral      32    'h0                                                
-#     [1]                        integral      32    'h0                                                
-#     [2]                        integral      32    'h0                                                
-#     [3]                        integral      32    'h0                                                
-#   rresp                        integral      2     'h1                                                
-#   begin_time                   time          64    30                                                 
-#   depth                        int           32    'd2                                                
-#   parent sequence (name)       string        3     seq                                                
-#   parent sequence (full name)  string        51    uvm_test_top.environment.master_agent.sequencer.seq
-#   sequencer                    string        47    uvm_test_top.environment.master_agent.sequencer    
-# ------------------------------------------------------------------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1210: uvm_test_top.environment.scoreboard [MONITOR - SCOREBOARD] Received item from monitor
+# UVM_INFO ../tb/scoreboard.sv(26) @ 1270: uvm_test_top.environment.scoreboard [DRIVER - SCROEBOARD] Received item from driver
+# UVM_INFO ../tb/scoreboard.sv(40) @ 1270: uvm_test_top.environment.scoreboard [COMPARE] Data matched
 # UVM_INFO ../tb/sequence.sv(15) @ 1270: uvm_test_top.environment.master_agent.sequencer@@seq [axi_sequence] Item generated done
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1330: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# Start colelct data
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1370: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 66bc738a with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1410: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1450: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 103be3d0 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1490: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1530: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 0dc314e0 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1570: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1610: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data c71cc234 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1650: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1690: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 2f094632 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1730: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1770: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data e75a96eb with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1810: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1850: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data c87ee274 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1890: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 1930: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 366201fa with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 1970: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2010: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 76280d25 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2050: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2090: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data db99bd86 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2130: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2170: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 94c6ee31 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2210: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2250: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 69aca787 with strobe 0100 at address 200
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2290: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2370: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2450: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 435
-# ------------------------------------------------------------------------------------------------------
-# Name                           Type          Size  Value                                              
-# ------------------------------------------------------------------------------------------------------
-# item                           transaction   -     @754                                               
-#   awlen                        integral      4     'hb                                                
-#   awsize                       integral      3     'h1                                                
-#   awaddr                       integral      32    'hc8                                               
-#   awburst                      integral      2     'h3                                                
-#   awid                         integral      4     'hb                                                
-#   wdata                        da(integral)  12    -                                                  
-#     [0]                        integral      32    'h66bc738a                                         
-#     [1]                        integral      32    'h103be3d0                                         
-#     [2]                        integral      32    'hdc314e0                                          
-#     [3]                        integral      32    'hc71cc234                                         
-#     [4]                        integral      32    'h2f094632                                         
-#     ...                        ...           ...   ...                                                
-#     [7]                        integral      32    'h366201fa                                         
-#     [8]                        integral      32    'h76280d25                                         
-#     [9]                        integral      32    'hdb99bd86                                         
-#     [10]                       integral      32    'h94c6ee31                                         
-#     [11]                       integral      32    'h69aca787                                         
-#   wstrb                        integral      4     'h4                                                
-#   wid                          integral      4     'hb                                                
-#   bid                          integral      4     'h0                                                
-#   bresp                        integral      2     'h0                                                
-#   arid                         integral      4     'h7                                                
-#   araddr                       integral      32    'h1b3                                              
-#   arlen                        integral      4     'he                                                
-#   arsize                       integral      3     'h5                                                
-#   arburst                      integral      2     'h0                                                
-#   rid                          integral      4     'h1                                                
-#   rdata                        da(integral)  15    -                                                  
-#     [0]                        integral      32    'h0                                                
-#     [1]                        integral      32    'h0                                                
-#     [2]                        integral      32    'h0                                                
-#     [3]                        integral      32    'h0                                                
-#     [4]                        integral      32    'h0                                                
-#     ...                        ...           ...   ...                                                
-#     [10]                       integral      32    'h0                                                
-#     [11]                       integral      32    'h0                                                
-#     [12]                       integral      32    'h0                                                
-#     [13]                       integral      32    'h0                                                
-#     [14]                       integral      32    'h0                                                
-#   rresp                        integral      2     'h1                                                
-#   begin_time                   time          64    1270                                               
-#   depth                        int           32    'd2                                                
-#   parent sequence (name)       string        3     seq                                                
-#   parent sequence (full name)  string        51    uvm_test_top.environment.master_agent.sequencer.seq
-#   sequencer                    string        47    uvm_test_top.environment.master_agent.sequencer    
-# ------------------------------------------------------------------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(26) @ 2510: uvm_test_top.environment.scoreboard [DRIVER - SCROEBOARD] Received item from driver
 # UVM_INFO ../tb/sequence.sv(15) @ 2510: uvm_test_top.environment.master_agent.sequencer@@seq [axi_sequence] Item generated done
-# Item at monitor
-# -----------------------------------------
-# Name       Type          Size  Value     
-# -----------------------------------------
-# item       transaction   -     @745      
-#   awlen    integral      4     'hb       
-#   awsize   integral      3     'h1       
-#   awaddr   integral      32    'hc8      
-#   awburst  integral      2     'h3       
-#   awid     integral      4     'hb       
-#   wdata    da(integral)  12    -         
-#     [0]    integral      32    'h66bc738a
-#     [1]    integral      32    'h103be3d0
-#     [2]    integral      32    'hdc314e0 
-#     [3]    integral      32    'hc71cc234
-#     [4]    integral      32    'h2f094632
-#     ...    ...           ...   ...       
-#     [7]    integral      32    'h366201fa
-#     [8]    integral      32    'h76280d25
-#     [9]    integral      32    'hdb99bd86
-#     [10]   integral      32    'h94c6ee31
-#     [11]   integral      32    'h69aca787
-#   wstrb    integral      4     'h4       
-#   wid      integral      4     'h0       
-#   bid      integral      4     'h0       
-#   bresp    integral      2     'h0       
-#   arid     integral      4     'h7       
-#   araddr   integral      32    'h1b3     
-#   arlen    integral      4     'he       
-#   arsize   integral      3     'h5       
-#   arburst  integral      2     'h0       
-#   rid      integral      4     'h0       
-#   rdata    da(integral)  15    -         
-#     [0]    integral      32    'h0       
-#     [1]    integral      32    'h0       
-#     [2]    integral      32    'h0       
-#     [3]    integral      32    'h0       
-#     [4]    integral      32    'h0       
-#     ...    ...           ...   ...       
-#     [10]   integral      32    'h0       
-#     [11]   integral      32    'h0       
-#     [12]   integral      32    'h0       
-#     [13]   integral      32    'h0       
-#     [14]   integral      32    'h0       
-#   rresp    integral      2     'h0       
-# -----------------------------------------
-# UVM_INFO ../tb/scoreboard.sv(15) @ 2530: uvm_test_top.environment.scoreboard [axi_scoreboard] Received item
-# Time at this point: 2550
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2570: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# Start colelct data
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2610: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 9ac84267 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2650: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2690: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 9eb68aa5 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2730: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2770: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data b03a2ab2 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2810: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2850: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 4c8342b0 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2890: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 2930: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 6878ee89 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 2970: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3010: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data a2290a64 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 3050: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3090: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 5ae9429d with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 3130: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3170: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 9b0fd7d1 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 3210: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3250: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data e7810b05 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 3290: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3330: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data ff7f25b3 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(176) @ 3370: uvm_test_top.environment.slave_agent.slave_driver [READ MEM] Read data 00000000 from address 986
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3410: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data f75ad67c with strobe 0000 at address 607
-# Time at this point: 3470
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3490: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data 4b985ac1 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3570: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data e37cf614 with strobe 0000 at address 607
-# UVM_INFO ../tb/driver_slave.sv(161) @ 3650: uvm_test_top.environment.slave_agent.slave_driver [WRITE MEM] Write data cab87b03 with strobe 0000 at address 607
-# Item at monitor
-# -----------------------------------------
-# Name       Type          Size  Value     
-# -----------------------------------------
-# item       transaction   -     @766      
-#   awlen    integral      4     'hd       
-#   awsize   integral      3     'h4       
-#   awaddr   integral      32    'h25f     
-#   awburst  integral      2     'h0       
-#   awid     integral      4     'h3       
-#   wdata    da(integral)  14    -         
-#     [0]    integral      32    'h9ac84267
-#     [1]    integral      32    'h9eb68aa5
-#     [2]    integral      32    'hb03a2ab2
-#     [3]    integral      32    'h4c8342b0
-#     [4]    integral      32    'h6878ee89
-#     ...    ...           ...   ...       
-#     [9]    integral      32    'hff7f25b3
-#     [10]   integral      32    'hf75ad67c
-#     [11]   integral      32    'h4b985ac1
-#     [12]   integral      32    'he37cf614
-#     [13]   integral      32    'hcab87b03
-#   wstrb    integral      4     'h0       
-#   wid      integral      4     'h0       
-#   bid      integral      4     'h0       
-#   bresp    integral      2     'h0       
-#   arid     integral      4     'ha       
-#   araddr   integral      32    'h3da     
-#   arlen    integral      4     'ha       
-#   arsize   integral      3     'h6       
-#   arburst  integral      2     'h1       
-#   rid      integral      4     'h0       
-#   rdata    da(integral)  11    -         
-#     [0]    integral      32    'h0       
-#     [1]    integral      32    'h0       
-#     [2]    integral      32    'h0       
-#     [3]    integral      32    'h0       
-#     [4]    integral      32    'h0       
-#     ...    ...           ...   ...       
-#     [6]    integral      32    'h0       
-#     [7]    integral      32    'h0       
-#     [8]    integral      32    'h0       
-#     [9]    integral      32    'h0       
-#     [10]   integral      32    'h0       
-#   rresp    integral      2     'h0       
-# -----------------------------------------
-# UVM_INFO ../tb/scoreboard.sv(15) @ 3690: uvm_test_top.environment.scoreboard [axi_scoreboard] Received item
-# ------------------------------------------------------------------------------------------------------
-# Name                           Type          Size  Value                                              
-# ------------------------------------------------------------------------------------------------------
-# item                           transaction   -     @762                                               
-#   awlen                        integral      4     'hd                                                
-#   awsize                       integral      3     'h4                                                
-#   awaddr                       integral      32    'h25f                                              
-#   awburst                      integral      2     'h0                                                
-#   awid                         integral      4     'h3                                                
-#   wdata                        da(integral)  14    -                                                  
-#     [0]                        integral      32    'h9ac84267                                         
-#     [1]                        integral      32    'h9eb68aa5                                         
-#     [2]                        integral      32    'hb03a2ab2                                         
-#     [3]                        integral      32    'h4c8342b0                                         
-#     [4]                        integral      32    'h6878ee89                                         
-#     ...                        ...           ...   ...                                                
-#     [9]                        integral      32    'hff7f25b3                                         
-#     [10]                       integral      32    'hf75ad67c                                         
-#     [11]                       integral      32    'h4b985ac1                                         
-#     [12]                       integral      32    'he37cf614                                         
-#     [13]                       integral      32    'hcab87b03                                         
-#   wstrb                        integral      4     'h0                                                
-#   wid                          integral      4     'h3                                                
-#   bid                          integral      4     'h0                                                
-#   bresp                        integral      2     'h0                                                
-#   arid                         integral      4     'ha                                                
-#   araddr                       integral      32    'h3da                                              
-#   arlen                        integral      4     'ha                                                
-#   arsize                       integral      3     'h6                                                
-#   arburst                      integral      2     'h1                                                
-#   rid                          integral      4     'h4                                                
-#   rdata                        da(integral)  11    -                                                  
-#     [0]                        integral      32    'h0                                                
-#     [1]                        integral      32    'h0                                                
-#     [2]                        integral      32    'h0                                                
-#     [3]                        integral      32    'h0                                                
-#     [4]                        integral      32    'h0                                                
-#     ...                        ...           ...   ...                                                
-#     [6]                        integral      32    'h0                                                
-#     [7]                        integral      32    'h0                                                
-#     [8]                        integral      32    'h0                                                
-#     [9]                        integral      32    'h0                                                
-#     [10]                       integral      32    'h0                                                
-#   rresp                        integral      2     'h2                                                
-#   begin_time                   time          64    2510                                               
-#   depth                        int           32    'd2                                                
-#   parent sequence (name)       string        3     seq                                                
-#   parent sequence (full name)  string        51    uvm_test_top.environment.master_agent.sequencer.seq
-#   sequencer                    string        47    uvm_test_top.environment.master_agent.sequencer    
-# ------------------------------------------------------------------------------------------------------
+# UVM_INFO ../tb/scoreboard.sv(21) @ 2530: uvm_test_top.environment.scoreboard [MONITOR - SCOREBOARD] Received item from monitor
+# UVM_INFO ../tb/scoreboard.sv(40) @ 2530: uvm_test_top.environment.scoreboard [COMPARE] Data matched
+# UVM_INFO ../tb/scoreboard.sv(21) @ 3690: uvm_test_top.environment.scoreboard [MONITOR - SCOREBOARD] Received item from monitor
+# UVM_INFO ../tb/scoreboard.sv(26) @ 3750: uvm_test_top.environment.scoreboard [DRIVER - SCROEBOARD] Received item from driver
+# UVM_INFO ../tb/scoreboard.sv(40) @ 3750: uvm_test_top.environment.scoreboard [COMPARE] Data matched
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 3750: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   87
+# UVM_INFO :   23
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [COMPARE]     3
 # [Connect interface]     4
+# [DRIVER - SCROEBOARD]     3
+# [MONITOR - SCOREBOARD]     3
 # [Questa UVM]     2
-# [READ MEM]    30
 # [RESET DUT]     2
 # [RNTST]     1
 # [TEST_DONE]     1
 # [Test class]     1
-# [WRITE MEM]    40
-# [axi_scoreboard]     3
 # [axi_sequence]     3
 # ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 3750 ns  Iteration: 61  Instance: /testbench
-# End time: 22:42:47 on Feb 28,2025, Elapsed time: 0:00:01
+# End time: 16:46:47 on Mar 01,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1

@@ -28,8 +28,8 @@ class master_axi_monitor extends uvm_monitor;
 
             item = transaction::type_id::create("item");
             collect_item();
-            $display("Item at monitor");
-            item.print();
+            //$display("Item at monitor");
+            //item.print();
             monitor_analysis_port.write(item);
         end
     endtask
@@ -50,7 +50,7 @@ endtask
 task master_axi_monitor::collect_write_channel();
     @(posedge intf.clk);
     @(negedge intf.awready);
-    $display("Start colelct data");
+    //$display("Start colelct data");
     item.awaddr         = intf.awaddr;
     item.awlen          = intf.awlen;
     item.awsize         = intf.awsize;

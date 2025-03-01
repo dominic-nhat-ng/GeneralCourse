@@ -18,7 +18,8 @@ class axi_environment extends uvm_env;
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
-        master_agent.master_monitor.monitor_analysis_port.connect(scoreboard.scoreboard_analyasis_imp);
+        master_agent.master_monitor.monitor_analysis_port.connect(scoreboard.monitor_port);
+        master_agent.master_driver.driver_put_port.connect(scoreboard.driver_port);
 
     endfunction
 endclass

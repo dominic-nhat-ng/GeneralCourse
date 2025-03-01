@@ -3,6 +3,7 @@ class master_axi_driver extends uvm_driver #(transaction);
     `uvm_component_utils(master_axi_driver)
     
     virtual axi_if intf;
+    uvm_blocking_put_port #(transaction) driver_put_port;
     transaction item;
 
     function new(string name = "master_axi_driver", uvm_component parent=null);
@@ -16,6 +17,7 @@ class master_axi_driver extends uvm_driver #(transaction);
     end
         else
             `uvm_info("Connect interface", "Driver Connected to interface", UVM_NONE)
+        driver_put_port = new("driver_put_port", this);
     endfunction
 
     extern task reset_dut();
@@ -35,7 +37,8 @@ class master_axi_driver extends uvm_driver #(transaction);
             item = transaction::type_id::create("item");
             seq_item_port.get_next_item(item);
             drive_logic(item);
-            item.print();
+            //item.print();
+            driver_put_port.put(item);
             seq_item_port.item_done();
         end
 

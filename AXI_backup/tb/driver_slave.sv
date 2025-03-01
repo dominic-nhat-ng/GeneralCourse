@@ -123,7 +123,7 @@ endtask
 task slave_axi_driver::slave_read_data();
     forever begin
         @(posedge intf.clk);
-        $display("Time at this point: %0t", $time);
+        //$display("Time at this point: %0t", $time);
         intf.rlast      = 1'b0;
         intf.rresp      = 2'b00;
         //$display("Pull down edge arvalid detected");
@@ -158,10 +158,10 @@ function void slave_axi_driver::write_mem(input bit [31:0] addr, input bit [31:0
         if (strb[1]) mem[addr + 1]      = data[15:8];
         if (strb[2]) mem[addr + 2]      = data[23:16];
         if (strb[3]) mem[addr + 3]      = data[31:24];
-        `uvm_info("WRITE MEM", $sformatf("Write data %h with strobe %b at address %0d", data, strb, addr), UVM_MEDIUM)
+        //`uvm_info("WRITE MEM", $sformatf("Write data %h with strobe %b at address %0d", data, strb, addr), UVM_MEDIUM)
     end
     else begin
-        `uvm_error("WRITE MEM", $sformatf("Address %0d out of range!", addr))
+        //`uvm_error("WRITE MEM", $sformatf("Address %0d out of range!", addr))
     end
 
 endfunction
@@ -173,11 +173,11 @@ function bit [31:0] slave_axi_driver::read_mem(bit [31:0] addr);
         data_out[15:8]      = mem[addr + 1];
         data_out[23:16]     = mem[addr + 2];
         data_out[31:24]     = mem[addr + 3];
-        `uvm_info("READ MEM", $sformatf("Read data %h from address %0d", data_out, addr), UVM_MEDIUM)
+        //`uvm_info("READ MEM", $sformatf("Read data %h from address %0d", data_out, addr), UVM_MEDIUM)
         return data_out;
     end
     else begin 
-        `uvm_error("READ MEM", $sformatf("Address %0d out of range!", addr))
+        //`uvm_error("READ MEM", $sformatf("Address %0d out of range!", addr))
         return 32'hxxxx_xxxx;
     end
 
