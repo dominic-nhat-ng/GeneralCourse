@@ -1,0 +1,117 @@
+# vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
+# Start time: 00:43:31 on Mar 07,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.ahb_intf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading work.ahb_intf(fast__2)
+# Loading work.AMBA_AHB(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'HRDATA'. The port definition is at: ../rtl/top.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/ahb_ip File: ../tb/testbench.sv Line: 38
+# Loading /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test ahb_test...
+# UVM_INFO ../tb/sequencer.sv(7) @ 0: uvm_test_top.environment.agent.sequencer [ahb_sequencer] Constructor
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               ahb_test                -     @471 
+#   environment              ahb_env                 -     @478 
+#     agent                  ahb_agent               -     @485 
+#       driver               ahb_driver              -     @493 
+#         rsp_port           uvm_analysis_port       -     @508 
+#         seq_item_port      uvm_seq_item_pull_port  -     @500 
+#       monitor              ahb_monitor             -     @625 
+#       sequencer            ahb_sequencer           -     @516 
+#         rsp_export         uvm_analysis_export     -     @523 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @617 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+# --------------------------------------------------------------
+# 
+# UVM_INFO ../tb/sequence.sv(8) @ 0: reporter@@ahb_sequence [ahb_sequence] Constructor
+# UVM_INFO ../tb/sequence.sv(15) @ 0: reporter@@ahb_sequence [ahb_sequence] Sequence generated done
+# UVM_INFO ../tb/driver.sv(29) @ 0: uvm_test_top.environment.agent.driver [ahb_driver] Driver received item
+# ------------------------------------------------------------------------------------------------------
+# Name                           Type         Size  Value                                               
+# ------------------------------------------------------------------------------------------------------
+# item                           transaction  -     @646                                                
+#   HRDATA                       integral     32    'h13163ee2                                          
+#   HADDR                        integral     16    'h318b                                              
+#   HWDATA                       integral     32    'h5873a345                                          
+#   HTRANS                       integral     2     'h3                                                 
+#   HSIZE                        integral     3     'h4                                                 
+#   begin_time                   time         64    0                                                   
+#   depth                        int          32    'd2                                                 
+#   parent sequence (name)       string       11    my_sequence                                         
+#   parent sequence (full name)  string       52    uvm_test_top.environment.agent.sequencer.my_sequence
+#   sequencer                    string       40    uvm_test_top.environment.agent.sequencer            
+# ------------------------------------------------------------------------------------------------------
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    9
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [ahb_driver]     1
+# [ahb_sequence]     2
+# [ahb_sequencer]     1
+# ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /testbench
+# End time: 00:43:33 on Mar 07,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 2
