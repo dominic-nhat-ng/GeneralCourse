@@ -1,0 +1,73 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11f vlog 2022.4 2022.10, Oct 18 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/nhat/GeneralCourse/Coverage/sim
+T_opt
+!s110 1740983427
+VNaO8FOGEbUHgIPmN>bFMP1
+04 9 4 work testbench fast 0
+=1-8cc84b040fef-67c54c83-8896-3583
+R0
+!s12b OEM100
+!s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2022.4;75
+R1
+vtestbench
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1741595576
+!i10b 1
+!s100 dhbjaLgf5WbhZm60l1hI^1
+IN:Sj]fKjFzoaSEC__Dioi2
+S1
+R1
+w1740934287
+8../tb/testbench.sv
+F../tb/testbench.sv
+!i122 1
+L0 3 25
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2022.4;75
+r1
+!s85 0
+31
+Z7 !s108 1741595576.000000
+!s107 ../tb/testbench.sv|../rtl/top.v|
+Z8 !s90 -sv|-f|compile.f|
+!i113 0
+Z9 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtop
+R3
+R4
+!i10b 1
+!s100 bWzzTiTzBfMjEeg1DVQPE3
+I^]DeKTEgR`jga_Ed4SO4m3
+S1
+R1
+w1740934154
+8../rtl/top.v
+F../rtl/top.v
+!i122 1
+L0 1 9
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z10 !s107 ../tb/testbench.sv|../rtl/top.v|
+R8
+!i113 0
+R9
+R2

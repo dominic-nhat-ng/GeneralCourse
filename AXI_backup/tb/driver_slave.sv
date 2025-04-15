@@ -147,12 +147,14 @@ task slave_axi_driver::slave_read_data();
             intf.rresp          = 2'b10;
         end else begin
             intf.rresp          = 2'b00;
-
         end
     end
 endtask
 
 function void slave_axi_driver::write_mem(input bit [31:0] addr, input bit [31:0] data, input bit [3:0] strb);
+    //if (burst == 2b'00)   ->> fixed mode
+    //else if (burst == 2'b01)  ->> increase mode 
+    //else if (burst == 2'b10) ->> wrap mode
     if(addr < 1020) begin
         if (strb[0]) mem[addr]          = data[7:0];
         if (strb[1]) mem[addr + 1]      = data[15:8];

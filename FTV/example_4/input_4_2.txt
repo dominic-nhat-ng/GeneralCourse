@@ -1,0 +1,3 @@
+This is the file of input_4_2
+Assume this file contain content of the UVM_INFO when run UVM environment
+

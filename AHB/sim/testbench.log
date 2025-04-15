@@ -1,6 +1,6 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 00:43:31 on Mar 07,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 16:29:22 on Mar 07,2025
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -26,8 +26,6 @@
 # Loading work.testbench(fast)
 # Loading work.ahb_intf(fast__2)
 # Loading work.AMBA_AHB(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'HRDATA'. The port definition is at: ../rtl/top.v(7).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/ahb_ip File: ../tb/testbench.sv Line: 38
 # Loading /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
@@ -77,41 +75,11 @@
 # --------------------------------------------------------------
 # 
 # UVM_INFO ../tb/sequence.sv(8) @ 0: reporter@@ahb_sequence [ahb_sequence] Constructor
-# UVM_INFO ../tb/sequence.sv(15) @ 0: reporter@@ahb_sequence [ahb_sequence] Sequence generated done
-# UVM_INFO ../tb/driver.sv(29) @ 0: uvm_test_top.environment.agent.driver [ahb_driver] Driver received item
-# ------------------------------------------------------------------------------------------------------
-# Name                           Type         Size  Value                                               
-# ------------------------------------------------------------------------------------------------------
-# item                           transaction  -     @646                                                
-#   HRDATA                       integral     32    'h13163ee2                                          
-#   HADDR                        integral     16    'h318b                                              
-#   HWDATA                       integral     32    'h5873a345                                          
-#   HTRANS                       integral     2     'h3                                                 
-#   HSIZE                        integral     3     'h4                                                 
-#   begin_time                   time         64    0                                                   
-#   depth                        int          32    'd2                                                 
-#   parent sequence (name)       string       11    my_sequence                                         
-#   parent sequence (full name)  string       52    uvm_test_top.environment.agent.sequencer.my_sequence
-#   sequencer                    string       40    uvm_test_top.environment.agent.sequencer            
-# ------------------------------------------------------------------------------------------------------
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../tb/driver.sv(44) @ 30: uvm_test_top.environment.agent.driver [RESET DUT] Reset Completed
+# UVM_INFO ../tb/sequence.sv(15) @ 50: reporter@@ahb_sequence [ahb_sequence] Sequence generated done
+# UVM_INFO ../tb/driver.sv(32) @ 50: uvm_test_top.environment.agent.driver [ahb_driver] Driver received item
+# Break key hit
+# Simulation stop requested.
 # 
-# --- UVM Report Summary ---
-# 
-# ** Report counts by severity
-# UVM_INFO :    9
-# UVM_WARNING :    0
-# UVM_ERROR :    0
-# UVM_FATAL :    0
-# ** Report counts by id
-# [Questa UVM]     2
-# [RNTST]     1
-# [TEST_DONE]     1
-# [UVMTOP]     1
-# [ahb_driver]     1
-# [ahb_sequence]     2
-# [ahb_sequencer]     1
-# ** Note: $finish    : /opt/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 0 ns  Iteration: 226  Instance: /testbench
-# End time: 00:43:33 on Mar 07,2025, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 2
+# End time: 16:29:26 on Mar 07,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1

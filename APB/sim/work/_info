@@ -2,6 +2,8 @@ m255
 K4
 z2
 Z0 !s99 nomlopt
+R0
+R0
 !s11f vlog 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
@@ -11,104 +13,120 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 d/home/nhat/GeneralCourse/APB/sim
 T_opt
-!s11d testbench_sv_unit /home/nhat/GeneralCourse/APB/sim/work 1 apb_intf 1 /home/nhat/GeneralCourse/APB/sim/work 
-!s11d uvm_pkg /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d 1 apb_intf 1 /home/nhat/GeneralCourse/APB/sim/work 
-!s110 1740148759
-Vg=E83JOO_7RlD]JGca3L:3
-04 9 4 work testbench fast 0
-=1-8cc84b040fef-67b89016-5e892-88f5
+Z2 !s11d testbench_sv_unit /home/nhat/GeneralCourse/APB/sim/work 1 apb_intf 1 /home/nhat/GeneralCourse/APB/sim/work 
+Z3 !s11d uvm_pkg /opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d 1 apb_intf 1 /home/nhat/GeneralCourse/APB/sim/work 
+!s110 1743267556
+V?Zfd6dLmg_9;:PhnT[UnH0
+Z4 04 9 4 work testbench fast 0
+=1-8cc84b040fef-67e826e4-4ee2a-5fd3
 R0
-!s12b OEM100
-!s124 OEM10U3 
+Z5 !s12b OEM100
+Z6 !s124 OEM10U3 
 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
-Z2 tCvgOpt 0
+Z7 tCvgOpt 0
 n@_opt
-OL;O;2022.4;75
+Z8 OL;O;2022.4;75
+R1
+T_opt1
+R2
+R3
+!s110 1741594916
+V>iSMNgK00ROmlaI<X`hNJ0
+R4
+=1-8cc84b040fef-67cea124-19065-6e36
+!s102 +cover=bcesft
+R0
+R5
+R6
+o-quiet -auto_acc_if_foreign -work work +cover=bcesft
+R7
+n@_opt1
+R8
 R1
 vAMBA_APB
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z4 !s110 1740331956
+Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z10 !s110 1744384109
 !i10b 1
-!s100 SY;c2QVnFz7]KZUMVSBgY1
-I3W`U?lhE_9^gXmB;[zXVT3
+!s100 YCWXMY]Sz3UWI0VWWH=M10
+ILbHORWObh;h8FgzQ6CLKn3
 S1
 R1
-Z5 w1740102978
+w1741594898
 8../rtl/top.v
 F../rtl/top.v
-!i122 1
+!i122 4
 L0 1 68
-Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 OL;L;2022.4;75
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2022.4;75
 r1
 !s85 0
 31
-Z8 !s108 1740331956.000000
+Z13 !s108 1744384109.000000
 !s107 ../tb/test.sv|../tb/environment.sv|../tb/scoreboard.sv|../tb/agent.sv|../tb/monitor.sv|../tb/driver.sv|../tb/sequencer.sv|../tb/sequence.sv|../tb/transaction.sv|../tb/interface.sv|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/testbench.sv|../rtl/top.v|
-Z9 !s90 -sv|-f|compile.f|
+Z14 !s90 -sv|-f|compile.f|
 !i113 0
-Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+Z15 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
 n@a@m@b@a_@a@p@b
 Yapb_intf
-R3
-Z11 DXx6 mtiUvm 7 uvm_pkg 0 22 8V[`8]Q0W57le7Z>zYaAj1
-Z12 DXx4 work 17 testbench_sv_unit 0 22 FUaTCL6]Xoj2U365TzP591
-R4
-R6
+R9
+Z16 DXx6 mtiUvm 7 uvm_pkg 0 22 8V[`8]Q0W57le7Z>zYaAj1
+Z17 DXx4 work 17 testbench_sv_unit 0 22 FUaTCL6]Xoj2U365TzP591
+R10
+R11
 r1
 !s85 0
 !i10b 1
 !s100 i?lBiUG^B0ieRHbjQ>I1R0
 ITdFo=>cb;BWZ;?FbB;K3Q2
-Z13 !s105 testbench_sv_unit
+Z18 !s105 testbench_sv_unit
 S1
 R1
-R5
+Z19 w1740102978
 8../tb/interface.sv
-Z14 F../tb/interface.sv
-!i122 1
-Z15 L0 2 0
-R7
-31
-R8
-Z16 !s107 ../tb/test.sv|../tb/environment.sv|../tb/scoreboard.sv|../tb/agent.sv|../tb/monitor.sv|../tb/driver.sv|../tb/sequencer.sv|../tb/sequence.sv|../tb/transaction.sv|../tb/interface.sv|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/testbench.sv|../rtl/top.v|
-R9
-!i113 0
-R10
-R2
-vtestbench
-R3
-R11
+Z20 F../tb/interface.sv
+!i122 4
+Z21 L0 2 0
 R12
-R4
-R6
+31
+R13
+Z22 !s107 ../tb/test.sv|../tb/environment.sv|../tb/scoreboard.sv|../tb/agent.sv|../tb/monitor.sv|../tb/driver.sv|../tb/sequencer.sv|../tb/sequence.sv|../tb/transaction.sv|../tb/interface.sv|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/testbench.sv|../rtl/top.v|
+R14
+!i113 0
+R15
+R7
+vtestbench
+R9
+R16
+R17
+R10
+R11
 r1
 !s85 0
 !i10b 1
 !s100 k`MFU0dQE`FHn[GLFNni61
 INT=P]YlK:B>EX?2e:MTZN3
-R13
+R18
 S1
 R1
-R5
-Z17 8../tb/testbench.sv
-Z18 F../tb/testbench.sv
-!i122 1
+R19
+Z23 8../tb/testbench.sv
+Z24 F../tb/testbench.sv
+!i122 4
 L0 16 47
-R7
+R12
 31
-R8
-R16
-R9
+R13
+R22
+R14
 !i113 0
-R10
-R2
+R15
+R7
 Xtestbench_sv_unit
 !s115 apb_intf
-R3
-R11
-R4
+R9
+R16
+R10
 VFUaTCL6]Xoj2U365TzP591
 r1
 !s85 0
@@ -118,9 +136,9 @@ IFUaTCL6]Xoj2U365TzP591
 !i103 1
 S1
 R1
-R5
-R17
-R18
+R19
+R23
+R24
 F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
 F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
 F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
@@ -133,7 +151,7 @@ F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/
 F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
 F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
 F/opt/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
-R14
+R20
 F../tb/transaction.sv
 F../tb/sequence.sv
 F../tb/sequencer.sv
@@ -143,13 +161,13 @@ F../tb/agent.sv
 F../tb/scoreboard.sv
 F../tb/environment.sv
 F../tb/test.sv
-!i122 1
+!i122 4
+R21
+R12
+31
+R13
+R22
+R14
+!i113 0
 R15
 R7
-31
-R8
-R16
-R9
-!i113 0
-R10
-R2

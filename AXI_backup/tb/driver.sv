@@ -139,6 +139,3 @@ task master_axi_driver::read_data(transaction item);
         //@(posedge intf.clk);
     end
 endtask
-
-
-

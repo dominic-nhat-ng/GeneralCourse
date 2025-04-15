@@ -1,0 +1,35 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /testbench/intf
+=== Design Unit: work.axi_if
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        376       156       220    41.48%
+
+=================================================================================
+=== Instance: /testbench
+=== Design Unit: work.testbench
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10        10         0   100.00%
+    Toggles                          4         3         1    75.00%
+
+=================================================================================
+=== Instance: /testbench_sv_unit
+=== Design Unit: work.testbench_sv_unit
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Assertions                       1         1         0   100.00%
+    Branches                       560        38       522     6.78%
+    Conditions                     139         2       137     1.43%
+    Statements                     743       278       465    37.41%
+
+
+TOTAL ASSERTION COVERAGE: 100.00%  ASSERTIONS: 1
+
+Total Coverage By Instance (filtered view): 37.66%
+

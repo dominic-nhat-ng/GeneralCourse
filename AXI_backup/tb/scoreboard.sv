@@ -58,7 +58,7 @@ function bit axi_scoreboard::compare(transaction mon_item, transaction  drv_item
     end
 
     if (mon_item.arlen != drv_item.arlen) begin
-
+        return 0;
     end else begin
         if(mon_item.araddr != drv_item.araddr) begin
         end
@@ -69,6 +69,3 @@ function bit axi_scoreboard::compare(transaction mon_item, transaction  drv_item
     return 1;
 
 endfunction
-
-
-

@@ -1,0 +1,962 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /testbench/intf
+=== Design Unit: work.apb_intf
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        206        94       112    45.63%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /testbench/intf --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                         P_addr[0]           0           2                               50.00 
+                                       P_addr[1-2]           2           2                              100.00 
+                                       P_addr[3-4]           0           2                               50.00 
+                                      P_addr[5-31]           0           0                                0.00 
+                                          P_enable           2           2                              100.00 
+                                        P_rdata[0]           2           0                               50.00 
+                                        P_rdata[1]           0           0                                0.00 
+                                        P_rdata[2]           0           2                               50.00 
+                                      P_rdata[3-4]           2           2                              100.00 
+                                        P_rdata[5]           0           2                               50.00 
+                                        P_rdata[6]           2           0                               50.00 
+                                      P_rdata[7-8]           0           2                               50.00 
+                                        P_rdata[9]           2           0                               50.00 
+                                       P_rdata[10]           0           0                                0.00 
+                                       P_rdata[11]           2           0                               50.00 
+                                    P_rdata[12-13]           0           2                               50.00 
+                                       P_rdata[14]           2           0                               50.00 
+                                    P_rdata[15-16]           0           2                               50.00 
+                                       P_rdata[17]           2           0                               50.00 
+                                    P_rdata[18-19]           0           2                               50.00 
+                                    P_rdata[20-21]           2           0                               50.00 
+                                       P_rdata[22]           2           2                              100.00 
+                                    P_rdata[23-24]           2           0                               50.00 
+                                       P_rdata[25]           0           0                                0.00 
+                                       P_rdata[26]           0           2                               50.00 
+                                       P_rdata[27]           0           0                                0.00 
+                                       P_rdata[28]           2           2                              100.00 
+                                    P_rdata[29-30]           2           0                               50.00 
+                                       P_rdata[31]           0           0                                0.00 
+                                           P_ready           2           2                              100.00 
+                                            P_selx           2           2                              100.00 
+                                          P_slverr           0           0                                0.00 
+                                        P_wdata[0]           2           2                              100.00 
+                                        P_wdata[1]           0           0                                0.00 
+                                        P_wdata[2]           0           2                               50.00 
+                                      P_wdata[3-4]           2           2                              100.00 
+                                        P_wdata[5]           0           2                               50.00 
+                                        P_wdata[6]           2           2                              100.00 
+                                      P_wdata[7-8]           0           2                               50.00 
+                                        P_wdata[9]           2           2                              100.00 
+                                       P_wdata[10]           0           0                                0.00 
+                                       P_wdata[11]           2           2                              100.00 
+                                    P_wdata[12-13]           0           2                               50.00 
+                                       P_wdata[14]           2           2                              100.00 
+                                    P_wdata[15-16]           0           2                               50.00 
+                                       P_wdata[17]           2           2                              100.00 
+                                    P_wdata[18-19]           0           2                               50.00 
+                                    P_wdata[20-24]           2           2                              100.00 
+                                       P_wdata[25]           0           0                                0.00 
+                                    P_wdata[26-27]           0           2                               50.00 
+                                    P_wdata[28-30]           2           2                              100.00 
+                                       P_wdata[31]           0           2                               50.00 
+                                           P_write           2           2                              100.00 
+                                               clk           2           2                              100.00 
+                                               rst           2           0                               50.00 
+
+Total Node Count     =        103 
+Toggled Node Count   =         27 
+Untoggled Node Count =         76 
+
+Toggle Coverage      =      45.63% (94 of 206 bins)
+
+=================================================================================
+=== Instance: /testbench/apb_ip
+=== Design Unit: work.AMBA_APB
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        14        13         1    92.85%
+
+================================Branch Details================================
+
+Branch Coverage for instance /testbench/apb_ip
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/top.v
+------------------------------------IF Branch------------------------------------
+    59                                        12     Count coming in to IF
+    59              1                         12           if (!P_enable | !P_selx) begin
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         3         3    50.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /testbench/apb_ip --
+
+  File ../rtl/top.v
+
+----------------Focused Condition View-------------------
+Line       42 Item    1  (P_enable ~& P_selx)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      P_selx         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          2  P_enable_0            P_selx                        
+  Row   2:          2  P_enable_1            P_selx                        
+  Row   3:    ***0***  P_selx_0              P_enable                      
+  Row   4:          2  P_selx_1              P_enable                      
+
+----------------Focused Condition View-------------------
+Line       59 Item    1  (P_enable ~& P_selx)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+    P_enable         N  No hits                  Hit '_0' and '_1'
+      P_selx         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  P_enable_0            P_selx                        
+  Row   2:    ***0***  P_enable_1            P_selx                        
+  Row   3:    ***0***  P_selx_0              P_enable                      
+  Row   4:    ***0***  P_selx_1              P_enable                      
+
+
+FSM Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    FSM Transitions                  4         3         1    75.00%
+
+================================FSM Details================================
+
+FSM Coverage for instance /testbench/apb_ip --
+
+FSM_ID: present_state
+    Current State Object : present_state
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  35                idle                   0
+  41               setup                   1
+  58              access                   2
+    Uncovered Transitions :
+    -----------------------
+Line            Trans_ID          Transition          
+----            --------          ----------          
+  43                   2          setup -> idle       
+
+
+    Summary                       Bins      Hits    Misses  Coverage
+    -------                       ----      ----    ------  --------
+        FSM Transitions              4         3         1    75.00%
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        214       102       112    47.66%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /testbench/apb_ip --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                         P_addr[0]           0           2                               50.00 
+                                       P_addr[1-2]           2           2                              100.00 
+                                       P_addr[3-4]           0           2                               50.00 
+                                      P_addr[5-31]           0           0                                0.00 
+                                             P_clk           2           2                              100.00 
+                                          P_enable           2           2                              100.00 
+                                        P_rdata[0]           2           0                               50.00 
+                                        P_rdata[1]           0           0                                0.00 
+                                        P_rdata[2]           0           2                               50.00 
+                                      P_rdata[3-4]           2           2                              100.00 
+                                        P_rdata[5]           0           2                               50.00 
+                                        P_rdata[6]           2           0                               50.00 
+                                      P_rdata[7-8]           0           2                               50.00 
+                                        P_rdata[9]           2           0                               50.00 
+                                       P_rdata[10]           0           0                                0.00 
+                                       P_rdata[11]           2           0                               50.00 
+                                    P_rdata[12-13]           0           2                               50.00 
+                                       P_rdata[14]           2           0                               50.00 
+                                    P_rdata[15-16]           0           2                               50.00 
+                                       P_rdata[17]           2           0                               50.00 
+                                    P_rdata[18-19]           0           2                               50.00 
+                                    P_rdata[20-21]           2           0                               50.00 
+                                       P_rdata[22]           2           2                              100.00 
+                                    P_rdata[23-24]           2           0                               50.00 
+                                       P_rdata[25]           0           0                                0.00 
+                                       P_rdata[26]           0           2                               50.00 
+                                       P_rdata[27]           0           0                                0.00 
+                                       P_rdata[28]           2           2                              100.00 
+                                    P_rdata[29-30]           2           0                               50.00 
+                                       P_rdata[31]           0           0                                0.00 
+                                           P_ready           2           2                              100.00 
+                                             P_rst           2           0                               50.00 
+                                            P_selx           2           2                              100.00 
+                                          P_slverr           0           0                                0.00 
+                                        P_wdata[0]           2           2                              100.00 
+                                        P_wdata[1]           0           0                                0.00 
+                                        P_wdata[2]           0           2                               50.00 
+                                      P_wdata[3-4]           2           2                              100.00 
+                                        P_wdata[5]           0           2                               50.00 
+                                        P_wdata[6]           2           2                              100.00 
+                                      P_wdata[7-8]           0           2                               50.00 
+                                        P_wdata[9]           2           2                              100.00 
+                                       P_wdata[10]           0           0                                0.00 
+                                       P_wdata[11]           2           2                              100.00 
+                                    P_wdata[12-13]           0           2                               50.00 
+                                       P_wdata[14]           2           2                              100.00 
+                                    P_wdata[15-16]           0           2                               50.00 
+                                       P_wdata[17]           2           2                              100.00 
+                                    P_wdata[18-19]           0           2                               50.00 
+                                    P_wdata[20-24]           2           2                              100.00 
+                                       P_wdata[25]           0           0                                0.00 
+                                    P_wdata[26-27]           0           2                               50.00 
+                                    P_wdata[28-30]           2           2                              100.00 
+                                       P_wdata[31]           0           2                               50.00 
+                                           P_write           2           2                              100.00 
+                                   next_state[0-1]           2           2                              100.00 
+                                present_state[0-1]           2           2                              100.00 
+
+Total Node Count     =        107 
+Toggled Node Count   =         31 
+Untoggled Node Count =         76 
+
+Toggle Coverage      =      47.66% (102 of 214 bins)
+
+=================================================================================
+=== Instance: /testbench
+=== Design Unit: work.testbench
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          4         3         1    75.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /testbench --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                               clk           2           2                              100.00 
+                                               rst           2           0                               50.00 
+
+Total Node Count     =          2 
+Toggled Node Count   =          1 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      75.00% (3 of 4 bins)
+
+=================================================================================
+=== Instance: /testbench_sv_unit
+=== Design Unit: work.testbench_sv_unit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       125        24       101    19.20%
+
+================================Branch Details================================
+
+Branch Coverage for instance /testbench_sv_unit
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/transaction.sv
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              1                    ***0***         `uvm_object_utils_begin(transaction)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                         6     Count coming in to IF
+    20              2                    ***0***         `uvm_object_utils_begin(transaction)
+                                               6     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              3                    ***0***         `uvm_object_utils_begin(transaction)
+    20              4                    ***0***         `uvm_object_utils_begin(transaction)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                         6     Count coming in to IF
+    20              5                    ***0***         `uvm_object_utils_begin(transaction)
+                                               6     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              6                    ***0***         `uvm_object_utils_begin(transaction)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------CASE Branch------------------------------------
+    21              2                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+    21              3                    ***0***     
+    21              5                    ***0***     
+    21              9                    ***0***     
+    21             10                    ***0***     
+    21             11                    ***0***     
+    21             13                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 9 branches = 11.11%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              4                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              6                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              7                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21              8                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21             14                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                   ***0***     Count coming in to IF
+    21             15                    ***0***         `uvm_field_int(P_addr, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------CASE Branch------------------------------------
+    22              2                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+    22              3                    ***0***     
+    22              5                    ***0***     
+    22              9                    ***0***     
+    22             10                    ***0***     
+    22             11                    ***0***     
+    22             13                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 9 branches = 11.11%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              4                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              6                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              7                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              8                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22             14                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22             15                    ***0***         `uvm_field_int(P_wdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------CASE Branch------------------------------------
+    23              2                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+    23              3                    ***0***     
+    23              5                    ***0***     
+    23              9                    ***0***     
+    23             10                    ***0***     
+    23             11                    ***0***     
+    23             13                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 9 branches = 11.11%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              4                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              6                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              7                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              8                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23             14                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23             15                    ***0***         `uvm_field_int(P_rdata, UVM_ALL_ON)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File ../tb/sequence.sv
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               1                    ***0***         `uvm_object_utils(apb_sequence) 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               2                    ***0***         `uvm_object_utils(apb_sequence) 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               3                    ***0***         `uvm_object_utils(apb_sequence) 
+    3               4                    ***0***         `uvm_object_utils(apb_sequence) 
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               5                    ***0***         `uvm_object_utils(apb_sequence) 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               6                    ***0***         `uvm_object_utils(apb_sequence) 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                          2     Count coming in to IF
+    8               1                          2             `uvm_info("Sequence class", "Constructor", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                         6     Count coming in to IF
+    24              1                          6             `uvm_info(get_type_name(), "Sequence generate done", UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/sequencer.sv
+------------------------------------IF Branch------------------------------------
+    7                                          2     Count coming in to IF
+    7               1                          2         `uvm_info("Sequencer class", "Constructor", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/driver.sv
+------------------------------------IF Branch------------------------------------
+    10                                         2     Count coming in to IF
+    10              1                          2             `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    17                                         2     Count coming in to IF
+    17              1                    ***0***             if(!uvm_config_db#(virtual apb_intf)::get(this, "", "intf", intf)) begin
+    20              1                          2             else
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                   ***0***     Count coming in to IF
+    18              1                    ***0***                 `uvm_fatal("no_inif in driver","virtual interface get failed from config db")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                         2     Count coming in to IF
+    21              1                          2                 `uvm_info(get_type_name(), "Driver connected to interface", UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                         2     Count coming in to IF
+    49              1                          2             `uvm_info(get_type_name(), "reset completed", UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/monitor.sv
+------------------------------------IF Branch------------------------------------
+    14                                         2     Count coming in to IF
+    14              1                          2             `uvm_info(get_type_name(), "Constructor executed", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                         2     Count coming in to IF
+    22              1                    ***0***         if(!uvm_config_db#(virtual apb_intf)::get(this, "", "intf", intf))
+                                               2     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              1                    ***0***           `uvm_fatal("no_inif in driver","virtual interface get failed from config db");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                         2     Count coming in to IF
+    24              1                          2             `uvm_info("Monitor class", "Build phase completed", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/agent.sv
+------------------------------------IF Branch------------------------------------
+    14                                         2     Count coming in to IF
+    14              1                          2         `uvm_info("Agent class", "Constructor", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                         2     Count coming in to IF
+    32              1                          2         `uvm_info("Agent Class", " connect phase", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    11                                         2     Count coming in to IF
+    11              1                          2         `uvm_info("scoreboard Class", "constructor", UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/environment.sv
+------------------------------------IF Branch------------------------------------
+    13                                         2     Count coming in to IF
+    13              1                          2         `uvm_info("Environment class", "Constructor", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                         2     Count coming in to IF
+    33              1                          2         `uvm_info("Environment Class", "Connect phase", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File ../tb/test.sv
+------------------------------------IF Branch------------------------------------
+    23                                         2     Count coming in to IF
+    23              1                          2         `uvm_info("Test class", "Constructor", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         2     Count coming in to IF
+    42              1                          2         `uvm_info("Test class", "connect phase", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                         2     Count coming in to IF
+    51              1                          2         `uvm_info("Test class", "elab phase", UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    58                                         2     Count coming in to IF
+    58              1                          2         `uvm_info("Test Class", "run_phase", UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      16         0        16     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /testbench_sv_unit --
+
+  File ../tb/transaction.sv
+----------------Focused Condition View-------------------
+Line       20 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       20 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          2  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       21 Item    1  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       21 Item    2  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       21 Item    3  (this.P_addr !== local_data__.P_addr)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                             Input Term   Covered  Reason for no coverage   Hint
+                            -----------  --------  -----------------------  --------------
+  (this.P_addr !== local_data__.P_addr)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                               Non-masking condition(s)      
+ ---------  ---------  --------------------                     -------------------------     
+  Row   1:    ***0***  (this.P_addr !== local_data__.P_addr)_0  -                             
+  Row   2:    ***0***  (this.P_addr !== local_data__.P_addr)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       21 Item    4  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                                                                                                              Input Term   Covered  Reason for no coverage   Hint
+                                                                                                                             -----------  --------  -----------------------  --------------
+  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                                                                                                                Non-masking condition(s)      
+ ---------  ---------  --------------------                                                                                                                      -------------------------     
+  Row   1:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_0  -                             
+  Row   2:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_1  -                             
+
+----------------Focused Condition View-------------------
+Line       22 Item    1  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       22 Item    2  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       22 Item    3  (this.P_wdata !== local_data__.P_wdata)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                               Input Term   Covered  Reason for no coverage   Hint
+                              -----------  --------  -----------------------  --------------
+  (this.P_wdata !== local_data__.P_wdata)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                 Non-masking condition(s)      
+ ---------  ---------  --------------------                       -------------------------     
+  Row   1:    ***0***  (this.P_wdata !== local_data__.P_wdata)_0  -                             
+  Row   2:    ***0***  (this.P_wdata !== local_data__.P_wdata)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       22 Item    4  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                                                                                                              Input Term   Covered  Reason for no coverage   Hint
+                                                                                                                             -----------  --------  -----------------------  --------------
+  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                                                                                                                Non-masking condition(s)      
+ ---------  ---------  --------------------                                                                                                                      -------------------------     
+  Row   1:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_0  -                             
+  Row   2:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_1  -                             
+
+----------------Focused Condition View-------------------
+Line       23 Item    1  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       23 Item    2  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       23 Item    3  (this.P_rdata !== local_data__.P_rdata)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                               Input Term   Covered  Reason for no coverage   Hint
+                              -----------  --------  -----------------------  --------------
+  (this.P_rdata !== local_data__.P_rdata)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                 Non-masking condition(s)      
+ ---------  ---------  --------------------                       -------------------------     
+  Row   1:    ***0***  (this.P_rdata !== local_data__.P_rdata)_0  -                             
+  Row   2:    ***0***  (this.P_rdata !== local_data__.P_rdata)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       23 Item    4  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                                                                                                              Input Term   Covered  Reason for no coverage   Hint
+                                                                                                                             -----------  --------  -----------------------  --------------
+  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                                                                                                                Non-masking condition(s)      
+ ---------  ---------  --------------------                                                                                                                      -------------------------     
+  Row   1:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_0  -                             
+  Row   2:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       3 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       3 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+
+
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     190       112        78    58.94%
+
+================================Statement Details================================
+
+Statement Coverage for instance /testbench_sv_unit --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/transaction.sv
+    20              1         `uvm_object_utils_begin(transaction)
+    20              2     
+    20              3     
+    20              4     
+    20              5     
+    20              7     
+    20              8     
+    20             10     
+    21              1         `uvm_field_int(P_addr, UVM_ALL_ON)
+    21              2     
+    21              3     
+    21              4     
+    21              5     
+    21              6     
+    21              7     
+    21              8     
+    21              9     
+    21             11     
+    21             12     
+    21             13     
+    21             14     
+    21             15     
+    21             16     
+    22              1         `uvm_field_int(P_wdata, UVM_ALL_ON)
+    22              2     
+    22              3     
+    22              4     
+    22              5     
+    22              6     
+    22              7     
+    22              8     
+    22              9     
+    22             11     
+    22             12     
+    22             13     
+    22             14     
+    22             15     
+    22             16     
+    23              1         `uvm_field_int(P_rdata, UVM_ALL_ON)
+    23              2     
+    23              3     
+    23              4     
+    23              5     
+    23              6     
+    23              7     
+    23              8     
+    23              9     
+    23             11     
+    23             12     
+    23             13     
+    23             14     
+    23             15     
+    23             16     
+  File ../tb/sequence.sv
+    3               1         `uvm_object_utils(apb_sequence) 
+    3               2     
+    3               3     
+    3               4     
+    3               5     
+    3               7     
+    3               8     
+    3               9     
+    3              10     
+  File ../tb/sequencer.sv
+    3               1       `uvm_component_utils(apb_sequencer) // register class to the factory
+    3               2     
+  File ../tb/driver.sv
+    3               1         `uvm_component_utils(apb_driver) // Register class with the factory
+    3               2     
+    18              1                 `uvm_fatal("no_inif in driver","virtual interface get failed from config db")
+  File ../tb/monitor.sv
+    3               1         `uvm_component_utils(apb_monitor)
+    3               2     
+    23              1           `uvm_fatal("no_inif in driver","virtual interface get failed from config db");
+  File ../tb/agent.sv
+    3               1       `uvm_component_utils(apb_agent) // register class to the factory
+    3               2     
+  File ../tb/scoreboard.sv
+    2               1       `uvm_component_utils(apb_scoreboard) // reg class to uvm factory
+    2               2     
+  File ../tb/environment.sv
+    3               1       `uvm_component_utils(apb_env) // register class to the factory
+    3               2     
+  File ../tb/test.sv
+    13              1       `uvm_component_utils(apb_test) // register class to the factory
+    13              2     
+
+
+Total Coverage By Instance (filtered view): 36.46%
+

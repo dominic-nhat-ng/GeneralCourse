@@ -9,7 +9,7 @@ module testbench;
         string test_name;
 
         if (!$value$plusargs("UVM_TESTNAME=%s", test_name)) begin
-            test_name = "test_example"; // Chạy test mặc định nếu không có argument
+            test_name = "test_example"; 
         end
 
         $display("Running test: %s", test_name);

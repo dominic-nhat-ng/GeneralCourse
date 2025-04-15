@@ -24,9 +24,9 @@ module testbench;
     end
 
     initial begin
-        rstn = 1;
-        repeat(2) @(posedge clk);
         rstn = 0;
+        repeat(2) @(posedge clk);
+        rstn = 1;
     end
 
     ahb_intf intf(.HCLK(clk), .HRSTN(rstn));
@@ -48,7 +48,7 @@ module testbench;
         .HWRITE(intf.HWRITE),
         .HSIZE(intf.HSIZE),
         //output of ip
-        .HREADYOUT(intf.HREADY),
+        .HREADYOUT(intf.HREADYOUT),
         .HRESP(intf.HRESP),
         .HRDATA(intf.HRDATA)
     );
