@@ -1,0 +1,870 @@
+################################################################################
+#
+# Created by icc2 save_upf on Tue Aug 22 10:28:18 2017
+#
+################################################################################
+
+################################################################################
+#
+# Units
+# time_unit               : 1e-09
+# resistance_unit         : 1000000
+# capacitive_load_unit    : 1e-15
+# voltage_unit            : 1
+# current_unit            : 1e-06
+# power_unit              : 1e-12
+################################################################################
+
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_top/bit_top.nlib/bit_top/design_label.chip_finish/design.upf on Tue Aug 22 10:28:04 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_37429_temp_upf_Saq3iA on Tue Aug 22 10:26:53 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_37017_temp_upf_anEWxy on Tue Aug 22 10:25:46 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_35856_temp_upf_MDpAlX on Tue Aug 22 10:23:41 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_32216_temp_upf_ACI1CN on Tue Aug 22 10:20:54 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_25967_temp_upf_nmKMSl on Tue Aug 22 10:16:59 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_30637_temp_upf_KrIhOa on Tue Aug 22 10:06:02 2017
+## Start - load_upf -noecho /tmp/_bit_top_1850_28358_temp_upf_I5Lj4t on Tue Aug 22 10:02:38 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_top/bit_top.nlib/bit_top/design_label.init_design/design.upf on Tue Aug 22 10:01:42 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/write_data/bit_top.nlib/bit_top/design_label.init_design/design.upf on Tue Aug 22 08:07:47 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/budgeting/bit_top.nlib/bit_top/design.upf on Tue Aug 22 07:45:18 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/pre_timing/bit_top.nlib/bit_top/design.upf on Tue Aug 22 06:04:53 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/create_power/bit_top.nlib/bit_top/design.upf on Tue Aug 22 05:46:15 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/placement/bit_top.nlib/bit_top/design.upf on Tue Aug 22 05:35:52 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/shaping/bit_top.nlib/bit_top/design.upf on Tue Aug 22 05:27:53 2017
+## Start - load_upf /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/split/bit_top/top.upf on Tue Aug 22 05:13:17 2017
+set_design_attributes -elements . -attribute lower_domain_boundary false
+create_supply_net VDDH
+create_supply_net VDDL
+create_supply_net VDDM -resolve parallel
+create_supply_net VSS
+create_supply_net piso_sw_out -resolve parallel
+create_supply_net sipo_sw_out -resolve parallel
+create_supply_set SS
+create_supply_set SSL
+create_supply_set SSL_PISO_SLICE_SW
+create_supply_set SSL_SIPO_SLICE_SW
+create_supply_set SS_MEM_SW
+create_supply_set SSL_PISO_SW
+create_supply_set SSL_SIPO_SW
+create_supply_port VDDH
+create_supply_port VDDL
+create_supply_port VDDM -direction out
+create_supply_port VSS
+create_supply_port piso_sw_out -direction out
+create_supply_port sipo_sw_out -direction out
+
+create_power_domain TOP
+create_power_domain PD_SIPO_SLICE -elements {sipo_slice_first sipo_slice_last}
+create_power_domain PD_PISO_SLICE -elements {piso_slice_last piso_slice_first}
+
+create_supply_set SS -function {power VDDH} -function {ground VSS} -update
+create_supply_set SSL -function {power VDDL} -function {ground VSS} -update
+create_supply_set SSL_PISO_SLICE_SW -function {power piso_sw_out} -function {ground VSS} -update
+create_supply_set SSL_SIPO_SLICE_SW -function {power sipo_sw_out} -function {ground VSS} -update
+create_supply_set SS_MEM_SW -function {power VDDM} -function {ground VSS} -update
+create_supply_set SSL_PISO_SW -function {power piso_sw_out} -function {ground VSS} -update
+create_supply_set SSL_SIPO_SW -function {power sipo_sw_out} -function {ground VSS} -update
+
+connect_supply_net piso_sw_out -ports {piso_sw_out slice_0/piso_sw_out slice_1/piso_sw_out slice_2/piso_sw_out slice_3/piso_sw_out slice_4/piso_sw_out slice_5/piso_sw_out slice_6/piso_sw_out slice_7/piso_sw_out slice_8/piso_sw_out slice_9/piso_sw_out slice_10/piso_sw_out slice_11/piso_sw_out slice_12/piso_sw_out slice_13/piso_sw_out slice_14/piso_sw_out slice_15/piso_sw_out slice_16/piso_sw_out slice_17/piso_sw_out slice_18/piso_sw_out slice_19/piso_sw_out slice_20/piso_sw_out slice_21/piso_sw_out slice_22/piso_sw_out slice_23/piso_sw_out slice_24/piso_sw_out slice_25/piso_sw_out slice_26/piso_sw_out slice_27/piso_sw_out slice_28/piso_sw_out slice_29/piso_sw_out slice_30/piso_sw_out slice_31/piso_sw_out}
+## (icc2-modified) connect_supply_net piso_sw_out -ports {snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_doutISO_PISO_OUT/VDDL snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_dout_0_ISO_PISO_OUT/VDDL snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_scan_out5ISO_PISO_OUT/VDDL piso_slice_first/load_UPF_LS/VDDL piso_slice_first/reset_UPF_LS/VDDL piso_slice_first/scan_enable_UPF_LS/VDDL piso_slice_last/load_UPF_LS/VDDL piso_slice_last/reset_UPF_LS/VDDL piso_slice_last/scan_enable_UPF_LS/VDDL U146/VDDG U103/VDDG U140/VDDG U124/VDDG U178/VDDG U99/VDDG U145/VDDG U157/VDDG U167/VDDG U123/VDDG U115/VDDG U180/VDDG U168/VDDG U148/VDDG U147/VDDG U116/VDDG U100/VDDG U96/VDDG U91/VDDG U87/VDDG U158/VDDG U137/VDDG U117/VDDG U132/VDDG U125/VDDG U154/VDDG U176/VDDG U165/VDDG U182/VDDG U149/VDDG U141/VDDG U138/VDDG U143/VDDG U85/VDDG U142/VDDG U131/VDDG U164/VDDG U134/VDDG U181/VDDG U175/VDDG U174/VDDG U159/VDDG U169/VDDG U152/VDDG U160/VDDG U166/VDDG U156/VDDG U170/VDDG U89/VDDG U120/VDDG U162/VDDG U114/VDDG U127/VDDG U130/VDDG U151/VDDG U112/VDDG}
+connect_supply_net piso_sw_out -ports {snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_doutISO_PISO_OUT/VDDL snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_dout_0_ISO_PISO_OUT/VDDL snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_scan_out5ISO_PISO_OUT/VDDL piso_slice_first/load_UPF_LS/VDDL piso_slice_first/reset_UPF_LS/VDDL piso_slice_first/scan_enable_UPF_LS/VDDL piso_slice_last/load_UPF_LS/VDDL piso_slice_last/reset_UPF_LS/VDDL piso_slice_last/scan_enable_UPF_LS/VDDL U170/VDDG}
+connect_supply_net sipo_sw_out -ports {sipo_sw_out slice_0/sipo_sw_out slice_1/sipo_sw_out slice_2/sipo_sw_out slice_3/sipo_sw_out slice_4/sipo_sw_out slice_5/sipo_sw_out slice_6/sipo_sw_out slice_7/sipo_sw_out slice_8/sipo_sw_out slice_9/sipo_sw_out slice_10/sipo_sw_out slice_11/sipo_sw_out slice_12/sipo_sw_out slice_13/sipo_sw_out slice_14/sipo_sw_out slice_15/sipo_sw_out slice_16/sipo_sw_out slice_17/sipo_sw_out slice_18/sipo_sw_out slice_19/sipo_sw_out slice_20/sipo_sw_out slice_21/sipo_sw_out slice_22/sipo_sw_out slice_23/sipo_sw_out slice_24/sipo_sw_out slice_25/sipo_sw_out slice_26/sipo_sw_out slice_27/sipo_sw_out slice_28/sipo_sw_out slice_29/sipo_sw_out slice_30/sipo_sw_out slice_31/sipo_sw_out}
+## (icc2-modified) connect_supply_net sipo_sw_out -ports {U249/VDDG U237/VDDG U230/VDDG U219/VDDG U235/VDDG U245/VDDG U136/VDDG U233/VDDG U247/VDDG U243/VDDG U241/VDDG U248/VDDG U218/VDDG U217/VDDG U252/VDDG U224/VDDG U238/VDDG U228/VDDG U232/VDDG U216/VDDG U244/VDDG U250/VDDG U240/VDDG U226/VDDG U239/VDDG U287/VDDG U231/VDDG U223/VDDG U221/VDDG U242/VDDG U229/VDDG U234/VDDG U290/VDDG U236/VDDG U246/VDDG U139/VDDG U172/VDDG U289/VDDG U150/VDDG U227/VDDG U220/VDDG U222/VDDG U251/VDDG U225/VDDG snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0__0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wrISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wr_0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1__0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3__0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2__0_ISO_SIPO_OUT/VDDL sipo_slice_first/sin_UPF_LS/VDDL sipo_slice_first/scan_in1_UPF_LS/VDDL sipo_slice_first/reset_UPF_LS/VDDL sipo_slice_first/scan_enable_UPF_LS/VDDL sipo_slice_last/sin_UPF_LS/VDDL sipo_slice_last/scan_enable_UPF_LS/VDDL sipo_slice_last/reset_UPF_LS/VDDL}
+connect_supply_net sipo_sw_out -ports {U237/VDDG U226/VDDG U239/VDDG U290/VDDG U172/VDDG U150/VDDG snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0__0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wrISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wr_0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1__0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3__0_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VDDL snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2__0_ISO_SIPO_OUT/VDDL sipo_slice_first/sin_UPF_LS/VDDL sipo_slice_first/scan_in1_UPF_LS/VDDL sipo_slice_first/reset_UPF_LS/VDDL sipo_slice_first/scan_enable_UPF_LS/VDDL sipo_slice_last/sin_UPF_LS/VDDL sipo_slice_last/scan_enable_UPF_LS/VDDL sipo_slice_last/reset_UPF_LS/VDDL}
+connect_supply_net VSS -ports {VSS slice_0/VSS slice_1/VSS slice_2/VSS slice_3/VSS slice_4/VSS slice_5/VSS slice_6/VSS slice_7/VSS slice_8/VSS slice_9/VSS slice_10/VSS slice_11/VSS slice_12/VSS slice_13/VSS slice_14/VSS slice_15/VSS slice_16/VSS slice_17/VSS slice_18/VSS slice_19/VSS slice_20/VSS slice_21/VSS slice_22/VSS slice_23/VSS slice_24/VSS slice_25/VSS slice_26/VSS slice_27/VSS slice_28/VSS slice_29/VSS slice_30/VSS slice_31/VSS}
+connect_supply_net VSS -ports {snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0__0_ISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wrISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VSS CLK_UPF_LS/VSS EN_UPF_LS/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wr_0_ISO_SIPO_OUT/VSS snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_doutISO_PISO_OUT/VSS snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_dout_0_ISO_PISO_OUT/VSS EN_1_UPF_LS/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1__0_ISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3__0_ISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VSS snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2__0_ISO_SIPO_OUT/VSS snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_scan_out5ISO_PISO_OUT/VSS lreset_sync/CLK_UPF_LS/VSS sipo_slice_first/sin_UPF_LS/VSS sipo_slice_first/scan_in1_UPF_LS/VSS sipo_slice_first/reset_UPF_LS/VSS sipo_slice_first/scan_enable_UPF_LS/VSS sipo_slice_last/sin_UPF_LS/VSS sipo_slice_last/scan_enable_UPF_LS/VSS sipo_slice_last/reset_UPF_LS/VSS piso_slice_first/load_UPF_LS/VSS piso_slice_first/reset_UPF_LS/VSS piso_slice_first/scan_enable_UPF_LS/VSS piso_slice_last/load_UPF_LS/VSS piso_slice_last/reset_UPF_LS/VSS piso_slice_last/scan_enable_UPF_LS/VSS}
+connect_supply_net VDDL -ports {VDDL slice_0/VDDL slice_1/VDDL slice_2/VDDL slice_3/VDDL slice_4/VDDL slice_5/VDDL slice_6/VDDL slice_7/VDDL slice_8/VDDL slice_9/VDDL slice_10/VDDL slice_11/VDDL slice_12/VDDL slice_13/VDDL slice_14/VDDL slice_15/VDDL slice_16/VDDL slice_17/VDDL slice_18/VDDL slice_19/VDDL slice_20/VDDL slice_21/VDDL slice_22/VDDL slice_23/VDDL slice_24/VDDL slice_25/VDDL slice_26/VDDL slice_27/VDDL slice_28/VDDL slice_29/VDDL slice_30/VDDL slice_31/VDDL}
+connect_supply_net VDDL -ports {CLK_UPF_LS/VDDL EN_UPF_LS/VDDL EN_1_UPF_LS/VDDL lreset_sync/CLK_UPF_LS/VDDL sipo_slice_first/count_reg_1_/VDDG sipo_slice_first/count_reg_2_/VDDG sipo_slice_first/pout_reg_1_/VDDG sipo_slice_first/pout_reg_13_/VDDG sipo_slice_first/tmp_reg_12_/VDDG sipo_slice_first/wr_tmp_reg/VDDG sipo_slice_first/tmp_reg_13_/VDDG sipo_slice_first/tmp_reg_8_/VDDG sipo_slice_first/tmp_reg_6_/VDDG sipo_slice_first/tmp_reg_4_/VDDG sipo_slice_first/pout_reg_9_/VDDG sipo_slice_first/pout_reg_3_/VDDG sipo_slice_first/pout_reg_0_/VDDG sipo_slice_first/pout_reg_14_/VDDG sipo_slice_first/wr_addr_reg_1_/VDDG sipo_slice_first/addr_reg_2_/VDDG sipo_slice_first/tmp_reg_15_/VDDG sipo_slice_first/tmp_reg_2_/VDDG sipo_slice_first/tmp_reg_10_/VDDG sipo_slice_first/count_reg_0_/VDDG sipo_slice_first/tmp_reg_0_/VDDG sipo_slice_first/pout_reg_5_/VDDG sipo_slice_first/pout_reg_15_/VDDG sipo_slice_first/pout_reg_2_/VDDG sipo_slice_first/wr_1_reg/VDDG sipo_slice_first/tmp_reg_9_/VDDG sipo_slice_first/tmp_reg_7_/VDDG sipo_slice_first/addr_reg_0_/VDDG sipo_slice_first/wr_addr_reg_0_/VDDG sipo_slice_first/rd_addr_reg_2_/VDDG sipo_slice_first/rd_addr_reg_3_/VDDG sipo_slice_first/rd_addr_reg_1_/VDDG sipo_slice_first/rd_addr_reg_0_/VDDG sipo_slice_first/pout_reg_11_/VDDG sipo_slice_first/pout_reg_12_/VDDG sipo_slice_first/addr_reg_1_/VDDG sipo_slice_first/pout_reg_4_/VDDG sipo_slice_first/addr_reg_3_/VDDG sipo_slice_first/wr_addr_reg_3_/VDDG sipo_slice_first/tmp_reg_3_/VDDG sipo_slice_first/tmp_reg_14_/VDDG sipo_slice_first/tmp_reg_11_/VDDG sipo_slice_first/tmp_reg_5_/VDDG sipo_slice_first/wr_addr_reg_2_/VDDG sipo_slice_first/count_reg_3_/VDDG sipo_slice_first/pout_reg_6_/VDDG sipo_slice_first/pout_reg_7_/VDDG sipo_slice_first/pout_reg_10_/VDDG sipo_slice_first/pout_reg_8_/VDDG sipo_slice_first/wr_0_reg/VDDG sipo_slice_first/wr_reg/VDDG sipo_slice_first/rd_reg/VDDG sipo_slice_first/tmp_reg_1_/VDDG sipo_slice_last/rd_addr_reg_1_/VDDG sipo_slice_last/pout_reg_9_/VDDG sipo_slice_last/pout_reg_3_/VDDG sipo_slice_last/wr_1_reg/VDDG sipo_slice_last/tmp_reg_6_/VDDG sipo_slice_last/tmp_reg_3_/VDDG sipo_slice_last/tmp_reg_2_/VDDG sipo_slice_last/tmp_reg_12_/VDDG sipo_slice_last/wr_addr_reg_2_/VDDG sipo_slice_last/tmp_reg_0_/VDDG sipo_slice_last/rd_reg/VDDG sipo_slice_last/pout_reg_15_/VDDG sipo_slice_last/wr_addr_reg_3_/VDDG sipo_slice_last/tmp_reg_1_/VDDG sipo_slice_last/tmp_reg_7_/VDDG sipo_slice_last/tmp_reg_15_/VDDG sipo_slice_last/count_reg_3_/VDDG sipo_slice_last/pout_reg_5_/VDDG sipo_slice_last/addr_reg_0_/VDDG sipo_slice_last/pout_reg_6_/VDDG sipo_slice_last/pout_reg_14_/VDDG sipo_slice_last/pout_reg_12_/VDDG sipo_slice_last/pout_reg_13_/VDDG sipo_slice_last/pout_reg_4_/VDDG sipo_slice_last/wr_addr_reg_1_/VDDG sipo_slice_last/tmp_reg_11_/VDDG sipo_slice_last/pout_reg_11_/VDDG sipo_slice_last/pout_reg_10_/VDDG sipo_slice_last/pout_reg_2_/VDDG sipo_slice_last/tmp_reg_4_/VDDG sipo_slice_last/tmp_reg_14_/VDDG sipo_slice_last/pout_reg_1_/VDDG sipo_slice_last/tmp_reg_5_/VDDG sipo_slice_last/count_reg_2_/VDDG sipo_slice_last/tmp_reg_9_/VDDG sipo_slice_last/tmp_reg_13_/VDDG sipo_slice_last/rd_addr_reg_0_/VDDG sipo_slice_last/wr_reg/VDDG sipo_slice_last/addr_reg_2_/VDDG sipo_slice_last/addr_reg_3_/VDDG sipo_slice_last/addr_reg_1_/VDDG sipo_slice_last/wr_0_reg/VDDG sipo_slice_last/count_reg_0_/VDDG sipo_slice_last/pout_reg_7_/VDDG sipo_slice_last/wr_tmp_reg/VDDG sipo_slice_last/wr_addr_reg_0_/VDDG sipo_slice_last/rd_addr_reg_2_/VDDG sipo_slice_last/tmp_reg_8_/VDDG sipo_slice_last/pout_reg_0_/VDDG sipo_slice_last/tmp_reg_10_/VDDG sipo_slice_last/pout_reg_8_/VDDG sipo_slice_last/count_reg_1_/VDDG sipo_slice_last/rd_addr_reg_3_/VDDG piso_slice_last/temp_reg_11_/VDDG piso_slice_last/temp_reg_6_/VDDG piso_slice_last/temp_reg_12_/VDDG piso_slice_last/dout_reg/VDDG piso_slice_last/temp_reg_2_/VDDG piso_slice_last/temp_reg_8_/VDDG piso_slice_last/temp_reg_14_/VDDG piso_slice_last/temp_reg_4_/VDDG piso_slice_last/temp_reg_1_/VDDG piso_slice_last/temp_reg_13_/VDDG piso_slice_last/temp_reg_3_/VDDG piso_slice_last/temp_reg_0_/VDDG piso_slice_last/temp_reg_9_/VDDG piso_slice_last/temp_reg_15_/VDDG piso_slice_last/temp_reg_5_/VDDG piso_slice_last/temp_reg_7_/VDDG piso_slice_last/temp_reg_10_/VDDG piso_slice_first/temp_reg_4_/VDDG piso_slice_first/temp_reg_6_/VDDG piso_slice_first/temp_reg_15_/VDDG piso_slice_first/temp_reg_13_/VDDG piso_slice_first/temp_reg_7_/VDDG piso_slice_first/temp_reg_14_/VDDG piso_slice_first/temp_reg_3_/VDDG piso_slice_first/temp_reg_10_/VDDG piso_slice_first/dout_reg/VDDG piso_slice_first/temp_reg_0_/VDDG piso_slice_first/temp_reg_1_/VDDG piso_slice_first/temp_reg_5_/VDDG piso_slice_first/temp_reg_2_/VDDG piso_slice_first/temp_reg_9_/VDDG piso_slice_first/temp_reg_11_/VDDG piso_slice_first/temp_reg_8_/VDDG piso_slice_first/temp_reg_12_/VDDG}
+connect_supply_net VDDH -ports {VDDH slice_0/VDDH slice_1/VDDH slice_2/VDDH slice_3/VDDH slice_4/VDDH slice_5/VDDH slice_6/VDDH slice_7/VDDH slice_8/VDDH slice_9/VDDH slice_10/VDDH slice_11/VDDH slice_12/VDDH slice_13/VDDH slice_14/VDDH slice_15/VDDH slice_16/VDDH slice_17/VDDH slice_18/VDDH slice_19/VDDH slice_20/VDDH slice_21/VDDH slice_22/VDDH slice_23/VDDH slice_24/VDDH slice_25/VDDH slice_26/VDDH slice_27/VDDH slice_28/VDDH slice_29/VDDH slice_30/VDDH slice_31/VDDH}
+connect_supply_net VDDH -ports {snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0__0_ISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wrISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VDDH CLK_UPF_LS/VDDH EN_UPF_LS/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wr_0_ISO_SIPO_OUT/VDDH snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_doutISO_PISO_OUT/VDDH snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_dout_0_ISO_PISO_OUT/VDDH EN_1_UPF_LS/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1__0_ISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3__0_ISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VDDH snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2__0_ISO_SIPO_OUT/VDDH snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_scan_out5ISO_PISO_OUT/VDDH lreset_sync/CLK_UPF_LS/VDDH}
+connect_supply_net VDDM -ports {VDDM slice_0/VDDM slice_1/VDDM slice_2/VDDM slice_3/VDDM slice_4/VDDM slice_5/VDDM slice_6/VDDM slice_7/VDDM slice_8/VDDM slice_9/VDDM slice_10/VDDM slice_11/VDDM slice_12/VDDM slice_13/VDDM slice_14/VDDM slice_15/VDDM slice_16/VDDM slice_17/VDDM slice_18/VDDM slice_19/VDDM slice_20/VDDM slice_21/VDDM slice_22/VDDM slice_23/VDDM slice_24/VDDM slice_25/VDDM slice_26/VDDM slice_27/VDDM slice_28/VDDM slice_29/VDDM slice_30/VDDM slice_31/VDDM}
+
+associate_supply_set SS -handle TOP.primary
+associate_supply_set SSL_SIPO_SLICE_SW -handle PD_SIPO_SLICE.primary
+associate_supply_set SSL_PISO_SLICE_SW -handle PD_PISO_SLICE.primary
+
+set_isolation ISO_SIPO_OUT -domain PD_SIPO_SLICE -isolation_supply_set SS -clamp_value 1 -sink SS -name_suffix ISO_SIPO_OUT
+set_isolation_control ISO_SIPO_OUT -domain PD_SIPO_SLICE -isolation_signal {isolation_signals[0]} -isolation_sense high -location parent
+set_isolation ISO_PPP -domain PD_SIPO_SLICE -isolation_supply_set SSL -clamp_value 1 -source SSL_PISO_SLICE_SW -sink SSL_SIPO_SLICE_SW
+set_isolation_control ISO_PPP -domain PD_SIPO_SLICE -isolation_signal {isolation_signals[0]} -isolation_sense high -location parent
+set_isolation ISO_PISO_OUT -domain PD_PISO_SLICE -isolation_supply_set SS -clamp_value 1 -sink SS -name_suffix ISO_PISO_OUT
+set_isolation_control ISO_PISO_OUT -domain PD_PISO_SLICE -isolation_signal {isolation_signals[1]} -isolation_sense high -location parent
+set_retention RET_SIPO_SLICE -domain PD_SIPO_SLICE -retention_supply_set SSL
+set_retention_control RET_SIPO_SLICE -domain PD_SIPO_SLICE -save_signal {{retention_signals[0]} high} -restore_signal {{retention_signals[0]} low}
+map_retention_cell RET_SIPO_SLICE -domain PD_SIPO_SLICE -lib_cells {RSDFFARX1_HVT RSDFFARX2_HVT RSDFFARX1_RVT RSDFFARX2_RVT RSDFFARX1_LVT RSDFFARX2_LVT}
+set_retention RET_PISO_SLICE -domain PD_PISO_SLICE -retention_supply_set SSL
+set_retention_control RET_PISO_SLICE -domain PD_PISO_SLICE -save_signal {{retention_signals[1]} high} -restore_signal {{retention_signals[1]} low}
+map_retention_cell RET_PISO_SLICE -domain PD_PISO_SLICE -lib_cells {RSDFFARX1_HVT RSDFFARX2_HVT RSDFFARX1_RVT RSDFFARX2_RVT RSDFFARX1_LVT RSDFFARX2_LVT}
+
+create_power_switch SW_SIPO_SLICE -domain PD_SIPO_SLICE -output_supply_port {out SSL_SIPO_SLICE_SW.power} -input_supply_port {in VDDL} -control_port {shut_down_signal_SIPO_SLICE {shut_down_signals[0]}} -ack_port {ack_signal_SIPO_SLICE {PG_ack_signals[2]} {shut_down_signal_SIPO_SLICE}} -on_state {TOP_ON in {!shut_down_signal_SIPO_SLICE}}
+map_power_switch SW_SIPO_SLICE -domain PD_SIPO_SLICE -lib_cells {HEAD2X16_HVT  HEAD2X2_HVT  HEAD2X32_HVT  HEAD2X4_HVT  HEAD2X8_HVT  HEAD2X16_RVT HEAD2X2_RVT HEAD2X32_RVT HEAD2X4_RVT HEAD2X8_RVT HEAD2X16_LVT HEAD2X2_LVT HEAD2X32_LVT HEAD2X4_LVT HEAD2X8_LVT}
+create_power_switch SW_PISO_SLICE -domain PD_PISO_SLICE -output_supply_port {out SSL_PISO_SLICE_SW.power} -input_supply_port {in VDDL} -control_port {shut_down_signal_PISO_SLICE {shut_down_signals[1]}} -ack_port {ack_signal_PISO_SLICE {PG_ack_signals[3]} {shut_down_signal_PISO_SLICE}} -on_state {TOP_ON in {!shut_down_signal_PISO_SLICE}}
+map_power_switch SW_PISO_SLICE -domain PD_PISO_SLICE -lib_cells {HEAD2X16_HVT  HEAD2X2_HVT  HEAD2X32_HVT  HEAD2X4_HVT  HEAD2X8_HVT  HEAD2X16_RVT HEAD2X2_RVT HEAD2X32_RVT HEAD2X4_RVT HEAD2X8_RVT HEAD2X16_LVT HEAD2X2_LVT HEAD2X32_LVT HEAD2X4_LVT HEAD2X8_LVT}
+
+add_power_state SSL_PISO_SW -state SSL_PISO_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_PISO_SW -state SSL_PISO_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL_PISO_SW -state SSL_PISO_SECURE_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_PISO_SW -state SSL_PISO_SECURE_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL_PISO_SLICE_SW -state SSL_PISO_SLICE_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_PISO_SLICE_SW -state SSL_PISO_SLICE_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL_SIPO_SW -state SSL_SIPO_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_SIPO_SW -state SSL_SIPO_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_port_state sipo_sw_out -state {SSL_SIPO_SECURE_OFF off}
+add_port_state sipo_sw_out -state {SSL_SIPO_SECURE_ON 0.78}
+add_power_state SSL_SIPO_SLICE_SW -state SSL_SIPO_SLICE_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_SIPO_SLICE_SW -state SSL_SIPO_SLICE_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL -state SSL_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SS -state SS_ON {-supply_expr {power == `{FULL_ON, 0.85}}}
+add_power_state SS_MEM_SW -state MEM_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SS_MEM_SW -state MEM_ON {-supply_expr {power == `{FULL_ON, 0.85}}}
+add_power_state SS -state GND {-supply_expr {ground == `{FULL_ON, 0}}}
+create_pst pst -supplies {VDDH VDDL piso_sw_out VDDM sipo_sw_out VSS}
+add_pst_state state_1 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_ON MEM_ON SSL_SIPO_SECURE_ON GND}
+add_pst_state state_2 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_ON MEM_ON SSL_SIPO_SECURE_OFF GND}
+add_pst_state state_3 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_OFF MEM_ON SSL_SIPO_SECURE_ON GND}
+add_pst_state state_4 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_OFF MEM_ON SSL_SIPO_SECURE_OFF GND}
+set_port_attributes -ports {hclk reset data_in_serial memory_sleep scan_enable sipo_scan_in piso_scan_in hv_scan_in lv_scan_in} -driver_supply SS
+set_port_attributes -ports {lclk data_valid shut_down_signals[1] shut_down_signals[0] isolation_signals[1] isolation_signals[0] retention_signals[1] retention_signals[0]} -driver_supply SSL
+set_port_attributes -ports {sipo_scan_out piso_scan_out hv_scan_out lv_scan_out sout[1] sout[0] memory_address[3] memory_address[2] memory_address[1] memory_address[0] memory_ack PG_ack_signals[3] PG_ack_signals[2] PG_ack_signals[1] PG_ack_signals[0]} -receiver_supply SS
+## End - load_upf /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/split/bit_top/top.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/shaping/bit_top.nlib/bit_top/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/placement/bit_top.nlib/bit_top/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/create_power/bit_top.nlib/bit_top/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/pre_timing/bit_top.nlib/bit_top/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/budgeting/bit_top.nlib/bit_top/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/write_data/bit_top.nlib/bit_top/design_label.init_design/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_top/bit_top.nlib/bit_top/design_label.init_design/design.upf
+## End - load_upf -noecho /tmp/_bit_top_1850_28358_temp_upf_I5Lj4t
+## End - load_upf -noecho /tmp/_bit_top_1850_30637_temp_upf_KrIhOa
+## End - load_upf -noecho /tmp/_bit_top_1850_25967_temp_upf_nmKMSl
+## End - load_upf -noecho /tmp/_bit_top_1850_32216_temp_upf_ACI1CN
+## End - load_upf -noecho /tmp/_bit_top_1850_35856_temp_upf_MDpAlX
+## End - load_upf -noecho /tmp/_bit_top_1850_37017_temp_upf_anEWxy
+## End - load_upf -noecho /tmp/_bit_top_1850_37429_temp_upf_Saq3iA
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_top/bit_top.nlib/bit_top/design_label.chip_finish/design.upf
+
+## Constraints below are generated by icc2. Please do not modify.
+set derived_upf true
+
+if ($derived_upf) {
+
+connect_supply_net VDDL -ports {BINV_RR_775/VDDG BINV_RR_776/VDDG \
+    BUFT_RR_777/VDDG BUFT_RR_838/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C0_0/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C0_1/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C0_2/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C0_3/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C0_4/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C0_5/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C0_6/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C0_7/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C0_8/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C0_9/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C0_10/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C0_11/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C0_12/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C0_13/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C0_14/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C0_15/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C0_16/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C0_17/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C0_18/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C0_19/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C0_20/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C0_21/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C0_22/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C0_23/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C1_24/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C1_25/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C1_26/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C1_27/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C1_28/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C1_29/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C1_30/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C1_31/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C1_32/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C1_33/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C1_34/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C1_35/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C1_36/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C1_37/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C1_38/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C1_39/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C1_40/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C1_41/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C1_42/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C1_43/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C1_44/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C1_45/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C1_46/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C1_47/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C2_48/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C2_49/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C2_50/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C2_51/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C2_52/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C2_53/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C2_54/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C2_55/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C2_56/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C2_57/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C2_58/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C2_59/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C2_60/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C2_61/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C2_62/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C2_63/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C2_64/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C2_65/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C2_66/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C2_67/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C2_68/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C2_69/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C2_70/VDDG \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C2_71/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C0_72/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C0_73/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C0_74/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C0_75/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C0_76/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C0_77/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C0_78/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C0_79/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C0_80/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C0_81/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C0_82/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C0_83/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C0_84/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C0_85/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C0_86/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C0_87/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C0_88/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C0_89/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C0_90/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C0_91/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C0_92/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C0_93/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C0_94/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C0_95/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C0_96/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C0_97/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C1_98/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C1_99/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C1_100/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C1_101/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C1_102/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C1_103/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C1_104/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C1_105/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C1_106/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C1_107/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C1_108/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C1_109/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C1_110/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C1_111/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C1_112/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C1_113/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C1_114/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C1_115/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C1_116/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C1_117/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C1_118/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C1_119/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C1_120/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C1_121/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C1_122/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C1_123/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C2_124/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C2_125/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C2_126/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C2_127/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C2_128/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C2_129/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C2_130/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C2_131/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C2_132/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C2_133/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C2_134/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C2_135/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C2_136/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C2_137/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C2_138/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C2_139/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C2_140/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C2_141/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C2_142/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C2_143/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C2_144/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C2_145/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C2_146/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C2_147/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C2_148/VDDG \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C2_149/VDDG \
+    RLB__1701/VDDG BUFT_P_284/VDDG BUFT_P_287/VDDG BUFT_P_290/VDDG \
+    BUFT_P_295/VDDG BUFT_P_297/VDDG RLB__1769/VDDG \
+    sipo_slice_last/BUFT_P_463/VDDG sipo_slice_last/BUFT_P_465/VDDG \
+    sipo_slice_last/BUFT_P_466/VDDG sipo_slice_last/BUFT_P_467/VDDG \
+    sipo_slice_last/BUFT_P_468/VDDG sipo_slice_last/BUFT_P_469/VDDG \
+    sipo_slice_last/BUFT_P_470/VDDG sipo_slice_last/BUFT_P_471/VDDG \
+    sipo_slice_first/BUFT_P_478/VDDG sipo_slice_first/BUFT_P_479/VDDG \
+    sipo_slice_first/BUFT_P_481/VDDG sipo_slice_first/BUFT_P_482/VDDG \
+    sipo_slice_first/BUFT_P_483/VDDG sipo_slice_first/BUFT_P_484/VDDG \
+    sipo_slice_first/BUFT_P_485/VDDG sipo_slice_first/BUFT_P_486/VDDG \
+    sipo_slice_first/BUFT_P_487/VDDG RLB__1795/VDDG \
+    sipo_slice_last/BUFT_P_499/VDDG sipo_slice_first/BUFT_P_500/VDDG \
+    BUFT_P_506/VDDG RLB__1818/VDDG piso_slice_first/BUFT_P_569/VDDG \
+    piso_slice_first/BUFT_P_570/VDDG piso_slice_first/BUFT_P_571/VDDG \
+    BUFT_P_577/VDDG BUFT_P_587/VDDG BUFT_P_593/VDDG RLB__1907/VDDG \
+    RLB__1770/VDDG RLB__25037/VDDG BUFT_RR_1177/VDDG RLB__1839/VDDG \
+    RLB__1889/VDDG BUFT_RR_1963/VDDG BUFT_RR_1964/VDDG RLB__25093/VDDG \
+    BUFT_P_2087/VDDG BUFT_RR_25202/VDDG BUFT_P_25262/VDDG BUFT_RR_2162/VDDG \
+    BUFT_P_25270/VDDG BUFT_P_25290/VDDG BUFT_P_25297/VDDG BUFT_P_25300/VDDG \
+    BUFT_P_25305/VDDG BUFT_P_25307/VDDG BUFT_RR_2228/VDDG BUFT_RR_25318/VDDG \
+    BUFT_RR_25319/VDDG BUFT_RR_25388/VDDG BUFT_RR_25390/VDDG BUFT_RR_25391/VDDG \
+    BUFT_RR_25393/VDDG BUFT_RR_25394/VDDG BUFT_P_2319/VDDG BUFT_RR_25396/VDDG \
+    BUFT_RR_25397/VDDG BUFT_RR_25400/VDDG BUFT_RR_25401/VDDG BUFT_RR_25404/VDDG \
+    BUFT_RR_25408/VDDG BUFT_RR_25416/VDDG BUFT_RR_25417/VDDG BUFT_P_25420/VDDG \
+    BUFT_P_25421/VDDG BUFT_P_25422/VDDG BUFT_P_25423/VDDG BUFT_P_25425/VDDG \
+    BUFT_P_25431/VDDG BUFT_P_25432/VDDG BUFT_P_25433/VDDG BUFT_P_25434/VDDG \
+    BUFT_P_25435/VDDG BUFT_P_25437/VDDG BUFT_P_25438/VDDG BUFT_P_25439/VDDG \
+    cts_inv_1260014965/VDDG cts_inv_1260514970/VDDG cts_inv_1260714972/VDDG \
+    cts_inv_1260814973/VDDG cts_inv_1260914974/VDDG cts_inv_1261014975/VDDG \
+    cts_inv_1261114976/VDDG cts_inv_1261214977/VDDG cts_inv_1261314978/VDDG \
+    cts_inv_1261414979/VDDG cts_inv_1261514980/VDDG cts_inv_1261614981/VDDG \
+    cts_inv_1261714982/VDDG cts_inv_1261814983/VDDG cts_inv_1261914984/VDDG \
+    cts_inv_1262014985/VDDG cts_inv_1262114986/VDDG cts_inv_1262214987/VDDG \
+    cts_inv_1262314988/VDDG cts_inv_1262414989/VDDG cts_inv_1262514990/VDDG \
+    cts_inv_1262614991/VDDG cts_inv_1262714992/VDDG cts_inv_1262814993/VDDG \
+    cts_inv_1262914994/VDDG cts_inv_1263014995/VDDG cts_inv_1263114996/VDDG \
+    cts_inv_1263214997/VDDG cts_inv_1263314998/VDDG cts_inv_1263414999/VDDG \
+    cts_inv_1263515000/VDDG cts_inv_1263615001/VDDG cts_inv_1263715002/VDDG \
+    cts_inv_1263815003/VDDG cts_inv_1263915004/VDDG cts_inv_1264015005/VDDG \
+    cts_inv_1264115006/VDDG cts_inv_1264215007/VDDG cts_inv_1264315008/VDDG \
+    cts_inv_1264415009/VDDG cts_inv_1264515010/VDDG cts_inv_1264615011/VDDG \
+    cts_inv_1264715012/VDDG cts_inv_1264815013/VDDG cts_inv_1264915014/VDDG \
+    cts_inv_1265015015/VDDG cts_inv_1265115016/VDDG cts_inv_1265215017/VDDG \
+    cts_inv_1265315018/VDDG cts_inv_1265415019/VDDG cto_buf_drc_20982/VDDG \
+    cto_buf_drc_21070/VDDG cto_buf_drc_21159/VDDG cto_buf_drc_21161/VDDG \
+    cto_buf_drc_21162/VDDG cto_buf_drc_21165/VDDG cto_buf_drc_21166/VDDG \
+    cto_buf_drc_21167/VDDG cto_buf_drc_21168/VDDG cto_buf_drc_21169/VDDG \
+    cto_buf_drc_21170/VDDG cto_buf_drc_21171/VDDG cto_buf_drc_21173/VDDG \
+    cto_buf_drc_21174/VDDG cto_buf_drc_21175/VDDG cto_buf_drc_21179/VDDG \
+    cto_buf_drc_21180/VDDG cto_buf_drc_21182/VDDG cto_buf_drc_21183/VDDG \
+    cto_buf_drc_21184/VDDG cto_buf_drc_21185/VDDG cto_buf_drc_21186/VDDG \
+    cto_buf_drc_21187/VDDG cto_buf_drc_21188/VDDG cto_buf_drc_21189/VDDG \
+    inv_drc_cln21424/VDDG cto_buf_drc_21425/VDDG cto_buf_drc_21427/VDDG \
+    cto_buf_drc_21428/VDDG cto_buf_drc_21429/VDDG cto_buf_drc_21430/VDDG \
+    cto_buf_drc_21431/VDDG cto_buf_drc_21432/VDDG cto_buf_drc_21435/VDDG \
+    cto_buf_drc_21437/VDDG cto_buf_drc_21438/VDDG cto_buf_drc_21439/VDDG \
+    cto_buf_drc_21440/VDDG cto_buf_drc_21441/VDDG cto_buf_drc_21442/VDDG \
+    cto_buf_drc_21443/VDDG cto_buf_drc_21444/VDDG cto_buf_drc_21445/VDDG \
+    cto_buf_drc_21446/VDDG cto_inv_cln_22277/VDDG cto_inv_cln_22278/VDDG \
+    cto_inv_cln_22288/VDDG cto_inv_cln_22289/VDDG cto_inv_cln_22290/VDDG \
+    cto_inv_cln_22291/VDDG cto_inv_cln_22292/VDDG cto_inv_cln_22293/VDDG \
+    cto_buf_22528/VDDG cto_buf_22530/VDDG cto_buf_22531/VDDG \
+    cto_dtrdly_22533/VDDG cto_dtrdly_22536/VDDG cto_dtrdly_22538/VDDG \
+    cto_dtrdly_22539/VDDG cto_buf_22542/VDDG cto_buf_22543/VDDG \
+    cto_buf_22544/VDDG cto_buf_22545/VDDG cto_buf_22546/VDDG cto_buf_22547/VDDG \
+    cto_buf_22548/VDDG cto_buf_22549/VDDG cto_buf_22550/VDDG cto_buf_22551/VDDG \
+    cto_buf_22552/VDDG cto_buf_22553/VDDG cto_buf_22554/VDDG cto_buf_22555/VDDG \
+    cto_buf_22556/VDDG cto_buf_22594/VDDG BUFT_P_25441/VDDG BUFT_P_25442/VDDG \
+    BUFT_P_25443/VDDG BUFT_P_25444/VDDG BUFT_P_25445/VDDG BUFT_P_25447/VDDG \
+    BUFT_P_25448/VDDG BUFT_P_25451/VDDG BUFT_P_25452/VDDG BUFT_P_25454/VDDG \
+    BUFT_P_25455/VDDG BUFT_P_25457/VDDG BUFT_P_25458/VDDG BUFT_P_25459/VDDG \
+    BUFT_P_25460/VDDG BUFT_P_25461/VDDG BUFT_P_25462/VDDG BUFT_P_25463/VDDG \
+    BUFT_P_25464/VDDG BUFT_P_25465/VDDG BUFT_P_25467/VDDG BUFT_P_25469/VDDG \
+    BUFT_P_25470/VDDG BUFT_P_25471/VDDG BUFT_P_25472/VDDG BUFT_P_25473/VDDG \
+    BUFT_P_25474/VDDG BUFT_P_25475/VDDG BUFT_P_25476/VDDG BUFT_P_25477/VDDG \
+    BUFT_P_25478/VDDG BUFT_P_25479/VDDG BUFT_P_25480/VDDG BUFT_P_25481/VDDG \
+    BUFT_P_25483/VDDG BUFT_P_25484/VDDG BUFT_P_25485/VDDG BUFT_P_25486/VDDG \
+    BUFT_P_25487/VDDG BUFT_P_25488/VDDG BUFT_P_25489/VDDG BUFT_P_25491/VDDG \
+    BUFT_P_25492/VDDG BUFT_P_25493/VDDG BUFT_P_25494/VDDG BUFT_P_25495/VDDG \
+    BUFT_P_25499/VDDG BUFT_P_25502/VDDG BUFT_P_25504/VDDG BUFT_P_25505/VDDG \
+    BUFT_P_25506/VDDG BUFT_P_25507/VDDG BUFT_RR_23855/VDDG BUFT_RR_23856/VDDG \
+    BUFT_RR_23908/VDDG BUFT_RR_23941/VDDG BUFT_RR_23954/VDDG BUFT_P_23956/VDDG \
+    BINV_RR_24295/VDDG BINV_RR_24296/VDDG BUFT_RR_24297/VDDG BUFT_RR_24299/VDDG \
+    BUFT_P_24631/VDDG sipo_slice_first/ropt_mt_inst_25744/VDDG \
+    piso_slice_last/ropt_mt_inst_25745/VDDG \
+    sipo_slice_first/ropt_mt_inst_25746/VDDG \
+    piso_slice_last/ropt_mt_inst_25747/VDDG \
+    sipo_slice_first/ropt_mt_inst_25748/VDDG \
+    piso_slice_last/ropt_mt_inst_25749/VDDG \
+    sipo_slice_first/ropt_mt_inst_25750/VDDG \
+    piso_slice_last/ropt_mt_inst_25751/VDDG \
+    sipo_slice_first/ropt_mt_inst_25752/VDDG \
+    piso_slice_last/ropt_mt_inst_25753/VDDG \
+    sipo_slice_first/ropt_mt_inst_25754/VDDG \
+    piso_slice_last/ropt_mt_inst_25755/VDDG \
+    sipo_slice_first/ropt_mt_inst_25756/VDDG \
+    piso_slice_last/ropt_mt_inst_25757/VDDG \
+    sipo_slice_first/ropt_mt_inst_25758/VDDG \
+    piso_slice_last/ropt_mt_inst_25759/VDDG \
+    sipo_slice_first/ropt_mt_inst_25760/VDDG \
+    piso_slice_last/ropt_mt_inst_25761/VDDG \
+    sipo_slice_first/ropt_mt_inst_25762/VDDG \
+    piso_slice_last/ropt_mt_inst_25763/VDDG \
+    sipo_slice_first/ropt_mt_inst_25764/VDDG \
+    piso_slice_last/ropt_mt_inst_25765/VDDG \
+    sipo_slice_first/ropt_mt_inst_25766/VDDG \
+    piso_slice_last/ropt_mt_inst_25767/VDDG \
+    sipo_slice_first/ropt_mt_inst_25768/VDDG \
+    piso_slice_last/ropt_mt_inst_25769/VDDG \
+    sipo_slice_first/ropt_mt_inst_25770/VDDG \
+    piso_slice_last/ropt_mt_inst_25771/VDDG \
+    sipo_slice_first/ropt_mt_inst_25772/VDDG \
+    piso_slice_last/ropt_mt_inst_25773/VDDG \
+    sipo_slice_first/ropt_mt_inst_25774/VDDG ropt_mt_inst_25775/VDDG \
+    piso_slice_last/ropt_mt_inst_25776/VDDG ropt_mt_inst_25777/VDDG \
+    ropt_mt_inst_25778/VDDG ropt_mt_inst_25779/VDDG ropt_mt_inst_25780/VDDG \
+    ropt_mt_inst_25781/VDDG sipo_slice_first/ropt_mt_inst_25782/VDDG \
+    ropt_mt_inst_25783/VDDG ropt_mt_inst_25784/VDDG ropt_mt_inst_25785/VDDG \
+    piso_slice_last/ropt_mt_inst_25786/VDDG \
+    sipo_slice_first/ropt_mt_inst_25787/VDDG \
+    piso_slice_last/ropt_mt_inst_25788/VDDG \
+    sipo_slice_first/ropt_mt_inst_25789/VDDG \
+    piso_slice_last/ropt_mt_inst_25790/VDDG \
+    sipo_slice_first/ropt_mt_inst_25791/VDDG \
+    piso_slice_last/ropt_mt_inst_25792/VDDG \
+    sipo_slice_first/ropt_mt_inst_25793/VDDG \
+    piso_slice_last/ropt_mt_inst_25795/VDDG \
+    sipo_slice_first/ropt_mt_inst_25796/VDDG ropt_mt_inst_25797/VDDG \
+    ropt_mt_inst_25798/VDDG piso_slice_last/ropt_mt_inst_25799/VDDG \
+    sipo_slice_first/ropt_mt_inst_25800/VDDG \
+    piso_slice_last/ropt_mt_inst_25818/VDDG ropt_mt_inst_25820/VDDG \
+    ropt_mt_inst_25825/VDDG sipo_slice_first/ropt_mt_inst_25828/VDDG \
+    ropt_mt_inst_25830/VDDG piso_slice_last/ropt_mt_inst_25836/VDDG \
+    sipo_slice_first/ropt_mt_inst_25845/VDDG ropt_mt_inst_25855/VDDG \
+    sipo_slice_first/ropt_mt_inst_25897/VDDG \
+    sipo_slice_first/ropt_mt_inst_25898/VDDG \
+    sipo_slice_first/ropt_mt_inst_25899/VDDG \
+    piso_slice_last/ropt_mt_inst_25900/VDDG \
+    piso_slice_last/ropt_mt_inst_25901/VDDG \
+    sipo_slice_first/ropt_mt_inst_25902/VDDG \
+    sipo_slice_first/ropt_mt_inst_25903/VDDG \
+    piso_slice_last/ropt_mt_inst_25904/VDDG \
+    piso_slice_last/ropt_mt_inst_25905/VDDG \
+    sipo_slice_first/ropt_mt_inst_25906/VDDG \
+    sipo_slice_first/ropt_mt_inst_25907/VDDG \
+    piso_slice_last/ropt_mt_inst_25908/VDDG \
+    piso_slice_last/ropt_mt_inst_25909/VDDG \
+    sipo_slice_first/ropt_mt_inst_25910/VDDG \
+    sipo_slice_first/ropt_mt_inst_25911/VDDG \
+    piso_slice_last/ropt_mt_inst_25912/VDDG \
+    piso_slice_last/ropt_mt_inst_25913/VDDG \
+    sipo_slice_first/ropt_mt_inst_25914/VDDG \
+    sipo_slice_first/ropt_mt_inst_25915/VDDG \
+    piso_slice_last/ropt_mt_inst_25916/VDDG \
+    piso_slice_last/ropt_mt_inst_25917/VDDG \
+    sipo_slice_first/ropt_mt_inst_25918/VDDG \
+    sipo_slice_first/ropt_mt_inst_25919/VDDG \
+    piso_slice_last/ropt_mt_inst_25920/VDDG \
+    piso_slice_last/ropt_mt_inst_25921/VDDG \
+    sipo_slice_first/ropt_mt_inst_25922/VDDG \
+    sipo_slice_first/ropt_mt_inst_25923/VDDG \
+    piso_slice_last/ropt_mt_inst_25924/VDDG \
+    piso_slice_last/ropt_mt_inst_25925/VDDG \
+    sipo_slice_first/ropt_mt_inst_25926/VDDG \
+    piso_slice_last/ropt_mt_inst_25927/VDDG \
+    sipo_slice_first/ropt_mt_inst_25928/VDDG ropt_mt_inst_25929/VDDG \
+    ropt_mt_inst_25930/VDDG ropt_mt_inst_25931/VDDG ropt_mt_inst_25932/VDDG \
+    piso_slice_last/ropt_mt_inst_25933/VDDG \
+    sipo_slice_first/ropt_mt_inst_25934/VDDG \
+    sipo_slice_first/ropt_mt_inst_25935/VDDG \
+    piso_slice_last/ropt_mt_inst_25936/VDDG \
+    piso_slice_last/ropt_mt_inst_25937/VDDG \
+    sipo_slice_first/ropt_mt_inst_25938/VDDG \
+    piso_slice_last/ropt_mt_inst_25939/VDDG \
+    sipo_slice_first/ropt_mt_inst_25940/VDDG \
+    piso_slice_last/ropt_mt_inst_25941/VDDG \
+    sipo_slice_first/ropt_mt_inst_25942/VDDG \
+    piso_slice_last/ropt_mt_inst_25943/VDDG \
+    sipo_slice_first/ropt_mt_inst_25944/VDDG \
+    piso_slice_last/ropt_mt_inst_25945/VDDG \
+    sipo_slice_first/ropt_mt_inst_25946/VDDG ropt_mt_inst_25948/VDDG \
+    ropt_mt_inst_25950/VDDG piso_slice_last/ropt_mt_inst_25952/VDDG \
+    sipo_slice_first/ropt_mt_inst_25953/VDDG \
+    sipo_slice_first/ropt_mt_inst_25960/VDDG ropt_mt_inst_25986/VDDG \
+    ropt_mt_inst_25987/VDDG ropt_mt_inst_25989/VDDG ropt_mt_inst_25990/VDDG \
+    ropt_mt_inst_25991/VDDG sipo_slice_first/ropt_mt_inst_25976/VDDG \
+    piso_slice_last/ropt_mt_inst_25977/VDDG ropt_mt_inst_25978/VDDG \
+    ropt_mt_inst_25981/VDDG ropt_mt_inst_25984/VDDG}
+connect_supply_net VSS -ports \
+    {piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C0_0/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C0_1/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C0_2/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C0_3/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C0_4/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C0_5/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C0_6/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C0_7/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C0_8/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C0_9/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C0_10/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C0_11/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C0_12/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C0_13/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C0_14/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C0_15/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C0_16/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C0_17/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C0_18/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C0_19/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C0_20/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C0_21/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C0_22/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C0_23/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C1_24/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C1_25/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C1_26/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C1_27/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C1_28/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C1_29/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C1_30/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C1_31/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C1_32/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C1_33/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C1_34/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C1_35/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C1_36/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C1_37/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C1_38/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C1_39/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C1_40/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C1_41/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C1_42/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C1_43/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C1_44/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C1_45/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C1_46/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C1_47/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C2_48/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C2_49/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C2_50/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C2_51/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C2_52/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C2_53/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C2_54/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C2_55/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C2_56/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C2_57/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C2_58/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C2_59/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C2_60/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C2_61/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C2_62/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C2_63/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C2_64/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C2_65/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C2_66/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C2_67/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C2_68/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C2_69/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C2_70/VSS \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C2_71/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C0_72/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C0_73/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C0_74/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C0_75/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C0_76/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C0_77/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C0_78/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C0_79/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C0_80/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C0_81/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C0_82/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C0_83/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C0_84/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C0_85/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C0_86/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C0_87/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C0_88/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C0_89/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C0_90/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C0_91/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C0_92/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C0_93/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C0_94/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C0_95/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C0_96/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C0_97/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C1_98/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C1_99/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C1_100/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C1_101/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C1_102/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C1_103/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C1_104/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C1_105/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C1_106/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C1_107/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C1_108/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C1_109/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C1_110/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C1_111/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C1_112/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C1_113/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C1_114/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C1_115/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C1_116/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C1_117/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C1_118/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C1_119/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C1_120/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C1_121/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C1_122/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C1_123/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C2_124/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C2_125/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C2_126/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C2_127/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C2_128/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C2_129/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C2_130/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C2_131/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C2_132/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C2_133/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C2_134/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C2_135/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C2_136/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C2_137/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C2_138/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C2_139/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C2_140/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C2_141/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C2_142/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C2_143/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C2_144/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C2_145/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C2_146/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C2_147/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C2_148/VSS \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C2_149/VSS}
+connect_supply_net piso_sw_out -ports {RLB__24928/VDDG RLB__24929/VDDG \
+    RLB__24964/VDDG RLB__24965/VDDG BUFT_RR_24670/VDDG BUFT_RR_24671/VDDG \
+    RLB__24951/VDDG RLB__24952/VDDG BINV_RR_24688/VDDG BINV_RR_24690/VDDG \
+    BINV_RR_24691/VDDG RLB__24981/VDDG RLB__24968/VDDG BINV_RR_24701/VDDG \
+    BINV_RR_24702/VDDG RLB__24959/VDDG RLB__24960/VDDG RLB__24961/VDDG \
+    RLB__24982/VDDG BINV_RR_24709/VDDG RLB__24972/VDDG BINV_RR_24712/VDDG \
+    BINV_RR_24713/VDDG RLB__24973/VDDG RLB__24974/VDDG BINV_RR_24720/VDDG \
+    BINV_RR_24722/VDDG BUFT_RR_24725/VDDG RLB__24984/VDDG BUFT_RR_24727/VDDG \
+    RLB__24985/VDDG BINV_RR_24743/VDDG BINV_RR_24744/VDDG RLB__25047/VDDG \
+    BINV_RR_24760/VDDG BINV_RR_24761/VDDG BUFT_P_24819/VDDG BUFT_P_24820/VDDG \
+    BUFT_P_24822/VDDG AINV_P_24825/VDDG BUFT_P_24827/VDDG BUFT_P_24831/VDDG \
+    AINV_P_24837/VDDG AINV_P_24838/VDDG AINV_P_24841/VDDG AINV_P_24842/VDDG \
+    AINV_P_24874/VDDG RLB__25004/VDDG RLB__25005/VDDG BUFT_RR_25120/VDDG \
+    BINV_RR_25127/VDDG BINV_RR_25128/VDDG BUFT_RR_25131/VDDG BINV_RR_25138/VDDG \
+    BINV_RR_25139/VDDG BINV_RR_25153/VDDG BINV_RR_25154/VDDG BUFT_RR_25175/VDDG \
+    BUFT_P_25227/VDDG BUFT_P_25229/VDDG BUFT_P_25235/VDDG BUFT_P_25236/VDDG \
+    BUFT_P_25256/VDDG BINV_RR_25324/VDDG BINV_RR_25325/VDDG BINV_RR_25326/VDDG \
+    BINV_RR_25327/VDDG BINV_RR_25328/VDDG BINV_RR_25329/VDDG BINV_RR_25331/VDDG \
+    BINV_RR_25332/VDDG BINV_RR_25333/VDDG BINV_RR_25334/VDDG BINV_RR_25336/VDDG \
+    BINV_RR_25337/VDDG BINV_RR_25338/VDDG BINV_RR_25339/VDDG BINV_RR_25340/VDDG \
+    BINV_RR_25341/VDDG BINV_RR_25353/VDDG BINV_RR_25354/VDDG BINV_RR_25360/VDDG \
+    BINV_RR_25361/VDDG BINV_RR_25366/VDDG BINV_RR_25367/VDDG BINV_RR_25374/VDDG \
+    BINV_RR_25375/VDDG BUFT_P_25427/VDDG BUFT_P_25429/VDDG BINV_RR_860/VDDG \
+    RLB__1723/VDDG BINV_RR_866/VDDG BINV_RR_1429/VDDG BINV_RR_1431/VDDG \
+    BINV_RR_1438/VDDG RLB__1748/VDDG BINV_RR_1456/VDDG AINV_PR_518/VDDG \
+    BINV_RR_885/VDDG AINV_P_532/VDDG AINV_P_534/VDDG AINV_P_535/VDDG \
+    AINV_PR_536/VDDG BINV_RR_886/VDDG RLB__1744/VDDG AINV_PR_620/VDDG \
+    AINV_P_624/VDDG AINV_P_626/VDDG AINV_PR_630/VDDG AINV_PR_704/VDDG \
+    AINV_PR_705/VDDG BINV_RR_921/VDDG AINV_P_1202/VDDG BINV_RR_2168/VDDG \
+    BINV_RR_2197/VDDG BINV_RR_2198/VDDG BINV_R_24301/VDDG BINV_R_24304/VDDG \
+    BINV_RR_24311/VDDG BINV_RR_24312/VDDG BINV_R_24329/VDDG BINV_R_24332/VDDG \
+    BINV_RR_24333/VDDG BINV_RR_24334/VDDG BINV_RR_24351/VDDG BINV_RR_24358/VDDG \
+    BINV_RR_24359/VDDG BINV_RR_24363/VDDG BINV_RR_24364/VDDG BINV_RR_24366/VDDG \
+    BINV_RR_24367/VDDG BUFT_RR_24370/VDDG BUFT_RR_24372/VDDG BINV_RR_24379/VDDG \
+    BINV_RR_24380/VDDG BINV_RR_24384/VDDG BINV_RR_24385/VDDG BINV_RR_24388/VDDG \
+    BINV_RR_24389/VDDG BINV_RR_24390/VDDG BINV_RR_24391/VDDG BUFT_RR_24392/VDDG \
+    BINV_RR_24417/VDDG BINV_RR_24418/VDDG BINV_RR_24419/VDDG BINV_RR_24420/VDDG \
+    BINV_RR_24432/VDDG BINV_RR_24433/VDDG AINV_P_24496/VDDG AINV_P_24497/VDDG \
+    AINV_P_24498/VDDG AINV_P_24505/VDDG AINV_P_24506/VDDG AINV_P_24508/VDDG \
+    AINV_P_24516/VDDG BUFT_P_24523/VDDG AINV_P_24527/VDDG AINV_P_24533/VDDG \
+    AINV_P_24583/VDDG AINV_P_24584/VDDG ropt_mt_inst_25794/VDDG \
+    ropt_mt_inst_25802/VDDG ropt_mt_inst_25804/VDDG ropt_mt_inst_25817/VDDG \
+    ropt_mt_inst_25843/VDDG ropt_mt_inst_25849/VDDG ropt_mt_inst_25859/VDDG \
+    ropt_mt_inst_25866/VDDG ropt_mt_inst_25870/VDDG ropt_d_inst_25995/VDDG \
+    ropt_d_inst_26012/VDDG ropt_d_inst_26013/VDDG}
+connect_supply_net sipo_sw_out -ports {RLB__24931/VDDG RLB__24932/VDDG \
+    RLB__24957/VDDG RLB__24969/VDDG RLB__24970/VDDG RLB__25038/VDDG \
+    BINV_RR_24773/VDDG BINV_RR_24774/VDDG AINV_P_24815/VDDG AINV_P_24816/VDDG \
+    RLB__25039/VDDG BINV_R_25166/VDDG BINV_R_25167/VDDG BINV_RR_25170/VDDG \
+    BINV_RR_25171/VDDG BUFT_RR_25176/VDDG BINV_RR_25379/VDDG BINV_RR_25380/VDDG \
+    BUFT_P_25449/VDDG BUFT_P_25450/VDDG RLB__1382/VDDG MVISOL_150/VDDG \
+    MVISOL_151/VDDG MVISOL_153/VDDG MVISOL_154/VDDG AINV_P_356/VDDG \
+    AINV_P_357/VDDG AINV_P_358/VDDG AINV_P_359/VDDG AINV_P_360/VDDG \
+    AINV_P_361/VDDG AINV_P_362/VDDG AINV_P_363/VDDG AINV_P_364/VDDG \
+    AINV_P_365/VDDG AINV_P_366/VDDG AINV_P_367/VDDG AINV_P_387/VDDG \
+    AINV_P_388/VDDG AINV_P_389/VDDG AINV_P_391/VDDG AINV_P_392/VDDG \
+    AINV_P_407/VDDG AINV_P_408/VDDG BINV_RR_883/VDDG BUFT_P_415/VDDG \
+    BINV_RR_1474/VDDG BINV_RR_1475/VDDG AINV_P_531/VDDG BINV_RR_1490/VDDG \
+    AINV_PR_618/VDDG AINV_PR_619/VDDG BUFT_RR_894/VDDG AINV_P_640/VDDG \
+    BINV_RR_923/VDDG BINV_RR_924/VDDG BUFT_RR_987/VDDG BUFT_RR_991/VDDG \
+    BINV_RR_1015/VDDG BINV_RR_1017/VDDG BINV_RR_1021/VDDG RLB__1817/VDDG \
+    BUFT_P_1199/VDDG AINV_P_1244/VDDG BINV_RR_1931/VDDG BINV_RR_1932/VDDG \
+    AINV_P_1275/VDDG AINV_P_1297/VDDG BUFT_P_2055/VDDG BUFT_P_2059/VDDG \
+    BINV_RR_2204/VDDG BINV_RR_2205/VDDG BUFT_RR_2221/VDDG BUFT_P_2306/VDDG \
+    BINV_RR_23939/VDDG BINV_RR_23940/VDDG BINV_RR_24374/VDDG BINV_RR_24375/VDDG \
+    BUFT_RR_24395/VDDG BINV_RR_24426/VDDG BINV_RR_24428/VDDG BUFT_RR_24430/VDDG \
+    ropt_mt_inst_25805/VDDG ropt_mt_inst_25806/VDDG ropt_mt_inst_25827/VDDG \
+    ropt_mt_inst_25835/VDDG ropt_mt_inst_25853/VDDG ropt_mt_inst_25854/VDDG \
+    ropt_mt_inst_25947/VDDG ropt_d_inst_25996/VDDG ropt_d_inst_25998/VDDG \
+    ropt_d_inst_25999/VDDG ropt_d_inst_26000/VDDG ropt_d_inst_26001/VDDG \
+    ropt_d_inst_26002/VDDG ropt_d_inst_26003/VDDG ropt_d_inst_26004/VDDG \
+    ropt_d_inst_26005/VDDG ropt_d_inst_26006/VDDG ropt_d_inst_26008/VDDG \
+    ropt_d_inst_26015/VDDG ropt_d_inst_26016/VDDG ropt_d_inst_26017/VDDG \
+    ropt_d_inst_26018/VDDG ropt_d_inst_26019/VDDG ropt_d_inst_26020/VDDG \
+    ropt_d_inst_26021/VDDG ropt_d_inst_26023/VDDG}
+connect_supply_net SSL_PISO_SLICE_SW.power -ports \
+    {piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C0_0/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C0_1/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C0_2/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C0_3/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C0_4/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C0_5/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C0_6/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C0_7/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C0_8/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C0_9/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C0_10/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C0_11/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C0_12/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C0_13/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C0_14/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C0_15/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C0_16/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C0_17/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C0_18/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C0_19/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C0_20/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C0_21/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C0_22/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C0_23/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C1_24/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C1_25/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C1_26/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C1_27/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C1_28/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C1_29/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C1_30/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C1_31/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C1_32/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C1_33/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C1_34/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C1_35/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C1_36/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C1_37/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C1_38/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C1_39/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C1_40/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C1_41/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C1_42/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C1_43/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C1_44/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C1_45/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C1_46/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C1_47/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R0_C2_48/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R1_C2_49/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R3_C2_50/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R5_C2_51/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R7_C2_52/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R9_C2_53/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R11_C2_54/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R13_C2_55/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R15_C2_56/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R17_C2_57/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R19_C2_58/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R21_C2_59/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R23_C2_60/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R26_C2_61/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R28_C2_62/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R30_C2_63/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R32_C2_64/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R34_C2_65/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R36_C2_66/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R38_C2_67/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R40_C2_68/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R42_C2_69/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R44_C2_70/VDD \
+    piso_slice_last/headerfooter_snps_PD_PISO_SLICE__SW_PISO_SLICE_snps_HEAD2X16_HVT_R46_C2_71/VDD}
+connect_supply_net SSL_SIPO_SLICE_SW.power -ports \
+    {sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C0_72/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C0_73/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C0_74/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C0_75/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C0_76/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C0_77/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C0_78/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C0_79/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C0_80/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C0_81/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C0_82/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C0_83/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C0_84/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C0_85/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C0_86/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C0_87/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C0_88/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C0_89/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C0_90/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C0_91/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C0_92/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C0_93/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C0_94/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C0_95/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C0_96/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C0_97/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C1_98/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C1_99/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C1_100/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C1_101/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C1_102/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C1_103/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C1_104/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C1_105/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C1_106/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C1_107/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C1_108/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C1_109/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C1_110/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C1_111/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C1_112/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C1_113/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C1_114/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C1_115/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C1_116/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C1_117/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C1_118/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C1_119/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C1_120/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C1_121/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C1_122/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C1_123/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R0_C2_124/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R1_C2_125/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R3_C2_126/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R5_C2_127/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R7_C2_128/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R9_C2_129/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R11_C2_130/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R13_C2_131/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R15_C2_132/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R17_C2_133/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R19_C2_134/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R21_C2_135/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R23_C2_136/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R26_C2_137/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R28_C2_138/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R30_C2_139/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R32_C2_140/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R34_C2_141/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R36_C2_142/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R38_C2_143/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R40_C2_144/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R42_C2_145/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R44_C2_146/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R46_C2_147/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R49_C2_148/VDD \
+    sipo_slice_first/headerfooter_snps_PD_SIPO_SLICE__SW_SIPO_SLICE_snps_HEAD2X16_HVT_R51_C2_149/VDD}
+
+}
+set derived_upf false

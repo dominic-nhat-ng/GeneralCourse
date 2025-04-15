@@ -1,0 +1,2 @@
+set mv_verbose_isolation_insertion true
+set mv_insert_level_shifter_verbose true

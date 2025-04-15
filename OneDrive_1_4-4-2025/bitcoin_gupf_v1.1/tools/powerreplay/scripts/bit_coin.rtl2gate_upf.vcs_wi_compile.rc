@@ -1,0 +1,7 @@
+#! /bin/csh -f
+
+###########################################################
+## COMMAND
+###########################################################
+
+vcs -sverilog -f wi_run.f -debug_access+f+w+cbk+fwn -debug_region=cell+lib +nospecify -power_top bit_coin -power_config ../scripts/vcs_config_wisim.tcl -upf "../wrap_bit_coin.upf"

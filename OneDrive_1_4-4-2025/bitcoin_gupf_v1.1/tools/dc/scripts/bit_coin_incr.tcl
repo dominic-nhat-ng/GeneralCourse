@@ -1,0 +1,70 @@
+source scripts/dc_variables.tcl
+source scripts/procs.tcl
+source rm_setup/dc_setup.tcl
+set RESULTS_DIR ./results_bit_coin
+set_top_implementation_options -block_references "bit_slice bit_top"
+read_ddc results_bit_coin/bit_coin.ddc
+read_ddc results_bit_top/bit_top_bam.ddc
+read_ddc results_bit_slice/bit_slice_bam.ddc
+current_design bit_coin
+link
+
+
+COMMAND_RUNTIME propagate_constraints -power_supply_data
+
+compile_ultra -incremental -scan -no_autoungroup
+optimize_netlist -area
+change_names -rules verilog -hierarchy
+write_scan_def -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.scan_def
+check_scan_def > ${REPORTS_DIR}/${DESIGN_NAME}_dft_compiled.check_scan_def
+write_test_model -format ctl -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.ctl
+write_test_model -format ddc -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.ctl.ddc
+report_dft_signal > ${REPORTS_DIR}/${DESIGN_NAME}_dft_signal.rpt
+write -f verilog -hier -o ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.vg
+write -f ddc -hier -o ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.ddc
+save_upf ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.upf
+write_sdc ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.sdc
+write_script -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.script
+write_parasitics -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.spef
+write_sdf ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.sdf
+report_scan_path > ${REPORTS_DIR}/${DESIGN_NAME}_dft_compiled.scan_path
+write_test_protocol -test_mode Internal_scan -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.internal_scan.spf
+write_test_protocol -test_mode ScanCompression_mode -output ${RESULTS_DIR}/${DESIGN_NAME}_dft_compiled.compression.spf
+
+######### WA to get LS inserted Properly ##########
+set_port_attributes -ports isolation_signals -driver_supply SSL
+set_dont_touch [get_nets *isolation_sign*] false
+
+insert_mv_cells
+check_mv_design
+compile_ultra -incremental -scan
+check_mv_design
+change_names -rule verilog -hier
+write_scan_def -output ${RESULTS_DIR}/${DESIGN_NAME}.scan_def
+check_scan_def > ${REPORTS_DIR}/${DESIGN_NAME}.check_scan_def
+write_test_model -format ctl -output ${RESULTS_DIR}/${DESIGN_NAME}.ctl
+write_test_model -format ddc -output ${RESULTS_DIR}/${DESIGN_NAME}.ctl.ddc
+write -f verilog -hier -o ${RESULTS_DIR}/${DESIGN_NAME}.vg
+write -f ddc -hier -o ${RESULTS_DIR}/${DESIGN_NAME}.ddc
+save_upf ${RESULTS_DIR}/${DESIGN_NAME}.upf
+write_sdc ${RESULTS_DIR}/${DESIGN_NAME}.sdc
+write_script -output ${RESULTS_DIR}/${DESIGN_NAME}.script
+extract_rc -estimate
+write_parasitics -output ${RESULTS_DIR}/${DESIGN_NAME}.spef
+write_sdf ${RESULTS_DIR}/${DESIGN_NAME}.sdf
+save_upf -full_upf ${RESULTS_DIR}/${DESIGN_NAME}.upf_full
+######################
+
+report_isolation_cell -domain [get_power_domains -hier] > reports/${DESIGN_NAME}.iso.rpt
+report_retention_cell -domain [get_power_domains -hier] > reports/${DESIGN_NAME}.ret.rpt
+report_level_shifter -domain [get_power_domains -hier] > reports/${DESIGN_NAME}.ls.rpt
+report_upf_area > reports/${DESIGN_NAME}.area.rpt
+report_qor -summary > ${REPORTS_DIR}/${DESIGN_NAME}.qor.rpt
+report_timing -transition_time -capacitance  -physical -attributes > ${REPORTS_DIR}/${DESIGN_NAME}.tim.rpt
+report_power > ${REPORTS_DIR}/${DESIGN_NAME}.power.rpt
+check_mv_design -verbose > ${REPORTS_DIR}/${DESIGN_NAME}.cmv.rpt
+set MSG720 [get_message_info -occurrences UPF-720]
+set MSG722 [get_message_info -occurrences UPF-722]
+
+
+exit

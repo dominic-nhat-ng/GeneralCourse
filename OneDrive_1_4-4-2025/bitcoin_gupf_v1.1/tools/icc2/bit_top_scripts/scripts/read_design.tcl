@@ -1,0 +1,16 @@
+source -e -v rm_setup/dc_setup.tcl
+set compile_automatic_clock_phase_inference none
+set mv_default_level_shifter_voltage_range_infinity true
+set auto_insert_level_shifters_on_clocks all
+set auto_insert_level_shifters_on_ideal_networks all
+set mv_insert_level_shifters_on_ideal_nets all
+set mv_insert_level_shifter_verbose true
+set mv_verbose_isolation_insertion true
+set mv_verbose_isolation_insertion true
+set mv_level_shifter_ignore_ibt true
+set mv_allow_ls_on_leaf_pin_boundary true
+set mv_no_main_power_violations  false
+set _mv_allow_iss_update_to_ss_function true
+
+read_verilog [list rtl/bit_coin.v rtl/bit_top.v rtl/bit_slice.v rtl/secure_data.v rtl/piso.v rtl/sipo.v ]
+link

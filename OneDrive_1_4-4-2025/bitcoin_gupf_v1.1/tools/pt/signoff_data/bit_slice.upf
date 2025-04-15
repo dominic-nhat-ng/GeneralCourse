@@ -1,0 +1,280 @@
+################################################################################
+#
+# Created by icc2 save_upf on Tue Aug 22 09:57:18 2017
+#
+################################################################################
+
+################################################################################
+#
+# Units
+# time_unit               : 1e-09
+# resistance_unit         : 1000000
+# capacitive_load_unit    : 1e-15
+# voltage_unit            : 1
+# current_unit            : 1e-06
+# power_unit              : 1e-12
+################################################################################
+
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_slice/bit_slice.nlib/bit_slice/design_label.chip_finish/design.upf on Tue Aug 22 09:53:12 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_24075_temp_upf_4VqhvL on Tue Aug 22 09:45:09 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_22989_temp_upf_ikijWy on Tue Aug 22 09:38:31 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_21326_temp_upf_IISvWI on Tue Aug 22 09:24:21 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_19177_temp_upf_zdDtIp on Tue Aug 22 09:15:15 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_14744_temp_upf_WFou7Y on Tue Aug 22 08:57:33 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_12519_temp_upf_t41Gq1 on Tue Aug 22 08:41:26 2017
+## Start - load_upf -noecho /tmp/_bit_slice_1850_11027_temp_upf_ld7zbl on Tue Aug 22 08:23:43 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_slice/bit_slice.nlib/bit_slice/design_label.init_design/design.upf on Tue Aug 22 08:13:08 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/write_data/bit_slice.nlib/bit_slice/design_label.init_design/design.upf on Tue Aug 22 07:59:40 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/budgeting/bit_slice.nlib/bit_slice/design.upf on Tue Aug 22 07:33:56 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/pre_timing/bit_slice.nlib/bit_slice/design.upf on Tue Aug 22 06:01:24 2017
+## Start - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/placement/bit_slice.nlib/bit_slice/design.upf on Tue Aug 22 05:36:11 2017
+## Start - load_upf /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/split/bit_slice/top.upf on Tue Aug 22 05:13:15 2017
+set_design_attributes -elements . -attribute lower_domain_boundary false
+create_supply_net VDDH
+create_supply_net VDDL
+create_supply_net VDDM -resolve parallel
+create_supply_net VSS
+create_supply_net piso_sw_out -resolve parallel
+create_supply_net sipo_sw_out -resolve parallel
+create_supply_set SS
+create_supply_set SSL
+create_supply_set SSL_PISO_SW
+create_supply_set SSL_SIPO_SW
+create_supply_set SS_MEM_SW
+create_supply_set SSL_PISO_SLICE_SW
+create_supply_set SSL_SIPO_SLICE_SW
+create_supply_port VDDH
+create_supply_port VDDL
+create_supply_port VDDM -direction out
+create_supply_port VSS
+create_supply_port piso_sw_out -direction out
+create_supply_port sipo_sw_out -direction out
+
+create_power_domain TOP
+create_power_domain PD_SIPO -elements sipo_bit
+create_power_domain PD_PISO -elements piso_bit
+
+create_supply_set SS -function {power VDDH} -function {ground VSS} -update
+create_supply_set SSL -function {power VDDL} -function {ground VSS} -update
+create_supply_set SSL_PISO_SW -function {power piso_sw_out} -function {ground VSS} -update
+create_supply_set SSL_SIPO_SW -function {power sipo_sw_out} -function {ground VSS} -update
+create_supply_set SS_MEM_SW -function {power VDDM} -function {ground VSS} -update
+create_supply_set SSL_PISO_SLICE_SW -function {power piso_sw_out} -function {ground VSS} -update
+create_supply_set SSL_SIPO_SLICE_SW -function {power sipo_sw_out} -function {ground VSS} -update
+
+connect_supply_net SS.power -ports {nibble_0/VDD nibble_1/VDD}
+connect_supply_net SS.ground -ports {nibble_0/VSS nibble_1/VSS}
+connect_supply_net SS_MEM_SW.power -ports {nibble_0/VDDG nibble_1/VDDG}
+connect_supply_net VSS -ports VSS
+connect_supply_net VSS -ports {snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT/VSS CLK_UPF_LS/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VSS lreset_sync/CLK_UPF_LS/VSS piso_bit/load_UPF_LS/VSS piso_bit/din_0__UPF_LS/VSS piso_bit/din_1__UPF_LS/VSS piso_bit/din_2__UPF_LS/VSS piso_bit/din_3__UPF_LS/VSS piso_bit/din_4__UPF_LS/VSS piso_bit/din_5__UPF_LS/VSS piso_bit/din_6__UPF_LS/VSS piso_bit/din_7__UPF_LS/VSS piso_bit/din_8__UPF_LS/VSS piso_bit/din_9__UPF_LS/VSS piso_bit/din_10__UPF_LS/VSS piso_bit/din_11__UPF_LS/VSS piso_bit/din_12__UPF_LS/VSS piso_bit/din_13__UPF_LS/VSS piso_bit/din_14__UPF_LS/VSS piso_bit/din_15__UPF_LS/VSS piso_bit/reset_UPF_LS/VSS sync_datafrommem/dut_sync/CLK_UPF_LS/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT/VSS isolation_signals_0__UPF_LS/VSS EN_UPF_LS/VSS sipo_bit/scan_enable_UPF_LS/VSS sipo_bit/scan_in_UPF_LS/VSS piso_bit/scan_enable_UPF_LS/VSS piso_bit/scan_in_UPF_LS/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT/VSS snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT/VSS snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT/VSS sipo_bit/reset_UPF_LS/VSS}
+connect_supply_net VDDL -ports VDDL
+connect_supply_net VDDL -ports {CLK_UPF_LS/VDDL lreset_sync/CLK_UPF_LS/VDDL sync_datafrommem/dut_sync/CLK_UPF_LS/VDDL isolation_signals_0__UPF_LS/VDDL EN_UPF_LS/VDDL sipo_bit/pout_reg_0_/VDDG sipo_bit/addr_reg_1_/VDDG sipo_bit/pout_reg_12_/VDDG sipo_bit/pout_reg_3_/VDDG sipo_bit/pout_reg_8_/VDDG sipo_bit/pout_reg_11_/VDDG sipo_bit/pout_reg_1_/VDDG sipo_bit/pout_reg_13_/VDDG sipo_bit/pout_reg_15_/VDDG sipo_bit/pout_reg_9_/VDDG sipo_bit/pout_reg_6_/VDDG sipo_bit/pout_reg_10_/VDDG sipo_bit/pout_reg_7_/VDDG sipo_bit/pout_reg_4_/VDDG sipo_bit/addr_reg_0_/VDDG sipo_bit/pout_reg_14_/VDDG sipo_bit/addr_reg_2_/VDDG sipo_bit/pout_reg_2_/VDDG sipo_bit/addr_reg_3_/VDDG sipo_bit/pout_reg_5_/VDDG sipo_bit/rd_addr_reg_3_/VDDG sipo_bit/wr_tmp_reg/VDDG sipo_bit/wr_0_reg/VDDG sipo_bit/count_reg_3_/VDDG sipo_bit/count_reg_2_/VDDG sipo_bit/wr_addr_reg_1_/VDDG sipo_bit/wr_addr_reg_3_/VDDG sipo_bit/count_reg_1_/VDDG sipo_bit/wr_addr_reg_2_/VDDG sipo_bit/tmp_reg_1_/VDDG sipo_bit/tmp_reg_15_/VDDG sipo_bit/wr_addr_reg_0_/VDDG sipo_bit/tmp_reg_2_/VDDG sipo_bit/tmp_reg_9_/VDDG sipo_bit/tmp_reg_7_/VDDG sipo_bit/tmp_reg_10_/VDDG sipo_bit/tmp_reg_0_/VDDG sipo_bit/tmp_reg_12_/VDDG sipo_bit/wr_1_reg/VDDG sipo_bit/tmp_reg_5_/VDDG sipo_bit/tmp_reg_8_/VDDG sipo_bit/tmp_reg_13_/VDDG sipo_bit/count_reg_0_/VDDG sipo_bit/tmp_reg_3_/VDDG sipo_bit/tmp_reg_6_/VDDG sipo_bit/tmp_reg_11_/VDDG sipo_bit/rd_reg/VDDG sipo_bit/tmp_reg_4_/VDDG sipo_bit/tmp_reg_14_/VDDG sipo_bit/rd_addr_reg_1_/VDDG sipo_bit/rd_addr_reg_2_/VDDG sipo_bit/rd_addr_reg_0_/VDDG sipo_bit/wr_reg/VDDG piso_bit/temp_reg_14_/VDDG piso_bit/temp_reg_2_/VDDG piso_bit/temp_reg_6_/VDDG piso_bit/temp_reg_4_/VDDG piso_bit/temp_reg_13_/VDDG piso_bit/temp_reg_10_/VDDG piso_bit/temp_reg_9_/VDDG piso_bit/temp_reg_5_/VDDG piso_bit/temp_reg_1_/VDDG piso_bit/temp_reg_7_/VDDG piso_bit/temp_reg_8_/VDDG piso_bit/temp_reg_11_/VDDG piso_bit/temp_reg_15_/VDDG piso_bit/temp_reg_12_/VDDG piso_bit/dout_reg/VDDG piso_bit/temp_reg_0_/VDDG piso_bit/temp_reg_3_/VDDG}
+connect_supply_net VDDH -ports VDDH
+connect_supply_net VDDH -ports {snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT/VDDH CLK_UPF_LS/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VDDH lreset_sync/CLK_UPF_LS/VDDH sync_datafrommem/dut_sync/CLK_UPF_LS/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT/VDDH isolation_signals_0__UPF_LS/VDDH EN_UPF_LS/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT/VDDH snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT/VDDH snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT/VDDH}
+connect_supply_net VDDM -ports VDDM
+connect_supply_net piso_sw_out -ports piso_sw_out
+connect_supply_net piso_sw_out -ports {piso_bit/load_UPF_LS/VDDL piso_bit/din_0__UPF_LS/VDDL piso_bit/din_1__UPF_LS/VDDL piso_bit/din_2__UPF_LS/VDDL piso_bit/din_3__UPF_LS/VDDL piso_bit/din_4__UPF_LS/VDDL piso_bit/din_5__UPF_LS/VDDL piso_bit/din_6__UPF_LS/VDDL piso_bit/din_7__UPF_LS/VDDL piso_bit/din_8__UPF_LS/VDDL piso_bit/din_9__UPF_LS/VDDL piso_bit/din_10__UPF_LS/VDDL piso_bit/din_11__UPF_LS/VDDL piso_bit/din_12__UPF_LS/VDDL piso_bit/din_13__UPF_LS/VDDL piso_bit/din_14__UPF_LS/VDDL piso_bit/din_15__UPF_LS/VDDL piso_bit/reset_UPF_LS/VDDL piso_bit/scan_enable_UPF_LS/VDDL piso_bit/scan_in_UPF_LS/VDDL snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT/VDDL}
+connect_supply_net sipo_sw_out -ports sipo_sw_out
+connect_supply_net sipo_sw_out -ports {snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT/VDDL sipo_bit/scan_enable_UPF_LS/VDDL sipo_bit/scan_in_UPF_LS/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT/VDDL snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT/VDDL sipo_bit/reset_UPF_LS/VDDL}
+## (icc2-modified) connect_supply_net VDDL -ports {sipo_bit/U40/VDDG sipo_bit/U72/VDDG sipo_bit/U33/VDDG sipo_bit/U70/VDDG sipo_bit/U71/VDDG sipo_bit/U73/VDDG sipo_bit/U28/VDDG sipo_bit/U74/VDDG piso_bit/U20/VDDG piso_bit/U4/VDDG}
+connect_supply_net VDDL -ports {piso_bit/U20/VDDG piso_bit/U4/VDDG}
+
+associate_supply_set SS -handle TOP.primary
+associate_supply_set SSL_SIPO_SW -handle PD_SIPO.primary
+associate_supply_set SSL_PISO_SW -handle PD_PISO.primary
+
+set_isolation ISO_SIPO_OUT -domain PD_SIPO -isolation_supply_set SS -clamp_value 1 -sink SS -name_suffix ISO_SIPO_OUT
+set_isolation_control ISO_SIPO_OUT -domain PD_SIPO -isolation_signal {isolation_signals[0]} -isolation_sense high -location parent
+set_isolation ISO_SIPO2MEM_OUT -domain PD_SIPO -isolation_supply_set SS -clamp_value 1 -sink SS_MEM_SW -name_suffix ISO_SIPO2MEM_OUT
+set_isolation_control ISO_SIPO2MEM_OUT -domain PD_SIPO -isolation_signal {isolation_signals[0]} -isolation_sense high -location parent
+set_isolation ISO_SIPO2MEM_OUT1 -domain PD_SIPO -isolation_supply_set SS -clamp_value 1 -sink SS_MEM_SW -elements sipo_bit/wr -name_suffix ISO_SIPO2MEM_OUT1
+set_isolation_control ISO_SIPO2MEM_OUT1 -domain PD_SIPO -isolation_signal {isolation_signals[0]} -isolation_sense high -location fanout
+set_isolation ISO_SIPO2MEM_OUT2 -domain PD_SIPO -isolation_supply_set SS -clamp_value 1 -sink SS -elements sipo_bit/wr -name_suffix ISO_SIPO2MEM_OUT2
+set_isolation_control ISO_SIPO2MEM_OUT2 -domain PD_SIPO -isolation_signal {isolation_signals[0]} -isolation_sense high -location fanout
+set_isolation ISO_PISO_OUT -domain PD_PISO -isolation_supply_set SS -clamp_value 1 -sink SS -name_suffix ISO_PISO_OUT
+set_isolation_control ISO_PISO_OUT -domain PD_PISO -isolation_signal {isolation_signals[1]} -isolation_sense high -location parent
+set_isolation ISO_TOP2_MEM -domain TOP -isolation_supply_set SS -clamp_value 1 -source SS_MEM_SW -name_suffix ISO_TOP2_MEM
+set_isolation_control ISO_TOP2_MEM -domain TOP -isolation_signal {isolation_signals[1]} -isolation_sense high -location self
+set_isolation ISO_PISO_OUT_SSL -domain PD_PISO -isolation_supply_set SSL -clamp_value 0 -elements piso_bit/dout -name_suffix ISO_PISO_OUT_SSL
+set_isolation_control ISO_PISO_OUT_SSL -domain PD_PISO -isolation_signal {isolation_signals[1]} -isolation_sense high -location self
+map_isolation_cell ISO_PISO_OUT_SSL -domain PD_PISO -lib_cells ISO_NOR2X4_HVT 
+set_retention RET_SIPO -domain PD_SIPO -retention_supply_set SSL
+set_retention_control RET_SIPO -domain PD_SIPO -save_signal {{retention_signals[0]} high} -restore_signal {{retention_signals[0]} low}
+map_retention_cell RET_SIPO -domain PD_SIPO -lib_cells {RSDFFARX1_HVT RSDFFARX2_HVT RSDFFARX1_RVT RSDFFARX2_RVT RSDFFARX1_LVT RSDFFARX2_LVT}
+set_retention RET_PISO -domain PD_PISO -retention_supply_set SSL
+set_retention_control RET_PISO -domain PD_PISO -save_signal {{retention_signals[1]} high} -restore_signal {{retention_signals[1]} low}
+map_retention_cell RET_PISO -domain PD_PISO -lib_cells {RSDFFARX1_HVT RSDFFARX2_HVT RSDFFARX1_RVT RSDFFARX2_RVT RSDFFARX1_LVT RSDFFARX2_LVT}
+
+create_power_switch PD1_SW -domain PD_SIPO -output_supply_port {out SSL_SIPO_SW.power} -input_supply_port {in SSL.power} -control_port {shut_down_signal_SIPO {shut_down_signals[0]}} -ack_port {ack_signal_SIPO {PG_ack_signals[0]} {shut_down_signal_SIPO}} -on_state {TOP_ON in {!shut_down_signal_SIPO}}
+map_power_switch PD1_SW -domain PD_SIPO -lib_cells {HEAD2X16_HVT  HEAD2X2_HVT  HEAD2X32_HVT  HEAD2X4_HVT  HEAD2X8_HVT  HEAD2X16_RVT HEAD2X2_RVT HEAD2X32_RVT HEAD2X4_RVT HEAD2X8_RVT HEAD2X16_LVT HEAD2X2_LVT HEAD2X32_LVT HEAD2X4_LVT HEAD2X8_LVT}
+create_power_switch PD2_SW -domain PD_PISO -output_supply_port {out SSL_PISO_SW.power} -input_supply_port {in SSL.power} -control_port {shut_down_signal_PISO {shut_down_signals[1]}} -ack_port {ack_signal_PISO {PG_ack_signals[1]} {shut_down_signal_PISO}} -on_state {TOP_ON in {!shut_down_signal_PISO}}
+map_power_switch PD2_SW -domain PD_PISO -lib_cells {HEAD2X16_HVT  HEAD2X2_HVT  HEAD2X32_HVT  HEAD2X4_HVT  HEAD2X8_HVT  HEAD2X16_RVT HEAD2X2_RVT HEAD2X32_RVT HEAD2X4_RVT HEAD2X8_RVT HEAD2X16_LVT HEAD2X2_LVT HEAD2X32_LVT HEAD2X4_LVT HEAD2X8_LVT}
+
+add_power_state SSL_PISO_SW -state SSL_PISO_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_PISO_SW -state SSL_PISO_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL_PISO_SW -state SSL_PISO_SECURE_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_PISO_SW -state SSL_PISO_SECURE_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL_PISO_SLICE_SW -state SSL_PISO_SLICE_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_PISO_SLICE_SW -state SSL_PISO_SLICE_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL_SIPO_SW -state SSL_SIPO_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_SIPO_SW -state SSL_SIPO_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_port_state sipo_sw_out -state {SSL_SIPO_SECURE_OFF off}
+add_port_state sipo_sw_out -state {SSL_SIPO_SECURE_ON 0.78}
+add_power_state SSL_SIPO_SLICE_SW -state SSL_SIPO_SLICE_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SSL_SIPO_SLICE_SW -state SSL_SIPO_SLICE_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SSL -state SSL_ON {-supply_expr {power == `{FULL_ON, 0.78}}}
+add_power_state SS -state SS_ON {-supply_expr {power == `{FULL_ON, 0.85}}}
+add_power_state SS_MEM_SW -state MEM_OFF {-supply_expr {power == `{OFF}}}
+add_power_state SS_MEM_SW -state MEM_ON {-supply_expr {power == `{FULL_ON, 0.85}}}
+add_power_state SS -state GND {-supply_expr {ground == `{FULL_ON, 0}}}
+create_pst pst -supplies {VDDH VDDL piso_sw_out sipo_sw_out VSS}
+add_pst_state state_1 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_ON SSL_SIPO_SECURE_ON GND}
+add_pst_state state_2 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_ON SSL_SIPO_SECURE_OFF GND}
+add_pst_state state_3 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_OFF SSL_SIPO_SECURE_ON GND}
+add_pst_state state_4 -pst pst -state {SS_ON SSL_ON SSL_PISO_SECURE_OFF SSL_SIPO_SECURE_OFF GND}
+set_port_attributes -ports {hclk reset memory_sleep scan_enable sipo_scan_in piso_scan_in hv_scan_in lv_scan_in} -driver_supply SS
+set_port_attributes -ports {lclk data_valid shut_down_signals[1] shut_down_signals[0] isolation_signals[1] isolation_signals[0] retention_signals[1] retention_signals[0]} -driver_supply SSL
+set_port_attributes -ports sin -driver_supply SSL_SIPO_SW
+set_port_attributes -ports {sipo_scan_out piso_scan_out hv_scan_out lv_scan_out memory_ack PG_ack_signals[1] PG_ack_signals[0]} -receiver_supply SS
+
+if {[info exists upf_extension] && $upf_extension} {
+set_related_supply_net -ground VSS -object_list sout
+set_related_supply_net -power VDDL -object_list sout
+}
+
+## End - load_upf /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/split/bit_slice/top.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/placement/bit_slice.nlib/bit_slice/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/pre_timing/bit_slice.nlib/bit_slice/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/budgeting/bit_slice.nlib/bit_slice/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/bit_coin_SPLIT_DIR/write_data/bit_slice.nlib/bit_slice/design_label.init_design/design.upf
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_slice/bit_slice.nlib/bit_slice/design_label.init_design/design.upf
+## End - load_upf -noecho /tmp/_bit_slice_1850_11027_temp_upf_ld7zbl
+## End - load_upf -noecho /tmp/_bit_slice_1850_12519_temp_upf_t41Gq1
+## End - load_upf -noecho /tmp/_bit_slice_1850_14744_temp_upf_WFou7Y
+## End - load_upf -noecho /tmp/_bit_slice_1850_19177_temp_upf_zdDtIp
+## End - load_upf -noecho /tmp/_bit_slice_1850_21326_temp_upf_IISvWI
+## End - load_upf -noecho /tmp/_bit_slice_1850_22989_temp_upf_ikijWy
+## End - load_upf -noecho /tmp/_bit_slice_1850_24075_temp_upf_4VqhvL
+## End - load_upf -noecho /global/gts_corpac3/bitcoin/users/tony/bitcoin_v1.1/tools/icc2/flat_place_and_route/bit_slice/bit_slice.nlib/bit_slice/design_label.chip_finish/design.upf
+
+## Constraints below are generated by icc2. Please do not modify.
+set derived_upf true
+
+if ($derived_upf) {
+
+connect_supply_net VDDL -ports {ABUF_PR_4041/VDDG BUFT_P_37/VDDG BUFT_P_62/VDDG \
+    BUFT_RR_160/VDDG sipo_bit/AINV_P_75/VDDG sipo_bit/AINV_P_77/VDDG \
+    sipo_bit/AINV_P_78/VDDG ABUF_PR_4042/VDDG sipo_bit/AINV_P_80/VDDG \
+    sipo_bit/AINV_P_82/VDDG sipo_bit/AINV_P_83/VDDG sipo_bit/AINV_P_84/VDDG \
+    sipo_bit/AINV_P_85/VDDG sipo_bit/AINV_P_86/VDDG sipo_bit/AINV_P_87/VDDG \
+    sipo_bit/AINV_P_89/VDDG sipo_bit/AINV_P_90/VDDG sipo_bit/AINV_P_91/VDDG \
+    sipo_bit/AINV_P_92/VDDG sipo_bit/AINV_P_94/VDDG sipo_bit/AINV_P_96/VDDG \
+    sipo_bit/AINV_P_97/VDDG sipo_bit/AINV_P_100/VDDG sipo_bit/AINV_P_102/VDDG \
+    sipo_bit/AINV_P_103/VDDG sipo_bit/AINV_P_104/VDDG sipo_bit/AINV_P_105/VDDG \
+    sipo_bit/AINV_P_106/VDDG AINV_P_109/VDDG AINV_P_110/VDDG BUFT_P_120/VDDG \
+    cts_inv_21302333/VDDG cts_inv_21332336/VDDG cts_inv_21362339/VDDG \
+    cts_inv_21372340/VDDG cts_inv_21382341/VDDG cts_inv_21392342/VDDG \
+    cts_inv_21402343/VDDG cto_buf_drc_2448/VDDG ropt_mt_inst_4278/VDDG \
+    ropt_mt_inst_4279/VDDG ropt_mt_inst_4292/VDDG}
+connect_supply_net VSS -ports \
+    {piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R0_C0_0/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R1_C0_1/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R3_C0_2/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R5_C0_3/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R7_C0_4/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R9_C0_5/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R11_C0_6/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R13_C0_7/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R15_C0_8/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R17_C0_9/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R19_C0_10/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R21_C0_11/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R23_C0_12/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R26_C0_13/VSS \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R28_C0_14/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R0_C0_15/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R1_C0_16/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R3_C0_17/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R5_C0_18/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R7_C0_19/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R9_C0_20/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R11_C0_21/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R13_C0_22/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R15_C0_23/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R17_C0_24/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R19_C0_25/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R21_C0_26/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R23_C0_27/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R26_C0_28/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R28_C0_29/VSS \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R30_C0_30/VSS}
+connect_supply_net sipo_sw_out -ports {AINV_P_60/VDDG AINV_P_61/VDDG \
+    BUFT_RR_3790/VDDG}
+connect_supply_net SSL.power -ports \
+    {piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R0_C0_0/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R1_C0_1/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R3_C0_2/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R5_C0_3/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R7_C0_4/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R9_C0_5/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R11_C0_6/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R13_C0_7/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R15_C0_8/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R17_C0_9/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R19_C0_10/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R21_C0_11/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R23_C0_12/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R26_C0_13/VDDG \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R28_C0_14/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R0_C0_15/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R1_C0_16/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R3_C0_17/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R5_C0_18/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R7_C0_19/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R9_C0_20/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R11_C0_21/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R13_C0_22/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R15_C0_23/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R17_C0_24/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R19_C0_25/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R21_C0_26/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R23_C0_27/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R26_C0_28/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R28_C0_29/VDDG \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R30_C0_30/VDDG}
+connect_supply_net SSL_PISO_SW.power -ports \
+    {piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R0_C0_0/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R1_C0_1/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R3_C0_2/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R5_C0_3/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R7_C0_4/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R9_C0_5/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R11_C0_6/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R13_C0_7/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R15_C0_8/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R17_C0_9/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R19_C0_10/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R21_C0_11/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R23_C0_12/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R26_C0_13/VDD \
+    piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R28_C0_14/VDD}
+connect_supply_net SSL_SIPO_SW.power -ports \
+    {sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R0_C0_15/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R1_C0_16/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R3_C0_17/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R5_C0_18/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R7_C0_19/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R9_C0_20/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R11_C0_21/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R13_C0_22/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R15_C0_23/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R17_C0_24/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R19_C0_25/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R21_C0_26/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R23_C0_27/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R26_C0_28/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R28_C0_29/VDD \
+    sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R30_C0_30/VDD}
+
+}
+set derived_upf false

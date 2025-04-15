@@ -1,0 +1,12 @@
+set FSDB                = ../vcs_nlp/outputsfromvcs/RTL_NOUPF.fsdb
+set Scope               = bitcoin_top.dut
+set Map                 = powrep_map.list.gz
+set Time_Unit           = ns
+set simulation_Compile_Script  = ./scripts/bit_coin.rtl2gate_noupf.vcs_wi_compile.rc
+set simulation_Run_Script      = ./scripts/bit_coin.rtl2gate_noupf.vcs_wi_run.rc
+
+# OPTIONAL
+# set Begin_Time          = 0
+# set End_Time            = 100000
+# set SDF                 = ../tools/icc2/outputs2icc2/bit_coin_dft.sdf
+# set delay               = delay.map

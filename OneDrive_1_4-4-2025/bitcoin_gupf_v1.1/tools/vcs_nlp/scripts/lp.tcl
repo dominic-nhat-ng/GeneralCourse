@@ -1,0 +1,4 @@
+#set_lp_msg_onoff OFF -msg {LP_PORT_STATE_INIT LP_ISOEN_INIT_VALUE LP_ISOPN_INIT LP_SNET_HDL_SNET_CONN_UPDATE LP_PST_STATE_CHANGE LP_PORT_STATE_CHANGE }
+set_lp_msg_onoff OFF -msg {LP_PSW_CTRL_INIT_INVALID LP_PST_STATE_ILLEGAL_INIT LP_ISOEN_INIT_INVALID } 
+set_lp_msg_log_severity WARNING
+set_lp_msg_log_mode DEFAULT -file {./logs/vcslp_msg.log}

@@ -1,0 +1,2 @@
+FUNC_0.85V_SETUP /slowfs/gts_lowpower/training/testing_1_31_2017/bitcoin_v1.4/tools/icc2/flat_place_and_route/bit_slice/tech/star_rcxt/saed32nm_1p9m_Cmax.nxtgrd
+FUNC_0.78V_SETUP /slowfs/gts_lowpower/training/testing_1_31_2017/bitcoin_v1.4/tools/icc2/flat_place_and_route/bit_slice/tech/star_rcxt/saed32nm_1p9m_nominal.nxtgrd

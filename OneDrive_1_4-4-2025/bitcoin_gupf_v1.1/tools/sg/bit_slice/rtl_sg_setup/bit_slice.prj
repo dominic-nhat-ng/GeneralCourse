@@ -1,0 +1,81 @@
+#!SPYGLASS_PROJECT_FILE
+#!VERSION 3.0
+#  -------------------------------------------------------------------
+#  This is a software generated project file. Manual edits to this file could be lost during the next save operation
+#  Copyright Synopsys Inc.
+#  Last Updated By: SpyGlass SpyGlass_vL-2016.06-SP1-1
+#  Last Updated On Mon Nov  7 13:44:04 2016
+#
+#  -------------------------------------------------------------------
+
+##Data Import Section
+
+read_file -type sourcelist ../../rtl/files_bit_slice.f
+read_file -type sgdc ./bit_slice/rtl_sg_setup/bit_slice.sgdc
+read_file -type gateslib ../../lib/SG/saed32hvt_tt0p85v125c.lib
+read_file -type gateslib ../../lib/SG/saed32hvt_ulvl_tt0p78v125c_i0p78v.lib
+read_file -type gateslib ../../lib/SG/saed32hvt_dlvl_tt0p78v125c_i0p78v.lib
+read_file -type gateslib ../../lib/SG/sram2rw16x4_tt1p85v125c.lib
+read_file -type gateslib ../../lib/SG/saed32lvt_tt0p78v125c.lib
+read_file -type gateslib ../../lib/SG/saed32rvt_tt0p78v125c.lib
+read_file -type gateslib ../../lib/SG/saed32hvt_tt0p78v125c.lib
+set_option lib WORK ./bit_slice/WORK
+read_file -type awl ./bit_slice/rtl_sg_setup/waivers.awl
+set_option default_waiver_file ./bit_slice/rtl_sg_setup/waivers.awl
+
+##Common Options Section
+
+set_option projectwdir ./bit_slice/outputs/
+set_option consolidate_reportdir ./bit_slice/reports
+set_option top bit_slice
+set_option sort yes
+set_option enableSV yes
+set_option strict_sgdc_check yes
+set_option project_read_only yes
+
+## SDC2SGDC related options
+set_option sdc2sgdc yes
+set_option sdc_domain_mode sta_compliant
+set_option sdc_generate_cfp yes
+set_option sdc2sgdcfile bit_slice.sdc2sgdc
+set_option mthresh 8192
+set_option language_mode mixed
+set_option pragma { spyglass synopsys synthesis pragma }
+
+##power related options
+set_option include_opt_data yes
+set_option enable_precompile_vlog no
+set_option remove_work yes
+set_option enable_save_restore no
+set_option sgsyn_opt_file { ./bit_slice/rtl_sg_setup/synth_options.tcl }
+
+##Goal Setup Section
+current_methodology $SPYGLASS_HOME/GuideWare/2017.03-EarlyAdopter/block/rtl_handoff
+
+current_goal power/power_activity_check -top bit_slice
+set_parameter pe_num_clock_cycles_avg_act 100
+
+current_goal power/power_audit -top bit_slice
+set_goal_option use_scan_flops yes
+set_parameter sgsyn_clock_gating_threshold 3
+set_parameter pe_enable_monitor_on_clock_nets yes
+set_parameter pe_enable_monitor_on_enable_nets yes
+
+
+current_goal power/power_est_profiling -top bit_slice
+set_goal_option use_scan_flops yes
+set_parameter sgsyn_clock_gating_threshold 3
+set_parameter pe_enable_monitor_on_clock_nets yes
+set_parameter pe_enable_monitor_on_enable_nets yes
+
+current_goal cdc/cdc_verify_struct -top bit_slice -scenario original
+set_goal_option report { SynchInfo CrossingInfo moresimple summary }
+set_parameter dump_sync_info detailed
+
+current_goal power/power_mem_reduction -top bit_slice
+set_goal_option use_scan_flops yes
+set_parameter sgsyn_clock_gating_threshold 3
+set_parameter pe_enable_monitor_on_clock_nets yes
+set_parameter pe_enable_monitor_on_enable_nets yes
+set_parameter pe_consolidate_goal power/power_est_profiling
+

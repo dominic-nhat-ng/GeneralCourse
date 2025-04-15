@@ -1,0 +1,70 @@
+
+set topmod top
+set coremod top
+
+set wd [pwd]
+
+set dc_results ./results
+
+#source scripts/load_libs.tcl 
+
+
+
+#upf specific
+set verification_verify_power_off_states false
+
+set hdlin_unresolved_modules         black_box
+set verification_failing_point_limit 500
+
+# Add the following variable setting
+
+set hdlin_ignore_synthesis true 
+
+set synopsys_auto_setup true
+set_svf default.svf 
+
+
+#==============================================================================
+#=============================== READ REFERENCE ===============================
+
+read_verilog -r [glob rtl/*.v]
+
+set_top ${topmod}
+
+load_upf -r ./upf/top_scope_2.0.upf_sim
+
+
+#==============================================================================
+#============================ READ IMPLEMENTATION =============================
+read_verilog -i  -netlist top/results/top_ropt.output.pg_flat.v
+
+
+set_top ${topmod}
+
+#load_upf -i $dc_results/top_compiled.upf
+
+
+#==============================================================================
+#==================================== SET =====================================
+set_ref       r:/WORK/${topmod}
+set_impl i:/WORK/${topmod}
+
+
+set_constant $impl/test_se 0
+
+
+
+#set verification_failing_point_limit 20 
+#set verification_force_upf_supplies_on true 
+set signature_analysis_match_compare_points false
+set_compare_rule $impl -from {c0_top} -to {}
+set_compare_rule $impl -from {c1_top} -to {}
+set_compare_rule $impl -from {c2_top} -to {}
+set_compare_rule $impl -from {c3_top} -to {}
+set_compare_rule $impl -from {c4_top} -to {}
+set_compare_rule $impl -from {c5_top} -to {}
+set_compare_rule $impl -from {c6_top} -to {}
+
+
+match
+verify

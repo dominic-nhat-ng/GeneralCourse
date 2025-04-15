@@ -1,0 +1,2 @@
+cd signoff_data
+pt_shell -f scripts/pt_timing.tcl | tee logs/pt_timing.tcl.log

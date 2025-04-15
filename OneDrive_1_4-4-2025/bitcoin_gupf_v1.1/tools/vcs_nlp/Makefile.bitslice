@@ -1,0 +1,133 @@
+################################################################################
+PROJECT_NAME = bit_slice
+################################################################################
+RUN_OPTS_SLICE  = +min_random_count=$(MIN_TRANS_CNT) +max_random_count=$(MAX_TRANS_CNT)
+UVM_TEST_SLICE  = btslice_test
+UVM_LP_TEST_SLICE  = btslice_lp_test
+
+
+ifneq ($(PHASE), RTL)
+COMP_OPTS_SLICE += +vcs+initreg+random
+RUN_OPTS_SLICE += +vcs+initreg+0
+endif
+
+#COMP_OPTS_SLICE +=  -partcomp -fastpartcomp=j4 -timescale=1ns/1ps +define+NO_SAIF -sverilog $(UVM) $(INCL) $(DEFINES)
+COMP_OPTS_SLICE +=  -timescale=1ns/1ps -sverilog $(UVM) $(INCL) $(DEFINES)
+
+ifeq ($(CHECKER), 1)
+  LPA_OPTS_SLICE = -mvrpt=logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/mvsim_native_reports -lpa_bind ./checker/checker.tcl ./checker/checker.v
+else
+  LPA_OPTS_SLICE = -mvrpt=logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/mvsim_native_reports
+endif
+
+UPF_OPTS_SLICE = -power=pst_state_msg  +define+UPF +warn=noTCL_OPT_NYI,noUPF_CONYI,noIWNF,noTFIPC $(LPA_OPTS_SLICE)
+  
+ifeq ($(PHASE), RTL)
+  UPF_OPTS_SLICE += -power=cov_pst_transition -xprop -gupf_config ./scripts/config_bs.tcl
+else
+  UPF_OPTS_SLICE += -power=accurate -gupf_config ./scripts/config_gls_bs.tcl
+endif
+
+ifeq ($(LP), UPF)
+  COMP_OPTS_SLICE +=  $(UPF_OPTS_SLICE)
+  UVM_TEST_SLICE = $(UVM_LP_TEST_SLICE)
+endif
+
+ifeq ($(PHASE), RTL)
+  RUN_OPTS_SLICE  += -power ./scripts/lp_bit_slice.tcl
+else
+  RUN_OPTS_SLICE  += -power ./scripts/lp_bit_slice_gls.tcl
+endif
+
+ifeq ($(PHASE), RTL)
+  FILELIST_SLICE = -F ../../verification/hdl/filelist_bitslice.f
+else
+    ifeq ($(PHASE), GLS)
+      FILELIST_SLICE = -F ../../verification/hdl/filelist_bitslice_gls.f +nospecify
+    else
+      FILELIST_SLICE = -F ../../verification/hdl/filelist_bitslice_pggates.f +nospecify -power=rtlpg
+    endif
+endif
+
+ifeq ($(MODE), DEBUG)
+RUN_OPTS_SLICE += +fsdbfile+./logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/dump.fsdb +SAIF_REPORT=./logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/bit_slice.saif
+#RUN_OPTS_SLICE += +fsdbfile+./logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/dump.fsdb
+endif
+
+bit_slice: check_bit_slice clean_bit_slice comp_bit_slice run_bit_slice
+
+
+check_bit_slice:
+	mkdir -p logs
+	mkdir -p output
+	mkdir -p outputsfromvcs
+	mkdir -p output/bit_slice/
+	mkdir -p logs/bit_slice/
+	mkdir -p output/bit_slice/$(PHASE)_$(MODE)_$(LP)
+	mkdir -p logs/bit_slice/$(PHASE)_$(MODE)_$(LP)
+
+comp_bit_slice: check_bit_slice
+ifndef ERR_STATUS
+ifeq ($(MODE), DEBUG)
+		vcs $(COMP_OPTS_SLICE)  -debug_region=lib+cell -debug_access+all -lca -kdb +define+DUMP \
+        	 ../../verification/tests/tb_top_slice.sv ../../verification/hdl/bitslice_top.sv \
+		$(FILELIST_SLICE) -o output/bit_slice/$(PHASE)_$(MODE)_$(LP)/simv -Mdir=output/bit_slice/$(PHASE)_$(MODE)_$(LP)/csrc \
+		-l logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/compile.log -partcomp_dir=output/bit_slice/$(PHASE)_$(MODE)_$(LP)/partitionlib
+		cp -R output/bit_slice/$(PHASE)_$(MODE)_$(LP)/simv.daidir outputsfromvcs/bit_slice_simv_$(PHASE)_$(LP).daidir
+else
+		vcs $(COMP_OPTS_SLICE)  \
+        	 ../../verification/tests/tb_top_slice.sv ../../verification/hdl/bitslice_top.sv \
+		$(FILELIST_SLICE) -o output/bit_slice/$(PHASE)_$(MODE)_$(LP)/simv -Mdir=output/bit_slice/$(PHASE)_$(MODE)_$(LP)/csrc \
+		-l logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/compile.log -partcomp_dir=output/bit_slice/$(PHASE)_$(MODE)_$(LP)/partitionlib
+endif
+endif
+
+run_bit_slice: check_bit_slice
+ifndef ERR_STATUS
+ifeq ($(MODE), DEBUG)
+	./output/bit_slice/$(PHASE)_$(MODE)_$(LP)/simv  $(RUN_OPTS_SLICE) -l logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/run.log \
+	+ntb_random_seed=$(SEED) +timeout=200000 +UVM_TESTNAME=$(UVM_TEST_SLICE) +fsdb+all
+	cp ./logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/dump.fsdb ./outputsfromvcs/bit_slice_$(PHASE)_$(LP).fsdb
+ ifeq ($(PHASE), RTL)
+  ifneq ($(PWR_ANALYSIS), 1)
+	cp logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/bit_slice.saif outputsfromvcs/bit_slice_$(PHASE)_$(LP).saif 
+  endif
+ endif
+else
+	./output/bit_slice/$(PHASE)_$(MODE)_$(LP)/simv  $(RUN_OPTS_SLICE) -l logs/bit_slice/$(PHASE)_$(MODE)_$(LP)/run.log \
+	+ntb_random_seed=$(SEED) +timeout=200000 +UVM_TESTNAME=$(UVM_TEST_SLICE) +fsdb+all
+endif
+endif
+
+reallyclean_bit_slice: clean_bit_slice
+	rm -rf output/bit_slice/* logs/bit_slice/* outputsfromvcs/bit_slice*
+clean_bit_slice:
+	rm -rf *.log inter.fsdb inter.vpd mvsim* 
+	rm -rf vc_hdrs.h .vcsmx_rebuild *.log DVEfiles novas.* debug.*
+	rm -rf verdiLog DVEfiles vhdl_objs_dir ucli.key vcs_version 
+
+help_bit_slice:
+	@echo "******************************************************************************"
+	@echo "***   Makefile Help for bit_slice :			                  ***"
+	@echo "******************************************************************************"
+	@echo "*  Usage:                                                                    *"
+	@echo "*  ------                                                                    *"
+	@echo "*  make       [Compile and Run the testcase with UPF and dumping]            *"
+	@echo "*                                                                            *"
+	@echo "*  Available targets:                                                        *"
+	@echo "*  make help  [To see the Help]                                              *"
+	@echo "*  make clean [Remove VCS generated log files && simv/csrc]                  *"
+	@echo "*  make reallyclean [Remove everything - simv, fsdb, logs]                   *"
+	@echo "*  make comp  [Compile the base testcase]                                    *"
+	@echo "*  make run  [Run the base testcase]                                         *"
+	@echo "*                                                                            *"
+	@echo "*  Available arguments to above targets:                                     *"
+	@echo "*  UVM_TEST=<name> [name of the UVM test, default is btslice_lp_test]        *"
+	@echo "*  MAX_TRANS_CNT=<int> [max number of sequence items, default is 50]         *"
+	@echo "*  LP=NOUPF [disable Power Aware Sim(NLP), defaults is with UPF (NLP run)]   *"
+	@echo "*  PHASE=RTL/GLS [ Run at RTL OR GLS, default is RTL]                        *"
+	@echo "*  UPF_FILE=<location of UPF file> [Override the UPF file path]              *"
+	@echo "*                                                                            *"
+	@echo "*  Optional Arguments                                                        *"
+	@echo "*  MODE=NODEBUG [Default MODE=DEBUG, FSDB is dumped]                         *"
+	@echo "******************************************************************************"

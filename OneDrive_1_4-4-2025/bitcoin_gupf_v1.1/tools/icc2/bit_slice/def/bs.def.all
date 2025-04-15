@@ -1,0 +1,1852 @@
+# 
+# IC Compiler II write_def
+# Release      : M-2016.12
+# User Name    : gmaben
+# Date         : Wed Dec 21 10:01:09 2016
+# 
+VERSION 5.7 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN bit_slice ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 200000 68000 ) ;
+ROW _row_1 unit 1672 1672 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_2 unit 1672 3344 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_3 unit 1672 5016 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_4 unit 1672 6688 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_5 unit 1672 8360 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_6 unit 1672 10032 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_7 unit 1672 11704 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_8 unit 1672 13376 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_9 unit 1672 15048 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_10 unit 1672 16720 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_11 unit 1672 18392 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_12 unit 1672 20064 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_13 unit 1672 21736 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_14 unit 1672 23408 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_15 unit 1672 25080 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_16 unit 1672 26752 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_17 unit 1672 28424 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_18 unit 1672 30096 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_19 unit 1672 31768 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_20 unit 1672 33440 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_21 unit 1672 35112 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_22 unit 1672 36784 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_23 unit 1672 38456 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_24 unit 1672 40128 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_25 unit 1672 41800 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_26 unit 1672 43472 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_27 unit 1672 45144 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_28 unit 1672 46816 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_29 unit 1672 48488 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_30 unit 1672 50160 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_31 unit 1672 51832 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_32 unit 1672 53504 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_33 unit 1672 55176 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_34 unit 1672 56848 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_35 unit 1672 58520 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_36 unit 1672 60192 N DO 1293 BY 1 STEP 152 0 ;
+ROW _row_37 unit 1672 61864 FS DO 1293 BY 1 STEP 152 0 ;
+ROW _row_38 unit 1672 63536 N DO 1293 BY 1 STEP 152 0 ;
+TRACKS Y 0 DO 448 STEP 152 LAYER M1 ;
+TRACKS X 0 DO 1316 STEP 152 LAYER M1 ;
+TRACKS Y 0 DO 448 STEP 152 LAYER M2 ;
+TRACKS X 0 DO 1316 STEP 152 LAYER M2 ;
+TRACKS Y 152 DO 224 STEP 304 LAYER M3 ;
+TRACKS X 152 DO 658 STEP 304 LAYER M3 ;
+TRACKS Y 152 DO 224 STEP 304 LAYER M4 ;
+TRACKS X 152 DO 658 STEP 304 LAYER M4 ;
+TRACKS Y 152 DO 112 STEP 608 LAYER M5 ;
+TRACKS X 152 DO 329 STEP 608 LAYER M5 ;
+TRACKS Y 152 DO 112 STEP 608 LAYER M6 ;
+TRACKS X 152 DO 329 STEP 608 LAYER M6 ;
+TRACKS Y 760 DO 56 STEP 1216 LAYER M7 ;
+TRACKS X 760 DO 164 STEP 1216 LAYER M7 ;
+TRACKS Y 760 DO 56 STEP 1216 LAYER M8 ;
+TRACKS X 760 DO 164 STEP 1216 LAYER M8 ;
+TRACKS Y 760 DO 28 STEP 2432 LAYER M9 ;
+TRACKS X 1976 DO 82 STEP 2432 LAYER M9 ;
+TRACKS Y 760 DO 14 STEP 4864 LAYER MRDL ;
+TRACKS X 1976 DO 41 STEP 4864 LAYER MRDL ;
+VIAS 24 ;
+ - VIA12SQ_C_1_23 + VIARULE VIA12SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M1 VIA1 M2
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA12SQ_C_1_24 + VIARULE VIA12SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M1 VIA1 M2
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA12SQ_C_1_25 + VIARULE VIA12SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M1 VIA1 M2
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA23SQ_C_1_23 + VIARULE VIA23SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M2 VIA2 M3
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA23SQ_C_1_24 + VIARULE VIA23SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M2 VIA2 M3
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA23SQ_C_1_25 + VIARULE VIA23SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M2 VIA2 M3
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA34SQ_C_1_23 + VIARULE VIA34SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M3 VIA3 M4
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA34SQ_C_1_24 + VIARULE VIA34SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M3 VIA3 M4
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA34SQ_C_1_25 + VIARULE VIA34SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M3 VIA3 M4
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA45SQ_C_1_23 + VIARULE VIA45SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M4 VIA4 M5
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA45SQ_C_1_24 + VIARULE VIA45SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M4 VIA4 M5
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA45SQ_C_1_25 + VIARULE VIA45SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M4 VIA4 M5
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA56SQ_C_1_23 + VIARULE VIA56SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M5 VIA5 M6
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA56SQ_C_1_24 + VIARULE VIA56SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M5 VIA5 M6
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA56SQ_C_1_25 + VIARULE VIA56SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M5 VIA5 M6
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA56SQ_C_2_25 + VIARULE VIA56SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M5 VIA5 M6
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 2 25
+   + PATTERN 2_R6F8 ;
+ - VIA67SQ_C_1_23 + VIARULE VIA67SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M6 VIA6 M7
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA67SQ_C_1_24 + VIARULE VIA67SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M6 VIA6 M7
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA67SQ_C_1_25 + VIARULE VIA67SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M6 VIA6 M7
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA67SQ_C_2_25 + VIARULE VIA67SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M6 VIA6 M7
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 2 25
+   + PATTERN 2_R6F8 ;
+ - VIA78SQ_C_1_23 + VIARULE VIA78SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M7 VIA7 M8
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 23
+   + PATTERN 1_R5FE ;
+ - VIA78SQ_C_1_24 + VIARULE VIA78SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M7 VIA7 M8
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 24
+   + PATTERN 1_R6F ;
+ - VIA78SQ_C_1_25 + VIARULE VIA78SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M7 VIA7 M8
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 1 25
+   + PATTERN 1_R6F8 ;
+ - VIA78SQ_C_2_25 + VIARULE VIA78SQ_C
+   + CUTSIZE 50 50
+   + LAYERS M7 VIA7 M8
+   + CUTSPACING 70 70
+   + ENCLOSURE 30 5 5 30
+   + ROWCOL 2 25
+   + PATTERN 2_R6F8 ;
+END VIAS
+COMPONENTS 2 ;
+ - nibble_0 SRAM2RW16x4 + FIXED ( 105234 5586 ) E ;
+ - nibble_1 SRAM2RW16x4 + FIXED ( 48336 5016 ) FE ;
+END COMPONENTS
+SPECIALNETS 3 ;
+ - VDDL
+   ( PIN VDDL )
+   ( cto_buf_drc_9488 VDDG )
+   ( cts_buf_22009134 VDDG )
+   ( cts_inv_21519085 VDDG )
+   ( cts_inv_21489082 VDDG )
+   ( BINV_RR_328 VDDG )
+   ( BINV_RR_327 VDDG )
+   ( AINV_P_222 VDDG )
+   ( AINV_P_221 VDDG )
+   ( BUFT_RR_94 VDDG )
+   ( sync_datafrommem/dut_sync/CLK_UPF_LS VDDL )
+   ( sipo_bit/AINV_P_220 VDDG )
+   ( sipo_bit/AINV_P_219 VDDG )
+   ( sipo_bit/AINV_P_218 VDDG )
+   ( sipo_bit/AINV_P_217 VDDG )
+   ( sipo_bit/AINV_P_216 VDDG )
+   ( sipo_bit/AINV_P_214 VDDG )
+   ( sipo_bit/AINV_P_212 VDDG )
+   ( sipo_bit/AINV_P_211 VDDG )
+   ( sipo_bit/AINV_P_207 VDDG )
+   ( sipo_bit/AINV_P_206 VDDG )
+   ( sipo_bit/AINV_P_204 VDDG )
+   ( sipo_bit/AINV_P_203 VDDG )
+   ( sipo_bit/AINV_P_201 VDDG )
+   ( sipo_bit/AINV_P_200 VDDG )
+   ( sipo_bit/AINV_P_199 VDDG )
+   ( sipo_bit/AINV_P_198 VDDG )
+   ( sipo_bit/AINV_P_196 VDDG )
+   ( sipo_bit/AINV_P_195 VDDG )
+   ( sipo_bit/AINV_P_194 VDDG )
+   ( sipo_bit/AINV_P_193 VDDG )
+   ( sipo_bit/AINV_P_192 VDDG )
+   ( sipo_bit/AINV_P_191 VDDG )
+   ( sipo_bit/AINV_P_189 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R32_C0_32 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R30_C0_31 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R28_C0_30 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R26_C0_29 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R23_C0_28 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R21_C0_27 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R19_C0_26 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R17_C0_25 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R15_C0_24 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R13_C0_23 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R11_C0_22 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R9_C0_21 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R7_C0_20 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R5_C0_19 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R3_C0_18 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R1_C0_17 VDDG )
+   ( sipo_bit/headerfooter_snps_PD_SIPO__PD1_SW_snps_HEAD2X16_HVT_R0_C0_16 VDDG )
+   ( sipo_bit/rd_addr_reg_1_ VDDG )
+   ( sipo_bit/wr_addr_reg_1_ VDDG )
+   ( sipo_bit/tmp_reg_5_ VDDG )
+   ( sipo_bit/tmp_reg_7_ VDDG )
+   ( sipo_bit/rd_reg VDDG )
+   ( sipo_bit/count_reg_0_ VDDG )
+   ( sipo_bit/tmp_reg_1_ VDDG )
+   ( sipo_bit/tmp_reg_3_ VDDG )
+   ( sipo_bit/tmp_reg_12_ VDDG )
+   ( sipo_bit/tmp_reg_14_ VDDG )
+   ( sipo_bit/tmp_reg_4_ VDDG )
+   ( sipo_bit/tmp_reg_13_ VDDG )
+   ( sipo_bit/tmp_reg_2_ VDDG )
+   ( sipo_bit/tmp_reg_0_ VDDG )
+   ( sipo_bit/tmp_reg_6_ VDDG )
+   ( sipo_bit/wr_addr_reg_2_ VDDG )
+   ( sipo_bit/count_reg_1_ VDDG )
+   ( sipo_bit/wr_addr_reg_0_ VDDG )
+   ( sipo_bit/tmp_reg_11_ VDDG )
+   ( sipo_bit/wr_1_reg VDDG )
+   ( sipo_bit/tmp_reg_8_ VDDG )
+   ( sipo_bit/wr_addr_reg_3_ VDDG )
+   ( sipo_bit/tmp_reg_9_ VDDG )
+   ( sipo_bit/tmp_reg_15_ VDDG )
+   ( sipo_bit/tmp_reg_10_ VDDG )
+   ( sipo_bit/wr_0_reg VDDG )
+   ( sipo_bit/count_reg_2_ VDDG )
+   ( sipo_bit/count_reg_3_ VDDG )
+   ( sipo_bit/rd_addr_reg_3_ VDDG )
+   ( sipo_bit/rd_addr_reg_2_ VDDG )
+   ( sipo_bit/rd_addr_reg_0_ VDDG )
+   ( sipo_bit/pout_reg_15_ VDDG )
+   ( sipo_bit/wr_tmp_reg VDDG )
+   ( sipo_bit/pout_reg_14_ VDDG )
+   ( sipo_bit/pout_reg_13_ VDDG )
+   ( sipo_bit/pout_reg_12_ VDDG )
+   ( sipo_bit/pout_reg_11_ VDDG )
+   ( sipo_bit/pout_reg_10_ VDDG )
+   ( sipo_bit/pout_reg_9_ VDDG )
+   ( sipo_bit/pout_reg_8_ VDDG )
+   ( sipo_bit/pout_reg_7_ VDDG )
+   ( sipo_bit/pout_reg_6_ VDDG )
+   ( sipo_bit/pout_reg_5_ VDDG )
+   ( sipo_bit/pout_reg_4_ VDDG )
+   ( sipo_bit/pout_reg_3_ VDDG )
+   ( sipo_bit/pout_reg_2_ VDDG )
+   ( sipo_bit/pout_reg_1_ VDDG )
+   ( sipo_bit/pout_reg_0_ VDDG )
+   ( sipo_bit/addr_reg_3_ VDDG )
+   ( sipo_bit/addr_reg_2_ VDDG )
+   ( sipo_bit/addr_reg_1_ VDDG )
+   ( sipo_bit/addr_reg_0_ VDDG )
+   ( sipo_bit/wr_reg VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R30_C0_15 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R28_C0_14 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R26_C0_13 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R23_C0_12 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R21_C0_11 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R19_C0_10 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R17_C0_9 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R15_C0_8 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R13_C0_7 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R11_C0_6 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R9_C0_5 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R7_C0_4 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R5_C0_3 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R3_C0_2 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R1_C0_1 VDDG )
+   ( piso_bit/headerfooter_snps_PD_PISO__PD2_SW_snps_HEAD2X16_HVT_R0_C0_0 VDDG )
+   ( piso_bit/temp_reg_1_ VDDG )
+   ( piso_bit/temp_reg_6_ VDDG )
+   ( piso_bit/temp_reg_14_ VDDG )
+   ( piso_bit/temp_reg_10_ VDDG )
+   ( piso_bit/temp_reg_8_ VDDG )
+   ( piso_bit/temp_reg_12_ VDDG )
+   ( piso_bit/temp_reg_5_ VDDG )
+   ( piso_bit/temp_reg_4_ VDDG )
+   ( piso_bit/temp_reg_13_ VDDG )
+   ( piso_bit/temp_reg_9_ VDDG )
+   ( piso_bit/temp_reg_3_ VDDG )
+   ( piso_bit/temp_reg_0_ VDDG )
+   ( piso_bit/temp_reg_2_ VDDG )
+   ( piso_bit/temp_reg_7_ VDDG )
+   ( piso_bit/temp_reg_15_ VDDG )
+   ( piso_bit/temp_reg_11_ VDDG )
+   ( piso_bit/dout_reg VDDG )
+   ( lreset_sync/CLK_UPF_LS VDDL )
+   ( shut_down_signals_1__UPF_LS VDDL )
+   ( shut_down_signals_0__UPF_LS VDDL )
+   ( isolation_signals_0__UPF_LS VDDL )
+   ( EN_UPF_LS VDDL )
+   ( CLK_UPF_LS VDDL )
+   + ROUTED M8 3000 + SHAPE STRIPE ( 40000 0 ) ( * 68000 )
+   NEW M8 3000 + SHAPE STRIPE ( 170000 0 ) ( * 68000 )
+   NEW M8 3000 + SHAPE STRIPE ( 104000 0 ) ( * 68000 )
+   NEW M1 50 + SHAPE STRIPE ( 170097 9206 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 15894 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 5862 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 12550 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 19238 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 22582 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 25926 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 49334 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 29270 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 32614 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 35958 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 39302 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 42646 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 45990 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 52678 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 170097 56022 ) VIA12SQ_C_1_23 VIA23SQ_C_1_23 VIA34SQ_C_1_23 VIA45SQ_C_1_23 VIA56SQ_C_1_23 VIA67SQ_C_1_23 VIA78SQ_C_1_23
+   NEW M1 50 + SHAPE STRIPE ( 40021 5862 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 9206 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 12550 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 15894 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 19238 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 22582 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 25926 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 29270 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 32614 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 35958 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 39302 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 42646 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 45990 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 49334 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 52678 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 56022 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M1 50 + SHAPE STRIPE ( 40021 59366 ) VIA12SQ_C_1_24 VIA23SQ_C_1_24 VIA34SQ_C_1_24 VIA45SQ_C_1_24 VIA56SQ_C_1_24 VIA67SQ_C_1_24 VIA78SQ_C_1_24
+   NEW M2 60 ( 103816 64722 30 ) ( * 64904 30 )
+   NEW M2 60 ( 121144 64747 30 ) ( * 64904 30 )
+   NEW M2 60 ( 101688 64859 30 ) ( * 64904 30 )
+   NEW M2 110 ( 13832 20824 55 ) ( * 20844 55 )
+   NEW M2 110 ( 13832 20804 55 ) ( * 20824 55 )
+   NEW M1 60 ( 13835 49400 30 ) ( 13984 * 30 )
+   NEW M2 60 ( 13984 49355 30 ) ( * 49400 30 )
+   NEW M2 60 ( 13984 49400 30 ) ( * 49445 30 )
+   NEW M1 60 ( 31875 52592 30 ) ( 31920 * 30 )
+   NEW M1 60 ( 31267 50920 30 ) ( 31312 * 30 )
+   NEW M2 60 ( 31312 50920 30 ) ( * 50965 30 )
+   NEW M2 60 ( 31312 50875 30 ) ( * 50920 30 )
+   NEW M1 60 ( 29443 22344 30 ) ( 29488 * 30 )
+   NEW M2 60 ( 29488 22299 30 ) ( * 22344 30 )
+   NEW M2 60 ( 29488 22344 30 ) ( * 22389 30 )
+   NEW M1 60 ( 14395 52592 30 ) ( 14440 * 30 )
+   NEW M2 60 ( 14440 52592 30 ) ( * 52637 30 )
+   NEW M2 60 ( 14440 52547 30 ) ( * 52592 30 )
+   NEW M1 60 ( 37195 17632 30 ) ( 37240 * 30 )
+   NEW M2 60 ( 37240 17632 30 ) ( * 17677 30 )
+   NEW M2 60 ( 37240 18955 30 ) ( * 19000 30 )
+   NEW M1 60 ( 37195 19000 30 ) ( 37240 * 30 )
+   NEW M1 60 ( 25795 5776 30 ) ( 25840 * 30 )
+   NEW M2 60 ( 25840 5731 30 ) ( * 5776 30 )
+   NEW M1 60 ( 36587 45752 30 ) ( 36632 * 30 )
+   NEW M2 60 ( 36632 45707 30 ) ( * 45752 30 )
+   NEW M2 60 ( 36632 45752 30 ) ( * 45797 30 )
+   NEW M1 60 ( 21843 29336 30 ) ( 21888 * 30 )
+   NEW M2 110 ( 36632 44232 55 ) ( * 44252 55 )
+   NEW M2 110 ( 36632 44212 55 ) ( * 44232 55 )
+   NEW M1 60 ( 36739 7448 30 ) ( 36784 * 30 )
+   NEW M2 60 ( 36784 7448 30 ) ( * 7493 30 )
+   NEW M1 110 ( 34352 34504 55 ) ( * 34524 55 )
+   NEW M1 110 ( 34352 34484 55 ) ( * 34504 55 )
+   NEW M2 60 ( 34352 34322 30 ) ( * 34504 30 )
+   NEW M2 110 ( 13832 24168 55 ) ( * 24188 55 )
+   NEW M2 110 ( 13832 24148 55 ) ( * 24168 55 )
+   NEW M1 110 ( 36024 37848 55 ) ( * 37868 55 )
+   NEW M1 110 ( 36024 37828 55 ) ( * 37848 55 )
+   NEW M1 60 ( 23363 14288 30 ) ( 23408 * 30 )
+   NEW M1 60 ( 166699 10792 30 ) ( 166744 * 30 )
+   NEW M2 60 ( 166744 10747 30 ) ( * 10792 30 )
+   NEW M1 60 ( 31267 58368 30 ) ( 31312 * 30 )
+   NEW M2 60 ( 31312 58323 30 ) ( * 58368 30 )
+   NEW M2 60 ( 13832 50267 30 ) ( * 50312 30 )
+   NEW M1 60 ( 13832 50312 30 ) ( 13877 * 30 )
+   NEW M1 60 ( 14395 50312 30 ) ( 14440 * 30 )
+   NEW M2 60 ( 14440 50312 30 ) ( * 50357 30 )
+   NEW M1 60 ( 31267 55024 30 ) ( 31312 * 30 )
+   NEW M2 60 ( 31312 54979 30 ) ( * 55024 30 )
+   NEW M2 60 ( 31312 55024 30 ) ( * 55069 30 )
+   NEW M1 60 ( 166699 7600 30 ) ( 166744 * 30 )
+   NEW M2 60 ( 166744 7600 30 ) ( * 7645 30 )
+   NEW M1 60 ( 32787 42560 30 ) ( 32832 * 30 )
+   NEW M2 60 ( 32832 42515 30 ) ( * 42560 30 )
+   NEW M1 60 ( 28120 57912 30 ) ( 28165 * 30 )
+   NEW M1 110 ( 27816 57912 55 ) ( * 57932 55 )
+   NEW M1 110 ( 27816 57892 55 ) ( * 57912 55 )
+   NEW M1 60 ( 167003 19152 30 ) ( 167048 * 30 )
+   NEW M2 60 ( 167048 19152 30 ) ( * 19197 30 )
+   NEW M2 60 ( 167048 19411 30 ) ( * 19456 30 )
+   NEW M1 60 ( 167048 19456 30 ) ( 167093 * 30 )
+   NEW M2 60 ( 23712 32455 30 ) ( * 32500 30 )
+   NEW M2 60 ( 182507 24168 30 ) ( 182552 * 30 )
+   NEW M1 60 ( 167003 25840 30 ) ( 167048 * 30 )
+   NEW M2 60 ( 167048 25840 30 ) ( * 25885 30 )
+   NEW M2 60 ( 167048 26099 30 ) ( * 26144 30 )
+   NEW M1 60 ( 167048 26144 30 ) ( 167093 * 30 )
+   NEW M1 60 ( 167003 32528 30 ) ( 167048 * 30 )
+   NEW M2 60 ( 167048 32528 30 ) ( * 32573 30 )
+   NEW M2 60 ( 167048 32787 30 ) ( * 32832 30 )
+   NEW M1 60 ( 167048 32832 30 ) ( 167093 * 30 )
+   NEW M1 60 ( 21691 36024 30 ) ( 21736 * 30 )
+   NEW M2 60 ( 21736 35842 30 ) ( * 36024 30 )
+   NEW M2 60 ( 5624 58368 30 ) ( * 58413 30 )
+   NEW M1 60 ( 5624 58368 30 ) ( 5669 * 30 )
+   NEW M2 60 ( 142880 64859 30 ) ( * 64904 30 )
+   NEW M2 60 ( 5472 54568 30 ) ( * 54700 30 )
+   NEW M2 60 ( 168568 61378 30 ) ( * 61560 30 )
+   NEW M3 60 ( 168386 61560 30 ) ( 168568 * 30 )
+   NEW M2 60 ( 43320 58931 30 ) ( * 58976 30 )
+   NEW M1 60 ( 43275 58976 30 ) ( 43320 * 30 )
+   NEW M1 60 ( 166851 41040 30 ) ( 166896 * 30 )
+   NEW M2 60 ( 166896 40995 30 ) ( * 41040 30 )
+   NEW M2 60 ( 23408 27692 30 ) ( * 27737 30 )
+   NEW M1 60 ( 157472 61408 30 ) ( 157517 * 30 )
+   NEW M1 80 ( 159585 61483 40 ) ( * 61500 40 )
+   NEW M2 110 ( 13832 17480 55 ) ( * 17500 55 )
+   NEW M2 110 ( 13832 17460 55 ) ( * 17480 55 )
+   NEW M1 60 ( 167003 29184 30 ) ( 167048 * 30 )
+   NEW M2 60 ( 167048 29184 30 ) ( * 29229 30 )
+   NEW M2 60 ( 167048 29443 30 ) ( * 29488 30 )
+   NEW M1 60 ( 167048 29488 30 ) ( 167093 * 30 )
+   NEW M1 110 ( 100168 57912 55 ) ( * 57932 55 )
+   NEW M1 110 ( 100168 57900 55 ) ( * 57912 55 )
+   NEW M2 60 ( 100168 57730 30 ) ( * 57912 30 )
+   NEW M1 60 ( 14091 42408 30 ) ( 14136 * 30 )
+   NEW M2 60 ( 14136 42408 30 ) ( * 42453 30 )
+   NEW M2 60 ( 14136 42363 30 ) ( * 42408 30 )
+   NEW M1 60 ( 167003 15808 30 ) ( 167048 * 30 )
+   NEW M2 60 ( 167048 15808 30 ) ( * 15853 30 )
+   NEW M2 60 ( 167048 16067 30 ) ( * 16112 30 )
+   NEW M1 60 ( 167048 16112 30 ) ( 167093 * 30 )
+   NEW M1 110 ( 9424 37848 55 ) ( * 37868 55 )
+   NEW M1 110 ( 9424 37828 55 ) ( * 37848 55 )
+   NEW M2 60 ( 9424 37666 30 ) ( * 37848 30 )
+   NEW M1 60 ( 167003 22496 30 ) ( 167048 * 30 )
+   NEW M2 60 ( 167048 22496 30 ) ( * 22541 30 )
+   NEW M2 60 ( 167048 22755 30 ) ( * 22800 30 )
+   NEW M1 60 ( 167048 22800 30 ) ( 167093 * 30 )
+   NEW M1 60 ( 22907 7600 30 ) ( 22952 * 30 )
+   NEW M1 60 ( 36587 51224 30 ) ( 36632 * 30 )
+   NEW M2 60 ( 36632 51179 30 ) ( * 51224 30 )
+   NEW M2 60 ( 165376 49125 30 ) ( * 49170 30 )
+   NEW M1 60 ( 166699 34352 30 ) ( 166744 * 30 )
+   NEW M2 60 ( 166744 34352 30 ) ( * 34397 30 )
+   NEW M1 54 ( 5444 57656 27 ) ( 5472 * 27 )
+   NEW M1 54 ( 5472 57656 27 ) ( 5500 * 27 )
+   NEW M2 60 ( 5472 57563 30 ) ( * 57608 30 )
+   NEW M2 110 ( 13832 34200 55 ) ( * 34220 55 )
+   NEW M2 110 ( 13832 34180 55 ) ( * 34200 55 )
+   NEW M1 60 ( 31312 51376 30 ) ( 31357 * 30 )
+   NEW M2 60 ( 31312 51376 30 ) ( * 51421 30 )
+   NEW M2 60 ( 31312 51331 30 ) ( * 51376 30 )
+   NEW M2 60 ( 25688 54675 30 ) ( * 54720 30 )
+   NEW M1 60 ( 25688 54720 30 ) ( 25733 * 30 )
+   NEW M1 110 ( 32984 14440 55 ) ( * 14460 55 )
+   NEW M1 110 ( 32984 14420 55 ) ( * 14440 55 )
+   NEW M2 60 ( 32984 14395 30 ) ( * 14440 30 )
+   NEW M1 60 ( 21083 25840 30 ) ( 21128 * 30 )
+   NEW M1 60 ( 21235 17784 30 ) ( 21325 * 30 )
+   NEW M1 60 ( 22755 17784 30 ) ( 22800 * 30 )
+   NEW M2 60 ( 22800 17739 30 ) ( * 17784 30 )
+   NEW M1 60 ( 20475 18240 30 ) ( 20520 * 30 )
+   NEW M2 60 ( 20520 18240 30 ) ( * 18285 30 )
+   NEW M2 110 ( 33136 10792 55 ) ( * 10812 55 )
+   NEW M2 110 ( 33136 10772 55 ) ( * 10792 55 )
+   NEW M1 60 ( 23515 9120 30 ) ( 23560 * 30 )
+   NEW M1 60 ( 36587 20824 30 ) ( 36632 * 30 )
+   NEW M2 60 ( 36632 20779 30 ) ( * 20824 30 )
+   NEW M2 60 ( 36632 19000 30 ) ( * 19045 30 )
+   NEW M1 60 ( 36632 19000 30 ) ( 36677 * 30 )
+   NEW M1 60 ( 36587 19000 30 ) ( 36632 * 30 )
+   NEW M1 60 ( 37195 29184 30 ) ( 37240 * 30 )
+   NEW M1 60 ( 23363 15960 30 ) ( 23408 * 30 )
+   NEW M1 60 ( 37347 9272 30 ) ( 37392 * 30 )
+   NEW M1 60 ( 33243 36024 30 ) ( 33288 * 30 )
+   NEW M2 60 ( 33288 36024 30 ) ( * 36069 30 )
+   NEW M2 110 ( 13832 27512 55 ) ( * 27532 55 )
+   NEW M2 110 ( 13832 27492 55 ) ( * 27512 55 )
+   NEW M2 60 ( 23408 21004 30 ) ( * 21049 30 )
+   NEW M1 60 ( 36587 27664 30 ) ( 36632 * 30 )
+   NEW M2 60 ( 36632 27664 30 ) ( * 27709 30 )
+   NEW M2 60 ( 36632 27619 30 ) ( * 27664 30 )
+   NEW M2 60 ( 36632 36024 30 ) ( * 36176 30 )
+   NEW M1 60 ( 166851 44384 30 ) ( 166896 * 30 )
+   NEW M2 60 ( 166896 44384 30 ) ( * 44429 30 )
+   NEW M1 60 ( 166744 9424 30 ) ( 166789 * 30 )
+   NEW M2 60 ( 166744 9424 30 ) ( * 9469 30 )
+   NEW M2 60 ( 166744 9379 30 ) ( * 9424 30 )
+   NEW M1 80 ( 20961 38075 40 ) ( * 38092 40 )
+   NEW M1 110 ( 20976 38000 55 ) ( * 38020 55 )
+   NEW M1 68 ( 36591 41652 34 ) ( 36632 * 34 )
+   NEW M1 68 ( 36632 41652 34 ) ( 36653 * 34 )
+   NEW M1 68 ( 163967 61716 34 ) ( 164008 * 34 )
+   NEW M1 68 ( 164008 61716 34 ) ( 164049 * 34 )
+   NEW M2 60 ( 16720 59083 30 ) ( * 59128 30 )
+   NEW M2 60 ( 165528 61378 30 ) ( * 61560 30 )
+   NEW M2 60 ( 164008 61530 30 ) ( * 61560 30 )
+   NEW M2 60 ( 164008 61560 30 ) ( * 61712 30 )
+   NEW M1 110 ( 20976 37980 55 ) ( * 38000 55 )
+   NEW M2 60 ( 36784 9120 30 ) ( * 9272 30 )
+   NEW M1 110 ( 33288 24908 55 ) ( * 24917 55 )
+   NEW M2 60 ( 33288 24928 30 ) ( * 24973 30 )
+   NEW M2 60 ( 33288 26555 30 ) ( * 26600 30 )
+   NEW M1 60 ( 33288 26600 30 ) ( 33333 * 30 )
+   NEW M1 60 ( 36587 26600 30 ) ( 36632 * 30 )
+   NEW M2 60 ( 36632 26600 30 ) ( * 26645 30 )
+   NEW M1 62 ( 26120 31080 31 ) ( 26144 * 31 )
+   NEW M1 62 ( 26144 31080 31 ) ( 26188 * 31 )
+   NEW M2 60 ( 26144 31034 30 ) ( * 31079 30 )
+   NEW M2 60 ( 29488 24340 30 ) ( * 24472 30 )
+   NEW M2 110 ( 5472 54720 55 ) ( * 54740 55 )
+   NEW M2 110 ( 5472 54700 55 ) ( * 54720 55 )
+   NEW M1 54 ( 166716 49477 ) ( * 49531 )
+   NEW M2 150 ( 99707 51533 75 ) ( 99712 * 75 )
+   NEW M2 150 ( 99712 51533 75 ) ( 99717 * 75 )
+   NEW M1 54 ( 99760 51480 27 ) ( * 51528 27 )
+   NEW M1 54 ( 99760 51528 27 ) ( * 51553 27 )
+   NEW M2 60 ( 32984 12317 30 ) ( * 12362 30 )
+   NEW M2 60 ( 32984 12362 30 ) ( * 12407 30 )
+   NEW M2 60 ( 33288 37761 30 ) ( * 37806 30 )
+   NEW M2 60 ( 33288 37716 30 ) ( * 37761 30 )
+   NEW M2 60 ( 32832 41118 30 ) ( * 41163 30 )
+   NEW M2 60 ( 32832 41073 30 ) ( * 41118 30 )
+   NEW M2 60 ( 181792 17710 30 ) ( * 17755 30 )
+   NEW M1 58 ( 29462 24127 29 ) ( * 24168 29 )
+   NEW M1 58 ( 29462 24168 29 ) ( * 24214 29 )
+   NEW M2 60 ( 29488 24168 30 ) ( * 24213 30 )
+   NEW M2 60 ( 29488 24123 30 ) ( * 24168 30 )
+   NEW M2 60 ( 36632 36176 30 ) ( * 36221 30 )
+   NEW M1 60 ( 36587 36176 30 ) ( 36632 * 30 )
+   NEW M1 60 ( 36176 36176 30 ) ( 36221 * 30 )
+   NEW M2 60 ( 36176 36131 30 ) ( * 36176 30 )
+   NEW M2 60 ( 36632 41648 30 ) ( * 41693 30 )
+   NEW M1 110 ( 26296 57912 55 ) ( * 57932 55 )
+   NEW M1 110 ( 26296 57892 55 ) ( * 57912 55 )
+   NEW M2 60 ( 26296 57867 30 ) ( * 57912 30 )
+   NEW M2 60 ( 26296 54720 30 ) ( * 54765 30 )
+   NEW M1 60 ( 26296 54720 30 ) ( 26341 * 30 )
+   NEW M1 60 ( 26251 54720 30 ) ( 26296 * 30 )
+   NEW M2 60 ( 23712 45831 30 ) ( * 45876 30 )
+   NEW M1 60 ( 98648 54568 30 ) ( 98693 * 30 )
+   NEW M2 60 ( 98648 54386 30 ) ( * 54568 30 )
+   NEW M1 54 ( 94516 61152 27 ) ( 94544 * 27 )
+   NEW M1 54 ( 94544 61152 27 ) ( 94572 * 27 )
+   NEW M2 150 ( 22339 10797 75 ) ( 22344 * 75 )
+   NEW M2 150 ( 22344 10797 75 ) ( 22349 * 75 )
+   NEW M2 150 ( 35867 32685 75 ) ( 35872 * 75 )
+   NEW M2 150 ( 35872 32685 75 ) ( 35877 * 75 )
+   NEW M2 150 ( 32067 39373 75 ) ( 32072 * 75 )
+   NEW M2 150 ( 32072 39373 75 ) ( 32077 * 75 )
+   NEW M2 60 ( 32224 19000 30 ) ( * 19045 30 )
+   NEW M2 60 ( 36176 34808 30 ) ( * 34853 30 )
+   NEW M2 60 ( 36176 34763 30 ) ( * 34808 30 )
+   NEW M2 60 ( 166744 36283 30 ) ( * 36328 30 )
+   NEW M2 60 ( 166744 36328 30 ) ( * 36373 30 )
+   NEW M1 60 ( 166699 50920 30 ) ( 166744 * 30 )
+   NEW M2 60 ( 166744 50875 30 ) ( * 50920 30 )
+   NEW M2 60 ( 166744 49552 30 ) ( * 49597 30 )
+   NEW M2 60 ( 181792 19152 30 ) ( * 19197 30 )
+   NEW M2 60 ( 181792 19107 30 ) ( * 19152 30 )
+   NEW M1 60 ( 181747 19152 30 ) ( 181792 * 30 )
+   NEW M1 136 ( 171347 19195 68 ) ( 171505 * 68 )
+   NEW M1 54 ( 36148 34733 ) ( * 34787 )
+   NEW M1 54 ( 36151 34760 27 ) ( 36224 * 27 )
+   NEW M1 54 ( 36151 34811 27 ) ( 36224 * 27 )
+   NEW M1 70 ( 15926 55789 35 ) ( 16000 * 35 )
+   NEW M1 70 ( 15926 55858 35 ) ( 16000 * 35 )
+   NEW M1 70 ( 15920 55789 35 ) ( 15994 * 35 )
+   NEW M1 70 ( 15920 55858 35 ) ( 15994 * 35 )
+   NEW M1 70 ( 13032 45757 35 ) ( 13106 * 35 )
+   NEW M1 70 ( 13032 45826 35 ) ( 13106 * 35 )
+   NEW M1 70 ( 13038 45757 35 ) ( 13112 * 35 )
+   NEW M1 70 ( 13038 45826 35 ) ( 13112 * 35 )
+   NEW M1 70 ( 32190 19005 35 ) ( 32264 * 35 )
+   NEW M1 70 ( 32190 19074 35 ) ( 32264 * 35 )
+   NEW M1 70 ( 32184 19005 35 ) ( 32258 * 35 )
+   NEW M1 70 ( 32184 19074 35 ) ( 32258 * 35 )
+   NEW M1 70 ( 16686 59133 35 ) ( 16760 * 35 )
+   NEW M1 70 ( 16686 59202 35 ) ( 16760 * 35 )
+   NEW M1 70 ( 16680 59133 35 ) ( 16754 * 35 )
+   NEW M1 70 ( 16680 59202 35 ) ( 16754 * 35 )
+   NEW M1 80 ( 5457 54795 40 ) ( * 54812 40 )
+   NEW M1 54 ( 166716 36253 ) ( * 36307 )
+   NEW M1 54 ( 166719 36280 27 ) ( 166792 * 27 )
+   NEW M1 54 ( 166719 36331 27 ) ( 166792 * 27 )
+   NEW M1 54 ( 166719 49504 27 ) ( 166792 * 27 )
+   NEW M1 54 ( 166719 49555 27 ) ( 166792 * 27 )
+   NEW M2 60 ( 140904 64859 30 ) ( * 64904 30 )
+   NEW M2 60 ( 126616 64859 30 ) ( * 64904 30 )
+   NEW M1 60 ( 159904 61256 30 ) ( 159949 * 30 )
+   NEW M1 110 ( 159600 61256 55 ) ( * 61276 55 )
+   NEW M1 110 ( 159600 61236 55 ) ( * 61256 55 )
+   NEW M2 60 ( 101384 34808 30 ) ( * 34853 30 )
+   NEW M2 60 ( 94544 61059 30 ) ( * 61104 30 )
+   NEW M1 60 ( 94088 54568 30 ) ( 94133 * 30 )
+   NEW M2 60 ( 94088 54386 30 ) ( * 54568 30 )
+   NEW M1 60 ( 31312 54568 30 ) ( 31357 * 30 )
+   NEW M2 60 ( 31312 54568 30 ) ( * 54613 30 )
+   NEW M2 60 ( 31312 54523 30 ) ( * 54568 30 )
+   + USE POWER ;
+ - VDDH
+   ( PIN VDDH )
+   ( * VDDH )
+   ( nibble_1 VDD )
+   ( nibble_0 VDD )
+   ( BUFT_RR_11287 VDD )
+   ( BUFT_RR_11285 VDD )
+   ( BUFT_RR_11284 VDD )
+   ( BUFT_RR_12092 VDD )
+   ( RLB__12083 VDD )
+   ( BINV_R_11281 VDD )
+   ( BINV_R_11280 VDD )
+   ( RLB__12082 VDD )
+   ( cto_buf_drc_9488 VDD )
+   ( cto_buf_drc_9385 VDD )
+   ( cts_buf_22009134 VDD )
+   ( cts_inv_21519085 VDD )
+   ( cts_inv_21489082 VDD )
+   ( cts_inv_9487882 VDD )
+   ( cts_inv_9477881 VDD )
+   ( cts_inv_9467880 VDD )
+   ( cts_inv_9457879 VDD )
+   ( BUFT_RR_375 VDD )
+   ( BINV_RR_328 VDD )
+   ( BINV_RR_327 VDD )
+   ( optlc_321 VDD )
+   ( optlc_320 VDD )
+   ( optlc_319 VDD )
+   ( optlc_317 VDD )
+   ( BINV_R_279 VDD )
+   ( BINV_R_278 VDD )
+   ( BUFT_L_382 VDD )
+   ( optlc_316 VDD )
+   ( BUFT_L_232 VDD )
+   ( AINV_P_222 VDD )
+   ( AINV_P_221 VDD )
+   ( BUFT_P_186 VDD )
+   ( BUFT_P_185 VDD )
+   ( optlc_314 VDD )
+   ( BUFT_P_184 VDD )
+   ( BINV_R_158 VDD )
+   ( BUFT_P_155 VDD )
+   ( AINV_P_154 VDD )
+   ( AINV_P_153 VDD )
+   ( BUFT_P_150 VDD )
+   ( BUFT_P_147 VDD )
+   ( AINV_P_146 VDD )
+   ( AINV_P_145 VDD )
+   ( AINV_PR_96 VDD )
+   ( AINV_PR_95 VDD )
+   ( BUFT_RR_94 VDD )
+   ( sync_datafrommem/dut_sync/BUFT_P_183 VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_9_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_8_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_7_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_6_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_5_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_4_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_3_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_2_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_1_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_15_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_14_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_13_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_12_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_11_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_10_ VDD )
+   ( sync_datafrommem/dut_sync/t_sync_out_reg_0_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_9_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_8_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_7_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_6_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_5_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_4_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_3_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_2_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_1_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_15_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_14_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_13_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_12_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_11_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_10_ VDD )
+   ( sync_datafrommem/dut_sync/sync_out_reg_0_ VDD )
+   ( sync_data2mem/dut_sync/RLB__12091 VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_9_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_8_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_7_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_6_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_5_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_4_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_3_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_2_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_1_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_15_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_14_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_13_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_12_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_11_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_10_ VDD )
+   ( sync_data2mem/dut_sync/t_sync_out_reg_0_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_9_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_8_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_7_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_6_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_5_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_4_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_3_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_2_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_1_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_15_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_14_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_13_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_12_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_11_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_10_ VDD )
+   ( sync_data2mem/dut_sync/sync_out_reg_0_ VDD )
+   ( sync_add2mem/dut_sync/BUFT_RR_11294 VDD )
+   ( sync_add2mem/dut_sync/BUFT_RR_280 VDD )
+   ( sync_add2mem/dut_sync/BUFT_P_44 VDD )
+   ( sync_add2mem/dut_sync/t_sync_out_reg_3_ VDD )
+   ( sync_add2mem/dut_sync/t_sync_out_reg_2_ VDD )
+   ( sync_add2mem/dut_sync/t_sync_out_reg_1_ VDD )
+   ( sync_add2mem/dut_sync/t_sync_out_reg_0_ VDD )
+   ( sync_add2mem/dut_sync/sync_out_reg_3_ VDD )
+   ( sync_add2mem/dut_sync/sync_out_reg_2_ VDD )
+   ( sync_add2mem/dut_sync/sync_out_reg_1_ VDD )
+   ( sync_add2mem/dut_sync/sync_out_reg_0_ VDD )
+   ( lreset_sync/BUFT_P_225 VDD )
+   ( lreset_sync/t_reset_sync_reg VDD )
+   ( lreset_sync/reset_sync_reg VDD )
+   ( lreset_sync/U3 VDD )
+   ( hreset_sync/BUFT_P_226 VDD )
+   ( hreset_sync/t_reset_sync_reg VDD )
+   ( hreset_sync/reset_sync_reg VDD )
+   ( hreset_sync/U3 VDD )
+   ( temp_2_reg VDD )
+   ( temp_1_reg VDD )
+   ( temp_0_reg VDD )
+   ( load_data_from_memory_reg VDD )
+   ( U11 VDD )
+   ( U10 VDD )
+   + ROUTED M8 3000 + SHAPE STRIPE ( 30000 0 ) ( * 68000 )
+   NEW M8 3000 + SHAPE STRIPE ( 160000 0 ) ( * 68000 )
+   NEW M8 3000 + SHAPE STRIPE ( 94000 0 ) ( * 68000 )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 1672 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 5016 ) ( 48336 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 5016 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 5016 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 5016 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 8360 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 8360 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 8360 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 8360 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 8360 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 11704 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 11704 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 11704 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 11704 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 11704 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 15048 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 15048 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 15048 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 15048 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 15048 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 18392 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 18392 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 18392 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 18392 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 18392 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 21736 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 21736 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 21736 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 21736 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 21736 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 25080 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 25080 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 25080 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 25080 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 25080 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 28424 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 28424 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91200 28424 ) ( 105184 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 28424 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 28424 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 31768 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 31768 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91200 31768 ) ( 105184 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 31768 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 31768 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 35112 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 35112 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91195 35112 ) ( 105184 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 35112 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 35112 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 38456 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 38456 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91189 38456 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 38456 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 38456 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 41800 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 41800 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 41800 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 41800 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 41800 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 45144 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 45144 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 45144 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 45144 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 45144 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 48488 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 48488 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 48488 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 48488 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 48488 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 51832 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 51832 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 51832 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 51832 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 51832 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 55176 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 55176 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 55176 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 195674 55176 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 55176 ) ( 155902 * )
+   NEW M1 60 + SHAPE IOWIRE ( 45194 58520 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 58520 ) ( 3750 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 58520 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 58520 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 61864 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 65208 ) ( 198208 * )
+   NEW M1 50 + SHAPE IOWIRE ( 30000 1672 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 1672 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 160000 1672 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 5016 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 8360 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 11704 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 15048 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 18392 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 21736 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 25080 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 28424 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 31768 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 35112 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 38456 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 41800 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 45144 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 48488 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 51832 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 55176 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 58520 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 160000 58520 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 30000 61864 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 61864 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 160000 61864 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 30000 65208 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 94000 65208 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 160000 65208 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 12412 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 16912 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 21412 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 25913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 26813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 30413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 31313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 32213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 33113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 36713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 41213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 46613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 48413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 49313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 52913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 53813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 57413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 7913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 9713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 10614 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 11514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 14213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 15114 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 16014 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 18713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 19614 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 20514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 23214 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 24113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 25013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 29514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 34914 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 35813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 38514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 39413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 40313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 42113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 43913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 44813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 45714 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 50213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 52013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 56514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 59214 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 7014 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 8813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 13314 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 17814 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 22313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 27713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 28613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 34013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 37613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 43013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 47513 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 51113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 54713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 55613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 58313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 11842 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 16342 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 20842 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 25343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 26243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 29843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 30743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 31643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 32543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 36143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 40643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 46043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 47843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 48743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 52343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 53243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 56843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 7343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 9143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 10044 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 10944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 13643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 14544 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 15444 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 18143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 19044 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 19944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 22644 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 23543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 24443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 28944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 34344 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 35243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 37944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 38843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 39743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 41543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 43343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 44243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 45144 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 49643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 51443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 55944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 58644 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 6444 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 8243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 12744 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 17244 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 21743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 27143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 28043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 33443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 37043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 42443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 46943 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 50543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 54143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 55043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 57743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   + RECT M5 ( 147748 12262 ) ( 161500 12563 )
+   + RECT M5 ( 147748 16762 ) ( 161500 17063 )
+   + RECT M5 ( 147748 21262 ) ( 161500 21563 )
+   + RECT M5 ( 147748 25763 ) ( 161500 26064 )
+   + RECT M5 ( 147748 26663 ) ( 161500 26964 )
+   + RECT M5 ( 147748 30263 ) ( 161500 30564 )
+   + RECT M5 ( 147748 31163 ) ( 161500 31464 )
+   + RECT M5 ( 147748 32063 ) ( 161500 32364 )
+   + RECT M5 ( 147748 32963 ) ( 161500 33264 )
+   + RECT M5 ( 147748 36563 ) ( 161500 36864 )
+   + RECT M5 ( 147748 41063 ) ( 161500 41364 )
+   + RECT M5 ( 147748 46463 ) ( 161500 46764 )
+   + RECT M5 ( 147748 48263 ) ( 161500 48564 )
+   + RECT M5 ( 147748 49163 ) ( 161500 49464 )
+   + RECT M5 ( 147748 52763 ) ( 161500 53064 )
+   + RECT M5 ( 147748 53663 ) ( 161500 53964 )
+   + RECT M5 ( 147748 57263 ) ( 161500 57564 )
+   + ROUTED M5 300 + SHAPE BLOCKWIRE ( 147748 7913 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 9713 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 10614 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 11514 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 14213 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 15114 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 16014 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 18713 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 19614 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 20514 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 23214 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 24113 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 25013 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 29514 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 34914 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 35813 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 38514 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 39413 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 40313 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 42113 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 43913 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 44813 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 45714 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 50213 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 52013 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 56514 ) ( 161500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 59214 ) ( 161500 * )
+   + RECT M5 ( 147748 6865 ) ( 161500 7164 )
+   + RECT M5 ( 147748 8664 ) ( 161500 8963 )
+   + RECT M5 ( 147748 13165 ) ( 161500 13464 )
+   + RECT M5 ( 147748 17665 ) ( 161500 17964 )
+   + RECT M5 ( 147748 22164 ) ( 161500 22463 )
+   + RECT M5 ( 147748 27564 ) ( 161500 27863 )
+   + RECT M5 ( 147748 28464 ) ( 161500 28763 )
+   + RECT M5 ( 147748 33864 ) ( 161500 34163 )
+   + RECT M5 ( 147748 37464 ) ( 161500 37763 )
+   + RECT M5 ( 147748 42864 ) ( 161500 43163 )
+   + RECT M5 ( 147748 47364 ) ( 161500 47663 )
+   + RECT M5 ( 147748 50964 ) ( 161500 51263 )
+   + RECT M5 ( 147748 54564 ) ( 161500 54863 )
+   + RECT M5 ( 147748 55464 ) ( 161500 55763 )
+   + RECT M5 ( 147748 58164 ) ( 161500 58463 )
+   + RECT M5 ( 28500 11692 ) ( 48636 11993 )
+   + RECT M5 ( 28500 16192 ) ( 48636 16493 )
+   + RECT M5 ( 28500 20692 ) ( 48636 20993 )
+   + RECT M5 ( 28500 25193 ) ( 48636 25494 )
+   + RECT M5 ( 28500 26093 ) ( 48636 26394 )
+   + RECT M5 ( 28500 29693 ) ( 48636 29994 )
+   + RECT M5 ( 28500 30593 ) ( 48636 30894 )
+   + RECT M5 ( 28500 31493 ) ( 48636 31794 )
+   + RECT M5 ( 28500 32393 ) ( 48636 32694 )
+   + RECT M5 ( 28500 35993 ) ( 48636 36294 )
+   + RECT M5 ( 28500 40493 ) ( 48636 40794 )
+   + RECT M5 ( 28500 45893 ) ( 48636 46194 )
+   + RECT M5 ( 28500 47693 ) ( 48636 47994 )
+   + RECT M5 ( 28500 48593 ) ( 48636 48894 )
+   + RECT M5 ( 28500 52193 ) ( 48636 52494 )
+   + RECT M5 ( 28500 53093 ) ( 48636 53394 )
+   + RECT M5 ( 28500 56693 ) ( 48636 56994 )
+   + ROUTED M5 300 + SHAPE BLOCKWIRE ( 28500 7343 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 9143 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 10044 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 10944 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 13643 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 14544 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 15444 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 18143 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 19044 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 19944 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 22644 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 23543 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 24443 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 28944 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 34344 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 35243 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 37944 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 38843 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 39743 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 41543 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 43343 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 44243 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 45144 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 49643 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 51443 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 55944 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 28500 58644 ) ( 48636 * )
+   + RECT M5 ( 28500 6295 ) ( 48636 6594 )
+   + RECT M5 ( 28500 8094 ) ( 48636 8393 )
+   + RECT M5 ( 28500 12595 ) ( 48636 12894 )
+   + RECT M5 ( 28500 17095 ) ( 48636 17394 )
+   + RECT M5 ( 28500 21594 ) ( 48636 21893 )
+   + RECT M5 ( 28500 26994 ) ( 48636 27293 )
+   + RECT M5 ( 28500 27894 ) ( 48636 28193 )
+   + RECT M5 ( 28500 33294 ) ( 48636 33593 )
+   + RECT M5 ( 28500 36894 ) ( 48636 37193 )
+   + RECT M5 ( 28500 42294 ) ( 48636 42593 )
+   + RECT M5 ( 28500 46794 ) ( 48636 47093 )
+   + RECT M5 ( 28500 50394 ) ( 48636 50693 )
+   + RECT M5 ( 28500 53994 ) ( 48636 54293 )
+   + RECT M5 ( 28500 54894 ) ( 48636 55193 )
+   + RECT M5 ( 28500 57594 ) ( 48636 57893 )
+   + ROUTED M5 56 + SHAPE BLOCKWIRE ( 160000 12412 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 16912 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 21412 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 25913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 26813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 30413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 31313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 32213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 33113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 36713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 41213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 46613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 48413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 49313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 52913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 53813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 57413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 7913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 9713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 10614 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 11514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 14213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 15114 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 16014 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 18713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 19614 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 20514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 23214 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 24113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 25013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 29514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 34914 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 35813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 38514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 39413 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 40313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 42113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 43913 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 44813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 45714 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 50213 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 52013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 56514 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 59214 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 7014 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 8813 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 13314 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 17814 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 22313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 27713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 28613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 34013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 37613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 43013 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 47513 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 51113 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 54713 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 55613 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 160000 58313 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 11842 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 16342 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 20842 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 25343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 26243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 29843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 30743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 31643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 32543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 36143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 40643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 46043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 47843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 48743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 52343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 53243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 56843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 7343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 9143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 10044 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 10944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 13643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 14544 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 15444 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 18143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 19044 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 19944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 22644 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 23543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 24443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 28944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 34344 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 35243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 37944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 38843 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 39743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 41543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 43343 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 44243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 45144 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 49643 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 51443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 55944 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 58644 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 6444 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 8243 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 12744 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 17244 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 21743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 27143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 28043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 33443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 37043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 42443 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 46943 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 50543 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 54143 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 55043 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 30000 57743 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   + USE POWER ;
+ - VSS
+   ( PIN VSS )
+   ( * VSS )
+   + ROUTED M8 3000 + SHAPE STRIPE ( 35000 0 ) ( * 68000 )
+   NEW M8 3000 + SHAPE STRIPE ( 165000 0 ) ( * 68000 )
+   NEW M8 3000 + SHAPE STRIPE ( 99000 0 ) ( * 68000 )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 3344 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 6688 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 10032 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 13376 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 16720 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 20064 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 23408 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 26752 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 30096 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 33440 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 36784 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 40128 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 43472 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 46816 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 50160 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 53504 ) ( 195624 * )
+   NEW M1 60 + SHAPE IOWIRE ( 155952 56848 ) ( 195624 * )
+   NEW M1 50 + SHAPE IOWIRE ( 165000 3344 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 6688 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 10032 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 13376 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 16720 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 20064 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 23408 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 26752 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 30096 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 33440 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 36784 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 40128 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 43472 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 46816 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 50160 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 53504 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 56848 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 60 + SHAPE IOWIRE ( 3800 3344 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 6688 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 10032 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 13376 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 16720 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 20064 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 23408 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 26752 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 30096 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 33440 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 36784 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 40128 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 43472 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 46816 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 50160 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 53504 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 56848 ) ( 45144 * )
+   NEW M1 60 + SHAPE IOWIRE ( 3800 60192 ) ( 45144 * )
+   NEW M1 50 + SHAPE IOWIRE ( 35000 3344 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 6688 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 10032 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 13376 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 16720 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 20064 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 23408 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 26752 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 30096 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 33440 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 36784 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 40128 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 43472 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 46816 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 50160 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 53504 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 56848 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 60192 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 60 + SHAPE IOWIRE ( 1672 3344 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 6688 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 6688 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 6688 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 10032 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 10032 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 10032 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 13376 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 13376 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 13376 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 16720 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 16720 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 16720 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 20064 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 20064 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 20064 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 23408 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 23408 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 23408 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 26752 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 26752 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 26752 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 30096 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 30096 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 30096 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 33440 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 33440 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 33440 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 36784 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91196 36784 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 36784 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 40128 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 40128 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 40128 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 43472 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 43472 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 43472 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 46816 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 46816 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 46816 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 50160 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 50160 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 50160 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 53504 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 53504 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 53504 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 56848 ) ( 48286 * )
+   NEW M1 60 + SHAPE IOWIRE ( 91150 56848 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148098 56848 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 60192 ) ( 105234 * )
+   NEW M1 60 + SHAPE IOWIRE ( 148048 60192 ) ( 198208 * )
+   NEW M1 60 + SHAPE IOWIRE ( 1672 63536 ) ( 198208 * )
+   NEW M1 50 + SHAPE IOWIRE ( 35000 3344 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 3344 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 3344 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 6688 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 6688 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 6688 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 10032 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 10032 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 10032 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 13376 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 13376 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 13376 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 16720 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 16720 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 16720 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 20064 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 20064 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 20064 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 23408 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 23408 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 23408 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 26752 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 26752 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 26752 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 30096 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 30096 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 30096 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 33440 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 33440 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 33440 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 36784 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 36784 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 36784 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 40128 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 40128 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 40128 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 43472 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 43472 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 43472 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 46816 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 46816 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 46816 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 50160 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 50160 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 50160 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 53504 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 53504 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 53504 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 56848 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 56848 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 56848 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 60192 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 60192 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 60192 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 35000 63536 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 99000 63536 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M1 50 + SHAPE IOWIRE ( 165000 63536 ) VIA12SQ_C_1_25 VIA23SQ_C_1_25 VIA34SQ_C_1_25 VIA45SQ_C_1_25 VIA56SQ_C_1_25 VIA67SQ_C_1_25 VIA78SQ_C_1_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 10162 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 14662 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 19162 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 23663 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 24563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 28163 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 29063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 35363 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 38063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 41663 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 42563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 43463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 50663 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 51563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 55163 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 56063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 6564 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 7463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 8364 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 9264 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 11963 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 12864 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 13764 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 16463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 17364 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 18264 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 20963 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 21864 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 22764 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 27263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 31763 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 32664 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 33563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 34464 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 37163 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 38964 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 39863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 40763 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 44364 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 46164 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 47063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 47964 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 49763 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 54263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 56964 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 57863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 58764 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 11064 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 15564 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 20064 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 25463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 26363 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 29963 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 30863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 36263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 45263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 48863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 52463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 53363 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 9592 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 14092 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 18592 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 23093 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 23993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 27593 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 28493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 34793 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 37493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 41093 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 41993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 42893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 50093 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 50993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 54593 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 55493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 5994 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 6893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 7794 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 8694 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 11393 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 12294 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 13194 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 15893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 16794 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 17694 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 20393 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 21294 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 22194 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 26693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 31193 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 32094 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 32993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 33894 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 36593 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 38394 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 39293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 40193 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 43794 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 45594 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 46493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 47394 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 49193 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 53693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 56394 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 57293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 58194 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 10494 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 14994 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 19494 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 24893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 25793 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 29393 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 30293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 35693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 44693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 48293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 51893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 52793 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   + RECT M5 ( 147748 10012 ) ( 166500 10313 )
+   + RECT M5 ( 147748 14512 ) ( 166500 14813 )
+   + RECT M5 ( 147748 19012 ) ( 166500 19313 )
+   + RECT M5 ( 147748 23513 ) ( 166500 23814 )
+   + RECT M5 ( 147748 24413 ) ( 166500 24714 )
+   + RECT M5 ( 147748 28013 ) ( 166500 28314 )
+   + RECT M5 ( 147748 28913 ) ( 166500 29214 )
+   + RECT M5 ( 147748 35213 ) ( 166500 35514 )
+   + RECT M5 ( 147748 37913 ) ( 166500 38214 )
+   + RECT M5 ( 147748 41513 ) ( 166500 41814 )
+   + RECT M5 ( 147748 42413 ) ( 166500 42714 )
+   + RECT M5 ( 147748 43313 ) ( 166500 43614 )
+   + RECT M5 ( 147748 50513 ) ( 166500 50814 )
+   + RECT M5 ( 147748 51413 ) ( 166500 51714 )
+   + RECT M5 ( 147748 55013 ) ( 166500 55314 )
+   + RECT M5 ( 147748 55913 ) ( 166500 56214 )
+   + ROUTED M5 300 + SHAPE BLOCKWIRE ( 147748 6564 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 7463 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 8364 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 9264 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 11963 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 12864 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 13764 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 16463 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 17364 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 18264 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 20963 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 21864 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 22764 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 27263 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 31763 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 32664 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 33563 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 34464 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 37163 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 38964 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 39863 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 40763 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 44364 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 46164 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 47063 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 47964 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 49763 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 54263 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 56964 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 57863 ) ( 166500 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 147748 58764 ) ( 166500 * )
+   + RECT M5 ( 147748 10915 ) ( 166500 11214 )
+   + RECT M5 ( 147748 15415 ) ( 166500 15714 )
+   + RECT M5 ( 147748 19915 ) ( 166500 20214 )
+   + RECT M5 ( 147748 25314 ) ( 166500 25613 )
+   + RECT M5 ( 147748 26214 ) ( 166500 26513 )
+   + RECT M5 ( 147748 29814 ) ( 166500 30113 )
+   + RECT M5 ( 147748 30714 ) ( 166500 31013 )
+   + RECT M5 ( 147748 36114 ) ( 166500 36413 )
+   + RECT M5 ( 147748 45114 ) ( 166500 45413 )
+   + RECT M5 ( 147748 48714 ) ( 166500 49013 )
+   + RECT M5 ( 147748 52314 ) ( 166500 52613 )
+   + RECT M5 ( 147748 53214 ) ( 166500 53513 )
+   + RECT M5 ( 33500 9442 ) ( 48636 9743 )
+   + RECT M5 ( 33500 13942 ) ( 48636 14243 )
+   + RECT M5 ( 33500 18442 ) ( 48636 18743 )
+   + RECT M5 ( 33500 22943 ) ( 48636 23244 )
+   + RECT M5 ( 33500 23843 ) ( 48636 24144 )
+   + RECT M5 ( 33500 27443 ) ( 48636 27744 )
+   + RECT M5 ( 33500 28343 ) ( 48636 28644 )
+   + RECT M5 ( 33500 34643 ) ( 48636 34944 )
+   + RECT M5 ( 33500 37343 ) ( 48636 37644 )
+   + RECT M5 ( 33500 40943 ) ( 48636 41244 )
+   + RECT M5 ( 33500 41843 ) ( 48636 42144 )
+   + RECT M5 ( 33500 42743 ) ( 48636 43044 )
+   + RECT M5 ( 33500 49943 ) ( 48636 50244 )
+   + RECT M5 ( 33500 50843 ) ( 48636 51144 )
+   + RECT M5 ( 33500 54443 ) ( 48636 54744 )
+   + RECT M5 ( 33500 55343 ) ( 48636 55644 )
+   + ROUTED M5 300 + SHAPE BLOCKWIRE ( 33500 5994 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 6893 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 7794 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 8694 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 11393 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 12294 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 13194 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 15893 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 16794 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 17694 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 20393 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 21294 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 22194 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 26693 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 31193 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 32094 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 32993 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 33894 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 36593 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 38394 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 39293 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 40193 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 43794 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 45594 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 46493 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 47394 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 49193 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 53693 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 56394 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 57293 ) ( 48636 * )
+   NEW M5 300 + SHAPE BLOCKWIRE ( 33500 58194 ) ( 48636 * )
+   + RECT M5 ( 33500 10345 ) ( 48636 10644 )
+   + RECT M5 ( 33500 14845 ) ( 48636 15144 )
+   + RECT M5 ( 33500 19345 ) ( 48636 19644 )
+   + RECT M5 ( 33500 24744 ) ( 48636 25043 )
+   + RECT M5 ( 33500 25644 ) ( 48636 25943 )
+   + RECT M5 ( 33500 29244 ) ( 48636 29543 )
+   + RECT M5 ( 33500 30144 ) ( 48636 30443 )
+   + RECT M5 ( 33500 35544 ) ( 48636 35843 )
+   + RECT M5 ( 33500 44544 ) ( 48636 44843 )
+   + RECT M5 ( 33500 48144 ) ( 48636 48443 )
+   + RECT M5 ( 33500 51744 ) ( 48636 52043 )
+   + RECT M5 ( 33500 52644 ) ( 48636 52943 )
+   + ROUTED M5 56 + SHAPE BLOCKWIRE ( 165000 10162 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 14662 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 19162 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 23663 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 24563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 28163 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 29063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 35363 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 38063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 41663 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 42563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 43463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 50663 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 51563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 55163 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 56063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 6564 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 7463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 8364 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 9264 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 11963 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 12864 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 13764 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 16463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 17364 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 18264 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 20963 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 21864 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 22764 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 27263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 31763 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 32664 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 33563 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 34464 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 37163 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 38964 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 39863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 40763 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 44364 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 46164 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 47063 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 47964 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 49763 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 54263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 56964 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 57863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 58764 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 11064 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 15564 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 20064 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 25463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 26363 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 29963 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 30863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 36263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 45263 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 48863 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 52463 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 165000 53363 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 9592 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 14092 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 18592 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 23093 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 23993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 27593 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 28493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 34793 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 37493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 41093 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 41993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 42893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 50093 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 50993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 54593 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 55493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 5994 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 6893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 7794 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 8694 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 11393 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 12294 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 13194 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 15893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 16794 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 17694 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 20393 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 21294 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 22194 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 26693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 31193 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 32094 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 32993 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 33894 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 36593 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 38394 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 39293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 40193 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 43794 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 45594 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 46493 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 47394 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 49193 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 53693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 56394 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 57293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 58194 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 10494 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 14994 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 19494 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 24893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 25793 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 29393 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 30293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 35693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 44693 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 48293 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 51893 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   NEW M5 56 + SHAPE BLOCKWIRE ( 35000 52793 ) VIA56SQ_C_2_25 VIA67SQ_C_2_25 VIA78SQ_C_2_25
+   + USE GROUND ;
+END SPECIALNETS
+END DESIGN

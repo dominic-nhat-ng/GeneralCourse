@@ -1,0 +1,1 @@
+vc_static_shell -full64 -f scripts/vclp_rtl.tcl | tee logs/vclp_rtl.tcl.log

@@ -1,0 +1,29 @@
+conducting_layers
+  PO        M0_PO
+  M1        M1
+  M2        M2
+  M3        M3
+  M4        M4
+  M5        M5
+  M6        M6
+  M7        M7
+  M8        M8
+  M9        M9
+  M10       M10
+  M11       M11
+  AP        AP
+  
+VIA_layers
+  VIA0          VIA0_M0_PO
+  VIA1          VIA1
+  VIA2          VIA2
+  VIA3          VIA3
+  VIA4          VIA4
+  VIA5          VIA5
+  VIA6          VIA6
+  VIA7          VIA7
+  VIA8          VIA8
+  VIA9          VIA9
+  VIA10         VIA10
+  RV            RV
+  

@@ -1,0 +1,38 @@
+#-----------------------------------------------------------------------
+echo SCRIPT-Info: Begin: [info script]
+#-----------------------------------------------------------------------
+
+# logs
+#set timestamp [sh date '+%m_%d_%H_%M']
+#set sh_output_log_file    ./${synopsys_program_name}.log.${timestamp}
+
+# variables
+set sh_continue_on_error true   ; echo "set sh_continue_on_error true"
+
+# aliases
+alias h history
+source scripts/procs.tcl
+
+# procs
+proc gui {} {if {$::in_gui_session==false} {start_gui} else {stop_gui}}
+proc list_collection {COLLECTION} {foreach_in item $COLLECTION {echo [get_object_name $item]}}
+
+# messages
+set_message_info -limit  5 -id ATTR-14  ;# Information: Attribute is_black_box will be obsoleted, please use design_type instead. (ATTR-14)
+
+#set_app_options -as_user_default -list {shell.common.tmp_dir_path .}
+
+set_host_options -max_cores 8
+set sh_continue_on_error true
+set sh_enable_page_mode false
+set sh_source_uses_search_path true
+set cell_prefix [pid]
+set_app_option -list {shell.common.monitor_cpu_memory true}
+#set_app_options -list {opt.common.do_physical_checks legalize}
+
+#alias all_clock_nets 'sizeof_collection [get_nets -of [get_pins * -hierarchical -filter "is_clock_used_as_clock==true"]]'
+
+
+#-----------------------------------------------------------------------
+echo SCRIPT-Info: End: [info script]
+#-----------------------------------------------------------------------

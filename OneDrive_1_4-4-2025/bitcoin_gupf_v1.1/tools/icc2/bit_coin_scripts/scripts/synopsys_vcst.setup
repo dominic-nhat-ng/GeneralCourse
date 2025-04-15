@@ -1,0 +1,54 @@
+set search_path .
+lappend search_path rtl
+lappend search_path verification
+lappend search_path lib
+lappend search_path lib/sram/ndms/lib_dbs
+lappend search_path lib/stdcell_hvt/db_nldm_gm
+lappend search_path lib/stdcell_lvt/db_nldm
+lappend search_path lib/stdcell_rvt/db_nldm
+
+set hvt_libs " \
+saed32hvt_tt0p78v125c.db \
+saed32hvt_tt0p85v125c.db \
+saed32hvt_tt1p05v125c.db \
+saed32hvt_ulvl_tt0p78v125c_i0p78v.db \
+saed32hvt_ulvl_tt0p85v125c_i0p85v.db \
+saed32hvt_ulvl_tt1p05v125c_i0p78v.db \
+saed32hvt_dlvl_tt0p78v125c_i0p78v.db \
+saed32hvt_dlvl_tt0p85v125c_i0p85v.db \
+saed32hvt_pg_tt0p78v125c.db \
+saed32hvt_pg_tt0p85v125c.db \
+saed32hvt_pg_tt1p05v125c.db \
+"
+set rvt_libs " \
+saed32rvt_tt0p78v125c.db \
+saed32rvt_tt0p85v125c.db \
+saed32rvt_tt1p05v125c.db \
+saed32rvt_ulvl_tt0p78v125c_i0p78v.db \
+saed32rvt_ulvl_tt0p85v125c_i0p85v.db \
+saed32rvt_ulvl_tt1p05v125c_i0p78v.db \
+saed32rvt_dlvl_tt0p78v125c_i0p78v.db \
+saed32rvt_dlvl_tt0p85v125c_i0p85v.db \
+saed32rvt_pg_tt0p78v125c.db \
+saed32rvt_pg_tt0p85v125c.db \
+saed32rvt_pg_tt1p05v125c.db \
+"
+set lvt_libs " \
+saed32lvt_tt0p78v125c.db \
+saed32lvt_tt0p85v125c.db \
+saed32lvt_tt1p05v125c.db \
+saed32lvt_ulvl_tt0p78v125c_i0p78v.db \
+saed32lvt_ulvl_tt0p85v125c_i0p85v.db \
+saed32lvt_ulvl_tt1p05v125c_i0p78v.db \
+saed32lvt_dlvl_tt0p78v125c_i0p78v.db \
+saed32lvt_dlvl_tt0p85v125c_i0p85v.db \
+saed32lvt_pg_tt0p78v125c.db \
+saed32lvt_pg_tt0p85v125c.db \
+saed32lvt_pg_tt1p05v125c.db \
+"
+
+set mem_libs " sram2rw16x4_tt1p78v125c.db  sram2rw16x4_tt1p85v125c.db"
+
+set link_library "$hvt_libs $rvt_libs $lvt_libs $mem_libs"
+
+set enable_verdi_debug true

@@ -1,0 +1,1 @@
+vc_static_shell -full64 -f scripts/vclp_gate.tcl | tee logs/vclp_gate.tcl.log

@@ -1,0 +1,101 @@
+################################################################################
+##
+##  This confidential and proprietary software may be used only
+##  as authorized by a licensing agreement from Synopsys Inc.
+##  In the event of publication, the following notice is applicable:
+##
+##  (C) COPYRIGHT 1994 - 2017 SYNOPSYS INC.
+##  ALL RIGHTS RESERVED
+##
+##  The entire notice above must be reproduced on all authorized copies.
+##
+##  AUTHOR:    Godwin Maben
+##
+##  FILE:      snps_bit_coin.upf
+##
+##  VERSION:   1.0
+##
+################################################################################
+
+# UPF DIRECTORY
+set UPF_DIR ../../upf
+
+# UPF 2.1 FOR PST
+set_design_attributes -elements {.} -attribute enable_state_propagation_in_add_power_state true
+
+# SUPPLY SETS (EXPLICIT)
+create_supply_set SS
+create_supply_set SSL
+create_supply_set SSL_SIPO_SW
+create_supply_set SSL_PISO_SW
+create_supply_set SS_MEM_SW
+
+# POWER DOMAINS
+create_power_domain TOP -supply {primary SS} -include_scope
+create_power_domain PD_PISO_SECURE -supply {primary SSL_PISO_SW} -elements {piso_secure_0 piso_secure_1}
+
+# FOR DC, USE BOTTOM UP FLOW, SO DON'T READ IN LOWER LEVEL UPF
+if { $synopsys_program_name != "dc_shell"} { 
+  load_upf -scope bit_secure_0 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_1 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_2 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_3 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_4 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_5 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_6 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_7 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_8 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_9 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_10 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_11 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_12 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_13 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_14 $UPF_DIR/snps_bit_top.upf
+  load_upf -scope bit_secure_15 $UPF_DIR/snps_bit_top.upf
+}
+
+# REFINE PG
+load_upf $UPF_DIR/refine_bc.upf
+
+# POWER SWITCH
+create_power_switch -domain PD_PISO_SECURE -output_supply_port {out SSL_PISO_SW.power} -input_supply_port {in SSL.power} -control_port {sleep_signals_17_PISO_SECURE sleep_signals[17] } -on_state {TOP_ON in !sleep_signals_17_PISO_SECURE} -ack_port {ack_signal_17_PISO_SECURE power_ack_signals[20] {sleep_signals_17_PISO_SECURE}} -ack_delay {ack_signal_17_PISO_SECURE 10} SW_PISO_SECURE
+map_power_switch -domain PD_PISO_SECURE -lib_cells {HEAD2X*} SW_PISO_SECURE
+
+# RETENTION                    
+set_retention -domain PD_PISO_SECURE -retention_supply_set SSL RET_PISO_SECURE
+set_retention_control -domain PD_PISO_SECURE -save_signal {retention_signals[1] high} -restore_signal {retention_signals[1] low} RET_PISO_SECURE
+map_retention_cell -domain PD_PISO_SECURE -lib_cells {RSDFFAR*} RET_PISO_SECURE
+
+# ISOLATION
+set_isolation -domain PD_PISO_SECURE -sink SS -isolation_supply_set SSL_PISO_SW -clamp_value 0 ISO_PISO_SECURE -name_suffix ISO_PISO_SECURE
+set_isolation_control -domain PD_PISO_SECURE -isolation_sense high -isolation_signal isolation_signals[1] -location self ISO_PISO_SECURE
+map_isolation_cell -domain PD_PISO_SECURE -lib_cells {ISO*NOR*} ISO_PISO_SECURE
+
+# POWER STATE TABLE (UPF 2.1)
+add_power_state -supply SS          -state SS_ON               {-supply_expr {power  == {FULL_ON 0.85} }}
+add_power_state -supply SS          -state GND                 {-supply_expr {ground == {FULL_ON 0.0} }} 
+add_power_state -supply SSL         -state SSL_ON              {-supply_expr {power  == {FULL_ON 0.78} }}
+add_power_state -supply SSL_PISO_SW -state SSL_PISO_SECURE_ON  {-supply_expr {power  == {FULL_ON 0.78} }}
+add_power_state -supply SSL_PISO_SW -state SSL_PISO_SECURE_OFF {-supply_expr {power  == {OFF}} -simstate CORRUPT}
+add_power_state -supply SS_MEM_SW   -state MEM_ON              {-supply_expr {power  == {FULL_ON 0.85} }}
+add_power_state -supply SS_MEM_SW   -state MEM_OFF             {-supply_expr {power  == {OFF}} -simstate CORRUPT}
+
+add_port_state  piso_sw_out         -state {SSL_PISO_SECURE_ON  0.78} 
+add_port_state  piso_sw_out         -state {SSL_PISO_SECURE_OFF off} 
+add_port_state  sipo_sw_out         -state {SSL_SIPO_SECURE_ON  0.78} 
+add_port_state  sipo_sw_out         -state {SSL_SIPO_SECURE_OFF off} 
+
+create_pst BIT_COIN_PST -supplies                              {SS.power SSL.power SSL_PISO_SW.power   SS_MEM_SW.power sipo_sw_out         SS.ground}
+add_pst_state ALL_ON                  -pst BIT_COIN_PST -state {SS_ON    SSL_ON    SSL_PISO_SECURE_ON  MEM_ON          SSL_SIPO_SECURE_ON  GND}
+add_pst_state PISO_ON_SIPO_OFF        -pst BIT_COIN_PST -state {SS_ON    SSL_ON    SSL_PISO_SECURE_ON  MEM_ON          SSL_SIPO_SECURE_OFF GND}
+add_pst_state PISO_OFF_SIPO_ON        -pst BIT_COIN_PST -state {SS_ON    SSL_ON    SSL_PISO_SECURE_OFF MEM_ON          SSL_SIPO_SECURE_ON  GND}
+add_pst_state SIPO_PISO_SLICE_MEM_OFF -pst BIT_COIN_PST -state {SS_ON    SSL_ON    SSL_PISO_SECURE_OFF MEM_ON          SSL_SIPO_SECURE_OFF GND}
+
+# PORT ATTRIBUTES
+set_port_attributes -ports retention_signals -driver_supply SSL
+set_port_attributes -ports isolation_signals -driver_supply SSL
+set_port_attributes -ports sleep_signals[16]  -driver_supply SSL
+set_port_attributes -ports sleep_signals[17]  -driver_supply SSL
+set_port_attributes -ports lclk  -driver_supply SSL
+set_port_attributes -ports hclk  -driver_supply SS
+set_port_attributes -ports data_valid -driver_supply SSL

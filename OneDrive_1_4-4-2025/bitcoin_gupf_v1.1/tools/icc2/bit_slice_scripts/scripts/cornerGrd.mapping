@@ -1,0 +1,3 @@
+FUNC_0.78V_SETUP /slowfs/gts_lowpower/saed_lp_training_libs/tech/star_rcxt/saed32nm_1p9m_Cmax.nxtgrd
+FUNC_0.85V_SETUP /slowfs/gts_lowpower/saed_lp_training_libs/tech/star_rcxt/saed32nm_1p9m_Cmin.nxtgrd
+FUNC_0.85V_HOLD /slowfs/gts_lowpower/saed_lp_training_libs/tech/star_rcxt/saed32nm_1p9m_Cmin.nxtgrd

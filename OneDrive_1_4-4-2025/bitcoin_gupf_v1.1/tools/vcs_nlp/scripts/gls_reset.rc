@@ -1,0 +1,305 @@
+Magic 271485
+Revision Verdi3_L-2016.06-SP1-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 182 469 1373 437 275 134
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/GLS_btcoin_lp_test_1.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 30699.098397 249531.892157
+cursor 56501.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 85
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/GLS_btcoin_lp_test_1.fsdb"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_1/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_0/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_0/slice_1/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_0/slice_0/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/\$PD_PISO_SECURE "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_15/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_14/\$TOP "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/bit_secure_0/\$SW_PISO_SLICE/out(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$piso_sw_out(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/bit_secure_0/\$SW_SIPO_SLICE/out(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$sipo_sw_out(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/\$VDDL(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$VDDL(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/\$VDDH(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$VDDH(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/\$VDDM(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$VDDM(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/\$VSS(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$VSS(power_net) "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_9/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_9/\$PD_SIPO_SLICE "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/bit_secure_9/\$VDDL(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/bit_secure_9/\$VDDL(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/bit_secure_9/\$VSS(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/bit_secure_9/\$VSS(power_net) "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_9/\$PD_PISO_SLICE "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/bit_secure_9/\$VDDM(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/bit_secure_9/\$VDDM(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/bit_secure_9/\$VDDH(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/bit_secure_9/\$VDDH(power_net) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/bit_secure_9/\$sipo_sw_out(power_net) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/bit_secure_9/\$piso_sw_out(power_net) "
+
+; power supply set signal
+; addPowerSupplySetSig supplySetSig_full_name
+addPowerSupplySetSig "/bitcoin_top/dut/bit_secure_9/\$SSL_SIPO_SLICE_SW(power_supplyset) "
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1" -e FALSE
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/GLS_btcoin_lp_test_1.fsdb"
+addSignal -h 15 /bitcoin_top/dut/reset
+addSignal -h 15 /bitcoin_top/dut/bit_secure_0/reset
+addSignal -h 15 /bitcoin_top/dut/bit_secure_0/slice_0/reset
+addSignal -h 15 -UNSIGNED -HEX /bitcoin_top/dut/secure_data_out[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_in[31:0]
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope isolation_signals[1:0]
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope retention_signals[1:0]
+addSignal -h 15 /bitcoin_top/dut/piso_secure_0/reset
+addSignal -h 15 -holdScope dout
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 /bitcoin_top/dut/bit_secure_14/data_valid
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -UNSIGNED -HEX -holdScope sout[1:0]
+addSignal -h 15 -holdScope sipo_scan_in
+addSignal -h 15 -holdScope piso_scan_in
+addSignal -h 15 -holdScope hv_scan_in
+addSignal -h 15 -holdScope lv_scan_in
+addSignal -h 15 -holdScope sipo_scan_out
+addSignal -h 15 -holdScope scan_enable
+addSignal -h 15 -holdScope piso_scan_out
+addSignal -h 15 -holdScope lv_scan_out
+addSignal -h 15 /bitcoin_top/dut/test_mode
+addSignal -h 15 -holdScope scan_enable
+addSignal -h 15 -holdScope sipo_scan_in
+addSignal -h 15 -holdScope piso_scan_in
+addSignal -h 15 -holdScope hv_scan_in
+addSignal -h 15 -holdScope lv_scan_in
+addSignal -h 15 -holdScope sipo_scan_out
+addSignal -h 15 -holdScope piso_scan_out
+addSignal -h 15 -holdScope hv_scan_out
+addSignal -h 15 -holdScope lv_scan_out
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope sleep_signals[17:0]
+addGroup "G2" -e FALSE
+addSignal -h 15 /bitcoin_top/dut/n1927
+addSignal -h 15 -holdScope \$VDDL(power_net) 
+addSignal -h 15 -holdScope n1334
+addSignal -h 15 -holdScope n568
+addSignal -h 15 -holdScope n613
+addSignal -h 15 -UNSIGNED -HEX /bitcoin_top/dut/bit_secure_9/sout[1:0]
+addSignal -h 15 -holdScope net2436
+addSignal -h 15 -holdScope net2437
+addSignal -h 15 -UNSIGNED -HEX /bitcoin_top/dut/bit_secure_9/sipo_slice_first/addr[3:0]
+addSignal -h 15 -holdScope n79
+addSignal -h 15 -holdScope retention_signals
+addSignal -h 15 -holdScope rd
+addSignal -h 15 -holdScope n60
+addGroup "G3" -e FALSE
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/sipo_slice_first/retention_signals
+addSignal -h 15 -holdScope n218
+addSignal -h 15 -holdScope n155
+addSignal -h 15 -holdScope n9
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope n74
+addSignal -h 15 -holdScope n102
+addSignal -h 15 -UNSIGNED /bitcoin_top/dut/bit_secure_9/piso_slice_first/upf_simstate[31:0]
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/sipo_slice_first/rd_reg/VDD
+addSignal -h 15 -holdScope VDDG
+addSignal -h 15 -holdScope D_db
+addSignal -h 15 -holdScope QN_db
+addSignal -h 15 -holdScope Q_db
+addSignal -h 15 -holdScope Q
+addSignal -h 15 -holdScope QN
+addSignal -h 15 -holdScope RSTB_db
+addSignal -h 15 -holdScope RSTB
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/sipo_slice_first/n228
+addSignal -h 15 -holdScope n58
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -holdScope n58
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/sipo_slice_first/U121/A
+addSignal -h 15 -holdScope A_db
+addSignal -h 15 -holdScope Y
+addSignal -h 15 -holdScope Y_db
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/sipo_slice_first/U74/A
+addSignal -h 15 -holdScope A_db
+addSignal -h 15 -holdScope Y
+addSignal -h 15 -holdScope Y_db
+addGroup "G4"
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/sipo_slice_first/reset_UPF_LS/A
+addSignal -h 15 -holdScope A_db
+addSignal -h 15 -holdScope VDDL
+addSignal -h 15 -holdScope Y
+addSignal -h 15 -holdScope Y_db
+addSignal -h 15 /bitcoin_top/dut/bit_secure_9/\$sipo_sw_out(power_net) 
+addSignal -h 15 -holdScope \$SSL_SIPO_SLICE_SW(power_supplyset) 
+addSignal -h 15 -holdScope \$sipo_sw_out(power_net) 
+addSignal -h 15 -holdScope \$VSS(power_net) 
+addGroup "G5"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/GLS_btcoin_lp_test_1.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm open
+
+"/_vcs_msglog"
+"/bitcoin_top"
+"/bitcoin_top/dut"
+"/bitcoin_top/dut/bit_secure_9"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/U74"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/rd_reg"
+
+SCOPE_LIST_BEGIN
+"/_vcs_msglog"
+"/bitcoin_top/dut/bit_secure_9/piso_slice_first"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/rd_reg"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/rd_addr_reg_3_"
+"/bitcoin_top"
+"/bitcoin_top/dut"
+"/bitcoin_top/dut/bit_secure_9"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/U121"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/U74"
+"/bitcoin_top/dut/bit_secure_9/sipo_slice_first/reset_UPF_LS"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

@@ -1,0 +1,99 @@
+puts "RM-Info: Running script [info script]\n"
+
+##########################################################################################
+# Variables common to all reference methodology scripts
+# Script: common_setup.tcl
+# Version: H-2013.03-SP4 (October 7, 2013)
+# Copyright (C) 2007-2013 Synopsys, Inc. All rights reserved.
+##########################################################################################
+
+set wd [pwd]
+
+set INPUT_FORMAT "VERILOG"
+
+
+set DESIGN_NAME                   "bit_top"  ;#  The name of the top-level design
+
+set DESIGN_REF_DATA_PATH          "$wd/${DESIGN_NAME}_HIER_IMPLEMENTATION/${DESIGN_NAME}_PHY_LIB"  ;#  Absolute path prefix variable for library/design data.
+                                       #  Use this variable to prefix the common absolute path  
+                                       #  to the common variables defined below.
+                                       #  Absolute paths are mandatory for hierarchical 
+                                       #  reference methodology flow.
+
+##########################################################################################
+# Hierarchical Flow Design Variables
+##########################################################################################
+
+set HIERARCHICAL_DESIGNS           "arm2_top" ;# List of hierarchical block design names "DesignA DesignB" ...
+set HIERARCHICAL_CELLS             "arm2_top"
+
+##########################################################################################
+# Library Setup Variables
+##########################################################################################
+
+# For the following variables, use a blank space to separate multiple entries.
+# Example: set TARGET_LIBRARY_FILES "lib1.db lib2.db lib3.db"
+
+set ADDITIONAL_SEARCH_PATH        ". $wd/lib/logic_db $wd/lib/mw_lib  $wd/lib/tlu_plus $wd/rtl $wd/sdc $wd/def $wd/inputs $wd/lib/ts28nihldst_1.00a/liberty/logic_synth /global/gtsna_benchmark3/gmaben/top_level_project/tsmc_28nm/ts28nihhpmc_1.00a/liberty/logic_synth /global/gtsna_benchmark3/gmaben/top_level_project/tsmc_28nm/ts28nihhpst_2.00a/liberty/logic_synth $wd/lib/tlup $wd/results $wd/rtl $wd/upf $wd/lib/stdcell_hvt/db_nldm $wd/lib/stdcell_rvt/db_nldm $wd/lib/stdcell_lvt/db_nldm $wd/lib/sram/db_nldm $wd/lib/io_std/db_nldm"  ;#  Additional search path to be added to the default search path
+
+
+set hvt_libs "ts28nihhpmc_ss0p765v125c.db"
+set rvt_libs "ts28nihldst_ss0p765v125c.db"
+set lvt_libs "ts28nihspst_ulvl_ss0p765v125c.db"
+
+
+set io_libs "saed32io_fc_ss0p95v25c_2p25v.db   saed32io_fc_tt1p05vn40c_2p5v.db   saed32io_wb_ss0p95v125c_2p25v.db  saed32io_wb_tt1p05v25c_2p5v.db saed32io_fc_ff1p16v25c_2p75v.db   saed32io_fc_ss0p95vn40c_2p25v.db  saed32io_wb_ff1p16v125c_2p75v.db  saed32io_wb_ss0p95v25c_2p25v.db   saed32io_wb_tt1p05vn40c_2p5v.db saed32io_fc_ff1p16vn40c_2p75v.db  saed32io_fc_tt1p05v125c_2p5v.db   saed32io_wb_ff1p16v25c_2p75v.db   saed32io_wb_ss0p95vn40c_2p25v.db saed32io_fc_ss0p95v125c_2p25v.db  saed32io_fc_tt1p05v25c_2p5v.db    saed32io_wb_ff1p16vn40c_2p75v.db  saed32io_wb_tt1p05v125c_2p5v.db"
+
+set TARGET_LIBRARY_FILES          "tcbn28hpbwplvtwcl_ccs.db"
+set ADDITIONAL_LINK_LIB_FILES     ""  ;#  Extra link logical libraries not included in TARGET_LIBRARY_FILES
+
+set MIN_LIBRARY_FILES             ""  ;#  List of max min library pairs "max1 min1 max2 min2 max3 min3"...
+
+set MW_REFERENCE_LIB_DIRS   "$wd/lib/mw_lib/tcbn28hpbwplvt"
+
+
+set MW_REFERENCE_CONTROL_FILE     ""  ;#  Reference Control file to define the Milkyway reference libs
+
+#set TECH_FILE                     "$wd/lib/ts28nihhpmc_1.00a/astro_milkyway/milkyway/tf/ts28nihhpmc_m08f1f1f0.tf"
+set TECH_FILE                     "$wd/lib/tlu_plus/28nm_ref.tf"
+#set TECH_FILE                     "$wd/lib/ts28nihhpmc_1.00a/astro_milkyway/milkyway/tf/ts28nihhpmc_m09f0f3f0.tf"
+#set MAP_FILE                     "$wd/lib/ts28nihhpmc_1.00a/astro_milkyway/milkyway/tlup/layers.map"
+#set MAP_FILE              "$wd/lib/tlup/layers.map"
+set MAP_FILE                      "$wd/lib/tlu_plus/mapping_file_PnR"
+set TLUPLUS_MAX_FILE              "$wd/lib/tlu_plus/t32_28hpt01_2009.06-SP2_rev0.1_cworst_forTLUPlus.TLUPlus"
+set TLUPLUS_MIN_FILE              "$wd/lib/tlu_plus/t32_28hpt01_2009.06-SP2_rev0.1_rcbest_forTLUPlus.TLUPlus"
+
+set MIN_ROUTING_LAYER            "M1"   ;# Min routing layer
+set MAX_ROUTING_LAYER            "M6"   ;# Max routing layer
+#set MIN_ROUTING_LAYER            ""   ;# Min routing layer
+#set MAX_ROUTING_LAYER            ""   ;# Max routing layer
+
+#set LIBRARY_DONT_USE_FILE        "$wd/scripts/dont_use.tcl"   ;# Tcl file with library modifications for dont_use
+set LIBRARY_DONT_USE_FILE        ""   ;# Tcl file with library modifications for dont_use
+
+##########################################################################################
+# Multivoltage Common Variables
+#
+# Define the following multivoltage common variables for the reference methodology scripts 
+# for multivoltage flows. 
+# Use as few or as many of the following definitions as needed by your design.
+##########################################################################################
+
+set PD1                          ""           ;# Name of power domain/voltage area  1
+set VA1_COORDINATES              {}           ;# Coordinates for voltage area 1
+set MW_POWER_NET1                "VDD1"       ;# Power net for voltage area 1
+
+set PD2                          ""           ;# Name of power domain/voltage area  2
+set VA2_COORDINATES              {}           ;# Coordinates for voltage area 2
+set MW_POWER_NET2                "VDD2"       ;# Power net for voltage area 2
+
+set PD3                          ""           ;# Name of power domain/voltage area  3
+set VA3_COORDINATES              {}           ;# Coordinates for voltage area 3
+set MW_POWER_NET3                "VDD3"       ;# Power net for voltage area 3
+
+set PD4                          ""           ;# Name of power domain/voltage area  4
+set VA4_COORDINATES              {}           ;# Coordinates for voltage area 4
+set MW_POWER_NET4                "VDD4"       ;# Power net for voltage area 4
+
+puts "RM-Info: Completed script [info script]\n"
+

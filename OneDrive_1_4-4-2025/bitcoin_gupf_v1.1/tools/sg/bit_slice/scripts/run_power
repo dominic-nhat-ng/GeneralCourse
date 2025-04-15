@@ -1,0 +1,13 @@
+#!/bin/csh -f
+
+################################################################################
+# Run RTL Power Exploration with SpyGlass
+################################################################################
+
+# RTL project file name
+set RTL_PRJ_FILE = ./bit_slice/rtl_sg_setup/bit_slice.prj
+
+########################################
+spyglass -project ${RTL_PRJ_FILE} -goals "power/power_est_profiling,power/power_mem_reduction" $*
+
+########################################

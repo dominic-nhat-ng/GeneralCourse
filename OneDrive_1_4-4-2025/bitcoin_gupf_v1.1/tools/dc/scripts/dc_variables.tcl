@@ -1,0 +1,15 @@
+set _mv_allow_iss_update_to_ss_function true
+set compile_automatic_clock_phase_inference none
+set mv_default_level_shifter_voltage_range_infinity true
+set auto_insert_level_shifters_on_clocks all
+set auto_insert_level_shifters_on_ideal_networks all
+set mv_insert_level_shifters_on_ideal_nets all
+set mv_level_shifter_ignore_ibt true
+set mv_allow_ls_on_leaf_pin_boundary true
+set power_cg_physically_aware_cg true
+set upf_allow_refer_before_define true
+set _mv_allow_iss_update_to_ss_function true
+set _upf_levshi_add_all_load_supplies_for_split_fanout true
+set write_sdc_output_lumped_net_capacitance false
+set write_sdc_output_net_resistance false
+set enable_golden_upf true

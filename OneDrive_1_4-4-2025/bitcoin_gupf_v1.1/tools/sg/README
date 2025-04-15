@@ -1,0 +1,48 @@
+cd tools/sg
+module load spyglass/2016.06-SP2
+
+#########################################################
+Instructions to run SpyGlass on bit_slice:
+ 
+To get Help on Make commands
+make help 
+
+To Run Lint:
+make bit_slice_lint 
+
+To Run SDC Checking:
+make bit_slice_constraint
+
+To Run CDC:
+make bit_slice_cdc
+
+##Run VCS-NLP to generate FSDB before running PE
+To Run RTL Power Exploration:
+make bit_slice_pe
+
+To Open GUI for Debug:
+make bit_slice_debug 
+ 
+To run everything (lint, constraints, cdc)
+make bit_slice
+#########################################################
+Instructions to run SpyGlass on bit_coin:
+
+To Run Lint:
+make bit_coin_lint 
+
+To Run SDC Checking:
+make bit_coin_constraint
+
+To Run CDC:
+make bit_coin_cdc
+
+##Run VCS-NLP to generate FSDB before running PE
+To Run RTL Power Exploration:
+make bit_coin_power
+
+To Open GUI for Debug:
+make bit_coin_debug 
+
+To run everything (lint, constraints, cdc)
+make bit_coin

@@ -1,0 +1,57 @@
+#with FT module enabled true as shown below
+#set_fp_voltage_area_constraints -create_feedthrough_module true -allow_feedthroughs true -exclude_feedthroughs [get_nets -of [all_fanout -flat -clock_tree ]]
+
+Feedthrough modules c1_top/c1_PD_ft_module on voltage area c1_top/c1_PD is created
+Feedthrough modules c5_top/c5_PD_ft_module on voltage area c5_top/c5_PD is created
+Feedthrough modules c2_top/c2_PD_ft_module on voltage area c2_top/c2_PD is created
+Feedthrough modules c6_top/c6_PD_ft_module on voltage area c6_top/c6_PD is created
+Feedthrough modules c0_top/c0_PD_ft_module on voltage area c0_top/c0_PD is created
+Feedthrough modules c3_top/c3_PD_ft_module on voltage area c3_top/c3_PD is created
+Feedthrough modules c4_top/c4_PD_ft_module on voltage area c4_top/c4_PD is created
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Name                     Orig Ports   FT Ports
+c1_top/c1_PD_ft_module            0         47
+c1_top                           32          0
+c5_top/c5_PD_ft_module            0         24
+c5_top                           33          0
+c2_top/c2_PD_ft_module            0         58
+c2_top                           30          0
+c6_top/c6_PD_ft_module            0         73
+c6_top                           29          0
+c0_top/c0_PD_ft_module            0         35
+c0_top                           29          0
+c3_top/c3_PD_ft_module            0         21
+c3_top                           33          0
+c4_top/c4_PD_ft_module            0         35
+c4_top                           29          0
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+#with FT module enabled false as shown below
+#set_fp_voltage_area_constraints -create_feedthrough_module false -allow_feedthroughs true -exclude_feedthroughs [get_nets -of [all_fanout -flat -clock_tree ]]
+
+create_voltage_area_feedthroughs -finalize_feedthroughs
+Begin finalize routing
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Name     Orig Ports   FT Ports
+c1_top           32         29
+c5_top           33         12
+c2_top           30         54
+c6_top           29         72
+c0_top           29         32
+c3_top           33         13
+c4_top           29         35
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Done finalize routing
+
+
+
+
+source -e -v rm_icc_scriptsg/ft_options.tcl
+
+
+
+set vao_feedthrough_module_name_prefix GFEED
+set vao_enable_physical_feedthrough_buffering true
+
+

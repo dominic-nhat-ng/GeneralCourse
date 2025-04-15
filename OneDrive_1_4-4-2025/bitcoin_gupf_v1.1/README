@@ -1,0 +1,145 @@
+################################################################################
+##
+##  This confidential and proprietary software may be used only
+##  as authorized by a licensing agreement from Synopsys Inc.
+##  In the event of publication, the following notice is applicable:
+##
+##  (C) COPYRIGHT 1994 - 2017 SYNOPSYS INC.
+##  ALL RIGHTS RESERVED
+##
+##  The entire notice above must be reproduced on all authorized copies.
+##
+##  AUTHOR:    Godwin Maben
+##
+##  VERSION:   1.1
+##
+################################################################################
+
+--------------------------------------------------------------------------------------------------------------
+README file for bitcoin_v1.1
+--------------------------------------------------------------------------------------------------------------
+
+This is the README file for the reference design for Bitcoin.  An accompanying "Case Study User Guide" is available
+via SolvNet, just search for "bitcoin" and download the PDF.
+
+Version History
+---------------------
+bitcoin_v1.0 : March 2017 : Initial Release
+bitcoin_v1.1 :  Sept 2017 : PowerReplay + VCS NLP Methodology Changes + Library Changes for PT-PX
+
+Files and Directories
+---------------------
+.
+├── def             : DEF files for implementation
+├── lib             : Tech libraries
+├── README          : This file
+├── rtl             : RTL Source Code
+├── sdc             : SDC Source Constraints
+├── tech            : Tech Libraries
+├── tools           : Tools Directory
+│   ├── dc          : Design Compiler, DFT Compiler, Power Compiler (Logic Synthesis, DFT, Power Optimization)
+│   ├── fm          : Formality (Logical Equivalence Checking)
+│   ├── icc2        : ICC2 (Place/Route)
+│   ├── Makefile    : Top level Makefile
+│   ├── pt          : PrimeTime (Static Timing Analysis), PT-PX (Power Analysis), PT-ECO (ECO)
+│   ├── setup.csh   : Top level setup file (please edit this per your environment)
+│   ├── sg          : SpyGlass (Static Checking for Lint/SDC/CDC + RTL Power Estimation)
+│   ├── vcs_nlp     : Native Low Power Simulation
+│   ├── vclp        : Static UPF Checking
+│   └── powerreplay : PowerReplay (Accelerated FSDB generation for PT-PX)
+├── upf             : UPF Source
+├── verification    : Verification Models
+└── verilog_pg      : PG Verification Models
+
+Tool Versions Tested with this Version
+--------------------------------------
+spyglass  : 2017.03-SP1
+vcsmx     : 2017.03-SP1
+vcstatic  : 2017.03-SP1
+verdi     : 2017.03-SP1
+fm        : 2016.12-SP2
+icc2      : 2016.12-SP2
+pt        : 2016.12-SP2
+syn       : 2016.12-SP2
+tx        : 2016.12-SP2
+starrc    : 2016.12-SP2
+
+* Note it you are using different tool versions than those listed above, you may get different results than those shown in
+the Case Study User Guide
+
+Instructions to Run Reference Design
+------------------------------------
+1.) Unpack the tech libraries and reference design
+
+cd <YOUR_GLOBAL_AREA>
+gtar zxvf bitcoin_v1.1_lib.tgz
+
+cd <YOUR_LOCAL_WORKAREA>
+gtar zxvf bitcoin_v1.1.tgz
+
+2.) Link your "lib" and "tech" directories
+
+cd <YOUR_LOCAL_WORKAREA>/bitcoin_v1.1
+rm lib
+rm tech
+ln -s <YOUR_GLOBAL_AREA/bitcoin_v1.1_lib/lib .
+ln -s <YOUR_GLOBAL_AREA/bitcoin_v1.1_lib/tech .
+
+3.) Modify bitcoin_v1.1/tools/setup.csh to load the tools per your environment
+
+4.) Once "setup.csh" is modified, source it to load the license files, etc. for your tools
+
+% cd bitcoin_v1.1/tools
+% source setup.csh
+
+4.) To run the smallest design unit "bit_slice" through the entire flow, use the following commands:
+
+# Assume directory is bitcoin_v1.1/tools (this will take ~30 minutes to run fully)
+% make bit_slice 
+
+5.) To run the top level design unit "bit_coin" through the entire flow, use the following commands:
+
+# Assume directory is bitcoin_v1.1/tools (this will take ~12 hours to run fully)
+% make bit_coin 
+
+6.) To run any individual step, you can peruse the top level Makefile for instructions, or simply change directory to each
+particular tool, peruse the local Makefiles, and then run the specific Make targets per tool.  For example:
+
+# To run SpyGlass Lint/SDC/CDC
+# Assume directory is bitcoin_v1.1/tools
+% cd sg 
+% make bit_coin_lint_sdc_cdc 
+
+# To run VCLP @RTL
+# Assume directory is bitcoin_v1.1/tools
+% cd vclp 
+% make bit_coin
+
+# To run VCS @RTL
+# Assume directory is bitcoin_v1.1/tools
+% cd vcs_nlp 
+% gmake
+
+Note also, the outputs of DC and ICC2 are already included in the package, so you don't need to re-run them in order to run
+the Gate Level or PG Level checks with the other tools.
+
+DC Outputs are stored in   : bitcoin_v1.1/tools/icc2/outputs2icc2
+ICC2 Outputs are stored in : bitcoin_v1.1/tools/pt/signoff_data
+
+# To run PowerReplay
+# Assume directory is bitcoin_v1.1/tools
+% cd powerreplay 
+% make bit_coin_upf
+
+# To run FM @RTL2PG
+# Assume directory is bitcoin_v1.1/tools
+% cd fm 
+% make bit_coin_rtl2pg
+
+# To run PT @Signoff
+# Assume directory is bitcoin_v1.1/tools
+% cd pt 
+% make bit_coin
+
+* Note for some tools like PT, PowerReplay, and SpyGlass PE, and RTL FSDB is required.  So you will need to run the VCS NLP @RTL first.
+* Note for DC, you will need a SAIF file, which is created with VCS NLP @RTL

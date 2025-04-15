@@ -1,0 +1,390 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN bit_top ;
+
+SCANCHAINS 35 ;
+
+- 1_SG1
++ START PIN sipo_scan_in
++ FLOATING slice_9 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_9 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_9/TOP
++ STOP slice_9 hv_scan_in ;
+
+- 1_SG2
++ START slice_9 hv_scan_out
++ FLOATING slice_8 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_8 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_8/TOP
++ STOP slice_8 hv_scan_in ;
+
+- 1_SG3
++ START slice_8 hv_scan_out
++ FLOATING slice_7 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_7 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_7/TOP
++ STOP slice_7 hv_scan_in ;
+
+- 1_SG4
++ START slice_7 hv_scan_out
++ FLOATING slice_6 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_6 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_6/TOP
++ STOP slice_6 hv_scan_in ;
+
+- 1_SG5
++ START slice_6 hv_scan_out
++ FLOATING slice_5 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_5 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_5/TOP
++ STOP slice_5 hv_scan_in ;
+
+- 1_SG6
++ START slice_5 hv_scan_out
++ FLOATING slice_4 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_4 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_4/TOP
++ STOP slice_4 hv_scan_in ;
+
+- 1_SG7
++ START slice_4 hv_scan_out
++ FLOATING slice_31 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_31 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_31/TOP
++ STOP slice_31 hv_scan_in ;
+
+- 1_SG8
++ START slice_31 hv_scan_out
++ FLOATING slice_30 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_30 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_30/TOP
++ STOP slice_30 hv_scan_in ;
+
+- 1_SG9
++ START slice_30 hv_scan_out
++ FLOATING slice_3 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_3 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_3/TOP
++ STOP slice_3 hv_scan_in ;
+
+- 1_SG10
++ START slice_3 hv_scan_out
++ FLOATING slice_29 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_29 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_29/TOP
++ STOP slice_29 hv_scan_in ;
+
+- 1_SG11
++ START slice_29 hv_scan_out
++ FLOATING slice_28 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_28 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_28/TOP
++ STOP slice_28 hv_scan_in ;
+
+- 1_SG12
++ START slice_28 hv_scan_out
++ FLOATING slice_27 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_27 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_27/TOP
++ STOP slice_27 hv_scan_in ;
+
+- 1_SG13
++ START slice_27 hv_scan_out
++ FLOATING slice_26 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_26 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_26/TOP
++ STOP slice_26 hv_scan_in ;
+
+- 1_SG14
++ START slice_26 hv_scan_out
++ FLOATING slice_25 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_25 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_25/TOP
++ STOP slice_25 hv_scan_in ;
+
+- 1_SG15
++ START slice_25 hv_scan_out
++ FLOATING slice_24 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_24 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_24/TOP
++ STOP slice_24 hv_scan_in ;
+
+- 1_SG16
++ START slice_24 hv_scan_out
++ FLOATING slice_23 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_23 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_23/TOP
++ STOP slice_23 hv_scan_in ;
+
+- 1_SG17
++ START slice_23 hv_scan_out
++ FLOATING lreset_sync/reset_sync_reg ( IN SI ) ( OUT Q )
++ ORDERED temp_0_reg ( IN SI ) ( OUT Q )
+          load_data_from_memory_0_reg ( IN D ) ( OUT Q )
++ PARTITION lclk_45_45_0.850000_TOP
++ STOP PIN sipo_scan_out ;
+
+- 2_SG1
++ START PIN piso_scan_in
++ FLOATING slice_22 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_22 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_22/TOP
++ STOP slice_22 hv_scan_in ;
+
+- 2_SG2
++ START slice_22 hv_scan_out
++ FLOATING slice_21 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_21 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_21/TOP
++ STOP slice_21 hv_scan_in ;
+
+- 2_SG3
++ START slice_21 hv_scan_out
++ FLOATING slice_20 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_20 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_20/TOP
++ STOP slice_20 hv_scan_in ;
+
+- 2_SG4
++ START slice_20 hv_scan_out
++ FLOATING slice_2 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_2 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_2/TOP
++ STOP slice_2 hv_scan_in ;
+
+- 2_SG5
++ START slice_2 hv_scan_out
++ FLOATING slice_19 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_19 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_19/TOP
++ STOP slice_19 hv_scan_in ;
+
+- 2_SG6
++ START slice_19 hv_scan_out
++ FLOATING slice_18 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_18 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_18/TOP
++ STOP slice_18 hv_scan_in ;
+
+- 2_SG7
++ START slice_18 hv_scan_out
++ FLOATING slice_17 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_17 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_17/TOP
++ STOP slice_17 hv_scan_in ;
+
+- 2_SG8
++ START slice_17 hv_scan_out
++ FLOATING slice_16 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_16 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_16/TOP
++ STOP slice_16 hv_scan_in ;
+
+- 2_SG9
++ START slice_16 hv_scan_out
++ FLOATING slice_15 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_15 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_15/TOP
++ STOP slice_15 hv_scan_in ;
+
+- 2_SG10
++ START slice_15 hv_scan_out
++ FLOATING slice_14 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_14 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_14/TOP
++ STOP slice_14 hv_scan_in ;
+
+- 2_SG11
++ START slice_14 hv_scan_out
++ FLOATING slice_13 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_13 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_13/TOP
++ STOP slice_13 hv_scan_in ;
+
+- 2_SG12
++ START slice_13 hv_scan_out
++ FLOATING slice_12 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_12 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_12/TOP
++ STOP slice_12 hv_scan_in ;
+
+- 2_SG13
++ START slice_12 hv_scan_out
++ FLOATING slice_11 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_11 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_11/TOP
++ STOP slice_11 hv_scan_in ;
+
+- 2_SG14
++ START slice_11 hv_scan_out
++ FLOATING slice_10 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
+           slice_10 ( IN sipo_scan_in ) ( OUT sipo_scan_out ) ( BITS 38 )
++ PARTITION lclk_45_45_0.850000_slice_10/TOP
++ STOP slice_10 hv_scan_in ;
+
+- 2_SG15
++ START slice_10 hv_scan_out
++ FLOATING slice_1 ( IN piso_scan_in ) ( OUT piso_scan_out ) ( BITS 53 )
++ PARTITION lclk_45_45_0.850000_slice_1/TOP
++ STOP slice_1 sipo_scan_in ;
+
+- 2_SG20
++ START slice_0 hv_scan_out
++ FLOATING lreset_sync/t_reset_sync_reg ( IN SI ) ( OUT Q )
++ ORDERED temp_1_reg ( IN SI ) ( OUT Q )
+          load_data_from_memory_1_reg ( IN D ) ( OUT Q )
++ PARTITION lclk_45_45_0.850000_TOP
++ STOP PIN piso_scan_out ;
+
+- 3_SG1_UPF2
++ START sipo_slice_first/pout_reg_2_ Q
++ FLOATING sipo_slice_first/pout_reg_6_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_6_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_5_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/count_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_7_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/rd_addr_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_addr_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/count_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/count_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_addr_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_addr_reg_3_ ( IN SI ) ( OUT QN )
+           sipo_slice_last/wr_addr_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_addr_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_addr_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_reg ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_addr_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_4_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_12_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_13_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_14_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_15_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_14_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/addr_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/addr_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/addr_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/addr_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/addr_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_15_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_4_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_12_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_13_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_11_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_5_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_10_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_13_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_14_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_15_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_9_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_7_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_6_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_8_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_14_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_11_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/addr_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_12_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/addr_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_8_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_7_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_9_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_8_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_10_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_9_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_12_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_13_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_10_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/rd_addr_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_6_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_5_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_11_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/rd_reg ( IN SI ) ( OUT Q )
+           sipo_slice_last/rd_addr_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_11_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_10_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_9_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_1_reg ( IN SI ) ( OUT Q )
+           sipo_slice_last/rd_reg ( IN SI ) ( OUT Q )
+           sipo_slice_last/rd_addr_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/rd_addr_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_1_reg ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_reg ( IN SI ) ( OUT QN )
+           sipo_slice_first/rd_addr_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/rd_addr_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/rd_addr_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_addr_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_0_reg ( IN SI ) ( OUT Q )
+           sipo_slice_last/wr_tmp_reg ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_8_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_0_reg ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_5_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_7_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_4_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/wr_tmp_reg ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/count_reg_3_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/count_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/count_reg_2_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/count_reg_1_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/count_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/tmp_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_0_ ( IN SI ) ( OUT Q )
+           sipo_slice_first/pout_reg_4_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/tmp_reg_15_ ( IN SI ) ( OUT Q )
+           sipo_slice_last/pout_reg_0_ ( IN SI ) ( OUT Q )
++ PARTITION lclk_45_45_0.780000_PD_SIPO_SLICE
++ STOP sipo_slice_first/addr_reg_0_ SI ;
+
+- 3_SG2_UPF1
++ START sipo_slice_first/U87 Y
++ FLOATING piso_slice_first/dout_reg ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_15_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_2_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_0_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_5_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_2_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_1_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_9_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_10_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_7_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_11_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_8_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_9_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_10_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_11_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_13_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_14_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_8_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_12_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_15_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_12_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_0_ ( IN SI ) ( OUT Q )
+           piso_slice_last/dout_reg ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_6_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_3_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_14_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_5_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_7_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_4_ ( IN SI ) ( OUT Q )
+           piso_slice_first/temp_reg_13_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_3_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_1_ ( IN SI ) ( OUT Q )
+           piso_slice_last/temp_reg_6_ ( IN SI ) ( OUT Q )
++ PARTITION lclk_45_45_0.780000_PD_PISO_SLICE
++ STOP piso_slice_last/temp_reg_4_ SI ;
+
+END SCANCHAINS
+
+END DESIGN

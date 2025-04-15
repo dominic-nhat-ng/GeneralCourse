@@ -1,0 +1,5 @@
+# Auto Generated Wrapper UPF for VG tools
+for {set i 0} {$i < 32} {incr i} {
+load_upf -scope bit_secure_${j}/slice_${i} ../pt/signoff_data/bit_slice.upf
+}
+load_upf ../pt/signoff_data/bit_top.upf

@@ -1,0 +1,1115 @@
+// IC Compiler II Verilog Writer
+// Generated on 10/02/2017 at 19:19:55
+// Library Name: bit_slice.nlib
+// Block Name: bit_slice
+// User Label: signoff_drc
+// Write Command: write_verilog -include { pg_netlist } results/bit_slice.vpg
+module piso ( din , clk , reset , load , shut_down_signals , 
+    isolation_signals , retention_signals , dout , scan_in , scan_out , 
+    scan_enable , piso_sw_out , VSS , VDDL ) ;
+input  [15:0] din ;
+input  clk ;
+input  reset ;
+input  load ;
+input  shut_down_signals ;
+input  isolation_signals ;
+input  retention_signals ;
+output dout ;
+input  scan_in ;
+output scan_out ;
+input  scan_enable ;
+inout  piso_sw_out ;
+input  VSS ;
+input  VDDL ;
+
+ISO_NOR2X4_HVT snps_PD_PISO__ISO_PISO_OUT_SSL_snps_doutISO_PISO_OUT_SSL ( 
+    .A2 ( n1 ) , .ISO ( isolation_signals ) , .Y ( dout ) , 
+    .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX8_LVT load_UPF_LS ( .A ( load ) , .Y ( n41 ) , .VDDL ( piso_sw_out ) , 
+    .VSS ( VSS ) ) ;
+LSDNSSX1_HVT din_0__UPF_LS ( .A ( din[0] ) , .Y ( \n[39] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_1__UPF_LS ( .A ( din[1] ) , .Y ( \n[38] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_2__UPF_LS ( .A ( din[2] ) , .Y ( \n[36] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_3__UPF_LS ( .A ( din[3] ) , .Y ( \n[35] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_4__UPF_LS ( .A ( din[4] ) , .Y ( \n[34] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_5__UPF_LS ( .A ( din[5] ) , .Y ( \n[33] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_6__UPF_LS ( .A ( din[6] ) , .Y ( \n[32] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_7__UPF_LS ( .A ( din[7] ) , .Y ( \n[31] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_8__UPF_LS ( .A ( din[8] ) , .Y ( \n[30] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_9__UPF_LS ( .A ( din[9] ) , .Y ( \n[29] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_10__UPF_LS ( .A ( din[10] ) , .Y ( \n[28] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_11__UPF_LS ( .A ( din[11] ) , .Y ( \n[27] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_12__UPF_LS ( .A ( din[12] ) , .Y ( \n[26] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_13__UPF_LS ( .A ( din[13] ) , .Y ( \n[25] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_14__UPF_LS ( .A ( din[14] ) , .Y ( \n[24] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_RVT din_15__UPF_LS ( .A ( din[15] ) , .Y ( \n[23] ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX4_HVT reset_UPF_LS ( .A ( reset ) , .Y ( n40 ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AND2X1_HVT U3 ( .A1 ( n41 ) , .A2 ( \n[39] ) , .Y ( N4 ) , 
+    .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U5 ( .A1 ( n41 ) , .A2 ( \n[38] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_0_ ) , .Y ( N5 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U6 ( .A1 ( n41 ) , .A2 ( \n[36] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_1_ ) , .Y ( N6 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U7 ( .A1 ( n41 ) , .A2 ( \n[35] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_2_ ) , .Y ( N7 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U8 ( .A1 ( n41 ) , .A2 ( \n[34] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_3_ ) , .Y ( N8 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U9 ( .A1 ( n41 ) , .A2 ( \n[33] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_4_ ) , .Y ( N9 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_LVT U10 ( .A1 ( n41 ) , .A2 ( \n[32] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_5_ ) , .Y ( N10 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U11 ( .A1 ( n41 ) , .A2 ( \n[31] ) , .A3 ( net_net_73 ) , 
+    .A4 ( scan_out ) , .Y ( N11 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U12 ( .A1 ( n41 ) , .A2 ( \n[30] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_7_ ) , .Y ( N12 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U13 ( .A1 ( n41 ) , .A2 ( \n[29] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_8_ ) , .Y ( N13 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U14 ( .A1 ( n41 ) , .A2 ( \n[28] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_9_ ) , .Y ( N14 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U15 ( .A1 ( n41 ) , .A2 ( \n[27] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_10_ ) , .Y ( N15 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U16 ( .A1 ( n41 ) , .A2 ( \n[26] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_11_ ) , .Y ( N16 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U17 ( .A1 ( n41 ) , .A2 ( \n[25] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_12_ ) , .Y ( N17 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U18 ( .A1 ( n41 ) , .A2 ( \n[24] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_13_ ) , .Y ( N18 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U19 ( .A1 ( n41 ) , .A2 ( \n[23] ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_14_ ) , .Y ( N19 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U21 ( .A1 ( n41 ) , .A2 ( n1 ) , .A3 ( net_net_73 ) , 
+    .A4 ( temp_15_ ) , .Y ( n5 ) , .VDD ( piso_sw_out ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_14_ ( .RETN ( retention_signals ) , .D ( N18 ) , 
+    .SI ( n1 ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , .Q ( temp_14_ ) , 
+    .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_2_ ( .RETN ( retention_signals ) , .D ( N6 ) , 
+    .SI ( temp_12_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_2_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_6_ ( .RETN ( retention_signals ) , .D ( N10 ) , 
+    .SI ( temp_5_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( scan_out ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_4_ ( .RETN ( retention_signals ) , .D ( N8 ) , 
+    .SI ( temp_7_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_4_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_13_ ( .RETN ( retention_signals ) , .D ( N17 ) , 
+    .SI ( temp_14_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_13_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_10_ ( .RETN ( retention_signals ) , .D ( N14 ) , 
+    .SI ( temp_3_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_10_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_9_ ( .RETN ( retention_signals ) , .D ( N13 ) , 
+    .SI ( temp_8_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_9_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_5_ ( .RETN ( retention_signals ) , .D ( N9 ) , 
+    .SI ( temp_13_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_5_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_1_ ( .RETN ( retention_signals ) , .D ( N5 ) , 
+    .SI ( temp_4_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_1_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_7_ ( .RETN ( retention_signals ) , .D ( N11 ) , 
+    .SI ( n2 ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , .Q ( temp_7_ ) , 
+    .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_8_ ( .RETN ( retention_signals ) , .D ( N12 ) , 
+    .SI ( temp_1_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_8_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_11_ ( .RETN ( retention_signals ) , .D ( N15 ) , 
+    .SI ( temp_0_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_11_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_15_ ( .RETN ( retention_signals ) , .D ( N19 ) , 
+    .SI ( temp_11_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_15_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_12_ ( .RETN ( retention_signals ) , .D ( N16 ) , 
+    .SI ( temp_15_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_12_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT dout_reg ( .RETN ( retention_signals ) , .D ( n5 ) , 
+    .SI ( temp_2_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , .Q ( n1 ) , 
+    .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_0_ ( .RETN ( retention_signals ) , .D ( N4 ) , 
+    .SI ( temp_10_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_0_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT temp_reg_3_ ( .RETN ( retention_signals ) , .D ( N7 ) , 
+    .SI ( temp_9_ ) , .SE ( n3 ) , .CLK ( clk ) , .RSTB ( n40 ) , 
+    .Q ( temp_3_ ) , .VDD ( piso_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+LSDNSSX4_HVT scan_enable_UPF_LS ( .A ( scan_enable ) , .Y ( n3 ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_HVT scan_in_UPF_LS ( .A ( scan_in ) , .Y ( n2 ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+INVX2_RVT U24 ( .A ( n41 ) , .Y ( net_net_73 ) , .VDD ( piso_sw_out ) , 
+    .VSS ( VSS ) ) ;
+endmodule
+
+
+module sync_width16_0 ( clk , reset , sync_in , sync_out , scan_in , 
+    scan_enable , VDDH , VSS , VDDL , p_abuf0 ) ;
+input  clk ;
+input  reset ;
+input  [15:0] sync_in ;
+output [15:0] sync_out ;
+input  scan_in ;
+input  scan_enable ;
+input  VDDH ;
+input  VSS ;
+input  VDDL ;
+input  p_abuf0 ;
+
+wire [15:0] t_sync_out ;
+
+SDFFARX1_RVT t_sync_out_reg_15_ ( .D ( sync_in[15] ) , .SI ( sync_out[7] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[15] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_14_ ( .D ( sync_in[14] ) , .SI ( scan_in ) , 
+    .SE ( scan_enable ) , .CLK ( n4 ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[14] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_13_ ( .D ( sync_in[13] ) , .SI ( sync_out[8] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[13] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_12_ ( .D ( sync_in[12] ) , .SI ( sync_out[15] ) , 
+    .SE ( scan_enable ) , .CLK ( n4 ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[12] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_11_ ( .D ( sync_in[11] ) , .SI ( sync_out[13] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[11] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_10_ ( .D ( sync_in[10] ) , .SI ( sync_out[9] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[10] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_9_ ( .D ( sync_in[9] ) , .SI ( sync_out[3] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[9] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_7_ ( .D ( sync_in[7] ) , .SI ( sync_out[6] ) , 
+    .SE ( scan_enable ) , .CLK ( n4 ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[7] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_6_ ( .D ( sync_in[6] ) , .SI ( sync_out[5] ) , 
+    .SE ( scan_enable ) , .CLK ( n4 ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[6] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_5_ ( .D ( sync_in[5] ) , .SI ( sync_out[14] ) , 
+    .SE ( scan_enable ) , .CLK ( n4 ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[5] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_4_ ( .D ( sync_in[4] ) , .SI ( sync_out[12] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[4] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_3_ ( .D ( sync_in[3] ) , .SI ( sync_out[0] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[3] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_2_ ( .D ( sync_in[2] ) , .SI ( sync_out[1] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[2] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_1_ ( .D ( sync_in[1] ) , .SI ( sync_out[4] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[1] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_0_ ( .D ( sync_in[0] ) , .SI ( sync_out[2] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[0] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_0_ ( .D ( t_sync_out[0] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[0] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_RVT sync_out_reg_1_ ( .D ( t_sync_out[1] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[1] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_2_ ( .D ( t_sync_out[2] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[2] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_3_ ( .D ( t_sync_out[3] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[3] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_4_ ( .D ( t_sync_out[4] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[4] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_LVT sync_out_reg_5_ ( .D ( t_sync_out[5] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[5] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_6_ ( .D ( t_sync_out[6] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[6] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_RVT sync_out_reg_7_ ( .D ( t_sync_out[7] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[7] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_11_ ( .D ( t_sync_out[11] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[11] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_12_ ( .D ( t_sync_out[12] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[12] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_13_ ( .D ( t_sync_out[13] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[13] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_14_ ( .D ( t_sync_out[14] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[14] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_15_ ( .D ( t_sync_out[15] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[15] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+LSUPX8_LVT CLK_UPF_LS ( .A ( clk ) , .Y ( n4 ) , .VDDH ( VDDH ) , 
+    .VDDL ( VDDL ) , .VSS ( VSS ) ) ;
+DFFARX2_RVT sync_out_reg_8_ ( .D ( t_sync_out[8] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[8] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_8_ ( .D ( sync_in[8] ) , .SI ( sync_out[10] ) , 
+    .SE ( p_abuf0 ) , .CLK ( n4 ) , .RSTB ( reset ) , .Q ( t_sync_out[8] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_10_ ( .D ( t_sync_out[10] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[10] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_9_ ( .D ( t_sync_out[9] ) , .CLK ( n4 ) , 
+    .RSTB ( reset ) , .Q ( sync_out[9] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+endmodule
+
+
+module sync_wrapper_width16_0 ( clk , reset , din , dout , scan_in , 
+    scan_enable , VDDH , VSS , VDDL , p_abuf0 ) ;
+input  clk ;
+input  reset ;
+input  [15:0] din ;
+output [15:0] dout ;
+input  scan_in ;
+input  scan_enable ;
+input  VDDH ;
+input  VSS ;
+input  VDDL ;
+input  p_abuf0 ;
+
+sync_width16_0 dut_sync ( .clk ( clk ) , .reset ( reset ) , .sync_in ( din ) , 
+    .sync_out ( dout ) , .scan_in ( scan_in ) , .scan_enable ( scan_enable ) , 
+    .VDDH ( VDDH ) , .VSS ( VSS ) , .VDDL ( VDDL ) , .p_abuf0 ( p_abuf0 ) ) ;
+endmodule
+
+
+module sync_width16_1 ( clk , reset , sync_in , sync_out , scan_in2 , 
+    scan_in1 , scan_enable , VDDH , VSS , p_abuf0 ) ;
+input  clk ;
+input  reset ;
+input  [15:0] sync_in ;
+output [15:0] sync_out ;
+input  scan_in2 ;
+input  scan_in1 ;
+input  scan_enable ;
+input  VDDH ;
+input  VSS ;
+input  p_abuf0 ;
+
+wire [15:0] t_sync_out ;
+
+SDFFARX1_RVT t_sync_out_reg_15_ ( .D ( sync_in[15] ) , .SI ( sync_out[3] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[15] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_14_ ( .D ( HFSNET_5 ) , .SI ( sync_out[5] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[14] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_13_ ( .D ( HFSNET_4 ) , .SI ( sync_out[15] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[13] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_12_ ( .D ( sync_in[12] ) , .SI ( sync_out[14] ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[12] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_11_ ( .D ( HFSNET_8 ) , .SI ( sync_out[13] ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[11] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_10_ ( .D ( sync_in[10] ) , .SI ( sync_out[0] ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[10] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_9_ ( .D ( sync_in[9] ) , .SI ( sync_out[11] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[9] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_8_ ( .D ( HFSNET_1 ) , .SI ( scan_in1 ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[8] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_7_ ( .D ( sync_in[7] ) , .SI ( sync_out[10] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[7] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_6_ ( .D ( sync_in[6] ) , .SI ( sync_out[4] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[6] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_5_ ( .D ( sync_in[5] ) , .SI ( sync_out[7] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[5] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_4_ ( .D ( sync_in[4] ) , .SI ( sync_out[12] ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[4] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_3_ ( .D ( sync_in[3] ) , .SI ( scan_in2 ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[3] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_2_ ( .D ( sync_in[2] ) , .SI ( sync_out[6] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[2] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_1_ ( .D ( sync_in[1] ) , .SI ( sync_out[8] ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[1] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_0_ ( .D ( sync_in[0] ) , .SI ( sync_out[1] ) , 
+    .SE ( p_abuf0 ) , .CLK ( clk ) , .RSTB ( reset ) , .Q ( t_sync_out[0] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_0_ ( .D ( t_sync_out[0] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[0] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_1_ ( .D ( t_sync_out[1] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[1] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_2_ ( .D ( t_sync_out[2] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[2] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_3_ ( .D ( t_sync_out[3] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[3] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_4_ ( .D ( t_sync_out[4] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[4] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_5_ ( .D ( t_sync_out[5] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[5] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_6_ ( .D ( t_sync_out[6] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[6] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_7_ ( .D ( t_sync_out[7] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[7] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX2_LVT sync_out_reg_8_ ( .D ( t_sync_out[8] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[8] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_9_ ( .D ( t_sync_out[9] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[9] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_10_ ( .D ( t_sync_out[10] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[10] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_11_ ( .D ( t_sync_out[11] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[11] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_12_ ( .D ( t_sync_out[12] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[12] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_13_ ( .D ( t_sync_out[13] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[13] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_14_ ( .D ( t_sync_out[14] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[14] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT sync_out_reg_15_ ( .D ( t_sync_out[15] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( sync_out[15] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT HFSBUF_1 ( .A ( sync_in[8] ) , .Y ( HFSNET_1 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_RVT HFSBUF_45 ( .A ( sync_in[11] ) , .Y ( HFSNET_8 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_RVT HFSBUF_4 ( .A ( sync_in[13] ) , .Y ( HFSNET_4 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_RVT HFSBUF_5 ( .A ( sync_in[14] ) , .Y ( HFSNET_5 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+endmodule
+
+
+module sync_wrapper_width16_1 ( clk , reset , din , dout , scan_in2 , 
+    scan_in1 , scan_enable , VDDH , VSS , p_abuf0 ) ;
+input  clk ;
+input  reset ;
+input  [15:0] din ;
+output [15:0] dout ;
+input  scan_in2 ;
+input  scan_in1 ;
+input  scan_enable ;
+input  VDDH ;
+input  VSS ;
+input  p_abuf0 ;
+
+sync_width16_1 dut_sync ( .clk ( clk ) , .reset ( reset ) , .sync_in ( din ) , 
+    .sync_out ( dout ) , .scan_in2 ( scan_in2 ) , .scan_in1 ( scan_in1 ) , 
+    .scan_enable ( scan_enable ) , .VDDH ( VDDH ) , .VSS ( VSS ) , 
+    .p_abuf0 ( p_abuf0 ) ) ;
+endmodule
+
+
+module sync_width4 ( clk , reset , sync_in , sync_out , scan_in , 
+    scan_enable , VDDH , VSS ) ;
+input  clk ;
+input  reset ;
+input  [3:0] sync_in ;
+output [3:0] sync_out ;
+input  scan_in ;
+input  scan_enable ;
+input  VDDH ;
+input  VSS ;
+
+wire [3:0] t_sync_out ;
+
+SDFFARX1_RVT t_sync_out_reg_3_ ( .D ( sync_in[3] ) , .SI ( sync_out[1] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[3] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_2_ ( .D ( sync_in[2] ) , .SI ( sync_out[0] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[2] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_1_ ( .D ( sync_in[1] ) , .SI ( scan_in ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[1] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT t_sync_out_reg_0_ ( .D ( sync_in[0] ) , .SI ( sync_out[3] ) , 
+    .SE ( scan_enable ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_sync_out[0] ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_RVT sync_out_reg_0_ ( .D ( t_sync_out[0] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( aps_rename_70_ ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_RVT sync_out_reg_2_ ( .D ( t_sync_out[2] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( aps_rename_68_ ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_RVT sync_out_reg_1_ ( .D ( t_sync_out[1] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( aps_rename_69_ ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_RVT sync_out_reg_3_ ( .D ( t_sync_out[3] ) , .CLK ( clk ) , 
+    .RSTB ( reset ) , .Q ( aps_rename_67_ ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX8_LVT BUFT_P_50 ( .A ( aps_rename_67_ ) , .Y ( sync_out[3] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX8_LVT BUFT_P_53 ( .A ( aps_rename_69_ ) , .Y ( sync_out[1] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX8_LVT BUFT_P_54 ( .A ( aps_rename_70_ ) , .Y ( sync_out[0] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX8_LVT BUFT_P_55 ( .A ( aps_rename_68_ ) , .Y ( sync_out[2] ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+endmodule
+
+
+module sync_wrapper_width4 ( clk , reset , din , dout , scan_in , 
+    scan_enable , VDDH , VSS ) ;
+input  clk ;
+input  reset ;
+input  [3:0] din ;
+output [3:0] dout ;
+input  scan_in ;
+input  scan_enable ;
+input  VDDH ;
+input  VSS ;
+
+sync_width4 dut_sync ( .clk ( clk ) , .reset ( reset ) , .sync_in ( din ) , 
+    .sync_out ( dout ) , .scan_in ( scan_in ) , .scan_enable ( scan_enable ) , 
+    .VDDH ( VDDH ) , .VSS ( VSS ) ) ;
+endmodule
+
+
+module sipo ( clk , reset , data_valid , sin , shut_down_signals , 
+    isolation_signals , retention_signals , pout , addr , wr , scan_in , 
+    scan_out , scan_enable , sipo_sw_out , VSS , VDDL ) ;
+input  clk ;
+input  reset ;
+input  data_valid ;
+input  sin ;
+input  shut_down_signals ;
+input  isolation_signals ;
+input  retention_signals ;
+output [15:0] pout ;
+output [3:0] addr ;
+output wr ;
+input  scan_in ;
+output scan_out ;
+input  scan_enable ;
+inout  sipo_sw_out ;
+input  VSS ;
+input  VDDL ;
+
+wire [15:0] tpout ;
+wire [3:0] count ;
+wire [3:0] taddr ;
+wire [3:0] rd_addr ;
+wire [3:0] wr_addr ;
+
+OR2X1_HVT U5 ( .A1 ( n54 ) , .A2 ( n59 ) , .Y ( n15 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+NAND2X0_RVT U7 ( .A1 ( wr ) , .A2 ( data_valid ) , .Y ( n14 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND2X0_LVT U13 ( .A1 ( rd_addr[1] ) , .A2 ( rd_addr[0] ) , .Y ( n7 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AND2X1_HVT U15 ( .A1 ( wr ) , .A2 ( data_valid ) , .Y ( n5 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AND2X1_HVT U16 ( .A1 ( n4 ) , .A2 ( n5 ) , .Y ( n9 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+NAND2X0_HVT U17 ( .A1 ( n5 ) , .A2 ( rd_addr[2] ) , .Y ( n6 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND4X0_RVT U20 ( .A1 ( count[0] ) , .A2 ( count[1] ) , .A3 ( count[2] ) , 
+    .A4 ( count[3] ) , .Y ( n28 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+INVX1_RVT HFSINV_9 ( .A ( n28 ) , .Y ( HFSNET_8 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+INVX1_HVT U22 ( .A ( wr ) , .Y ( trd ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+INVX1_HVT U23 ( .A ( rd ) , .Y ( n8 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U24 ( .A1 ( rd ) , .A2 ( rd_addr[0] ) , .A3 ( n8 ) , 
+    .A4 ( wr_addr[0] ) , .Y ( taddr[0] ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+AO22X1_HVT U25 ( .A1 ( rd ) , .A2 ( rd_addr[1] ) , .A3 ( n8 ) , 
+    .A4 ( wr_addr[1] ) , .Y ( taddr[1] ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+AO22X1_HVT U26 ( .A1 ( rd ) , .A2 ( rd_addr[2] ) , .A3 ( n8 ) , 
+    .A4 ( wr_addr[2] ) , .Y ( taddr[2] ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+AO22X1_HVT U27 ( .A1 ( rd ) , .A2 ( rd_addr[3] ) , .A3 ( n8 ) , 
+    .A4 ( wr_addr[3] ) , .Y ( taddr[3] ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+AO21X1_HVT U30 ( .A1 ( n11 ) , .A2 ( n62 ) , .A3 ( n9 ) , .Y ( n21 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+HADDX1_HVT U31 ( .A0 ( rd_addr[3] ) , .B0 ( n12 ) , .SO ( n13 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+OA21X1_HVT U34 ( .A1 ( n58 ) , .A2 ( wr_addr[2] ) , .A3 ( n18 ) , .Y ( n34 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND3X0_HVT U35 ( .A1 ( data_valid ) , .A2 ( wr ) , .A3 ( wr_addr[0] ) , 
+    .Y ( n23 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+INVX1_HVT U36 ( .A ( n23 ) , .Y ( n22 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+OA21X1_HVT U38 ( .A1 ( n22 ) , .A2 ( wr_addr[1] ) , .A3 ( n20 ) , .Y ( n37 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+OA21X1_HVT U39 ( .A1 ( n24 ) , .A2 ( wr_addr[0] ) , .A3 ( n23 ) , .Y ( n40 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U41 ( .A1 ( data_valid ) , .A2 ( wr_1 ) , .A3 ( n53 ) , 
+    .A4 ( wr ) , .Y ( n43 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U42 ( .A1 ( data_valid ) , .A2 ( wr_0 ) , .A3 ( n55 ) , 
+    .A4 ( wr_1 ) , .Y ( n46 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U43 ( .A1 ( data_valid ) , .A2 ( wr_tmp ) , .A3 ( n55 ) , 
+    .A4 ( wr_0 ) , .Y ( n49 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND2X0_HVT U44 ( .A1 ( count[0] ) , .A2 ( data_valid ) , .Y ( n27 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND2X0_HVT U45 ( .A1 ( count[2] ) , .A2 ( count[1] ) , .Y ( n26 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+OR2X1_HVT U46 ( .A1 ( n27 ) , .A2 ( n26 ) , .Y ( n29 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+MUX21X1_HVT U47 ( .A1 ( n28 ) , .A2 ( count[3] ) , .S0 ( n29 ) , .Y ( n86 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND3X0_LVT U48 ( .A1 ( data_valid ) , .A2 ( count[0] ) , .A3 ( count[1] ) , 
+    .Y ( n32 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+INVX1_HVT U49 ( .A ( n32 ) , .Y ( n30 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+OA21X1_HVT U50 ( .A1 ( count[2] ) , .A2 ( n30 ) , .A3 ( n29 ) , .Y ( n89 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+OA221X1_RVT U51 ( .A1 ( count[1] ) , .A2 ( count[0] ) , .A3 ( count[1] ) , 
+    .A4 ( data_valid ) , .A5 ( n32 ) , .Y ( n92 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+AO22X1_HVT U53 ( .A1 ( data_valid ) , .A2 ( n51 ) , .A3 ( n53 ) , 
+    .A4 ( count[0] ) , .Y ( n95 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U54 ( .A1 ( data_valid ) , .A2 ( tpout[14] ) , .A3 ( n53 ) , 
+    .A4 ( tpout[15] ) , .Y ( n98 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U55 ( .A1 ( data_valid ) , .A2 ( tpout[13] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[14] ) , .Y ( n101 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U56 ( .A1 ( data_valid ) , .A2 ( tpout[12] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[13] ) , .Y ( n104 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U57 ( .A1 ( data_valid ) , .A2 ( tpout[11] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[12] ) , .Y ( n107 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U58 ( .A1 ( data_valid ) , .A2 ( tpout[10] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[11] ) , .Y ( n110 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U59 ( .A1 ( data_valid ) , .A2 ( tpout[9] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[10] ) , .Y ( n113 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U60 ( .A1 ( data_valid ) , .A2 ( tpout[8] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[9] ) , .Y ( n116 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U61 ( .A1 ( data_valid ) , .A2 ( tpout[7] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[8] ) , .Y ( n119 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U62 ( .A1 ( data_valid ) , .A2 ( tpout[6] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[7] ) , .Y ( n122 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U63 ( .A1 ( data_valid ) , .A2 ( tpout[5] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[6] ) , .Y ( n125 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U64 ( .A1 ( data_valid ) , .A2 ( tpout[4] ) , .A3 ( n53 ) , 
+    .A4 ( tpout[5] ) , .Y ( n128 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U65 ( .A1 ( data_valid ) , .A2 ( tpout[3] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[4] ) , .Y ( n131 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U66 ( .A1 ( data_valid ) , .A2 ( tpout[2] ) , .A3 ( n53 ) , 
+    .A4 ( tpout[3] ) , .Y ( n134 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U67 ( .A1 ( data_valid ) , .A2 ( tpout[1] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[2] ) , .Y ( n137 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U68 ( .A1 ( data_valid ) , .A2 ( tpout[0] ) , .A3 ( n55 ) , 
+    .A4 ( tpout[1] ) , .Y ( n140 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AO22X1_HVT U69 ( .A1 ( data_valid ) , .A2 ( sin ) , .A3 ( n55 ) , 
+    .A4 ( tpout[0] ) , .Y ( n143 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+INVX1_HVT U78 ( .A ( data_valid ) , .Y ( n53 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+INVX2_HVT U80 ( .A ( data_valid ) , .Y ( n55 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_0_ ( .RETN ( retention_signals ) , .D ( tpout[0] ) , 
+    .SI ( aps_rename_63_ ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( aps_rename_82_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT addr_reg_1_ ( .RETN ( retention_signals ) , .D ( taddr[1] ) , 
+    .SI ( pout[14] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( addr[1] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_12_ ( .RETN ( retention_signals ) , .D ( tpout[12] ) , 
+    .SI ( aps_rename_82_ ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( pout[12] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_3_ ( .RETN ( n47 ) , .D ( tpout[3] ) , 
+    .SI ( pout[6] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( aps_rename_1_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_8_ ( .RETN ( retention_signals ) , .D ( tpout[8] ) , 
+    .SI ( n16 ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( pout[8] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_11_ ( .RETN ( n47 ) , .D ( tpout[11] ) , 
+    .SI ( count[3] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( pout[11] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_1_ ( .RETN ( retention_signals ) , .D ( tpout[1] ) , 
+    .SI ( aps_rename_83_ ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( aps_rename_66_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_13_ ( .RETN ( retention_signals ) , .D ( tpout[13] ) , 
+    .SI ( pout[11] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( pout[13] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_15_ ( .RETN ( n47 ) , .D ( tpout[15] ) , 
+    .SI ( pout[13] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( aps_rename_62_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_9_ ( .RETN ( retention_signals ) , .D ( tpout[9] ) , 
+    .SI ( wr_0 ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( scan_out ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_6_ ( .RETN ( n47 ) , .D ( tpout[6] ) , 
+    .SI ( addr[1] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( pout[6] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_10_ ( .RETN ( retention_signals ) , .D ( tpout[10] ) , 
+    .SI ( tpout[1] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( aps_rename_63_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_7_ ( .RETN ( retention_signals ) , .D ( tpout[7] ) , 
+    .SI ( tpout[13] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( pout[7] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX2_RVT pout_reg_4_ ( .RETN ( n35 ) , .D ( tpout[4] ) , 
+    .SI ( aps_rename_62_ ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , 
+    .RSTB ( HFSNET_11 ) , .Q ( pout[4] ) , .VDD ( sipo_sw_out ) , 
+    .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT addr_reg_0_ ( .RETN ( retention_signals ) , .D ( taddr[0] ) , 
+    .SI ( n63 ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( addr[0] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_14_ ( .RETN ( retention_signals ) , .D ( tpout[14] ) , 
+    .SI ( pout[5] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( pout[14] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT addr_reg_2_ ( .RETN ( n45 ) , .D ( taddr[2] ) , 
+    .SI ( tpout[8] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( aps_rename_83_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_2_ ( .RETN ( retention_signals ) , .D ( tpout[2] ) , 
+    .SI ( count[0] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( aps_rename_81_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT addr_reg_3_ ( .RETN ( retention_signals ) , .D ( taddr[3] ) , 
+    .SI ( tpout[4] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( addr[3] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT pout_reg_5_ ( .RETN ( retention_signals ) , .D ( tpout[5] ) , 
+    .SI ( addr[0] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( aps_rename_64_ ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT rd_addr_reg_3_ ( .RETN ( retention_signals ) , .D ( n13 ) , 
+    .SI ( wr_addr[2] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , 
+    .RSTB ( HFSNET_11 ) , .Q ( n63 ) , .QN ( rd_addr[3] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_tmp_reg ( .RETN ( retention_signals ) , .D ( HFSNET_8 ) , 
+    .SI ( tpout[9] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( wr_tmp ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_0_reg ( .RETN ( retention_signals ) , .D ( n49 ) , 
+    .SI ( wr_1 ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , .Q ( wr_0 ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT count_reg_3_ ( .RETN ( n45 ) , .D ( n86 ) , .SI ( count[2] ) , 
+    .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , .Q ( count[3] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT count_reg_2_ ( .RETN ( n35 ) , .D ( n89 ) , .SI ( wr ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , .Q ( count[2] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_addr_reg_1_ ( .RETN ( retention_signals ) , .D ( n37 ) , 
+    .SI ( n62 ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( wr_addr[1] ) , .QN ( n54 ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_addr_reg_3_ ( .RETN ( retention_signals ) , .D ( n31 ) , 
+    .SI ( addr[3] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( wr_addr[3] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT count_reg_1_ ( .RETN ( n35 ) , .D ( n92 ) , .SI ( pout[4] ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , .Q ( count[1] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_addr_reg_2_ ( .RETN ( retention_signals ) , .D ( n34 ) , 
+    .SI ( wr_addr[3] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , 
+    .RSTB ( HFSNET_11 ) , .Q ( wr_addr[2] ) , .QN ( n52 ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_1_ ( .RETN ( retention_signals ) , .D ( n140 ) , 
+    .SI ( tpout[12] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[1] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_15_ ( .RETN ( retention_signals ) , .D ( n98 ) , 
+    .SI ( rd ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( tpout[15] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_addr_reg_0_ ( .RETN ( n35 ) , .D ( n40 ) , .SI ( n60 ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , 
+    .Q ( wr_addr[0] ) , .QN ( n59 ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_2_ ( .RETN ( retention_signals ) , .D ( n137 ) , 
+    .SI ( tpout[11] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[2] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_9_ ( .RETN ( retention_signals ) , .D ( n116 ) , 
+    .SI ( pout[12] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[9] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_7_ ( .RETN ( retention_signals ) , .D ( n122 ) , 
+    .SI ( pout[8] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[7] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_10_ ( .RETN ( retention_signals ) , .D ( n113 ) , 
+    .SI ( aps_rename_66_ ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[10] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_0_ ( .RETN ( retention_signals ) , .D ( n143 ) , 
+    .SI ( tpout[10] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[0] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_12_ ( .RETN ( retention_signals ) , .D ( n107 ) , 
+    .SI ( tpout[6] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[12] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT wr_1_reg ( .RETN ( retention_signals ) , .D ( n46 ) , 
+    .SI ( pout[7] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( wr_1 ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_5_ ( .RETN ( n45 ) , .D ( n128 ) , .SI ( tpout[15] ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , .Q ( tpout[5] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_8_ ( .RETN ( retention_signals ) , .D ( n119 ) , 
+    .SI ( tpout[7] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[8] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_13_ ( .RETN ( retention_signals ) , .D ( n104 ) , 
+    .SI ( tpout[2] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[13] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT count_reg_0_ ( .RETN ( retention_signals ) , .D ( n95 ) , 
+    .SI ( count[1] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( count[0] ) , .QN ( n51 ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_3_ ( .RETN ( n45 ) , .D ( n134 ) , .SI ( wr_tmp ) , 
+    .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , .Q ( tpout[3] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_6_ ( .RETN ( retention_signals ) , .D ( n125 ) , 
+    .SI ( tpout[14] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[6] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_11_ ( .RETN ( retention_signals ) , .D ( n110 ) , 
+    .SI ( tpout[5] ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[11] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT rd_reg ( .RETN ( n45 ) , .D ( trd ) , .SI ( aps_rename_81_ ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , .Q ( rd ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_4_ ( .RETN ( n45 ) , .D ( n131 ) , .SI ( tpout[0] ) , 
+    .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , .Q ( tpout[4] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT tmp_reg_14_ ( .RETN ( retention_signals ) , .D ( n101 ) , 
+    .SI ( n61 ) , .SE ( n19 ) , .CLK ( clk ) , .RSTB ( n39 ) , 
+    .Q ( tpout[14] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+LSDNSSX8_RVT scan_enable_UPF_LS ( .A ( scan_enable ) , .Y ( n19 ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX1_HVT scan_in_UPF_LS ( .A ( scan_in ) , .Y ( n16 ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX8_RVT HFSBUF_46 ( .A ( n19 ) , .Y ( HFSNET_9 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+AOBUFX4_LVT U74 ( .A ( retention_signals ) , .Y ( n47 ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+AOBUFX4_RVT U28 ( .A ( retention_signals ) , .Y ( n35 ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+AOBUFX4_RVT U73 ( .A ( retention_signals ) , .Y ( n45 ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_RR_74 ( .A ( aps_rename_81_ ) , .Y ( pout[2] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_RR_4512 ( .A ( aps_rename_1_ ) , .Y ( pout[3] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_RR_82 ( .A ( aps_rename_82_ ) , .Y ( pout[0] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT rd_addr_reg_1_ ( .RETN ( n35 ) , .D ( n21 ) , 
+    .SI ( aps_rename_1_ ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , 
+    .RSTB ( HFSNET_11 ) , .Q ( n62 ) , .QN ( rd_addr[1] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT rd_addr_reg_2_ ( .RETN ( n45 ) , .D ( n17 ) , 
+    .SI ( wr_addr[1] ) , .SE ( HFSNET_9 ) , .CLK ( clk ) , 
+    .RSTB ( HFSNET_11 ) , .Q ( n61 ) , .QN ( rd_addr[2] ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+INVX1_HVT U14 ( .A ( n7 ) , .Y ( n4 ) , .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+OR3X1_LVT U8 ( .A1 ( n15 ) , .A2 ( n52 ) , .A3 ( n14 ) , .Y ( n18 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+OAI21X1_RVT U19 ( .A1 ( n9 ) , .A2 ( rd_addr[2] ) , .A3 ( n12 ) , .Y ( n17 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+XNOR2X1_HVT U9 ( .A1 ( n18 ) , .A2 ( wr_addr[3] ) , .Y ( n31 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NAND2X0_HVT U4 ( .A1 ( n24 ) , .A2 ( rd_addr[0] ) , .Y ( n11 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+AND2X1_HVT U6 ( .A1 ( wr ) , .A2 ( data_valid ) , .Y ( n24 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+INVX1_HVT U10 ( .A ( n20 ) , .Y ( n58 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+OR2X1_HVT U11 ( .A1 ( n15 ) , .A2 ( n14 ) , .Y ( n20 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+RSDFFARX1_RVT rd_addr_reg_0_ ( .RETN ( n35 ) , .D ( n25 ) , .SI ( tpout[3] ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , .Q ( n60 ) , 
+    .QN ( rd_addr[0] ) , .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , 
+    .VSS ( VSS ) ) ;
+RSDFFARX2_RVT wr_reg ( .RETN ( n47 ) , .D ( n43 ) , .SI ( wr_addr[0] ) , 
+    .SE ( HFSNET_9 ) , .CLK ( clk ) , .RSTB ( HFSNET_11 ) , .Q ( wr ) , 
+    .VDD ( sipo_sw_out ) , .VDDG ( VDDL ) , .VSS ( VSS ) ) ;
+OR2X1_RVT U18 ( .A1 ( n7 ) , .A2 ( n6 ) , .Y ( n12 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+OAI21X1_HVT U3 ( .A1 ( n24 ) , .A2 ( rd_addr[0] ) , .A3 ( n11 ) , .Y ( n25 ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSDNSSX4_RVT reset_UPF_LS ( .A ( reset ) , .Y ( n39 ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX4_RVT HFSBUF_48 ( .A ( n39 ) , .Y ( HFSNET_11 ) , .VDD ( sipo_sw_out ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_20 ( .A ( aps_rename_62_ ) , .Y ( pout[15] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_23 ( .A ( aps_rename_64_ ) , .Y ( pout[5] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_27 ( .A ( aps_rename_66_ ) , .Y ( pout[1] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_29 ( .A ( aps_rename_63_ ) , .Y ( pout[10] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_52 ( .A ( aps_rename_83_ ) , .Y ( addr[2] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX2_LVT FTB_1__59 ( .A ( scan_out ) , .Y ( pout[9] ) , 
+    .VDD ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+endmodule
+
+
+module reset_sync_0 ( reset , clk , reset_sync , bit_slice_scan_enable_in , 
+    scan_in , scan_out , VDDH , VSS , p1 ) ;
+input  reset ;
+input  clk ;
+output reset_sync ;
+input  bit_slice_scan_enable_in ;
+input  scan_in ;
+output scan_out ;
+input  VDDH ;
+input  VSS ;
+input  p1 ;
+
+SDFFARX1_RVT t_reset_sync_reg ( .D ( p1 ) , .SI ( scan_in ) , 
+    .SE ( bit_slice_scan_enable_in ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( t_reset_sync ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT reset_sync_reg ( .D ( t_reset_sync ) , .SI ( t_reset_sync ) , 
+    .SE ( bit_slice_scan_enable_in ) , .CLK ( clk ) , .RSTB ( reset ) , 
+    .Q ( scan_out ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+OR2X1_RVT U3 ( .A1 ( bit_slice_scan_enable_in ) , .A2 ( scan_out ) , 
+    .Y ( aps_rename_61_ ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX8_LVT BUFT_P_58 ( .A ( aps_rename_61_ ) , .Y ( reset_sync ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+endmodule
+
+
+module reset_sync_1 ( reset , clk , reset_sync , bit_slice_scan_enable_in , 
+    scan_in , scan_out , VDDH , VSS , VDDL , p1 ) ;
+input  reset ;
+input  clk ;
+output reset_sync ;
+input  bit_slice_scan_enable_in ;
+input  scan_in ;
+output scan_out ;
+input  VDDH ;
+input  VSS ;
+input  VDDL ;
+input  p1 ;
+
+SDFFARX1_RVT t_reset_sync_reg ( .D ( p1 ) , .SI ( scan_in ) , 
+    .SE ( bit_slice_scan_enable_in ) , .CLK ( n3 ) , .RSTB ( reset ) , 
+    .Q ( t_reset_sync ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+LSUPX1_RVT CLK_UPF_LS ( .A ( clk ) , .Y ( n3 ) , .VDDH ( VDDH ) , 
+    .VDDL ( VDDL ) , .VSS ( VSS ) ) ;
+SDFFARX1_RVT reset_sync_reg ( .D ( t_reset_sync ) , .SI ( t_reset_sync ) , 
+    .SE ( bit_slice_scan_enable_in ) , .CLK ( n3 ) , .RSTB ( reset ) , 
+    .Q ( scan_out ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+OR2X2_RVT U3 ( .A1 ( bit_slice_scan_enable_in ) , .A2 ( scan_out ) , 
+    .Y ( reset_sync ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+endmodule
+
+
+module bit_slice ( hclk , lclk , reset , sin , data_valid , memory_sleep , 
+    shut_down_signals , isolation_signals , retention_signals , scan_enable , 
+    sipo_scan_in , piso_scan_in , hv_scan_in , lv_scan_in , sipo_scan_out , 
+    piso_scan_out , hv_scan_out , lv_scan_out , sout , memory_ack , 
+    PG_ack_signals , VDDH , VDDL , VSS , piso_sw_out , sipo_sw_out ) ;
+input  hclk ;
+input  lclk ;
+input  reset ;
+input  sin ;
+input  data_valid ;
+input  memory_sleep ;
+input  [1:0] shut_down_signals ;
+input  [1:0] isolation_signals ;
+input  [1:0] retention_signals ;
+input  scan_enable ;
+input  sipo_scan_in ;
+input  piso_scan_in ;
+input  hv_scan_in ;
+input  lv_scan_in ;
+output sipo_scan_out ;
+output piso_scan_out ;
+output hv_scan_out ;
+output lv_scan_out ;
+output sout ;
+output memory_ack ;
+output [1:0] PG_ack_signals ;
+input  VDDH ;
+input  VDDL ;
+input  VSS ;
+output piso_sw_out ;
+output sipo_sw_out ;
+
+wire [1:0] power_ack ;
+wire [15:0] t_pout2mem ;
+wire [2:0] t_pout_addr2mem ;
+wire [3:0] pout_addr2mem ;
+wire [15:0] pout2mem ;
+wire [15:0] t_din2piso ;
+wire [15:0] din2piso ;
+// synopsys upf_name_map bit_slice ""
+
+reset_sync_1 lreset_sync ( .reset ( reset ) , .clk ( lclk ) , 
+    .reset_sync ( n22 ) , .bit_slice_scan_enable_in ( APSDRC_net_1 ) , 
+    .scan_in ( din2piso[11] ) , .scan_out ( sipo_scan_out ) , .VDDH ( VDDH ) , 
+    .VSS ( VSS ) , .VDDL ( VDDL ) , .p1 ( optlc_net_77 ) ) ;
+reset_sync_0 hreset_sync ( .reset ( reset ) , .clk ( hclk ) , 
+    .reset_sync ( n21 ) , .bit_slice_scan_enable_in ( APSDRC_net_1 ) , 
+    .scan_in ( pout2mem[9] ) , .scan_out ( lv_scan_out ) , .VDDH ( VDDH ) , 
+    .VSS ( VSS ) , .p1 ( optlc_net_77 ) ) ;
+sipo sipo_bit ( .clk ( lclk ) , .reset ( n25 ) , .data_valid ( data_valid ) , 
+    .sin ( sin ) , .shut_down_signals ( shut_down_signals[0] ) , 
+    .isolation_signals ( n4 ) , .retention_signals ( retention_signals[0] ) ,
+    .pout ( { net73 , net74 , net75 , net76 , net77 , net78 , net79 , net80 , 
+        net81 , net82 , net83 , net84 , net85 , net86 , net87 , net88 } ) ,
+    .addr ( { net89 , net90 , net91 , net92 } ) ,
+    .wr ( wr ) , .scan_in ( piso_scan_in ) , .scan_out ( net69 ) , 
+    .scan_enable ( scan_enable ) , .sipo_sw_out ( sipo_sw_out ) , 
+    .VSS ( VSS ) , .VDDL ( VDDL ) ) ;
+sync_wrapper_width4 sync_add2mem ( .clk ( hclk ) , .reset ( n21 ) ,
+    .din ( { n23 , t_pout_addr2mem[2] , t_pout_addr2mem[1] , 
+        t_pout_addr2mem[0] } ) ,
+    .dout ( pout_addr2mem ) , .scan_in ( pout2mem[2] ) , 
+    .scan_enable ( APSDRC_net_1 ) , .VDDH ( VDDH ) , .VSS ( VSS ) ) ;
+sync_wrapper_width16_1 sync_data2mem ( .clk ( hclk ) , .reset ( n21 ) ,
+    .din ( { BUF_net_53 , t_pout2mem[14] , t_pout2mem[13] , BUF_net_61 , 
+        t_pout2mem[11] , t_pout2mem[10] , t_pout2mem[9] , t_pout2mem[8] , 
+        BUF_net_58 , BUF_net_65 , t_pout2mem[5] , t_pout2mem[4] , 
+        t_pout2mem[3] , t_pout2mem[2] , t_pout2mem[1] , t_pout2mem[0] } ) ,
+    .dout ( pout2mem ) , .scan_in2 ( pout_addr2mem[2] ) , 
+    .scan_in1 ( lv_scan_in ) , .scan_enable ( APSDRC_net_1 ) , 
+    .VDDH ( VDDH ) , .VSS ( VSS ) , .p_abuf0 ( scan_enable ) ) ;
+sync_wrapper_width16_0 sync_datafrommem ( .clk ( lclk ) , .reset ( n25 ) ,
+    .din ( { n5 , n6 , t_din2piso[13] , n8 , t_din2piso[11] , n10 , n11 , 
+        net_aps_43 , n13 , n14 , n15 , t_din2piso[4] , t_din2piso[3] , n18 , 
+        t_din2piso[1] , net_aps_67 } ) ,
+    .dout ( din2piso ) , .scan_in ( load_data_from_memory ) , 
+    .scan_enable ( APSDRC_net_1 ) , .VDDH ( VDDH ) , .VSS ( VSS ) , 
+    .VDDL ( VDDL ) , .p_abuf0 ( scan_enable ) ) ;
+SRAM2RW16x4 nibble_0 ( .CE1 ( hclk ) , .ACK ( power_ack[0] ) , 
+    .SLEEPIN ( memory_sleep ) , .CSB1 ( optlc_net_78 ) , .WEB1 ( HFSNET_10 ) , 
+    .OEB1 ( optlc_net_79 ) , .CE2 ( hclk ) , .CSB2 ( optlc_net_81 ) , 
+    .WEB2 ( HFSNET_10 ) , .OEB2 ( optlc_net_79 ) , .I1 ( pout2mem[3:0] ) , 
+    .O1 ( t_din2piso[3:0] ) , .A1 ( pout_addr2mem ) , .I2 ( pout2mem[7:4] ) , 
+    .O2 ( t_din2piso[7:4] ) , .A2 ( pout_addr2mem ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+SRAM2RW16x4 nibble_1 ( .CE1 ( hclk ) , .ACK ( power_ack[1] ) , 
+    .SLEEPIN ( memory_sleep ) , .CSB1 ( optlc_net_80 ) , .WEB1 ( HFSNET_10 ) , 
+    .OEB1 ( optlc_net_79 ) , .CE2 ( hclk ) , .CSB2 ( optlc_net_82 ) , 
+    .WEB2 ( HFSNET_10 ) , .OEB2 ( optlc_net_79 ) , .I1 ( pout2mem[11:8] ) , 
+    .O1 ( t_din2piso[11:8] ) , .A1 ( pout_addr2mem ) , 
+    .I2 ( pout2mem[15:12] ) , .O2 ( t_din2piso[15:12] ) , 
+    .A2 ( pout_addr2mem ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+piso piso_bit ( .din ( din2piso ) , .clk ( lclk ) , .reset ( n25 ) , 
+    .load ( load_data_from_memory ) , 
+    .shut_down_signals ( shut_down_signals[1] ) , 
+    .isolation_signals ( isolation_signals[1] ) , 
+    .retention_signals ( retention_signals[1] ) , .dout ( sout ) , 
+    .scan_in ( hv_scan_in ) , .scan_out ( net70 ) , 
+    .scan_enable ( scan_enable ) , .piso_sw_out ( piso_sw_out ) , 
+    .VSS ( VSS ) , .VDDL ( VDDL ) ) ;
+SDFFARX1_RVT temp_0_reg ( .D ( HFSNET_11 ) , .SI ( sipo_scan_in ) , 
+    .SE ( APSDRC_net_1 ) , .CLK ( n2 ) , .RSTB ( n22 ) , .Q ( temp_0 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT temp_1_reg ( .D ( temp_0 ) , .CLK ( n2 ) , .RSTB ( n22 ) , 
+    .Q ( temp_1 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT temp_2_reg ( .D ( temp_1 ) , .CLK ( n2 ) , .RSTB ( n22 ) , 
+    .Q ( temp_2 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+DFFARX1_HVT load_data_from_memory_reg ( .D ( temp_2 ) , .CLK ( n2 ) , 
+    .RSTB ( n25 ) , .Q ( load_data_from_memory ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2 ( 
+    .A ( wr ) , .EN ( n4 ) , .Y ( net93 ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT ( 
+    .A ( net92 ) , .EN ( n4 ) , .Y ( t_pout_addr2mem[0] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT ( 
+    .A ( net91 ) , .EN ( n4 ) , .Y ( t_pout_addr2mem[1] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT ( 
+    .A ( net90 ) , .EN ( n4 ) , .Y ( t_pout_addr2mem[2] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT ( 
+    .A ( net88 ) , .EN ( n4 ) , .Y ( t_pout2mem[0] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT ( 
+    .A ( net87 ) , .EN ( n4 ) , .Y ( t_pout2mem[1] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT ( 
+    .A ( net85 ) , .EN ( n4 ) , .Y ( t_pout2mem[3] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT ( 
+    .A ( net84 ) , .EN ( n4 ) , .Y ( t_pout2mem[4] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT ( 
+    .A ( net83 ) , .EN ( n4 ) , .Y ( t_pout2mem[5] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT ( 
+    .A ( net80 ) , .EN ( n4 ) , .Y ( t_pout2mem[8] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT ( 
+    .A ( net78 ) , .EN ( n4 ) , .Y ( t_pout2mem[10] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT ( 
+    .A ( net77 ) , .EN ( n4 ) , .Y ( t_pout2mem[11] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_RVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT ( 
+    .A ( net76 ) , .EN ( n4 ) , .Y ( t_pout2mem[12] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT ( 
+    .A ( net75 ) , .EN ( n4 ) , .Y ( t_pout2mem[13] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT ( 
+    .A ( net74 ) , .EN ( n4 ) , .Y ( t_pout2mem[14] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_RVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT ( 
+    .A ( net73 ) , .EN ( n4 ) , .Y ( t_pout2mem[15] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPX2_RVT CLK_UPF_LS ( .A ( lclk ) , .Y ( n2 ) , .VDDH ( VDDH ) , 
+    .VDDL ( VDDL ) , .VSS ( VSS ) ) ;
+INVX8_LVT HFSINV_12 ( .A ( HFSNET_11 ) , .Y ( HFSNET_10 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+OR2X1_HVT U11 ( .A1 ( power_ack[0] ) , .A2 ( power_ack[1] ) , 
+    .Y ( memory_ack ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_HVT U13 ( .A ( t_din2piso[15] ) , .Y ( n5 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U14 ( .A ( t_din2piso[14] ) , .Y ( n6 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U16 ( .A ( t_din2piso[12] ) , .Y ( n8 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U18 ( .A ( t_din2piso[10] ) , .Y ( n10 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U19 ( .A ( t_din2piso[9] ) , .Y ( n11 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT RLB__89 ( .A ( t_din2piso[0] ) , .Y ( net_aps_67 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_HVT U21 ( .A ( t_din2piso[7] ) , .Y ( n13 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U22 ( .A ( t_din2piso[6] ) , .Y ( n14 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U23 ( .A ( t_din2piso[5] ) , .Y ( n15 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT U26 ( .A ( t_din2piso[2] ) , .Y ( n18 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+NBUFFX2_HVT RLB__63 ( .A ( t_din2piso[8] ) , .Y ( net_aps_43 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+LSUPENX1_RVT snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT ( 
+    .A ( net89 ) , .EN ( n4 ) , .Y ( n23 ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+TIEH_HVT optlc_8868 ( .Y ( optlc_net_77 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT HFSBUF_13 ( .A ( net93 ) , .Y ( HFSNET_11 ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+LSUPENX1_RVT snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT ( 
+    .A ( net69 ) , .EN ( n4 ) , .Y ( aps_rename_73_ ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT ( 
+    .A ( net79 ) , .EN ( n4 ) , .Y ( t_pout2mem[9] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPX8_LVT isolation_signals_0__UPF_LS ( .A ( isolation_signals[0] ) , 
+    .Y ( n4 ) , .VDDH ( VDDH ) , .VDDL ( VDDL ) , .VSS ( VSS ) ) ;
+LSUPX1_HVT EN_UPF_LS ( .A ( isolation_signals[1] ) , .Y ( net94 ) , 
+    .VDDH ( VDDH ) , .VDDL ( VDDL ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT ( 
+    .A ( net86 ) , .EN ( n4 ) , .Y ( t_pout2mem[2] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_HVT snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT ( 
+    .A ( net70 ) , .EN ( net94 ) , .Y ( n39 ) , .VDDH ( VDDH ) , 
+    .VDDL ( piso_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_RVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT ( 
+    .A ( net82 ) , .EN ( n4 ) , .Y ( t_pout2mem[6] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+LSUPENX1_RVT snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT ( 
+    .A ( net81 ) , .EN ( n4 ) , .Y ( t_pout2mem[7] ) , .VDDH ( VDDH ) , 
+    .VDDL ( sipo_sw_out ) , .VSS ( VSS ) ) ;
+NBUFFX32_LVT U31 ( .A ( n22 ) , .Y ( n25 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+INVX1_RVT U36 ( .A ( n40 ) , .Y ( hv_scan_out ) , .VDD ( VDDH ) , 
+    .VSS ( VSS ) ) ;
+INVX1_HVT U37 ( .A ( n39 ) , .Y ( n40 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX8_RVT BUFT_P_15 ( .A ( scan_enable ) , .Y ( APSDRC_net_1 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+TIEL_HVT optlc_8869 ( .Y ( optlc_net_78 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+TIEL_HVT optlc_8871 ( .Y ( optlc_net_79 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+TIEL_HVT optlc_8872 ( .Y ( optlc_net_80 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_43 ( .A ( aps_rename_73_ ) , .Y ( piso_scan_out ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+TIEL_HVT optlc_8874 ( .Y ( optlc_net_81 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+TIEL_HVT optlc_8875 ( .Y ( optlc_net_82 ) , .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_RR_75 ( .A ( t_pout2mem[15] ) , .Y ( BUF_net_53 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_RR_80 ( .A ( t_pout2mem[7] ) , .Y ( BUF_net_58 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_P_83 ( .A ( t_pout2mem[12] ) , .Y ( BUF_net_61 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+NBUFFX2_RVT BUFT_RR_87 ( .A ( t_pout2mem[6] ) , .Y ( BUF_net_65 ) , 
+    .VDD ( VDDH ) , .VSS ( VSS ) ) ;
+endmodule
+
+

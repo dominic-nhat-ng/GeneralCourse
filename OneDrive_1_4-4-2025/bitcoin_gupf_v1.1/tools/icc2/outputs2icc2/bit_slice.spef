@@ -1,0 +1,3535 @@
+*SPEF "IEEE 1481-1999"
+*DESIGN "bit_slice"
+*DATE "Mon Oct  2 10:28:54 2017"
+*VENDOR "SYNOPSYS INC"
+*PROGRAM "Synopsys Design Compiler cmos"
+*VERSION "M-2016.12-SP5"
+*DESIGN_FLOW "SYNTHESIS"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1.0 NS
+*C_UNIT 0.0010 PF
+*R_UNIT 1000.0 KOHM
+*L_UNIT 1.0 HENRY
+
+*PORTS
+
+hclk I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+lclk I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+reset I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+sin I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+data_valid I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+memory_sleep I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+shut_down_signals\[1\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+shut_down_signals\[0\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+isolation_signals\[1\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+isolation_signals\[0\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+retention_signals\[1\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+retention_signals\[0\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+scan_enable I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+sipo_scan_in I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+piso_scan_in I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+hv_scan_in I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+lv_scan_in I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+sipo_scan_out O *L 0.000e+00 *S 3.568e-02 7.385e-02 
+piso_scan_out O *L 0.000e+00 *S 4.626e-02 7.698e-02 
+hv_scan_out O *L 0.000e+00 *S 6.555e-02 7.701e-02 
+lv_scan_out O *L 0.000e+00 *S 2.322e-02 4.757e-02 
+sout O *L 0.000e+00 *S 9.535e-03 8.581e-03 
+memory_ack O *L 0.000e+00 *S 3.778e-03 3.745e-03 
+PG_ack_signals\[1\] O *L 0.000e+00 *S 0.000e+00 0.000e+00 
+PG_ack_signals\[0\] O *L 0.000e+00 *S 0.000e+00 0.000e+00 
+
+*R_NET reset 8.523e+00
+*DRIVER reset
+*CELL NULL
+*C2_R1_C1 4.261e+00 1.004e-04 4.261e+00 
+*LOADS
+*RC hreset_sync/reset_sync_reg:RSTB 1.391e-04
+*RC hreset_sync/t_reset_sync_reg:RSTB 1.882e-04
+*RC lreset_sync/reset_sync_reg:RSTB 1.440e-04
+*RC lreset_sync/t_reset_sync_reg:RSTB 1.961e-04
+*END
+
+*R_NET sin 3.133e+00
+*DRIVER sin
+*CELL NULL
+*C2_R1_C1 1.567e+00 7.247e-05 1.567e+00 
+*LOADS
+*RC sipo_bit/U69:A2 9.979e-05
+*END
+
+*R_NET data_valid 2.828e+01
+*DRIVER data_valid
+*CELL NULL
+*C2_R1_C1 1.414e+01 1.456e-04 1.414e+01 
+*LOADS
+*RC sipo_bit/U6:A2 8.820e-04
+*RC sipo_bit/U54:A1 1.881e-04
+*RC sipo_bit/U53:A1 2.220e-04
+*RC sipo_bit/U78:A 5.430e-04
+*RC sipo_bit/U66:A1 3.566e-04
+*RC sipo_bit/U51:A4 2.953e-04
+*RC sipo_bit/U44:A2 3.642e-04
+*RC sipo_bit/U48:A1 3.020e-04
+*RC sipo_bit/U64:A1 5.181e-04
+*RC sipo_bit/U41:A1 8.875e-04
+*RC sipo_bit/U35:A1 8.712e-04
+*RC sipo_bit/U7:A2 8.623e-04
+*RC sipo_bit/U15:A2 8.748e-04
+*RC sipo_bit/U42:A1 4.324e-04
+*RC sipo_bit/U43:A1 3.843e-04
+*RC sipo_bit/U60:A1 5.738e-04
+*RC sipo_bit/U61:A1 3.539e-04
+*RC sipo_bit/U55:A1 4.062e-04
+*RC sipo_bit/U56:A1 2.102e-04
+*RC sipo_bit/U67:A1 5.522e-04
+*RC sipo_bit/U65:A1 4.464e-04
+*RC sipo_bit/U58:A1 6.884e-04
+*RC sipo_bit/U80:A 4.608e-04
+*RC sipo_bit/U62:A1 4.359e-04
+*RC sipo_bit/U59:A1 8.534e-04
+*RC sipo_bit/U57:A1 4.937e-04
+*RC sipo_bit/U68:A1 8.488e-04
+*RC sipo_bit/U63:A1 5.159e-04
+*RC sipo_bit/U69:A1 6.557e-04
+*END
+
+*R_NET memory_sleep 3.779e+00
+*DRIVER memory_sleep
+*CELL NULL
+*C2_R1_C1 1.890e+00 1.033e-04 1.890e+00 
+*LOADS
+*RC nibble_1:SLEEPIN 7.559e-05
+*RC nibble_0:SLEEPIN 7.358e-05
+*END
+
+*R_NET isolation_signals\[1\] 3.305e+00
+*DRIVER isolation_signals\[1\]
+*CELL NULL
+*C2_R1_C1 1.652e+00 3.512e-05 1.652e+00 
+*LOADS
+*RC EN_UPF_LS:A 6.185e-05
+*RC piso_bit/snps_PD_PISO__ISO_PISO_OUT_SSL_snps_doutISO_PISO_OUT_SSL:ISO 4.126e-05
+*END
+
+*R_NET n4 2.775e+01
+*DRIVER isolation_signals_0__UPF_LS:Y
+*CELL LSUPX4_HVT
+*C2_R1_C1 1.387e+01 3.826e-04 1.387e+01 
+*LOADS
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT:EN 1.336e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT:EN 1.027e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT:EN 1.511e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT:EN 1.373e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT:EN 1.517e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT:EN 1.682e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT:EN 5.930e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT:EN 5.733e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT:EN 1.179e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT:EN 1.987e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT:EN 7.309e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT:EN 1.834e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT:EN 2.172e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT:EN 6.838e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT:EN 8.802e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT:EN 4.668e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT:EN 1.175e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT:EN 1.013e-03
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT:EN 8.404e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT:EN 1.528e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT:EN 1.589e-04
+*RC snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2:EN 3.430e-04
+*END
+
+*R_NET retention_signals\[1\] 3.092e+00
+*DRIVER retention_signals\[1\]
+*CELL NULL
+*C2_R1_C1 1.546e+00 4.809e-05 1.546e+00 
+*LOADS
+*RC piso_bit/U20:A 3.560e-05
+*RC piso_bit/U4:A 7.030e-05
+*END
+
+*R_NET retention_signals\[0\] 1.251e+01
+*DRIVER retention_signals\[0\]
+*CELL NULL
+*C2_R1_C1 6.253e+00 1.421e-04 6.253e+00 
+*LOADS
+*RC sipo_bit/U72:A 5.001e-04
+*RC sipo_bit/U40:A 5.477e-04
+*RC sipo_bit/U33:A 4.049e-04
+*RC sipo_bit/U70:A 1.405e-04
+*RC sipo_bit/U71:A 9.119e-05
+*RC sipo_bit/U73:A 4.283e-04
+*RC sipo_bit/U28:A 2.692e-04
+*RC sipo_bit/U74:A 1.174e-04
+*END
+
+*R_NET sout 1.291e+00
+*DRIVER piso_bit/snps_PD_PISO__ISO_PISO_OUT_SSL_snps_doutISO_PISO_OUT_SSL:Y
+*CELL ISO_NOR2X4_HVT
+*C2_R1_C1 6.453e-01 3.539e-05 6.453e-01 
+*LOADS
+*RC sout 1.522e-05
+*END
+
+*R_NET memory_ack 2.204e-01
+*DRIVER U11:Y
+*CELL OR2X1_HVT
+*C2_R1_C1 1.102e-01 5.911e-06 1.102e-01 
+*LOADS
+*RC memory_ack 4.342e-07
+*END
+
+*R_NET power_ack\[1\] 2.697e+00
+*DRIVER nibble_1:ACK
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.349e+00 5.485e-05 1.349e+00 
+*LOADS
+*RC U11:A2 7.484e-05
+*END
+
+*R_NET power_ack\[0\] 2.472e+00
+*DRIVER nibble_0:ACK
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.236e+00 5.063e-05 1.236e+00 
+*LOADS
+*RC U11:A1 6.269e-05
+*END
+
+*R_NET t_pout2mem\[15\] 4.213e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.107e+00 1.032e-04 2.107e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_15_:D 1.803e-04
+*END
+
+*R_NET t_pout2mem\[14\] 3.844e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 1.922e+00 9.249e-05 1.922e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_14_:D 1.502e-04
+*END
+
+*R_NET t_pout2mem\[13\] 6.030e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 3.015e+00 1.496e-04 3.015e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_13_:D 3.520e-04
+*END
+
+*R_NET t_pout2mem\[12\] 6.035e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 3.018e+00 1.539e-04 3.018e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_12_:D 3.624e-04
+*END
+
+*R_NET t_pout2mem\[11\] 5.225e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.613e+00 1.305e-04 2.613e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_11_:D 2.721e-04
+*END
+
+*R_NET t_pout2mem\[10\] 4.080e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.040e+00 9.935e-05 2.040e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_10_:D 1.692e-04
+*END
+
+*R_NET t_pout2mem\[9\] 1.877e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 9.386e-01 3.782e-05 9.386e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_9_:D 3.663e-05
+*END
+
+*R_NET t_pout2mem\[8\] 4.113e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.056e+00 1.005e-04 2.056e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_8_:D 1.722e-04
+*END
+
+*R_NET t_pout2mem\[7\] 6.546e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT:Y
+*CELL LSUPENX8_HVT
+*C2_R1_C1 3.273e+00 1.682e-04 3.273e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_7_:D 4.248e-04
+*END
+
+*R_NET t_pout2mem\[6\] 6.982e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT:Y
+*CELL LSUPENX4_HVT
+*C2_R1_C1 3.491e+00 1.804e-04 3.491e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_6_:D 4.818e-04
+*END
+
+*R_NET t_pout2mem\[5\] 4.568e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.284e+00 1.118e-04 2.284e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_5_:D 2.085e-04
+*END
+
+*R_NET t_pout2mem\[4\] 8.222e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 4.111e+00 2.130e-04 4.111e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_4_:D 6.567e-04
+*END
+
+*R_NET t_pout2mem\[3\] 4.678e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.339e+00 1.162e-04 2.339e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_3_:D 2.210e-04
+*END
+
+*R_NET t_pout2mem\[2\] 7.923e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 3.962e+00 2.044e-04 3.962e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_2_:D 6.100e-04
+*END
+
+*R_NET t_pout2mem\[1\] 4.886e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.443e+00 1.211e-04 2.443e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_1_:D 2.387e-04
+*END
+
+*R_NET t_pout2mem\[0\] 3.839e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 1.919e+00 9.237e-05 1.919e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_0_:D 1.499e-04
+*END
+
+*R_NET t_pout_addr2mem\[3\] 4.630e+00
+*DRIVER U29:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.315e+00 1.147e-04 2.315e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_3_:D 2.164e-04
+*END
+
+*R_NET t_pout_addr2mem\[2\] 5.015e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.508e+00 1.230e-04 2.508e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_2_:D 2.477e-04
+*END
+
+*R_NET t_pout_addr2mem\[1\] 3.154e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 1.577e+00 7.364e-05 1.577e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_1_:D 1.027e-04
+*END
+
+*R_NET t_pout_addr2mem\[0\] 5.982e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.991e+00 1.524e-04 2.991e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_0_:D 3.562e-04
+*END
+
+*R_NET wr 8.489e+00
+*DRIVER sipo_bit/wr_reg:Q
+*CELL RSDFFARX2_RVT
+*C2_R1_C1 4.244e+00 5.520e-05 4.244e+00 
+*LOADS
+*RC sipo_bit/U6:A1 3.635e-05
+*RC sipo_bit/U22:A 3.468e-05
+*RC sipo_bit/count_reg_2_:SI 1.263e-04
+*RC sipo_bit/U7:A1 2.432e-05
+*RC sipo_bit/U15:A1 2.154e-05
+*RC sipo_bit/U35:A2 1.464e-05
+*RC sipo_bit/U41:A4 3.582e-05
+*RC snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2:A 8.939e-05
+*END
+
+*R_NET pout_addr2mem\[3\] 1.085e+01
+*DRIVER sync_add2mem/dut_sync/sync_out_reg_3_:Q
+*CELL DFFARX2_HVT
+*C2_R1_C1 5.424e+00 2.288e-04 5.424e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_0_:SI 2.815e-05
+*RC nibble_0:A2\[3\] 2.236e-04
+*RC nibble_1:A2\[3\] 2.824e-04
+*RC nibble_1:A1\[3\] 6.277e-04
+*RC nibble_0:A1\[3\] 5.689e-04
+*END
+
+*R_NET pout_addr2mem\[2\] 1.170e+01
+*DRIVER sync_add2mem/dut_sync/sync_out_reg_2_:Q
+*CELL DFFARX2_HVT
+*C2_R1_C1 5.850e+00 2.484e-04 5.850e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_3_:SI 2.765e-04
+*RC nibble_0:A2\[2\] 2.689e-04
+*RC nibble_1:A2\[2\] 3.100e-04
+*RC nibble_1:A1\[2\] 6.703e-04
+*RC nibble_0:A1\[2\] 6.214e-04
+*END
+
+*R_NET pout_addr2mem\[1\] 1.197e+01
+*DRIVER sync_add2mem/dut_sync/sync_out_reg_1_:Q
+*CELL DFFARX2_HVT
+*C2_R1_C1 5.984e+00 2.544e-04 5.984e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_3_:SI 3.401e-05
+*RC nibble_0:A2\[1\] 3.955e-04
+*RC nibble_1:A2\[1\] 2.577e-04
+*RC nibble_1:A1\[1\] 6.387e-04
+*RC nibble_0:A1\[1\] 7.764e-04
+*END
+
+*R_NET pout_addr2mem\[0\] 1.313e+01
+*DRIVER sync_add2mem/dut_sync/sync_out_reg_0_:Q
+*CELL DFFARX2_HVT
+*C2_R1_C1 6.565e+00 2.811e-04 6.565e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_2_:SI 3.038e-04
+*RC nibble_0:A2\[0\] 2.739e-04
+*RC nibble_1:A2\[0\] 5.694e-04
+*RC nibble_1:A1\[0\] 9.874e-04
+*RC nibble_0:A1\[0\] 6.918e-04
+*END
+
+*R_NET pout2mem\[15\] 5.304e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_15_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.652e+00 1.304e-04 2.652e+00 
+*LOADS
+*RC nibble_1:I2\[3\] 2.306e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_13_:SI 1.391e-05
+*END
+
+*R_NET pout2mem\[14\] 3.137e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_14_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.568e+00 6.898e-05 1.568e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_12_:SI 9.360e-05
+*RC nibble_1:I2\[2\] 1.398e-05
+*END
+
+*R_NET pout2mem\[13\] 5.530e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_13_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.765e+00 1.362e-04 2.765e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_11_:SI 8.143e-05
+*RC nibble_1:I2\[1\] 2.399e-04
+*END
+
+*R_NET pout2mem\[12\] 4.551e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_12_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.275e+00 1.065e-04 2.275e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_4_:SI 1.664e-04
+*RC nibble_1:I2\[0\] 1.106e-04
+*END
+
+*R_NET pout2mem\[11\] 4.477e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_11_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.238e+00 1.073e-04 2.238e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_9_:SI 1.957e-04
+*RC nibble_1:I1\[3\] 1.142e-05
+*END
+
+*R_NET pout2mem\[10\] 3.079e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_10_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.539e+00 6.830e-05 1.539e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_7_:SI 7.830e-05
+*RC nibble_1:I1\[2\] 6.747e-05
+*END
+
+*R_NET pout2mem\[9\] 6.816e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_9_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 3.408e+00 1.681e-04 3.408e+00 
+*LOADS
+*RC hreset_sync/t_reset_sync_reg:SI 4.385e-04
+*RC nibble_1:I1\[1\] 1.099e-04
+*END
+
+*R_NET pout2mem\[8\] 5.741e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_8_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.871e+00 1.429e-04 2.871e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_1_:SI 2.227e-04
+*RC nibble_1:I1\[0\] 2.240e-04
+*END
+
+*R_NET pout2mem\[7\] 2.172e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_7_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.086e+00 4.447e-05 1.086e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_5_:SI 2.387e-05
+*RC nibble_0:I2\[3\] 2.512e-05
+*END
+
+*R_NET pout2mem\[6\] 3.075e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_6_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.538e+00 6.843e-05 1.538e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_2_:SI 7.917e-05
+*RC nibble_0:I2\[2\] 1.054e-05
+*END
+
+*R_NET pout2mem\[5\] 2.495e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_5_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.248e+00 5.333e-05 1.248e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_14_:SI 6.115e-05
+*RC nibble_0:I2\[1\] 8.305e-06
+*END
+
+*R_NET pout2mem\[4\] 1.751e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_4_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 8.754e-01 3.320e-05 8.754e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_6_:SI 1.451e-05
+*RC nibble_0:I2\[0\] 1.571e-05
+*END
+
+*R_NET pout2mem\[3\] 5.892e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_3_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.946e+00 1.462e-04 2.946e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_15_:SI 1.857e-04
+*RC nibble_0:I1\[3\] 1.286e-04
+*END
+
+*R_NET pout2mem\[2\] 6.008e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_2_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 3.004e+00 1.465e-04 3.004e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/t_sync_out_reg_1_:SI 3.271e-04
+*RC nibble_0:I1\[2\] 8.720e-05
+*END
+
+*R_NET pout2mem\[1\] 3.685e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_1_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.843e+00 8.552e-05 1.843e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_0_:SI 1.041e-04
+*RC nibble_0:I1\[1\] 7.684e-05
+*END
+
+*R_NET pout2mem\[0\] 4.526e+00
+*DRIVER sync_data2mem/dut_sync/sync_out_reg_0_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.263e+00 1.089e-04 2.263e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_10_:SI 1.463e-04
+*RC nibble_0:I1\[0\] 4.473e-05
+*END
+
+*R_NET t_din2piso\[15\] 2.221e+00
+*DRIVER nibble_1:O2\[3\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.110e+00 4.445e-05 1.110e+00 
+*LOADS
+*RC U13:A 4.969e-05
+*END
+
+*R_NET t_din2piso\[14\] 1.463e+00
+*DRIVER nibble_1:O2\[2\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 7.315e-01 2.468e-05 7.315e-01 
+*LOADS
+*RC U14:A 2.136e-05
+*END
+
+*R_NET t_din2piso\[13\] 5.027e+00
+*DRIVER nibble_1:O2\[1\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 2.514e+00 1.202e-04 2.514e+00 
+*LOADS
+*RC U15:A 2.469e-04
+*END
+
+*R_NET t_din2piso\[12\] 1.049e+00
+*DRIVER nibble_1:O2\[0\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 5.245e-01 1.290e-05 5.245e-01 
+*LOADS
+*RC U16:A 9.380e-06
+*END
+
+*R_NET t_din2piso\[11\] 4.780e+00
+*DRIVER nibble_1:O1\[3\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 2.390e+00 1.138e-04 2.390e+00 
+*LOADS
+*RC U17:A 2.242e-04
+*END
+
+*R_NET t_din2piso\[10\] 2.371e+00
+*DRIVER nibble_1:O1\[2\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.185e+00 4.833e-05 1.185e+00 
+*LOADS
+*RC U18:A 5.645e-05
+*END
+
+*R_NET t_din2piso\[9\] 1.849e+00
+*DRIVER nibble_1:O1\[1\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 9.246e-01 3.479e-05 9.246e-01 
+*LOADS
+*RC U19:A 3.458e-05
+*END
+
+*R_NET t_din2piso\[8\] 4.585e+00
+*DRIVER nibble_1:O1\[0\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 2.292e+00 1.087e-04 2.292e+00 
+*LOADS
+*RC U20:A 2.071e-04
+*END
+
+*R_NET t_din2piso\[7\] 6.375e+00
+*DRIVER nibble_0:O2\[3\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 3.188e+00 1.592e-04 3.188e+00 
+*LOADS
+*RC U21:A 3.984e-04
+*END
+
+*R_NET t_din2piso\[6\] 2.201e+00
+*DRIVER nibble_0:O2\[2\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.100e+00 4.233e-05 1.100e+00 
+*LOADS
+*RC U22:A 4.703e-05
+*END
+
+*R_NET t_din2piso\[5\] 1.248e+00
+*DRIVER nibble_0:O2\[1\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 6.239e-01 1.756e-05 6.239e-01 
+*LOADS
+*RC U23:A 1.393e-05
+*END
+
+*R_NET t_din2piso\[4\] 7.286e-01
+*DRIVER nibble_0:O2\[0\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 3.643e-01 4.107e-06 3.643e-01 
+*LOADS
+*RC U24:A 2.549e-06
+*END
+
+*R_NET t_din2piso\[3\] 3.459e+00
+*DRIVER nibble_0:O1\[3\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.730e+00 7.678e-05 1.730e+00 
+*LOADS
+*RC U25:A 1.175e-04
+*END
+
+*R_NET t_din2piso\[2\] 1.276e+00
+*DRIVER nibble_0:O1\[2\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 6.378e-01 1.851e-05 6.378e-01 
+*LOADS
+*RC U26:A 1.486e-05
+*END
+
+*R_NET t_din2piso\[1\] 3.149e+00
+*DRIVER nibble_0:O1\[1\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.575e+00 6.872e-05 1.575e+00 
+*LOADS
+*RC U27:A 9.807e-05
+*END
+
+*R_NET t_din2piso\[0\] 3.382e+00
+*DRIVER nibble_0:O1\[0\]
+*CELL SRAM2RW16x4
+*C2_R1_C1 1.691e+00 7.476e-05 1.691e+00 
+*LOADS
+*RC U28:A 1.125e-04
+*END
+
+*R_NET din2piso\[15\] 5.024e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_15_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.512e+00 1.075e-04 2.512e+00 
+*LOADS
+*RC piso_bit/din_15__UPF_LS:A 2.714e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_12_:SI 2.161e-04
+*END
+
+*R_NET din2piso\[14\] 3.401e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_14_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.701e+00 6.193e-05 1.701e+00 
+*LOADS
+*RC piso_bit/din_14__UPF_LS:A 9.361e-06
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_5_:SI 8.738e-05
+*END
+
+*R_NET din2piso\[13\] 3.555e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_13_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.778e+00 6.519e-05 1.778e+00 
+*LOADS
+*RC piso_bit/din_13__UPF_LS:A 1.164e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_11_:SI 9.471e-05
+*END
+
+*R_NET din2piso\[12\] 1.809e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_12_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 9.043e-01 1.932e-05 9.043e-01 
+*LOADS
+*RC piso_bit/din_12__UPF_LS:A 2.082e-06
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_4_:SI 1.684e-05
+*END
+
+*R_NET din2piso\[11\] 5.919e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_11_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.959e+00 1.272e-04 2.959e+00 
+*LOADS
+*RC lreset_sync/t_reset_sync_reg:SI 2.938e-04
+*RC piso_bit/din_11__UPF_LS:A 1.678e-05
+*END
+
+*R_NET din2piso\[10\] 6.224e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_10_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 3.112e+00 1.420e-04 3.112e+00 
+*LOADS
+*RC piso_bit/din_10__UPF_LS:A 5.684e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_8_:SI 3.097e-04
+*END
+
+*R_NET din2piso\[9\] 7.221e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_9_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 3.610e+00 1.654e-04 3.610e+00 
+*LOADS
+*RC piso_bit/din_9__UPF_LS:A 3.514e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_10_:SI 4.536e-04
+*END
+
+*R_NET din2piso\[8\] 8.813e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_8_:Q
+*CELL DFFARX2_HVT
+*C2_R1_C1 4.407e+00 2.083e-04 4.407e+00 
+*LOADS
+*RC piso_bit/din_8__UPF_LS:A 7.769e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_13_:SI 6.821e-04
+*END
+
+*R_NET din2piso\[7\] 2.994e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_7_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.497e+00 5.168e-05 1.497e+00 
+*LOADS
+*RC piso_bit/din_7__UPF_LS:A 2.454e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_15_:SI 5.769e-05
+*END
+
+*R_NET din2piso\[6\] 4.235e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_6_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.117e+00 8.448e-05 2.117e+00 
+*LOADS
+*RC piso_bit/din_6__UPF_LS:A 4.038e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_7_:SI 1.477e-04
+*END
+
+*R_NET din2piso\[5\] 1.647e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_5_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 8.234e-01 1.472e-05 8.234e-01 
+*LOADS
+*RC piso_bit/din_5__UPF_LS:A 7.634e-06
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_6_:SI 8.165e-06
+*END
+
+*R_NET din2piso\[4\] 6.340e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_4_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 3.170e+00 1.422e-04 3.170e+00 
+*LOADS
+*RC piso_bit/din_4__UPF_LS:A 2.560e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_1_:SI 3.452e-04
+*END
+
+*R_NET din2piso\[3\] 5.022e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_3_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.511e+00 1.070e-04 2.511e+00 
+*LOADS
+*RC piso_bit/din_3__UPF_LS:A 1.427e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_9_:SI 2.152e-04
+*END
+
+*R_NET din2piso\[2\] 4.660e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_2_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.330e+00 9.642e-05 2.330e+00 
+*LOADS
+*RC piso_bit/din_2__UPF_LS:A 2.417e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_0_:SI 1.822e-04
+*END
+
+*R_NET din2piso\[1\] 5.092e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_1_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 2.546e+00 1.103e-04 2.546e+00 
+*LOADS
+*RC piso_bit/din_1__UPF_LS:A 2.014e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_2_:SI 2.229e-04
+*END
+
+*R_NET din2piso\[0\] 2.461e+00
+*DRIVER sync_datafrommem/dut_sync/sync_out_reg_0_:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 1.231e+00 4.269e-05 1.231e+00 
+*LOADS
+*RC piso_bit/din_0__UPF_LS:A 1.246e-05
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_3_:SI 4.547e-05
+*END
+
+*R_NET n_6_net_ 7.061e+00
+*DRIVER U10:Y
+*CELL INVX1_HVT
+*C2_R1_C1 3.531e+00 1.616e-04 3.531e+00 
+*LOADS
+*RC nibble_0:WEB2 1.727e-05
+*RC nibble_0:WEB1 2.434e-04
+*RC nibble_1:WEB2 1.428e-04
+*RC nibble_1:WEB1 3.689e-04
+*END
+
+*R_NET load_data_from_memory 1.920e+00
+*DRIVER load_data_from_memory_reg:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 9.598e-01 2.039e-05 9.598e-01 
+*LOADS
+*RC piso_bit/load_UPF_LS:A 2.449e-06
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_14_:SI 1.794e-05
+*END
+
+*R_NET temp_0 1.216e+00
+*DRIVER temp_0_reg:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.078e-01 1.851e-05 6.078e-01 
+*LOADS
+*RC temp_1_reg:D 1.429e-05
+*END
+
+*R_NET temp_1 8.887e-01
+*DRIVER temp_1_reg:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 4.443e-01 8.867e-06 4.443e-01 
+*LOADS
+*RC temp_2_reg:D 5.877e-06
+*END
+
+*R_NET temp_2 1.052e+00
+*DRIVER temp_2_reg:Q
+*CELL DFFARX1_HVT
+*C2_R1_C1 5.260e-01 1.335e-05 5.260e-01 
+*LOADS
+*RC load_data_from_memory_reg:D 9.576e-06
+*END
+
+*R_NET net73 3.866e+00
+*DRIVER sipo_bit/pout_reg_15_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.933e+00 5.219e-05 1.933e+00 
+*LOADS
+*RC sipo_bit/pout_reg_4_:SI 5.778e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_15_ISO_SIPO_OUT:A 6.014e-05
+*END
+
+*R_NET net74 3.271e+00
+*DRIVER sipo_bit/pout_reg_14_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.635e+00 3.711e-05 1.635e+00 
+*LOADS
+*RC sipo_bit/addr_reg_1_:SI 2.855e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_14_ISO_SIPO_OUT:A 3.478e-05
+*END
+
+*R_NET net75 4.332e+00
+*DRIVER sipo_bit/pout_reg_13_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.166e+00 6.436e-05 2.166e+00 
+*LOADS
+*RC sipo_bit/pout_reg_15_:SI 8.318e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_13_ISO_SIPO_OUT:A 6.976e-05
+*END
+
+*R_NET net76 2.608e+00
+*DRIVER sipo_bit/pout_reg_12_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.304e+00 1.894e-05 1.304e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_9_:SI 1.582e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_12_ISO_SIPO_OUT:A 1.064e-05
+*END
+
+*R_NET net77 3.864e+00
+*DRIVER sipo_bit/pout_reg_11_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.932e+00 5.216e-05 1.932e+00 
+*LOADS
+*RC sipo_bit/pout_reg_13_:SI 7.078e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_11_ISO_SIPO_OUT:A 4.760e-05
+*END
+
+*R_NET net78 4.176e+00
+*DRIVER sipo_bit/pout_reg_10_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.088e+00 6.107e-05 2.088e+00 
+*LOADS
+*RC sipo_bit/pout_reg_0_:SI 8.911e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_10_ISO_SIPO_OUT:A 2.273e-05
+*END
+
+*R_NET net79 3.495e+00
+*DRIVER sipo_bit/pout_reg_9_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.747e+00 1.957e-05 1.747e+00 
+*LOADS
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT:A 3.108e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_9_ISO_SIPO_OUT:A 1.983e-05
+*END
+
+*R_NET net80 4.520e+00
+*DRIVER sipo_bit/pout_reg_8_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.260e+00 7.075e-05 2.260e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_7_:SI 8.393e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_8_ISO_SIPO_OUT:A 6.194e-05
+*END
+
+*R_NET net81 3.814e+00
+*DRIVER sipo_bit/pout_reg_7_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.907e+00 5.280e-05 1.907e+00 
+*LOADS
+*RC sipo_bit/wr_1_reg:SI 3.878e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_7_ISO_SIPO_OUT:A 8.428e-05
+*END
+
+*R_NET net82 3.273e+00
+*DRIVER sipo_bit/pout_reg_6_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.636e+00 3.699e-05 1.636e+00 
+*LOADS
+*RC sipo_bit/pout_reg_3_:SI 2.065e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_6_ISO_SIPO_OUT:A 6.493e-05
+*END
+
+*R_NET net83 3.569e+00
+*DRIVER sipo_bit/pout_reg_5_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.784e+00 4.470e-05 1.784e+00 
+*LOADS
+*RC sipo_bit/pout_reg_14_:SI 5.267e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_5_ISO_SIPO_OUT:A 2.202e-05
+*END
+
+*R_NET net84 3.185e+00
+*DRIVER sipo_bit/pout_reg_4_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.592e+00 3.478e-05 1.592e+00 
+*LOADS
+*RC sipo_bit/count_reg_1_:SI 2.532e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_4_ISO_SIPO_OUT:A 5.417e-05
+*END
+
+*R_NET net85 4.046e+00
+*DRIVER sipo_bit/pout_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.023e+00 5.685e-05 2.023e+00 
+*LOADS
+*RC sipo_bit/rd_addr_reg_1_:SI 4.760e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_3_ISO_SIPO_OUT:A 6.550e-05
+*END
+
+*R_NET net86 5.530e+00
+*DRIVER sipo_bit/pout_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.765e+00 9.809e-05 2.765e+00 
+*LOADS
+*RC sipo_bit/rd_reg:SI 1.643e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_2_ISO_SIPO_OUT:A 6.389e-05
+*END
+
+*R_NET net87 3.410e+00
+*DRIVER sipo_bit/pout_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.705e+00 4.163e-05 1.705e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_10_:SI 4.759e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_1_ISO_SIPO_OUT:A 1.969e-05
+*END
+
+*R_NET net88 5.865e+00
+*DRIVER sipo_bit/pout_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.932e+00 1.084e-04 2.932e+00 
+*LOADS
+*RC sipo_bit/pout_reg_12_:SI 2.272e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_pout_0_ISO_SIPO_OUT:A 2.771e-05
+*END
+
+*R_NET net89 5.517e+00
+*DRIVER sipo_bit/addr_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.759e+00 9.513e-05 2.759e+00 
+*LOADS
+*RC sipo_bit/wr_addr_reg_3_:SI 1.747e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT:A 4.197e-05
+*END
+
+*R_NET net90 4.268e+00
+*DRIVER sipo_bit/addr_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.134e+00 6.289e-05 2.134e+00 
+*LOADS
+*RC sipo_bit/pout_reg_1_:SI 9.156e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT:A 3.813e-05
+*END
+
+*R_NET net91 5.473e+00
+*DRIVER sipo_bit/addr_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.736e+00 9.748e-05 2.736e+00 
+*LOADS
+*RC sipo_bit/pout_reg_6_:SI 1.898e-04
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT:A 3.593e-05
+*END
+
+*R_NET net92 4.044e+00
+*DRIVER sipo_bit/addr_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.022e+00 5.691e-05 2.022e+00 
+*LOADS
+*RC sipo_bit/pout_reg_5_:SI 6.805e-05
+*RC snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT:A 3.809e-05
+*END
+
+*R_NET net93 1.325e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO2MEM_OUT2_snps_wrISO_SIPO2MEM_OUT2:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 6.623e-01 2.075e-05 6.623e-01 
+*LOADS
+*RC U30:A 1.700e-05
+*END
+
+*R_NET n5 5.941e+00
+*DRIVER U13:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.970e+00 1.500e-04 2.970e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_15_:D 3.484e-04
+*END
+
+*R_NET n6 4.563e+00
+*DRIVER U14:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.282e+00 1.111e-04 2.282e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_14_:D 2.070e-04
+*END
+
+*R_NET n7 1.470e+00
+*DRIVER U15:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 7.351e-01 2.646e-05 7.351e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_13_:D 2.204e-05
+*END
+
+*R_NET n8 4.524e+00
+*DRIVER U16:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.262e+00 1.111e-04 2.262e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_12_:D 2.055e-04
+*END
+
+*R_NET n9 1.868e+00
+*DRIVER U17:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 9.339e-01 3.779e-05 9.339e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_11_:D 3.648e-05
+*END
+
+*R_NET n10 3.651e+00
+*DRIVER U18:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 1.825e+00 8.744e-05 1.825e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_10_:D 1.364e-04
+*END
+
+*R_NET n11 3.619e+00
+*DRIVER U19:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 1.810e+00 8.670e-05 1.810e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_9_:D 1.343e-04
+*END
+
+*R_NET n12 8.634e-01
+*DRIVER U20:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 4.317e-01 9.722e-06 4.317e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_8_:D 6.131e-06
+*END
+
+*R_NET n13 1.326e+00
+*DRIVER U21:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 6.629e-01 2.178e-05 6.629e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_7_:D 1.709e-05
+*END
+
+*R_NET n14 4.643e+00
+*DRIVER U22:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.322e+00 1.152e-04 2.322e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_6_:D 2.177e-04
+*END
+
+*R_NET n15 4.414e+00
+*DRIVER U23:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.207e+00 1.060e-04 2.207e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_5_:D 1.923e-04
+*END
+
+*R_NET n16 3.550e+00
+*DRIVER U24:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 1.775e+00 8.472e-05 1.775e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_4_:D 1.293e-04
+*END
+
+*R_NET n17 4.418e+00
+*DRIVER U25:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 2.209e+00 1.090e-04 2.209e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_3_:D 1.978e-04
+*END
+
+*R_NET n18 3.897e+00
+*DRIVER U26:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 1.949e+00 9.392e-05 1.949e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_2_:D 1.542e-04
+*END
+
+*R_NET n19 2.775e+00
+*DRIVER U27:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 1.387e+00 6.304e-05 1.387e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_1_:D 7.992e-05
+*END
+
+*R_NET n20 3.936e+00
+*DRIVER U28:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 1.968e+00 9.538e-05 1.968e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_0_:D 1.578e-04
+*END
+
+*R_NET n21 1.416e+01
+*DRIVER hreset_sync/U3:Y
+*CELL OR2X2_HVT
+*C2_R1_C1 7.078e+00 1.050e-04 7.078e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/U3:A 5.018e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_6_:RSTB 2.885e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_2_:RSTB 5.222e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_0_:RSTB 5.058e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_0_:RSTB 4.595e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_5_:RSTB 3.131e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_6_:RSTB 2.131e-04
+*RC sync_add2mem/dut_sync/U3:A 1.030e-04
+*END
+
+*R_NET n22 6.904e+00
+*DRIVER lreset_sync/U3:Y
+*CELL OR2X1_HVT
+*C2_R1_C1 3.452e+00 7.335e-05 3.452e+00 
+*LOADS
+*RC U31:A 3.772e-05
+*RC temp_1_reg:RSTB 1.917e-04
+*RC temp_0_reg:RSTB 1.148e-04
+*RC temp_2_reg:RSTB 2.067e-04
+*END
+
+*R_NET n23 6.750e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT:Y
+*CELL LSUPENX4_HVT
+*C2_R1_C1 3.375e+00 1.642e-04 3.375e+00 
+*LOADS
+*RC U29:A 4.315e-04
+*END
+
+*R_NET n24 8.894e+00
+*DRIVER U30:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 4.447e+00 2.117e-04 4.447e+00 
+*LOADS
+*RC temp_0_reg:D 6.841e-04
+*RC U10:A 5.968e-04
+*END
+
+*R_NET n25 1.551e+01
+*DRIVER U31:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 7.754e+00 2.374e-04 7.754e+00 
+*LOADS
+*RC sipo_bit/reset_UPF_LS:A 1.163e-03
+*RC piso_bit/reset_UPF_LS:A 4.532e-04
+*RC load_data_from_memory_reg:RSTB 3.815e-04
+*RC sync_datafrommem/U1:A 2.902e-04
+*END
+
+*R_NET lv_scan_out 3.374e+00
+*DRIVER hreset_sync/reset_sync_reg:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 1.687e+00 7.370e-05 1.687e+00 
+*LOADS
+*RC hreset_sync/U3:A2 9.429e-05
+*RC lv_scan_out 7.149e-05
+*END
+
+*R_NET lv_scan_in 7.786e+00
+*DRIVER lv_scan_in
+*CELL NULL
+*C2_R1_C1 3.893e+00 1.949e-04 3.893e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/t_sync_out_reg_8_:SI 5.714e-04
+*END
+
+*R_NET hv_scan_out 9.460e+00
+*DRIVER U36:Y
+*CELL INVX2_HVT
+*C2_R1_C1 4.730e+00 2.565e-04 4.730e+00 
+*LOADS
+*RC hv_scan_out 8.087e-04
+*END
+
+*R_NET hv_scan_in 6.581e+00
+*DRIVER hv_scan_in
+*CELL NULL
+*C2_R1_C1 3.290e+00 1.704e-04 3.290e+00 
+*LOADS
+*RC piso_bit/scan_in_UPF_LS:A 4.215e-04
+*END
+
+*R_NET piso_scan_out 4.227e+00
+*DRIVER snps_PD_SIPO__ISO_SIPO_OUT_snps_scan_outISO_SIPO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 2.114e+00 1.180e-04 2.114e+00 
+*LOADS
+*RC piso_scan_out 1.662e-04
+*END
+
+*R_NET piso_scan_in 5.452e+00
+*DRIVER piso_scan_in
+*CELL NULL
+*C2_R1_C1 2.726e+00 1.400e-04 2.726e+00 
+*LOADS
+*RC sipo_bit/scan_in_UPF_LS:A 2.936e-04
+*END
+
+*R_NET sipo_scan_out 5.569e+00
+*DRIVER lreset_sync/reset_sync_reg:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 2.785e+00 1.351e-04 2.785e+00 
+*LOADS
+*RC lreset_sync/U3:A2 2.204e-04
+*RC sipo_scan_out 2.397e-04
+*END
+
+*R_NET sipo_scan_in 7.106e+00
+*DRIVER sipo_scan_in
+*CELL NULL
+*C2_R1_C1 3.553e+00 1.760e-04 3.553e+00 
+*LOADS
+*RC temp_0_reg:SI 4.760e-04
+*END
+
+*R_NET scan_enable 7.651e+01
+*DRIVER scan_enable
+*CELL NULL
+*C2_R1_C1 3.825e+01 3.630e-04 3.825e+01 
+*LOADS
+*RC sipo_bit/scan_enable_UPF_LS:A 4.247e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_9_:SE 1.915e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_11_:SE 4.673e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_13_:SE 5.357e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_15_:SE 5.015e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_3_:SE 4.335e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_2_:SE 8.227e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_6_:SE 1.939e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_4_:SE 2.437e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_12_:SE 5.705e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_14_:SE 2.415e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_5_:SE 1.491e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_7_:SE 1.455e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_10_:SE 1.552e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_0_:SE 1.110e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_1_:SE 3.306e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_8_:SE 2.279e-03
+*RC sync_add2mem/dut_sync/t_sync_out_reg_2_:SE 2.708e-03
+*RC sync_add2mem/dut_sync/t_sync_out_reg_0_:SE 3.183e-03
+*RC sync_add2mem/dut_sync/t_sync_out_reg_3_:SE 3.357e-03
+*RC sync_add2mem/dut_sync/t_sync_out_reg_1_:SE 3.995e-03
+*RC hreset_sync/U3:A1 2.873e-03
+*RC hreset_sync/reset_sync_reg:SE 4.231e-03
+*RC hreset_sync/t_reset_sync_reg:SE 3.871e-03
+*RC piso_bit/scan_enable_UPF_LS:A 3.270e-03
+*RC lreset_sync/U3:A1 3.629e-03
+*RC lreset_sync/t_reset_sync_reg:SE 6.305e-03
+*RC lreset_sync/reset_sync_reg:SE 5.920e-03
+*RC temp_0_reg:SE 4.549e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_8_:SE 1.636e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_11_:SE 2.386e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_13_:SE 2.010e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_10_:SE 3.098e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_9_:SE 3.418e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_3_:SE 3.920e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_0_:SE 3.502e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_2_:SE 3.604e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_1_:SE 2.695e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_4_:SE 3.954e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_12_:SE 4.333e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_15_:SE 6.301e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_7_:SE 6.678e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_6_:SE 5.903e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_5_:SE 4.890e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_14_:SE 4.704e-03
+*END
+
+*R_NET net70 2.989e+00
+*DRIVER piso_bit/temp_reg_6_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.495e+00 2.793e-05 1.495e+00 
+*LOADS
+*RC piso_bit/U11:A4 2.489e-05
+*RC snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT:A 5.373e-05
+*END
+
+*R_NET isolation_signals\[0\] 4.783e+00
+*DRIVER isolation_signals\[0\]
+*CELL NULL
+*C2_R1_C1 2.391e+00 8.958e-05 2.391e+00 
+*LOADS
+*RC isolation_signals_0__UPF_LS:A 2.357e-04
+*END
+
+*R_NET net94 6.969e+00
+*DRIVER EN_UPF_LS:Y
+*CELL LSUPX1_HVT
+*C2_R1_C1 3.484e+00 1.698e-04 3.484e+00 
+*LOADS
+*RC snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT:EN 4.640e-04
+*END
+
+*R_NET n39 9.377e-01
+*DRIVER snps_PD_PISO__ISO_PISO_OUT_snps_scan_outISO_PISO_OUT:Y
+*CELL LSUPENX1_HVT
+*C2_R1_C1 4.689e-01 4.290e-06 4.689e-01 
+*LOADS
+*RC U37:A 3.570e-06
+*END
+
+*R_NET n40 1.447e+00
+*DRIVER U37:Y
+*CELL INVX1_HVT
+*C2_R1_C1 7.237e-01 1.517e-07 7.237e-01 
+*LOADS
+*RC U36:A 2.190e-07
+*END
+
+*R_NET lreset_sync/t_reset_sync 1.861e+00
+*DRIVER lreset_sync/t_reset_sync_reg:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 9.306e-01 2.345e-05 9.306e-01 
+*LOADS
+*RC lreset_sync/reset_sync_reg:SI 2.182e-05
+*RC lreset_sync/reset_sync_reg:D 2.164e-05
+*END
+
+*R_NET sipo_bit/n39 4.948e+01
+*DRIVER sipo_bit/reset_UPF_LS:Y
+*CELL LSDNSSX8_HVT
+*C2_R1_C1 2.474e+01 1.620e-04 2.474e+01 
+*LOADS
+*RC sipo_bit/tmp_reg_4_:RSTB 1.136e-03
+*RC sipo_bit/pout_reg_8_:RSTB 2.423e-03
+*RC sipo_bit/pout_reg_0_:RSTB 1.097e-03
+*RC sipo_bit/pout_reg_12_:RSTB 2.532e-03
+*RC sipo_bit/pout_reg_1_:RSTB 1.376e-03
+*RC sipo_bit/pout_reg_9_:RSTB 1.559e-03
+*RC sipo_bit/pout_reg_10_:RSTB 2.198e-03
+*RC sipo_bit/pout_reg_7_:RSTB 1.692e-03
+*RC sipo_bit/addr_reg_2_:RSTB 7.355e-04
+*RC sipo_bit/addr_reg_3_:RSTB 1.850e-03
+*RC sipo_bit/wr_tmp_reg:RSTB 1.449e-03
+*RC sipo_bit/wr_0_reg:RSTB 1.875e-03
+*RC sipo_bit/tmp_reg_1_:RSTB 1.310e-03
+*RC sipo_bit/tmp_reg_15_:RSTB 1.876e-03
+*RC sipo_bit/tmp_reg_14_:RSTB 1.006e-03
+*RC sipo_bit/rd_addr_reg_0_:RSTB 9.653e-04
+*RC sipo_bit/tmp_reg_2_:RSTB 1.904e-03
+*RC sipo_bit/tmp_reg_9_:RSTB 2.077e-03
+*RC sipo_bit/tmp_reg_7_:RSTB 1.423e-03
+*RC sipo_bit/tmp_reg_10_:RSTB 1.684e-03
+*RC sipo_bit/tmp_reg_0_:RSTB 1.316e-03
+*RC sipo_bit/tmp_reg_12_:RSTB 1.887e-03
+*RC sipo_bit/wr_1_reg:RSTB 1.631e-03
+*RC sipo_bit/tmp_reg_5_:RSTB 7.836e-04
+*RC sipo_bit/tmp_reg_8_:RSTB 2.252e-03
+*RC sipo_bit/tmp_reg_13_:RSTB 2.070e-03
+*RC sipo_bit/tmp_reg_3_:RSTB 1.397e-03
+*RC sipo_bit/tmp_reg_6_:RSTB 1.068e-03
+*RC sipo_bit/tmp_reg_11_:RSTB 1.615e-03
+*RC sipo_bit/wr_reg:RSTB 9.640e-04
+*RC sipo_bit/addr_reg_1_:RSTB 4.001e-04
+*RC sipo_bit/rd_addr_reg_1_:RSTB 9.805e-04
+*RC sipo_bit/rd_reg:RSTB 7.313e-04
+*RC sipo_bit/count_reg_0_:RSTB 1.714e-03
+*RC sipo_bit/wr_addr_reg_0_:RSTB 8.386e-04
+*RC sipo_bit/wr_addr_reg_2_:RSTB 2.574e-04
+*RC sipo_bit/count_reg_1_:RSTB 1.348e-03
+*RC sipo_bit/wr_addr_reg_3_:RSTB 2.644e-04
+*RC sipo_bit/wr_addr_reg_1_:RSTB 5.772e-04
+*RC sipo_bit/count_reg_2_:RSTB 1.180e-03
+*RC sipo_bit/count_reg_3_:RSTB 1.167e-03
+*RC sipo_bit/rd_addr_reg_2_:RSTB 7.590e-04
+*RC sipo_bit/rd_addr_reg_3_:RSTB 4.200e-04
+*RC sipo_bit/pout_reg_5_:RSTB 4.570e-04
+*RC sipo_bit/pout_reg_2_:RSTB 2.234e-03
+*RC sipo_bit/pout_reg_14_:RSTB 2.568e-04
+*RC sipo_bit/addr_reg_0_:RSTB 7.414e-04
+*RC sipo_bit/pout_reg_4_:RSTB 1.279e-03
+*RC sipo_bit/pout_reg_6_:RSTB 1.243e-03
+*RC sipo_bit/pout_reg_15_:RSTB 1.314e-03
+*RC sipo_bit/pout_reg_13_:RSTB 1.546e-03
+*RC sipo_bit/pout_reg_11_:RSTB 1.219e-03
+*RC sipo_bit/pout_reg_3_:RSTB 1.090e-03
+*END
+
+*R_NET sipo_bit/tpout\[15\] 6.297e+00
+*DRIVER sipo_bit/tmp_reg_15_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.149e+00 1.169e-04 3.149e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_5_:SI 1.251e-04
+*RC sipo_bit/pout_reg_15_:D 1.895e-04
+*RC sipo_bit/U54:A4 4.713e-05
+*END
+
+*R_NET sipo_bit/tpout\[14\] 6.872e+00
+*DRIVER sipo_bit/tmp_reg_14_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.436e+00 1.127e-04 3.436e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_6_:SI 4.692e-05
+*RC sipo_bit/pout_reg_14_:D 1.460e-04
+*RC sipo_bit/U54:A2 1.609e-04
+*RC sipo_bit/U55:A4 9.276e-05
+*END
+
+*R_NET sipo_bit/tpout\[13\] 4.868e+00
+*DRIVER sipo_bit/tmp_reg_13_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.434e+00 6.567e-05 2.434e+00 
+*LOADS
+*RC sipo_bit/pout_reg_7_:SI 4.686e-05
+*RC sipo_bit/pout_reg_13_:D 1.069e-04
+*RC sipo_bit/U55:A2 6.300e-05
+*RC sipo_bit/U56:A4 3.743e-05
+*END
+
+*R_NET sipo_bit/tpout\[12\] 5.480e+00
+*DRIVER sipo_bit/tmp_reg_12_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.740e+00 8.129e-05 2.740e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_1_:SI 4.484e-05
+*RC sipo_bit/pout_reg_12_:D 1.138e-04
+*RC sipo_bit/U56:A2 1.192e-04
+*RC sipo_bit/U57:A4 5.470e-05
+*END
+
+*R_NET sipo_bit/tpout\[11\] 7.287e+00
+*DRIVER sipo_bit/tmp_reg_11_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.644e+00 1.216e-04 3.644e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_2_:SI 8.911e-05
+*RC sipo_bit/pout_reg_11_:D 3.463e-04
+*RC sipo_bit/U57:A2 8.390e-05
+*RC sipo_bit/U58:A4 2.616e-05
+*END
+
+*R_NET sipo_bit/tpout\[10\] 4.472e+00
+*DRIVER sipo_bit/tmp_reg_10_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.236e+00 5.713e-05 2.236e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_0_:SI 3.819e-05
+*RC sipo_bit/pout_reg_10_:D 8.214e-05
+*RC sipo_bit/U58:A2 4.680e-05
+*RC sipo_bit/U59:A4 1.413e-05
+*END
+
+*R_NET sipo_bit/tpout\[9\] 5.661e+00
+*DRIVER sipo_bit/tmp_reg_9_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.831e+00 8.419e-05 2.831e+00 
+*LOADS
+*RC sipo_bit/wr_tmp_reg:SI 1.253e-04
+*RC sipo_bit/pout_reg_9_:D 6.678e-05
+*RC sipo_bit/U59:A2 4.912e-05
+*RC sipo_bit/U60:A4 3.573e-05
+*END
+
+*R_NET sipo_bit/tpout\[8\] 6.275e+00
+*DRIVER sipo_bit/tmp_reg_8_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.138e+00 9.913e-05 3.138e+00 
+*LOADS
+*RC sipo_bit/pout_reg_8_:D 5.704e-05
+*RC sipo_bit/addr_reg_2_:SI 1.875e-04
+*RC sipo_bit/U60:A2 1.303e-05
+*RC sipo_bit/U61:A4 5.156e-05
+*END
+
+*R_NET sipo_bit/tpout\[7\] 5.441e+00
+*DRIVER sipo_bit/tmp_reg_7_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.720e+00 7.987e-05 2.720e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_8_:SI 1.380e-04
+*RC sipo_bit/pout_reg_7_:D 1.119e-04
+*RC sipo_bit/U61:A2 1.507e-04
+*RC sipo_bit/U62:A4 4.343e-05
+*END
+
+*R_NET sipo_bit/tpout\[6\] 7.703e+00
+*DRIVER sipo_bit/tmp_reg_6_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.851e+00 1.320e-04 3.851e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_12_:SI 1.838e-04
+*RC sipo_bit/pout_reg_6_:D 3.216e-04
+*RC sipo_bit/U62:A2 1.108e-04
+*RC sipo_bit/U63:A4 8.574e-05
+*END
+
+*R_NET sipo_bit/tpout\[5\] 5.634e+00
+*DRIVER sipo_bit/tmp_reg_5_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.817e+00 8.311e-05 2.817e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_11_:SI 1.425e-04
+*RC sipo_bit/pout_reg_5_:D 7.632e-05
+*RC sipo_bit/U63:A2 7.468e-05
+*RC sipo_bit/U64:A4 7.691e-05
+*END
+
+*R_NET sipo_bit/tpout\[4\] 7.155e+00
+*DRIVER sipo_bit/tmp_reg_4_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.578e+00 1.183e-04 3.578e+00 
+*LOADS
+*RC sipo_bit/addr_reg_3_:SI 1.552e-04
+*RC sipo_bit/pout_reg_4_:D 2.032e-04
+*RC sipo_bit/U64:A2 3.355e-05
+*RC sipo_bit/U65:A4 5.624e-05
+*END
+
+*R_NET sipo_bit/tpout\[3\] 5.738e+00
+*DRIVER sipo_bit/tmp_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.869e+00 8.596e-05 2.869e+00 
+*LOADS
+*RC sipo_bit/rd_addr_reg_0_:SI 1.291e-04
+*RC sipo_bit/pout_reg_3_:D 2.005e-04
+*RC sipo_bit/U65:A2 3.797e-05
+*RC sipo_bit/U66:A4 3.746e-05
+*END
+
+*R_NET sipo_bit/tpout\[2\] 4.331e+00
+*DRIVER sipo_bit/tmp_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.165e+00 5.366e-05 2.165e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_13_:SI 5.630e-05
+*RC sipo_bit/pout_reg_2_:D 5.973e-05
+*RC sipo_bit/U66:A2 4.298e-05
+*RC sipo_bit/U67:A4 1.612e-05
+*END
+
+*R_NET sipo_bit/tpout\[1\] 4.849e+00
+*DRIVER sipo_bit/tmp_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.425e+00 6.647e-05 2.425e+00 
+*LOADS
+*RC sipo_bit/pout_reg_10_:SI 1.327e-04
+*RC sipo_bit/pout_reg_1_:D 3.352e-05
+*RC sipo_bit/U67:A2 8.591e-05
+*RC sipo_bit/U68:A4 4.771e-05
+*END
+
+*R_NET sipo_bit/tpout\[0\] 4.522e+00
+*DRIVER sipo_bit/tmp_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.261e+00 5.747e-05 2.261e+00 
+*LOADS
+*RC sipo_bit/tmp_reg_4_:SI 8.697e-05
+*RC sipo_bit/pout_reg_0_:D 2.398e-05
+*RC sipo_bit/U68:A2 4.231e-05
+*RC sipo_bit/U69:A4 3.581e-05
+*END
+
+*R_NET sipo_bit/count\[3\] 4.485e+00
+*DRIVER sipo_bit/count_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.243e+00 7.327e-05 2.243e+00 
+*LOADS
+*RC sipo_bit/pout_reg_11_:SI 1.337e-04
+*RC sipo_bit/U20:A4 4.077e-05
+*RC sipo_bit/U47:A2 3.246e-05
+*END
+
+*R_NET sipo_bit/count\[2\] 3.138e+00
+*DRIVER sipo_bit/count_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.569e+00 2.356e-05 1.569e+00 
+*LOADS
+*RC sipo_bit/count_reg_3_:SI 1.830e-05
+*RC sipo_bit/U20:A3 2.946e-05
+*RC sipo_bit/U45:A1 2.892e-05
+*RC sipo_bit/U50:A1 2.493e-05
+*END
+
+*R_NET sipo_bit/count\[1\] 4.719e+00
+*DRIVER sipo_bit/count_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.359e+00 3.616e-05 2.359e+00 
+*LOADS
+*RC sipo_bit/count_reg_0_:SI 6.816e-05
+*RC sipo_bit/U20:A2 2.337e-05
+*RC sipo_bit/U45:A2 2.111e-05
+*RC sipo_bit/U48:A3 4.467e-05
+*RC sipo_bit/U51:A3 4.354e-05
+*RC sipo_bit/U51:A1 4.513e-05
+*END
+
+*R_NET sipo_bit/count\[0\] 6.116e+00
+*DRIVER sipo_bit/count_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.058e+00 5.766e-05 3.058e+00 
+*LOADS
+*RC sipo_bit/pout_reg_2_:SI 1.064e-04
+*RC sipo_bit/U20:A1 2.860e-05
+*RC sipo_bit/U44:A1 1.533e-05
+*RC sipo_bit/U48:A2 2.695e-05
+*RC sipo_bit/U51:A2 3.233e-05
+*RC sipo_bit/U53:A4 2.140e-05
+*END
+
+*R_NET sipo_bit/twr_tmp 8.381e-01
+*DRIVER sipo_bit/U21:Y
+*CELL INVX1_HVT
+*C2_R1_C1 4.190e-01 7.034e-06 4.190e-01 
+*LOADS
+*RC sipo_bit/wr_tmp_reg:D 4.665e-06
+*END
+
+*R_NET sipo_bit/trd 2.734e+00
+*DRIVER sipo_bit/U22:Y
+*CELL INVX1_HVT
+*C2_R1_C1 1.367e+00 5.758e-05 1.367e+00 
+*LOADS
+*RC sipo_bit/rd_reg:D 7.457e-05
+*END
+
+*R_NET sipo_bit/rd 8.087e+00
+*DRIVER sipo_bit/rd_reg:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 4.044e+00 1.004e-04 4.044e+00 
+*LOADS
+*RC sipo_bit/U23:A 6.756e-05
+*RC sipo_bit/tmp_reg_15_:SI 2.482e-04
+*RC sipo_bit/U24:A1 1.271e-04
+*RC sipo_bit/U25:A1 1.145e-04
+*RC sipo_bit/U26:A1 8.194e-05
+*RC sipo_bit/U27:A1 6.731e-05
+*END
+
+*R_NET sipo_bit/taddr\[3\] 3.555e+00
+*DRIVER sipo_bit/U27:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 1.778e+00 7.825e-05 1.778e+00 
+*LOADS
+*RC sipo_bit/addr_reg_3_:D 1.228e-04
+*END
+
+*R_NET sipo_bit/taddr\[2\] 1.499e+00
+*DRIVER sipo_bit/U26:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 7.495e-01 2.411e-05 7.495e-01 
+*LOADS
+*RC sipo_bit/addr_reg_2_:D 2.130e-05
+*END
+
+*R_NET sipo_bit/taddr\[1\] 1.733e+00
+*DRIVER sipo_bit/U25:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 8.664e-01 3.091e-05 8.664e-01 
+*LOADS
+*RC sipo_bit/addr_reg_1_:D 2.972e-05
+*END
+
+*R_NET sipo_bit/taddr\[0\] 1.444e+00
+*DRIVER sipo_bit/U24:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 7.220e-01 2.292e-05 7.220e-01 
+*LOADS
+*RC sipo_bit/addr_reg_0_:D 1.983e-05
+*END
+
+*R_NET sipo_bit/rd_addr\[3\] 2.229e+00
+*DRIVER sipo_bit/rd_addr_reg_3_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.115e+00 2.016e-05 1.115e+00 
+*LOADS
+*RC sipo_bit/U27:A2 2.058e-05
+*RC sipo_bit/U31:A0 2.541e-05
+*END
+
+*R_NET sipo_bit/rd_addr\[2\] 2.387e+00
+*DRIVER sipo_bit/rd_addr_reg_2_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.194e+00 2.200e-05 1.194e+00 
+*LOADS
+*RC sipo_bit/U19:A2 1.873e-05
+*RC sipo_bit/U17:A2 2.343e-05
+*RC sipo_bit/U26:A2 1.622e-05
+*END
+
+*R_NET sipo_bit/rd_addr\[1\] 1.600e+00
+*DRIVER sipo_bit/rd_addr_reg_1_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 8.001e-01 1.440e-05 8.001e-01 
+*LOADS
+*RC sipo_bit/U13:A1 1.100e-05
+*RC sipo_bit/U25:A2 1.247e-05
+*END
+
+*R_NET sipo_bit/rd_addr\[0\] 2.803e+00
+*DRIVER sipo_bit/rd_addr_reg_0_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.401e+00 2.041e-05 1.401e+00 
+*LOADS
+*RC sipo_bit/U3:A2 1.666e-05
+*RC sipo_bit/U4:A2 1.344e-05
+*RC sipo_bit/U13:A2 1.293e-05
+*RC sipo_bit/U24:A2 1.409e-05
+*END
+
+*R_NET sipo_bit/wr_addr\[3\] 3.467e+00
+*DRIVER sipo_bit/wr_addr_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.733e+00 3.447e-05 1.733e+00 
+*LOADS
+*RC sipo_bit/U9:A2 3.350e-05
+*RC sipo_bit/wr_addr_reg_2_:SI 3.445e-05
+*RC sipo_bit/U27:A4 4.541e-05
+*END
+
+*R_NET sipo_bit/wr_addr\[2\] 2.751e+00
+*DRIVER sipo_bit/wr_addr_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.375e+00 2.786e-05 1.375e+00 
+*LOADS
+*RC sipo_bit/rd_addr_reg_3_:SI 2.990e-05
+*RC sipo_bit/U26:A4 2.793e-05
+*RC sipo_bit/U34:A2 2.072e-05
+*END
+
+*R_NET sipo_bit/wr_addr\[1\] 3.161e+00
+*DRIVER sipo_bit/wr_addr_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.581e+00 3.752e-05 1.581e+00 
+*LOADS
+*RC sipo_bit/rd_addr_reg_2_:SI 4.945e-05
+*RC sipo_bit/U25:A4 3.074e-05
+*RC sipo_bit/U38:A2 2.025e-05
+*END
+
+*R_NET sipo_bit/wr_addr\[0\] 3.802e+00
+*DRIVER sipo_bit/wr_addr_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.901e+00 3.535e-05 1.901e+00 
+*LOADS
+*RC sipo_bit/wr_reg:SI 3.963e-05
+*RC sipo_bit/U24:A4 1.628e-05
+*RC sipo_bit/U35:A3 2.482e-05
+*RC sipo_bit/U39:A2 1.410e-05
+*END
+
+*R_NET sipo_bit/wr_0 4.394e+00
+*DRIVER sipo_bit/wr_0_reg:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.197e+00 7.011e-05 2.197e+00 
+*LOADS
+*RC sipo_bit/pout_reg_9_:SI 1.190e-04
+*RC sipo_bit/U42:A2 1.162e-05
+*RC sipo_bit/U43:A4 1.490e-05
+*END
+
+*R_NET sipo_bit/wr_1 5.754e+00
+*DRIVER sipo_bit/wr_1_reg:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.877e+00 1.025e-04 2.877e+00 
+*LOADS
+*RC sipo_bit/wr_0_reg:SI 7.865e-05
+*RC sipo_bit/U41:A2 1.958e-04
+*RC sipo_bit/U42:A4 4.370e-05
+*END
+
+*R_NET sipo_bit/wr_tmp 1.637e+00
+*DRIVER sipo_bit/wr_tmp_reg:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 8.186e-01 1.654e-05 8.186e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_3_:SI 9.598e-06
+*RC sipo_bit/U43:A2 1.455e-05
+*END
+
+*R_NET sipo_bit/n13 6.906e-01
+*DRIVER sipo_bit/U31:SO
+*CELL HADDX1_HVT
+*C2_R1_C1 3.453e-01 3.167e-06 3.453e-01 
+*LOADS
+*RC sipo_bit/rd_addr_reg_3_:D 1.944e-06
+*END
+
+*R_NET sipo_bit/n17 1.026e+00
+*DRIVER sipo_bit/U19:Y
+*CELL OAI21X1_RVT
+*C2_R1_C1 5.130e-01 1.218e-05 5.130e-01 
+*LOADS
+*RC sipo_bit/rd_addr_reg_2_:D 8.839e-06
+*END
+
+*R_NET sipo_bit/n21 8.361e-01
+*DRIVER sipo_bit/U30:Y
+*CELL AO21X1_HVT
+*C2_R1_C1 4.181e-01 7.131e-06 4.181e-01 
+*LOADS
+*RC sipo_bit/rd_addr_reg_1_:D 4.725e-06
+*END
+
+*R_NET sipo_bit/n25 1.039e+00
+*DRIVER sipo_bit/U3:Y
+*CELL OAI21X1_HVT
+*C2_R1_C1 5.196e-01 1.264e-05 5.196e-01 
+*LOADS
+*RC sipo_bit/rd_addr_reg_0_:D 9.232e-06
+*END
+
+*R_NET sipo_bit/n31 6.768e-01
+*DRIVER sipo_bit/U9:Y
+*CELL XNOR2X1_HVT
+*C2_R1_C1 3.384e-01 2.784e-06 3.384e-01 
+*LOADS
+*RC sipo_bit/wr_addr_reg_3_:D 1.697e-06
+*END
+
+*R_NET sipo_bit/n34 7.087e-01
+*DRIVER sipo_bit/U34:Y
+*CELL OA21X1_HVT
+*C2_R1_C1 3.543e-01 3.475e-06 3.543e-01 
+*LOADS
+*RC sipo_bit/wr_addr_reg_2_:D 2.155e-06
+*END
+
+*R_NET sipo_bit/n37 8.346e-01
+*DRIVER sipo_bit/U38:Y
+*CELL OA21X1_HVT
+*C2_R1_C1 4.173e-01 6.911e-06 4.173e-01 
+*LOADS
+*RC sipo_bit/wr_addr_reg_1_:D 4.575e-06
+*END
+
+*R_NET sipo_bit/n40 1.048e+00
+*DRIVER sipo_bit/U39:Y
+*CELL OA21X1_HVT
+*C2_R1_C1 5.242e-01 1.302e-05 5.242e-01 
+*LOADS
+*RC sipo_bit/wr_addr_reg_0_:D 9.549e-06
+*END
+
+*R_NET sipo_bit/n43 1.389e+00
+*DRIVER sipo_bit/U41:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 6.943e-01 1.554e-05 6.943e-01 
+*LOADS
+*RC sipo_bit/wr_reg:D 1.567e-05
+*END
+
+*R_NET sipo_bit/n46 7.853e-01
+*DRIVER sipo_bit/U42:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 3.926e-01 5.482e-06 3.926e-01 
+*LOADS
+*RC sipo_bit/wr_1_reg:D 3.540e-06
+*END
+
+*R_NET sipo_bit/n49 1.380e+00
+*DRIVER sipo_bit/U43:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 6.899e-01 2.215e-05 6.899e-01 
+*LOADS
+*RC sipo_bit/wr_0_reg:D 1.869e-05
+*END
+
+*R_NET sipo_bit/n86 7.641e-01
+*DRIVER sipo_bit/U47:Y
+*CELL MUX21X1_HVT
+*C2_R1_C1 3.820e-01 5.111e-06 3.820e-01 
+*LOADS
+*RC sipo_bit/count_reg_3_:D 3.264e-06
+*END
+
+*R_NET sipo_bit/n89 7.153e-01
+*DRIVER sipo_bit/U50:Y
+*CELL OA21X1_HVT
+*C2_R1_C1 3.577e-01 3.747e-06 3.577e-01 
+*LOADS
+*RC sipo_bit/count_reg_2_:D 2.332e-06
+*END
+
+*R_NET sipo_bit/n92 1.110e+00
+*DRIVER sipo_bit/U51:Y
+*CELL OA221X1_HVT
+*C2_R1_C1 5.552e-01 1.406e-05 5.552e-01 
+*LOADS
+*RC sipo_bit/count_reg_1_:D 1.060e-05
+*END
+
+*R_NET sipo_bit/n95 9.971e-01
+*DRIVER sipo_bit/U53:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.986e-01 1.153e-05 4.986e-01 
+*LOADS
+*RC sipo_bit/count_reg_0_:D 8.260e-06
+*END
+
+*R_NET sipo_bit/n98 1.002e+00
+*DRIVER sipo_bit/U54:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.010e-01 1.132e-05 5.010e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_15_:D 8.129e-06
+*END
+
+*R_NET sipo_bit/n101 1.284e+00
+*DRIVER sipo_bit/U55:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 6.421e-01 1.972e-05 6.421e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_14_:D 1.601e-05
+*END
+
+*R_NET sipo_bit/n104 7.131e-01
+*DRIVER sipo_bit/U56:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 3.566e-01 3.791e-06 3.566e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_13_:D 2.356e-06
+*END
+
+*R_NET sipo_bit/n107 9.994e-01
+*DRIVER sipo_bit/U57:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.997e-01 1.105e-05 4.997e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_12_:D 7.925e-06
+*END
+
+*R_NET sipo_bit/n110 9.633e-01
+*DRIVER sipo_bit/U58:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.817e-01 1.063e-05 4.817e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_11_:D 7.493e-06
+*END
+
+*R_NET sipo_bit/n113 1.011e+00
+*DRIVER sipo_bit/U59:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.054e-01 1.197e-05 5.054e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_10_:D 8.628e-06
+*END
+
+*R_NET sipo_bit/n116 7.263e-01
+*DRIVER sipo_bit/U60:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 3.631e-01 4.019e-06 3.631e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_9_:D 2.516e-06
+*END
+
+*R_NET sipo_bit/n119 8.163e-01
+*DRIVER sipo_bit/U61:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.081e-01 6.539e-06 4.081e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_8_:D 4.289e-06
+*END
+
+*R_NET sipo_bit/n122 7.537e-01
+*DRIVER sipo_bit/U62:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 3.768e-01 4.907e-06 3.768e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_7_:D 3.116e-06
+*END
+
+*R_NET sipo_bit/n125 1.098e+00
+*DRIVER sipo_bit/U63:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.490e-01 1.417e-05 5.490e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_6_:D 1.062e-05
+*END
+
+*R_NET sipo_bit/n128 1.289e+00
+*DRIVER sipo_bit/U64:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 6.447e-01 1.954e-05 6.447e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_5_:D 1.590e-05
+*END
+
+*R_NET sipo_bit/n131 8.009e-01
+*DRIVER sipo_bit/U65:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.004e-01 6.051e-06 4.004e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_4_:D 3.938e-06
+*END
+
+*R_NET sipo_bit/n134 6.464e-01
+*DRIVER sipo_bit/U66:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 3.232e-01 1.956e-06 3.232e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_3_:D 1.173e-06
+*END
+
+*R_NET sipo_bit/n137 1.006e+00
+*DRIVER sipo_bit/U67:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.028e-01 1.177e-05 5.028e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_2_:D 8.460e-06
+*END
+
+*R_NET sipo_bit/n140 9.319e-01
+*DRIVER sipo_bit/U68:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.659e-01 9.466e-06 4.659e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_1_:D 6.574e-06
+*END
+
+*R_NET sipo_bit/n143 8.156e-01
+*DRIVER sipo_bit/U69:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.078e-01 6.313e-06 4.078e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_0_:D 4.139e-06
+*END
+
+*R_NET sipo_bit/n4 6.214e-01
+*DRIVER sipo_bit/U14:Y
+*CELL INVX1_HVT
+*C2_R1_C1 3.107e-01 4.942e-07 3.107e-01 
+*LOADS
+*RC sipo_bit/U16:A1 3.011e-07
+*END
+
+*R_NET sipo_bit/n5 2.306e+00
+*DRIVER sipo_bit/U15:Y
+*CELL AND2X1_HVT
+*C2_R1_C1 1.153e+00 3.299e-05 1.153e+00 
+*LOADS
+*RC sipo_bit/U16:A2 3.472e-05
+*RC sipo_bit/U17:A1 3.704e-05
+*END
+
+*R_NET sipo_bit/n6 7.468e-01
+*DRIVER sipo_bit/U17:Y
+*CELL NAND2X0_HVT
+*C2_R1_C1 3.734e-01 1.072e-06 3.734e-01 
+*LOADS
+*RC sipo_bit/U18:A2 7.715e-07
+*END
+
+*R_NET sipo_bit/n7 1.545e+00
+*DRIVER sipo_bit/U13:Y
+*CELL NAND2X0_HVT
+*C2_R1_C1 7.726e-01 3.947e-06 7.726e-01 
+*LOADS
+*RC sipo_bit/U18:A1 3.677e-06
+*RC sipo_bit/U14:A 1.884e-06
+*END
+
+*R_NET sipo_bit/n8 3.538e+00
+*DRIVER sipo_bit/U23:Y
+*CELL INVX1_HVT
+*C2_R1_C1 1.769e+00 3.078e-05 1.769e+00 
+*LOADS
+*RC sipo_bit/U26:A3 4.169e-05
+*RC sipo_bit/U24:A3 3.056e-05
+*RC sipo_bit/U25:A3 2.882e-05
+*RC sipo_bit/U27:A3 2.832e-05
+*END
+
+*R_NET sipo_bit/n9 1.880e+00
+*DRIVER sipo_bit/U16:Y
+*CELL AND2X1_HVT
+*C2_R1_C1 9.402e-01 2.263e-05 9.402e-01 
+*LOADS
+*RC sipo_bit/U19:A1 6.496e-06
+*RC sipo_bit/U30:A3 2.036e-05
+*END
+
+*R_NET sipo_bit/n11 1.487e+00
+*DRIVER sipo_bit/U4:Y
+*CELL NAND2X0_HVT
+*C2_R1_C1 7.434e-01 1.218e-05 7.434e-01 
+*LOADS
+*RC sipo_bit/U3:A3 1.232e-06
+*RC sipo_bit/U30:A1 9.603e-06
+*END
+
+*R_NET sipo_bit/n12 1.795e+00
+*DRIVER sipo_bit/U18:Y
+*CELL OR2X1_RVT
+*C2_R1_C1 8.973e-01 7.944e-06 8.973e-01 
+*LOADS
+*RC sipo_bit/U19:A3 4.484e-06
+*RC sipo_bit/U31:B0 8.622e-06
+*END
+
+*R_NET sipo_bit/n14 2.428e+00
+*DRIVER sipo_bit/U7:Y
+*CELL NAND2X0_HVT
+*C2_R1_C1 1.214e+00 2.900e-05 1.214e+00 
+*LOADS
+*RC sipo_bit/U11:A2 3.299e-05
+*RC sipo_bit/U8:A3 3.646e-05
+*END
+
+*R_NET sipo_bit/n15 1.286e+00
+*DRIVER sipo_bit/U5:Y
+*CELL OR2X1_HVT
+*C2_R1_C1 6.428e-01 2.923e-06 6.428e-01 
+*LOADS
+*RC sipo_bit/U11:A1 1.184e-06
+*RC sipo_bit/U8:A1 1.214e-06
+*END
+
+*R_NET sipo_bit/n18 2.111e+00
+*DRIVER sipo_bit/U8:Y
+*CELL OR3X1_RVT
+*C2_R1_C1 1.056e+00 1.202e-05 1.056e+00 
+*LOADS
+*RC sipo_bit/U9:A1 1.818e-05
+*RC sipo_bit/U34:A3 5.670e-06
+*END
+
+*R_NET sipo_bit/n20 1.573e+00
+*DRIVER sipo_bit/U11:Y
+*CELL OR2X1_HVT
+*C2_R1_C1 7.867e-01 9.243e-06 7.867e-01 
+*LOADS
+*RC sipo_bit/U10:A 3.295e-06
+*RC sipo_bit/U38:A3 5.042e-06
+*END
+
+*R_NET sipo_bit/n22 6.608e-01
+*DRIVER sipo_bit/U36:Y
+*CELL INVX1_HVT
+*C2_R1_C1 3.304e-01 4.144e-06 3.304e-01 
+*LOADS
+*RC sipo_bit/U38:A1 2.325e-06
+*END
+
+*R_NET sipo_bit/n23 1.744e+00
+*DRIVER sipo_bit/U35:Y
+*CELL NAND3X0_HVT
+*C2_R1_C1 8.720e-01 1.377e-05 8.720e-01 
+*LOADS
+*RC sipo_bit/U36:A 1.403e-05
+*RC sipo_bit/U39:A3 6.897e-06
+*END
+
+*R_NET sipo_bit/n24 2.355e+00
+*DRIVER sipo_bit/U6:Y
+*CELL AND2X1_HVT
+*C2_R1_C1 1.177e+00 1.936e-05 1.177e+00 
+*LOADS
+*RC sipo_bit/U3:A1 1.940e-05
+*RC sipo_bit/U4:A1 2.111e-05
+*RC sipo_bit/U39:A1 1.439e-05
+*END
+
+*R_NET sipo_bit/n26 7.652e-01
+*DRIVER sipo_bit/U45:Y
+*CELL NAND2X0_HVT
+*C2_R1_C1 3.826e-01 1.768e-06 3.826e-01 
+*LOADS
+*RC sipo_bit/U46:A2 1.275e-06
+*END
+
+*R_NET sipo_bit/n27 7.235e-01
+*DRIVER sipo_bit/U44:Y
+*CELL NAND2X0_HVT
+*C2_R1_C1 3.618e-01 2.843e-06 3.618e-01 
+*LOADS
+*RC sipo_bit/U46:A1 1.860e-06
+*END
+
+*R_NET sipo_bit/n28 1.420e+00
+*DRIVER sipo_bit/U20:Y
+*CELL NAND4X0_HVT
+*C2_R1_C1 7.099e-01 3.585e-06 7.099e-01 
+*LOADS
+*RC sipo_bit/U21:A 2.482e-06
+*RC sipo_bit/U47:A1 2.155e-06
+*END
+
+*R_NET sipo_bit/n29 1.918e+00
+*DRIVER sipo_bit/U46:Y
+*CELL OR2X1_HVT
+*C2_R1_C1 9.590e-01 1.005e-05 9.590e-01 
+*LOADS
+*RC sipo_bit/U47:S0 4.334e-06
+*RC sipo_bit/U50:A3 6.482e-06
+*END
+
+*R_NET sipo_bit/n30 1.066e+00
+*DRIVER sipo_bit/U49:Y
+*CELL INVX1_HVT
+*C2_R1_C1 5.328e-01 1.388e-05 5.328e-01 
+*LOADS
+*RC sipo_bit/U50:A2 1.008e-05
+*END
+
+*R_NET sipo_bit/n32 1.391e+00
+*DRIVER sipo_bit/U48:Y
+*CELL NAND3X0_HVT
+*C2_R1_C1 6.955e-01 2.404e-06 6.955e-01 
+*LOADS
+*RC sipo_bit/U49:A 1.958e-06
+*RC sipo_bit/U51:A5 3.319e-07
+*END
+
+*R_NET sipo_bit/n53 7.064e+00
+*DRIVER sipo_bit/U78:Y
+*CELL INVX1_HVT
+*C2_R1_C1 3.532e+00 9.407e-05 3.532e+00 
+*LOADS
+*RC sipo_bit/U54:A3 9.740e-05
+*RC sipo_bit/U53:A3 8.796e-05
+*RC sipo_bit/U66:A3 5.632e-05
+*RC sipo_bit/U64:A3 4.428e-05
+*RC sipo_bit/U41:A3 1.480e-04
+*END
+
+*R_NET sipo_bit/n55 1.373e+01
+*DRIVER sipo_bit/U80:Y
+*CELL INVX2_HVT
+*C2_R1_C1 6.865e+00 8.553e-05 6.865e+00 
+*LOADS
+*RC sipo_bit/U42:A3 1.703e-05
+*RC sipo_bit/U43:A3 1.673e-05
+*RC sipo_bit/U60:A3 1.549e-04
+*RC sipo_bit/U61:A3 2.581e-04
+*RC sipo_bit/U55:A3 5.055e-05
+*RC sipo_bit/U56:A3 1.853e-04
+*RC sipo_bit/U67:A3 9.751e-05
+*RC sipo_bit/U65:A3 7.091e-05
+*RC sipo_bit/U58:A3 1.372e-04
+*RC sipo_bit/U62:A3 9.400e-06
+*RC sipo_bit/U59:A3 2.208e-04
+*RC sipo_bit/U57:A3 6.455e-05
+*RC sipo_bit/U68:A3 2.184e-04
+*RC sipo_bit/U63:A3 1.061e-04
+*RC sipo_bit/U69:A3 1.207e-04
+*END
+
+*R_NET sipo_bit/n58 6.873e-01
+*DRIVER sipo_bit/U10:Y
+*CELL INVX1_HVT
+*C2_R1_C1 3.436e-01 4.839e-06 3.436e-01 
+*LOADS
+*RC sipo_bit/U34:A1 2.758e-06
+*END
+
+*R_NET sipo_bit/n19 4.692e+00
+*DRIVER sipo_bit/scan_enable_UPF_LS:Y
+*CELL LSDNSSX1_HVT
+*C2_R1_C1 2.346e+00 3.945e-05 2.346e+00 
+*LOADS
+*RC sipo_bit/U76:A 3.819e-05
+*RC sipo_bit/pout_reg_5_:SE 7.034e-05
+*RC sipo_bit/U75:A 6.600e-05
+*END
+
+*R_NET sipo_bit/n60 1.267e+00
+*DRIVER sipo_bit/rd_addr_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 6.336e-01 2.043e-05 6.336e-01 
+*LOADS
+*RC sipo_bit/wr_addr_reg_0_:SI 1.567e-05
+*END
+
+*R_NET sipo_bit/n61 1.603e+00
+*DRIVER sipo_bit/rd_addr_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 8.014e-01 2.850e-05 8.014e-01 
+*LOADS
+*RC sipo_bit/tmp_reg_14_:SI 2.505e-05
+*END
+
+*R_NET sipo_bit/n62 2.151e+00
+*DRIVER sipo_bit/rd_addr_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.076e+00 3.070e-05 1.076e+00 
+*LOADS
+*RC sipo_bit/U30:A2 1.255e-05
+*RC sipo_bit/wr_addr_reg_1_:SI 2.277e-05
+*END
+
+*R_NET sipo_bit/n63 2.488e+00
+*DRIVER sipo_bit/rd_addr_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.244e+00 5.341e-05 1.244e+00 
+*LOADS
+*RC sipo_bit/addr_reg_0_:SI 6.270e-05
+*END
+
+*R_NET sipo_bit/n16 2.468e+00
+*DRIVER sipo_bit/scan_in_UPF_LS:Y
+*CELL LSDNSSX1_HVT
+*C2_R1_C1 1.234e+00 5.399e-05 1.234e+00 
+*LOADS
+*RC sipo_bit/pout_reg_8_:SI 6.301e-05
+*END
+
+*R_NET sipo_bit/n35 2.003e+01
+*DRIVER sipo_bit/U28:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.002e+01 5.490e-05 1.002e+01 
+*LOADS
+*RC sipo_bit/rd_addr_reg_0_:RETN 2.565e-04
+*RC sipo_bit/rd_addr_reg_1_:RETN 1.506e-04
+*RC sipo_bit/pout_reg_4_:RETN 3.871e-04
+*RC sipo_bit/count_reg_1_:RETN 3.136e-04
+*RC sipo_bit/count_reg_2_:RETN 1.393e-04
+*RC sipo_bit/wr_addr_reg_0_:RETN 3.342e-04
+*END
+
+*R_NET sipo_bit/n36 2.633e+01
+*DRIVER sipo_bit/U33:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.317e+01 5.925e-05 1.317e+01 
+*LOADS
+*RC sipo_bit/addr_reg_0_:RETN 6.331e-04
+*RC sipo_bit/wr_addr_reg_1_:RETN 5.290e-04
+*RC sipo_bit/rd_addr_reg_3_:RETN 1.831e-04
+*RC sipo_bit/wr_addr_reg_2_:RETN 3.263e-04
+*RC sipo_bit/pout_reg_14_:RETN 3.259e-04
+*RC sipo_bit/pout_reg_5_:RETN 8.060e-05
+*RC sipo_bit/wr_addr_reg_3_:RETN 2.027e-04
+*RC sipo_bit/addr_reg_1_:RETN 4.168e-04
+*END
+
+*R_NET sipo_bit/n38 2.013e+01
+*DRIVER sipo_bit/U40:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.007e+01 5.659e-05 1.007e+01 
+*LOADS
+*RC sipo_bit/tmp_reg_7_:RETN 3.618e-04
+*RC sipo_bit/tmp_reg_11_:RETN 2.274e-04
+*RC sipo_bit/tmp_reg_14_:RETN 3.201e-04
+*RC sipo_bit/pout_reg_0_:RETN 2.233e-04
+*RC sipo_bit/tmp_reg_6_:RETN 2.480e-04
+*RC sipo_bit/pout_reg_1_:RETN 8.081e-05
+*END
+
+*R_NET sipo_bit/n41 2.835e+01
+*DRIVER sipo_bit/U70:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.417e+01 9.995e-05 1.417e+01 
+*LOADS
+*RC sipo_bit/pout_reg_8_:RETN 4.088e-04
+*RC sipo_bit/wr_1_reg:RETN 5.220e-04
+*RC sipo_bit/pout_reg_2_:RETN 2.810e-04
+*RC sipo_bit/pout_reg_9_:RETN 1.135e-03
+*RC sipo_bit/pout_reg_12_:RETN 4.860e-04
+*RC sipo_bit/tmp_reg_8_:RETN 4.001e-04
+*RC sipo_bit/tmp_reg_9_:RETN 6.470e-04
+*RC sipo_bit/tmp_reg_2_:RETN 4.772e-04
+*END
+
+*R_NET sipo_bit/n42 2.359e+01
+*DRIVER sipo_bit/U71:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.180e+01 6.562e-05 1.180e+01 
+*LOADS
+*RC sipo_bit/pout_reg_7_:RETN 2.322e-04
+*RC sipo_bit/tmp_reg_15_:RETN 2.101e-04
+*RC sipo_bit/count_reg_0_:RETN 2.195e-04
+*RC sipo_bit/tmp_reg_13_:RETN 3.252e-04
+*RC sipo_bit/wr_0_reg:RETN 3.257e-04
+*RC sipo_bit/pout_reg_13_:RETN 3.167e-04
+*RC sipo_bit/wr_tmp_reg:RETN 3.729e-04
+*END
+
+*R_NET sipo_bit/n44 2.038e+01
+*DRIVER sipo_bit/U72:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.019e+01 6.279e-05 1.019e+01 
+*LOADS
+*RC sipo_bit/tmp_reg_10_:RETN 2.823e-04
+*RC sipo_bit/pout_reg_10_:RETN 5.481e-04
+*RC sipo_bit/addr_reg_3_:RETN 3.680e-04
+*RC sipo_bit/tmp_reg_12_:RETN 3.875e-04
+*RC sipo_bit/tmp_reg_1_:RETN 8.901e-05
+*RC sipo_bit/tmp_reg_0_:RETN 9.242e-05
+*END
+
+*R_NET sipo_bit/n45 2.323e+01
+*DRIVER sipo_bit/U73:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.161e+01 5.861e-05 1.161e+01 
+*LOADS
+*RC sipo_bit/rd_addr_reg_2_:RETN 4.166e-04
+*RC sipo_bit/count_reg_3_:RETN 4.530e-04
+*RC sipo_bit/tmp_reg_4_:RETN 2.795e-04
+*RC sipo_bit/tmp_reg_3_:RETN 2.961e-04
+*RC sipo_bit/tmp_reg_5_:RETN 8.520e-05
+*RC sipo_bit/addr_reg_2_:RETN 1.723e-04
+*RC sipo_bit/rd_reg:RETN 2.941e-04
+*END
+
+*R_NET sipo_bit/n47 1.721e+01
+*DRIVER sipo_bit/U74:Y
+*CELL AOBUFX2_HVT
+*C2_R1_C1 8.604e+00 5.843e-05 8.604e+00 
+*LOADS
+*RC sipo_bit/wr_reg:RETN 4.098e-04
+*RC sipo_bit/pout_reg_15_:RETN 3.260e-04
+*RC sipo_bit/pout_reg_11_:RETN 2.656e-04
+*RC sipo_bit/pout_reg_3_:RETN 2.466e-04
+*RC sipo_bit/pout_reg_6_:RETN 1.774e-04
+*END
+
+*R_NET sipo_bit/n48 3.550e+01
+*DRIVER sipo_bit/U75:Y
+*CELL NBUFFX8_HVT
+*C2_R1_C1 1.775e+01 1.114e-04 1.775e+01 
+*LOADS
+*RC sipo_bit/pout_reg_8_:SE 1.219e-03
+*RC sipo_bit/wr_1_reg:SE 6.348e-04
+*RC sipo_bit/pout_reg_2_:SE 1.079e-03
+*RC sipo_bit/pout_reg_7_:SE 6.798e-04
+*RC sipo_bit/tmp_reg_15_:SE 8.155e-04
+*RC sipo_bit/tmp_reg_13_:SE 9.585e-04
+*RC sipo_bit/wr_0_reg:SE 8.150e-04
+*RC sipo_bit/pout_reg_9_:SE 6.711e-04
+*RC sipo_bit/pout_reg_12_:SE 1.299e-03
+*RC sipo_bit/tmp_reg_8_:SE 1.093e-03
+*RC sipo_bit/wr_tmp_reg:SE 5.008e-04
+*RC sipo_bit/tmp_reg_9_:SE 9.640e-04
+*RC sipo_bit/tmp_reg_2_:SE 8.362e-04
+*RC sipo_bit/tmp_reg_7_:SE 4.817e-04
+*RC sipo_bit/count_reg_3_:SE 3.746e-04
+*RC sipo_bit/tmp_reg_10_:SE 6.738e-04
+*RC sipo_bit/pout_reg_10_:SE 1.053e-03
+*RC sipo_bit/tmp_reg_3_:SE 4.621e-04
+*RC sipo_bit/tmp_reg_11_:SE 6.234e-04
+*RC sipo_bit/addr_reg_3_:SE 7.961e-04
+*RC sipo_bit/tmp_reg_5_:SE 9.897e-05
+*RC sipo_bit/tmp_reg_14_:SE 1.740e-04
+*RC sipo_bit/tmp_reg_12_:SE 8.240e-04
+*RC sipo_bit/tmp_reg_1_:SE 4.337e-04
+*RC sipo_bit/tmp_reg_0_:SE 4.028e-04
+*RC sipo_bit/pout_reg_0_:SE 2.987e-04
+*RC sipo_bit/tmp_reg_6_:SE 2.200e-04
+*RC sipo_bit/pout_reg_1_:SE 5.358e-04
+*END
+
+*R_NET sipo_bit/n50 3.182e+01
+*DRIVER sipo_bit/U76:Y
+*CELL NBUFFX4_HVT
+*C2_R1_C1 1.591e+01 1.170e-04 1.591e+01 
+*LOADS
+*RC sipo_bit/wr_reg:SE 9.064e-04
+*RC sipo_bit/rd_addr_reg_0_:SE 6.614e-04
+*RC sipo_bit/rd_addr_reg_2_:SE 3.330e-04
+*RC sipo_bit/rd_addr_reg_1_:SE 5.232e-04
+*RC sipo_bit/count_reg_0_:SE 9.101e-04
+*RC sipo_bit/pout_reg_4_:SE 8.318e-04
+*RC sipo_bit/pout_reg_15_:SE 1.126e-03
+*RC sipo_bit/pout_reg_11_:SE 1.063e-03
+*RC sipo_bit/pout_reg_3_:SE 9.669e-04
+*RC sipo_bit/pout_reg_6_:SE 9.335e-04
+*RC sipo_bit/count_reg_1_:SE 7.360e-04
+*RC sipo_bit/pout_reg_13_:SE 7.986e-04
+*RC sipo_bit/count_reg_2_:SE 5.549e-04
+*RC sipo_bit/wr_addr_reg_0_:SE 7.628e-04
+*RC sipo_bit/addr_reg_0_:SE 7.450e-04
+*RC sipo_bit/tmp_reg_4_:SE 5.255e-04
+*RC sipo_bit/wr_addr_reg_1_:SE 6.358e-04
+*RC sipo_bit/rd_addr_reg_3_:SE 2.730e-04
+*RC sipo_bit/wr_addr_reg_2_:SE 4.232e-04
+*RC sipo_bit/pout_reg_14_:SE 4.227e-04
+*RC sipo_bit/addr_reg_2_:SE 2.595e-04
+*RC sipo_bit/rd_reg:SE 2.568e-04
+*RC sipo_bit/wr_addr_reg_3_:SE 2.935e-04
+*RC sipo_bit/addr_reg_1_:SE 5.180e-04
+*END
+
+*R_NET sipo_bit/n51 7.737e-01
+*DRIVER sipo_bit/count_reg_0_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 3.869e-01 7.542e-06 3.869e-01 
+*LOADS
+*RC sipo_bit/U53:A2 4.453e-06
+*END
+
+*R_NET sipo_bit/n52 1.358e+00
+*DRIVER sipo_bit/wr_addr_reg_2_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 6.790e-01 2.094e-05 6.790e-01 
+*LOADS
+*RC sipo_bit/U8:A2 1.794e-05
+*END
+
+*R_NET sipo_bit/n54 1.118e+00
+*DRIVER sipo_bit/wr_addr_reg_1_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 5.589e-01 1.355e-05 5.589e-01 
+*LOADS
+*RC sipo_bit/U5:A1 1.065e-05
+*END
+
+*R_NET sipo_bit/n59 1.166e+00
+*DRIVER sipo_bit/wr_addr_reg_0_:QN
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 5.828e-01 1.287e-05 5.828e-01 
+*LOADS
+*RC sipo_bit/U5:A2 1.099e-05
+*END
+
+*R_NET piso_bit/n\[23\] 3.551e+00
+*DRIVER piso_bit/din_15__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.776e+00 8.076e-05 1.776e+00 
+*LOADS
+*RC piso_bit/U19:A2 1.225e-04
+*END
+
+*R_NET piso_bit/n\[24\] 2.370e+00
+*DRIVER piso_bit/din_14__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.185e+00 4.878e-05 1.185e+00 
+*LOADS
+*RC piso_bit/U18:A2 5.476e-05
+*END
+
+*R_NET piso_bit/n\[25\] 8.717e-01
+*DRIVER piso_bit/din_13__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 4.359e-01 9.812e-06 4.359e-01 
+*LOADS
+*RC piso_bit/U17:A2 6.115e-06
+*END
+
+*R_NET piso_bit/n\[26\] 8.834e-01
+*DRIVER piso_bit/din_12__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 4.417e-01 1.003e-05 4.417e-01 
+*LOADS
+*RC piso_bit/U16:A2 6.289e-06
+*END
+
+*R_NET piso_bit/n\[27\] 2.006e+00
+*DRIVER piso_bit/din_11__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.003e+00 3.927e-05 1.003e+00 
+*LOADS
+*RC piso_bit/U15:A2 3.933e-05
+*END
+
+*R_NET piso_bit/n\[28\] 3.340e+00
+*DRIVER piso_bit/din_10__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.670e+00 7.566e-05 1.670e+00 
+*LOADS
+*RC piso_bit/U14:A2 1.094e-04
+*END
+
+*R_NET piso_bit/n\[29\] 3.144e+00
+*DRIVER piso_bit/din_9__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.572e+00 7.192e-05 1.572e+00 
+*LOADS
+*RC piso_bit/U13:A2 9.930e-05
+*END
+
+*R_NET piso_bit/n\[30\] 1.625e+00
+*DRIVER piso_bit/din_8__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 8.125e-01 3.143e-05 8.125e-01 
+*LOADS
+*RC piso_bit/U12:A2 2.747e-05
+*END
+
+*R_NET piso_bit/n\[31\] 1.272e+00
+*DRIVER piso_bit/din_7__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 6.360e-01 2.151e-05 6.360e-01 
+*LOADS
+*RC piso_bit/U11:A2 1.628e-05
+*END
+
+*R_NET piso_bit/n\[32\] 2.793e+00
+*DRIVER piso_bit/din_6__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.396e+00 6.371e-05 1.396e+00 
+*LOADS
+*RC piso_bit/U10:A2 8.050e-05
+*END
+
+*R_NET piso_bit/n\[33\] 1.215e+00
+*DRIVER piso_bit/din_5__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 6.074e-01 1.923e-05 6.074e-01 
+*LOADS
+*RC piso_bit/U9:A2 1.418e-05
+*END
+
+*R_NET piso_bit/n\[34\] 2.984e+00
+*DRIVER piso_bit/din_4__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.492e+00 6.776e-05 1.492e+00 
+*LOADS
+*RC piso_bit/U8:A2 8.994e-05
+*END
+
+*R_NET piso_bit/n\[35\] 2.523e+00
+*DRIVER piso_bit/din_3__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 1.262e+00 5.424e-05 1.262e+00 
+*LOADS
+*RC piso_bit/U7:A2 6.365e-05
+*END
+
+*R_NET piso_bit/n\[36\] 1.469e+00
+*DRIVER piso_bit/din_2__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 7.345e-01 2.681e-05 7.345e-01 
+*LOADS
+*RC piso_bit/U6:A2 2.205e-05
+*END
+
+*R_NET piso_bit/n\[38\] 1.569e+00
+*DRIVER piso_bit/din_1__UPF_LS:Y
+*CELL LSDNSSX2_HVT
+*C2_R1_C1 7.845e-01 2.944e-05 7.845e-01 
+*LOADS
+*RC piso_bit/U5:A2 2.519e-05
+*END
+
+*R_NET piso_bit/n\[39\] 2.453e+00
+*DRIVER piso_bit/din_0__UPF_LS:Y
+*CELL LSDNSSX1_HVT
+*C2_R1_C1 1.227e+00 5.179e-05 1.227e+00 
+*LOADS
+*RC piso_bit/U3:A2 6.040e-05
+*END
+
+*R_NET piso_bit/n40 1.912e+01
+*DRIVER piso_bit/reset_UPF_LS:Y
+*CELL LSDNSSX4_HVT
+*C2_R1_C1 9.559e+00 1.305e-04 9.559e+00 
+*LOADS
+*RC piso_bit/temp_reg_3_:RSTB 4.804e-04
+*RC piso_bit/temp_reg_0_:RSTB 7.688e-04
+*RC piso_bit/dout_reg:RSTB 6.129e-04
+*RC piso_bit/temp_reg_12_:RSTB 2.043e-04
+*RC piso_bit/temp_reg_15_:RSTB 6.221e-04
+*RC piso_bit/temp_reg_11_:RSTB 3.154e-04
+*RC piso_bit/temp_reg_8_:RSTB 4.625e-04
+*RC piso_bit/temp_reg_7_:RSTB 3.335e-04
+*RC piso_bit/temp_reg_1_:RSTB 7.777e-04
+*RC piso_bit/temp_reg_5_:RSTB 1.305e-04
+*RC piso_bit/temp_reg_9_:RSTB 3.742e-04
+*RC piso_bit/temp_reg_10_:RSTB 5.331e-04
+*RC piso_bit/temp_reg_13_:RSTB 4.342e-04
+*RC piso_bit/temp_reg_4_:RSTB 2.986e-04
+*RC piso_bit/temp_reg_6_:RSTB 1.316e-04
+*RC piso_bit/temp_reg_2_:RSTB 6.315e-04
+*RC piso_bit/temp_reg_14_:RSTB 4.649e-04
+*END
+
+*R_NET piso_bit/n41 1.914e+01
+*DRIVER piso_bit/load_UPF_LS:Y
+*CELL LSDNSSX4_HVT
+*C2_R1_C1 9.571e+00 1.108e-04 9.571e+00 
+*LOADS
+*RC piso_bit/U24:A 1.443e-04
+*RC piso_bit/U3:A1 7.263e-04
+*RC piso_bit/U5:A1 7.156e-04
+*RC piso_bit/U6:A1 7.123e-04
+*RC piso_bit/U7:A1 6.319e-04
+*RC piso_bit/U8:A1 2.621e-04
+*RC piso_bit/U9:A1 6.970e-05
+*RC piso_bit/U10:A1 1.169e-04
+*RC piso_bit/U11:A1 3.090e-04
+*RC piso_bit/U12:A1 3.239e-04
+*RC piso_bit/U13:A1 3.390e-04
+*RC piso_bit/U14:A1 4.870e-04
+*RC piso_bit/U15:A1 2.930e-04
+*RC piso_bit/U16:A1 1.510e-04
+*RC piso_bit/U17:A1 3.993e-04
+*RC piso_bit/U18:A1 4.009e-04
+*RC piso_bit/U19:A1 6.413e-04
+*RC piso_bit/U21:A1 6.309e-04
+*END
+
+*R_NET piso_bit/n1 4.162e+00
+*DRIVER piso_bit/dout_reg:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.081e+00 6.132e-05 2.081e+00 
+*LOADS
+*RC piso_bit/temp_reg_14_:SI 5.762e-05
+*RC piso_bit/U21:A2 6.049e-05
+*RC piso_bit/snps_PD_PISO__ISO_PISO_OUT_SSL_snps_doutISO_PISO_OUT_SSL:A2 4.840e-05
+*END
+
+*R_NET piso_bit/temp_15_ 3.793e+00
+*DRIVER piso_bit/temp_reg_15_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.897e+00 7.307e-05 1.897e+00 
+*LOADS
+*RC piso_bit/temp_reg_12_:SI 1.176e-04
+*RC piso_bit/U21:A4 2.356e-05
+*END
+
+*R_NET piso_bit/temp_14_ 2.445e+00
+*DRIVER piso_bit/temp_reg_14_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.222e+00 3.738e-05 1.222e+00 
+*LOADS
+*RC piso_bit/temp_reg_13_:SI 1.848e-05
+*RC piso_bit/U19:A4 3.875e-05
+*END
+
+*R_NET piso_bit/temp_13_ 3.358e+00
+*DRIVER piso_bit/temp_reg_13_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.679e+00 6.081e-05 1.679e+00 
+*LOADS
+*RC piso_bit/temp_reg_5_:SI 8.239e-05
+*RC piso_bit/U18:A4 3.380e-05
+*END
+
+*R_NET piso_bit/temp_12_ 3.840e+00
+*DRIVER piso_bit/temp_reg_12_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.920e+00 7.522e-05 1.920e+00 
+*LOADS
+*RC piso_bit/temp_reg_2_:SI 8.397e-05
+*RC piso_bit/U17:A4 6.614e-05
+*END
+
+*R_NET piso_bit/temp_11_ 4.009e+00
+*DRIVER piso_bit/temp_reg_11_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.005e+00 7.814e-05 2.005e+00 
+*LOADS
+*RC piso_bit/temp_reg_15_:SI 5.698e-05
+*RC piso_bit/U16:A4 7.585e-05
+*END
+
+*R_NET piso_bit/temp_10_ 5.272e+00
+*DRIVER piso_bit/temp_reg_10_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.636e+00 1.134e-04 2.636e+00 
+*LOADS
+*RC piso_bit/temp_reg_0_:SI 1.630e-04
+*RC piso_bit/U15:A4 1.531e-04
+*END
+
+*R_NET piso_bit/temp_9_ 2.428e+00
+*DRIVER piso_bit/temp_reg_9_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.214e+00 3.628e-05 1.214e+00 
+*LOADS
+*RC piso_bit/temp_reg_3_:SI 2.758e-05
+*RC piso_bit/U14:A4 1.471e-05
+*END
+
+*R_NET piso_bit/temp_8_ 3.049e+00
+*DRIVER piso_bit/temp_reg_8_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.525e+00 5.405e-05 1.525e+00 
+*LOADS
+*RC piso_bit/temp_reg_9_:SI 7.157e-05
+*RC piso_bit/U13:A4 6.376e-05
+*END
+
+*R_NET piso_bit/temp_7_ 2.632e+00
+*DRIVER piso_bit/temp_reg_7_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.316e+00 4.249e-05 1.316e+00 
+*LOADS
+*RC piso_bit/temp_reg_4_:SI 5.197e-05
+*RC piso_bit/U12:A4 2.660e-05
+*END
+
+*R_NET piso_bit/temp_5_ 1.857e+00
+*DRIVER piso_bit/temp_reg_5_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 9.286e-01 2.087e-05 9.286e-01 
+*LOADS
+*RC piso_bit/temp_reg_6_:SI 1.335e-05
+*RC piso_bit/U10:A4 1.820e-05
+*END
+
+*R_NET piso_bit/temp_4_ 5.162e+00
+*DRIVER piso_bit/temp_reg_4_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.581e+00 1.094e-04 2.581e+00 
+*LOADS
+*RC piso_bit/temp_reg_1_:SI 1.225e-04
+*RC piso_bit/U9:A4 1.051e-04
+*END
+
+*R_NET piso_bit/temp_3_ 3.169e+00
+*DRIVER piso_bit/temp_reg_3_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.585e+00 5.603e-05 1.585e+00 
+*LOADS
+*RC piso_bit/temp_reg_10_:SI 2.671e-05
+*RC piso_bit/U8:A4 6.926e-05
+*END
+
+*R_NET piso_bit/temp_2_ 4.370e+00
+*DRIVER piso_bit/temp_reg_2_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 2.185e+00 8.921e-05 2.185e+00 
+*LOADS
+*RC piso_bit/dout_reg:SI 1.608e-04
+*RC piso_bit/U7:A4 7.313e-05
+*END
+
+*R_NET piso_bit/temp_1_ 3.413e+00
+*DRIVER piso_bit/temp_reg_1_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.706e+00 6.164e-05 1.706e+00 
+*LOADS
+*RC piso_bit/temp_reg_8_:SI 8.593e-05
+*RC piso_bit/U6:A4 3.818e-05
+*END
+
+*R_NET piso_bit/temp_0_ 3.992e+00
+*DRIVER piso_bit/temp_reg_0_:Q
+*CELL RSDFFARX1_RVT
+*C2_R1_C1 1.996e+00 7.865e-05 1.996e+00 
+*LOADS
+*RC piso_bit/temp_reg_11_:SI 1.313e-04
+*RC piso_bit/U5:A4 4.107e-05
+*END
+
+*R_NET piso_bit/N4 2.018e+00
+*DRIVER piso_bit/U3:Y
+*CELL AND2X1_HVT
+*C2_R1_C1 1.009e+00 3.852e-05 1.009e+00 
+*LOADS
+*RC piso_bit/temp_reg_0_:D 4.069e-05
+*END
+
+*R_NET piso_bit/N5 1.026e+00
+*DRIVER piso_bit/U5:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.130e-01 1.176e-05 5.130e-01 
+*LOADS
+*RC piso_bit/temp_reg_1_:D 8.538e-06
+*END
+
+*R_NET piso_bit/N6 1.084e+00
+*DRIVER piso_bit/U6:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.418e-01 1.328e-05 5.418e-01 
+*LOADS
+*RC piso_bit/temp_reg_2_:D 9.894e-06
+*END
+
+*R_NET piso_bit/N7 1.372e+00
+*DRIVER piso_bit/U7:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 6.861e-01 2.131e-05 6.861e-01 
+*LOADS
+*RC piso_bit/temp_reg_3_:D 1.792e-05
+*END
+
+*R_NET piso_bit/N8 8.361e-01
+*DRIVER piso_bit/U8:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.180e-01 6.877e-06 4.180e-01 
+*LOADS
+*RC piso_bit/temp_reg_4_:D 4.556e-06
+*END
+
+*R_NET piso_bit/N9 9.822e-01
+*DRIVER piso_bit/U9:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.911e-01 1.069e-05 4.911e-01 
+*LOADS
+*RC piso_bit/temp_reg_5_:D 7.605e-06
+*END
+
+*R_NET piso_bit/N10 9.217e-01
+*DRIVER piso_bit/U10:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.609e-01 9.453e-06 4.609e-01 
+*LOADS
+*RC piso_bit/temp_reg_6_:D 6.533e-06
+*END
+
+*R_NET piso_bit/N11 9.207e-01
+*DRIVER piso_bit/U11:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.603e-01 9.014e-06 4.603e-01 
+*LOADS
+*RC piso_bit/temp_reg_7_:D 6.226e-06
+*END
+
+*R_NET piso_bit/N12 1.388e+00
+*DRIVER piso_bit/U12:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 6.940e-01 2.187e-05 6.940e-01 
+*LOADS
+*RC piso_bit/temp_reg_8_:D 1.852e-05
+*END
+
+*R_NET piso_bit/N13 8.430e-01
+*DRIVER piso_bit/U13:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.215e-01 6.959e-06 4.215e-01 
+*LOADS
+*RC piso_bit/temp_reg_9_:D 4.627e-06
+*END
+
+*R_NET piso_bit/N14 8.784e-01
+*DRIVER piso_bit/U14:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.392e-01 8.023e-06 4.392e-01 
+*LOADS
+*RC piso_bit/temp_reg_10_:D 5.429e-06
+*END
+
+*R_NET piso_bit/N15 8.485e-01
+*DRIVER piso_bit/U15:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.243e-01 7.492e-06 4.243e-01 
+*LOADS
+*RC piso_bit/temp_reg_11_:D 4.995e-06
+*END
+
+*R_NET piso_bit/N16 1.078e+00
+*DRIVER piso_bit/U16:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.391e-01 1.327e-05 5.391e-01 
+*LOADS
+*RC piso_bit/temp_reg_12_:D 9.863e-06
+*END
+
+*R_NET piso_bit/N17 8.484e-01
+*DRIVER piso_bit/U17:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 4.242e-01 7.573e-06 4.242e-01 
+*LOADS
+*RC piso_bit/temp_reg_13_:D 5.048e-06
+*END
+
+*R_NET piso_bit/N18 1.036e+00
+*DRIVER piso_bit/U18:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 5.179e-01 1.200e-05 5.179e-01 
+*LOADS
+*RC piso_bit/temp_reg_14_:D 8.749e-06
+*END
+
+*R_NET piso_bit/N19 1.465e+00
+*DRIVER piso_bit/U19:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 7.327e-01 2.402e-05 7.327e-01 
+*LOADS
+*RC piso_bit/temp_reg_15_:D 2.095e-05
+*END
+
+*R_NET piso_bit/n5 2.379e+00
+*DRIVER piso_bit/U21:Y
+*CELL AO22X1_HVT
+*C2_R1_C1 1.190e+00 4.862e-05 1.190e+00 
+*LOADS
+*RC piso_bit/dout_reg:D 5.722e-05
+*END
+
+*R_NET piso_bit/n45 1.609e+01
+*DRIVER piso_bit/U24:Y
+*CELL INVX4_HVT
+*C2_R1_C1 8.047e+00 1.101e-04 8.047e+00 
+*LOADS
+*RC piso_bit/U17:A3 3.530e-04
+*RC piso_bit/U11:A3 2.292e-04
+*RC piso_bit/U21:A3 4.459e-04
+*RC piso_bit/U18:A3 3.585e-04
+*RC piso_bit/U10:A3 9.611e-06
+*RC piso_bit/U8:A3 1.314e-04
+*RC piso_bit/U9:A3 7.410e-05
+*RC piso_bit/U16:A3 1.632e-04
+*RC piso_bit/U6:A3 5.154e-04
+*RC piso_bit/U19:A3 4.548e-04
+*RC piso_bit/U13:A3 1.970e-04
+*RC piso_bit/U5:A3 5.182e-04
+*RC piso_bit/U15:A3 2.844e-04
+*RC piso_bit/U7:A3 4.468e-04
+*RC piso_bit/U12:A3 1.840e-04
+*RC piso_bit/U14:A3 3.232e-04
+*END
+
+*R_NET piso_bit/n3 2.468e+01
+*DRIVER piso_bit/scan_enable_UPF_LS:Y
+*CELL LSDNSSX4_HVT
+*C2_R1_C1 1.234e+01 1.277e-04 1.234e+01 
+*LOADS
+*RC piso_bit/temp_reg_7_:SE 1.006e-03
+*RC piso_bit/temp_reg_4_:SE 7.530e-04
+*RC piso_bit/temp_reg_1_:SE 4.735e-04
+*RC piso_bit/temp_reg_8_:SE 9.429e-04
+*RC piso_bit/temp_reg_9_:SE 6.006e-04
+*RC piso_bit/temp_reg_3_:SE 5.121e-04
+*RC piso_bit/temp_reg_10_:SE 8.036e-04
+*RC piso_bit/temp_reg_0_:SE 2.813e-04
+*RC piso_bit/temp_reg_11_:SE 3.297e-04
+*RC piso_bit/temp_reg_15_:SE 2.720e-04
+*RC piso_bit/temp_reg_12_:SE 4.562e-04
+*RC piso_bit/temp_reg_2_:SE 7.067e-04
+*RC piso_bit/dout_reg:SE 7.760e-05
+*RC piso_bit/temp_reg_14_:SE 1.158e-04
+*RC piso_bit/temp_reg_13_:SE 2.541e-04
+*RC piso_bit/temp_reg_5_:SE 5.558e-04
+*RC piso_bit/temp_reg_6_:SE 8.011e-04
+*END
+
+*R_NET piso_bit/n2 1.063e+00
+*DRIVER piso_bit/scan_in_UPF_LS:Y
+*CELL LSDNSSX1_HVT
+*C2_R1_C1 5.314e-01 1.449e-05 5.314e-01 
+*LOADS
+*RC piso_bit/temp_reg_7_:SI 1.013e-05
+*END
+
+*R_NET piso_bit/n4 2.820e+01
+*DRIVER piso_bit/U4:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.410e+01 9.554e-05 1.410e+01 
+*LOADS
+*RC piso_bit/temp_reg_14_:RETN 6.369e-04
+*RC piso_bit/temp_reg_13_:RETN 6.881e-04
+*RC piso_bit/temp_reg_11_:RETN 8.870e-04
+*RC piso_bit/temp_reg_15_:RETN 3.739e-04
+*RC piso_bit/dout_reg:RETN 4.169e-04
+*RC piso_bit/temp_reg_0_:RETN 1.604e-04
+*RC piso_bit/temp_reg_1_:RETN 1.382e-04
+*RC piso_bit/temp_reg_10_:RETN 5.608e-04
+*END
+
+*R_NET piso_bit/n6 3.160e+01
+*DRIVER piso_bit/U20:Y
+*CELL AOBUFX4_HVT
+*C2_R1_C1 1.580e+01 1.024e-04 1.580e+01 
+*LOADS
+*RC piso_bit/temp_reg_5_:RETN 1.021e-03
+*RC piso_bit/temp_reg_12_:RETN 8.846e-04
+*RC piso_bit/temp_reg_6_:RETN 1.018e-03
+*RC piso_bit/temp_reg_2_:RETN 1.846e-04
+*RC piso_bit/temp_reg_9_:RETN 5.719e-04
+*RC piso_bit/temp_reg_7_:RETN 6.469e-04
+*RC piso_bit/temp_reg_3_:RETN 3.766e-04
+*RC piso_bit/temp_reg_4_:RETN 7.111e-04
+*RC piso_bit/temp_reg_8_:RETN 5.172e-04
+*END
+
+*R_NET sync_add2mem/dut_sync/t_sync_out\[3\] 7.388e-01
+*DRIVER sync_add2mem/dut_sync/t_sync_out_reg_3_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.694e-01 5.254e-06 3.694e-01 
+*LOADS
+*RC sync_add2mem/dut_sync/sync_out_reg_3_:D 3.220e-06
+*END
+
+*R_NET sync_add2mem/dut_sync/t_sync_out\[2\] 1.093e+00
+*DRIVER sync_add2mem/dut_sync/t_sync_out_reg_2_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 5.465e-01 1.418e-05 5.465e-01 
+*LOADS
+*RC sync_add2mem/dut_sync/sync_out_reg_2_:D 1.037e-05
+*END
+
+*R_NET sync_add2mem/dut_sync/t_sync_out\[1\] 7.099e-01
+*DRIVER sync_add2mem/dut_sync/t_sync_out_reg_1_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.550e-01 4.469e-06 3.550e-01 
+*LOADS
+*RC sync_add2mem/dut_sync/sync_out_reg_1_:D 2.696e-06
+*END
+
+*R_NET sync_add2mem/dut_sync/t_sync_out\[0\] 7.351e-01
+*DRIVER sync_add2mem/dut_sync/t_sync_out_reg_0_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.676e-01 5.160e-06 3.676e-01 
+*LOADS
+*RC sync_add2mem/dut_sync/sync_out_reg_0_:D 3.156e-06
+*END
+
+*R_NET sync_add2mem/dut_sync/n1 1.309e+01
+*DRIVER sync_add2mem/dut_sync/U3:Y
+*CELL NBUFFX2_HVT
+*C2_R1_C1 6.543e+00 8.534e-05 6.543e+00 
+*LOADS
+*RC sync_add2mem/dut_sync/sync_out_reg_3_:RSTB 1.038e-04
+*RC sync_add2mem/dut_sync/sync_out_reg_0_:RSTB 2.332e-04
+*RC sync_add2mem/dut_sync/sync_out_reg_1_:RSTB 1.602e-04
+*RC sync_add2mem/dut_sync/sync_out_reg_2_:RSTB 4.424e-05
+*RC sync_add2mem/dut_sync/t_sync_out_reg_0_:RSTB 1.721e-04
+*RC sync_add2mem/dut_sync/t_sync_out_reg_1_:RSTB 2.162e-04
+*RC sync_add2mem/dut_sync/t_sync_out_reg_2_:RSTB 6.263e-05
+*RC sync_add2mem/dut_sync/t_sync_out_reg_3_:RSTB 9.205e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[15\] 1.782e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_15_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 8.912e-01 3.436e-05 8.912e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_15_:D 3.300e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[14\] 1.308e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_14_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.539e-01 2.032e-05 6.539e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_14_:D 1.631e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[13\] 1.431e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_13_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 7.157e-01 2.423e-05 7.157e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_13_:D 2.044e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[12\] 7.210e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_12_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.605e-01 4.745e-06 3.605e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_12_:D 2.879e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[11\] 4.292e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_11_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 2.146e+00 1.002e-04 2.146e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_11_:D 1.801e-04
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[10\] 7.661e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_10_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.831e-01 6.001e-06 3.831e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_10_:D 3.732e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[9\] 1.703e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_9_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 8.517e-01 3.219e-05 8.517e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_9_:D 3.008e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[8\] 1.301e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_8_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.505e-01 2.097e-05 6.505e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_8_:D 1.678e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[7\] 7.894e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_7_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.947e-01 6.473e-06 3.947e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_7_:D 4.076e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[6\] 1.315e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_6_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.576e-01 2.054e-05 6.576e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_6_:D 1.653e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[5\] 6.341e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_5_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.171e-01 2.332e-06 3.171e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_5_:D 1.348e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[4\] 1.283e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_4_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.416e-01 1.971e-05 6.416e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_4_:D 1.565e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[3\] 2.012e+00
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_3_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 1.006e+00 4.006e-05 1.006e+00 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_3_:D 4.154e-05
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[2\] 6.902e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_2_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.451e-01 3.867e-06 3.451e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_2_:D 2.307e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[1\] 7.806e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_1_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.903e-01 6.380e-06 3.903e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_1_:D 3.999e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/t_sync_out\[0\] 7.496e-01
+*DRIVER sync_data2mem/dut_sync/t_sync_out_reg_0_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.748e-01 5.447e-06 3.748e-01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_0_:D 3.358e-06
+*END
+
+*R_NET sync_data2mem/dut_sync/n4 4.706e+01
+*DRIVER sync_data2mem/dut_sync/U3:Y
+*CELL NBUFFX8_HVT
+*C2_R1_C1 2.353e+01 2.356e-04 2.353e+01 
+*LOADS
+*RC sync_data2mem/dut_sync/sync_out_reg_3_:RSTB 1.710e-03
+*RC sync_data2mem/dut_sync/sync_out_reg_4_:RSTB 1.156e-03
+*RC sync_data2mem/dut_sync/sync_out_reg_7_:RSTB 4.532e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_4_:RSTB 1.282e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_3_:RSTB 2.473e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_5_:RSTB 6.880e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_1_:RSTB 5.090e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_14_:RSTB 1.120e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_7_:RSTB 6.657e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_12_:RSTB 3.457e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_10_:RSTB 9.786e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_15_:RSTB 3.358e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_1_:RSTB 2.977e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_2_:RSTB 3.079e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_12_:RSTB 5.343e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_14_:RSTB 1.268e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_10_:RSTB 1.170e-03
+*RC sync_data2mem/dut_sync/sync_out_reg_8_:RSTB 1.860e-03
+*RC sync_data2mem/dut_sync/sync_out_reg_13_:RSTB 3.235e-03
+*RC sync_data2mem/dut_sync/sync_out_reg_11_:RSTB 9.345e-04
+*RC sync_data2mem/dut_sync/sync_out_reg_9_:RSTB 7.727e-04
+*RC sync_data2mem/dut_sync/t_sync_out_reg_15_:RSTB 2.900e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_13_:RSTB 3.114e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_9_:RSTB 1.399e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_11_:RSTB 2.685e-03
+*RC sync_data2mem/dut_sync/t_sync_out_reg_8_:RSTB 1.626e-03
+*END
+
+*R_NET sync_datafrommem/n1 5.236e+01
+*DRIVER sync_datafrommem/U1:Y
+*CELL NBUFFX8_HVT
+*C2_R1_C1 2.618e+01 4.689e-04 2.618e+01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_8_:RSTB 2.112e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_9_:RSTB 2.092e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_10_:RSTB 3.905e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_8_:RSTB 3.089e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_11_:RSTB 2.562e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_13_:RSTB 2.824e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_10_:RSTB 2.068e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_9_:RSTB 1.845e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_12_:RSTB 7.585e-04
+*RC sync_datafrommem/dut_sync/sync_out_reg_13_:RSTB 1.424e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_15_:RSTB 1.809e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_5_:RSTB 3.899e-04
+*RC sync_datafrommem/dut_sync/sync_out_reg_11_:RSTB 2.263e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_15_:RSTB 9.238e-04
+*RC sync_datafrommem/dut_sync/sync_out_reg_14_:RSTB 5.418e-04
+*RC sync_datafrommem/dut_sync/sync_out_reg_12_:RSTB 9.741e-04
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_14_:RSTB 3.343e-04
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_4_:RSTB 1.189e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_3_:RSTB 4.503e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_5_:RSTB 3.600e-04
+*RC sync_datafrommem/dut_sync/sync_out_reg_6_:RSTB 2.638e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_0_:RSTB 4.794e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_6_:RSTB 6.385e-04
+*RC sync_datafrommem/dut_sync/sync_out_reg_4_:RSTB 2.884e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_1_:RSTB 2.812e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_7_:RSTB 1.186e-03
+*RC sync_datafrommem/dut_sync/t_sync_out_reg_2_:RSTB 1.598e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_1_:RSTB 3.378e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_2_:RSTB 3.132e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_0_:RSTB 3.919e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_3_:RSTB 4.216e-03
+*RC sync_datafrommem/dut_sync/sync_out_reg_7_:RSTB 1.609e-03
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[15\] 1.296e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_15_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.478e-01 2.078e-05 6.478e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_15_:D 1.659e-05
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[14\] 8.913e-01
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_14_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 4.457e-01 9.019e-06 4.457e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_14_:D 5.985e-06
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[13\] 2.958e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_13_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 1.479e+00 6.378e-05 1.479e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_13_:D 8.626e-05
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[12\] 9.081e-01
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_12_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 4.541e-01 9.456e-06 4.541e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_12_:D 6.329e-06
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[11\] 9.420e-01
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_11_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 4.710e-01 1.021e-05 4.710e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_11_:D 6.950e-06
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[10\] 4.144e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_10_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 2.072e+00 9.882e-05 2.072e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_10_:D 1.727e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[9\] 5.745e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_9_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 2.872e+00 1.403e-04 2.872e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_9_:D 3.200e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[8\] 8.300e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_8_:Q
+*CELL SDFFARX2_RVT
+*C2_R1_C1 4.150e+00 2.093e-04 4.150e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_8_:D 6.557e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[7\] 1.151e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_7_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 5.757e-01 1.678e-05 5.757e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_7_:D 1.259e-05
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[6\] 3.572e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_6_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 1.786e+00 8.207e-05 1.786e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_6_:D 1.278e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[5\] 1.778e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_5_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 8.891e-01 3.368e-05 8.891e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_5_:D 3.231e-05
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[4\] 6.244e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_4_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.122e+00 1.536e-04 3.122e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_4_:D 3.759e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[3\] 8.880e-01
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_3_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 4.440e-01 9.394e-06 4.440e-01 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_3_:D 6.224e-06
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[2\] 6.632e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_2_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 3.316e+00 1.637e-04 3.316e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_2_:D 4.218e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[1\] 4.237e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_1_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 2.119e+00 1.009e-04 2.119e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_1_:D 1.795e-04
+*END
+
+*R_NET sync_datafrommem/dut_sync/t_sync_out\[0\] 2.003e+00
+*DRIVER sync_datafrommem/dut_sync/t_sync_out_reg_0_:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 1.002e+00 4.058e-05 1.002e+00 
+*LOADS
+*RC sync_datafrommem/dut_sync/sync_out_reg_0_:D 4.197e-05
+*END
+
+*R_NET hreset_sync/t_reset_sync 1.295e+00
+*DRIVER hreset_sync/t_reset_sync_reg:Q
+*CELL SDFFARX1_RVT
+*C2_R1_C1 6.475e-01 7.632e-06 6.475e-01 
+*LOADS
+*RC hreset_sync/reset_sync_reg:SI 5.862e-06
+*RC hreset_sync/reset_sync_reg:D 4.650e-06
+*END

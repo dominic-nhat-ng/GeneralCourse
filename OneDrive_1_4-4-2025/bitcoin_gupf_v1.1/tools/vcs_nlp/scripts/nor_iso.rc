@@ -1,0 +1,200 @@
+Magic 271485
+Revision Verdi3_L-2016.06-SP1-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 117 261 1480 608 224 139
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/global/gts_corpac2/bitcoin/users/karan/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_btcoin_lp_test_1.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 174225.000000
+cursor 88501.000000
+marker 128501.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 4
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_btcoin_lp_test_1.fsdb"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/\$PD_PISO_SECURE "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/\$SW_PISO_SECURE/out(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$piso_sw_out(power_net) "
+
+; power supply port signal
+; addPowerSupplyPortSig supplyPortSig_full_name
+addPowerSupplyPortSig "/bitcoin_top/dut/\$VSS(power_port) "
+
+; power supply net signal
+; addPowerSupplyNetSig supplyNetSig_full_name
+addPowerSupplyNetSig "/bitcoin_top/dut/\$VSS(power_net) "
+
+; power supply set signal
+; addPowerSupplySetSig supplySetSig_full_name
+addPowerSupplySetSig "/bitcoin_top/dut/\$ISO_PISO_SECURE.isolation_supply_set(power_supplyset) "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_11/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_10/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_9/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_8/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_7/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_6/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_5/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_4/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_3/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_2/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_1/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_0/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_15/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_14/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_13/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/bit_secure_12/\$TOP "
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_btcoin_lp_test_1.fsdb"
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 /bitcoin_top/dut/hclk
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -holdScope lclk
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_in[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_out[31:0]
+addSignal -h 15 -holdScope reset
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -holdScope data_valid
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope sleep_signals[17:0]
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope retention_signals[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope isolation_signals[1:0]
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope power_ack_signals[20:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_in[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_out[31:0]
+addGroup "G2"
+addSignal -c ID_YELLOW2 -ls solid -lw 1 -h 15 /bitcoin_top/dut/piso_secure_0/dout
+addSignal -h 15 -holdScope dout_UPF_ISO_PRE
+addSignal -h 15 -holdScope save____dout
+addSignal -h 15 /bitcoin_top/dut/isolation_signals[1]
+addSignal -h 15 -holdScope \$ISO_PISO_SECURE.isolation_supply_set(power_supplyset) 
+addSignal -h 15 -UNSIGNED -HEX /bitcoin_top/dut/piso_secure_1/din[15:0]
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -holdScope load
+addSignal -h 15 -holdScope shut_down_signals
+addSignal -h 15 -holdScope isolation_signals
+addSignal -h 15 -holdScope retention_signals
+addSignal -c ID_YELLOW2 -ls solid -lw 1 -h 15 -holdScope dout
+addSignal -h 15 -UNSIGNED -HEX /bitcoin_top/dut/piso_secure_0/din[15:0]
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -holdScope load
+addSignal -h 15 -holdScope shut_down_signals
+addSignal -h 15 -holdScope isolation_signals
+addSignal -h 15 -holdScope retention_signals
+addSignal -c ID_YELLOW2 -ls solid -lw 1 -h 15 -holdScope dout
+addSignal -c ID_YELLOW2 -ls solid -lw 1 -h 15 -holdScope dout
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_btcoin_lp_test_1.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/_vcs_msglog"
+"/bitcoin_top"
+"/bitcoin_top/dut"
+"/bitcoin_top/dut/piso_secure_0"
+
+SCOPE_LIST_BEGIN
+"/_vcs_msglog"
+"/bitcoin_top/dut"
+"/bitcoin_top/dut/piso_secure_0"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

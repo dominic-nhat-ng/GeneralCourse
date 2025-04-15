@@ -1,0 +1,100 @@
+################################################################
+# SpyGlass Design Constraint
+# This file was created using PowerKit_L2016.06_v1 templates
+################################################################
+# Define the top level design name
+# e.g: current_design "med_top"
+
+current_design "bit_slice"
+################################################################
+# constraint: sdc_data (Optional)
+################################################################
+
+#reset -name "bit_slice.reset" -value 0
+
+## Added to tell spyglass to treat data_valid as qualifier, externally synchronized 
+#abstract_port -ports data_valid -clock lclk -from hclk -to lclk -sync active
+
+## Added to fully constrain asynchronous reset, this is synchronized internally
+#abstract_port -ports reset -clock vclk 
+
+# How to read a SDC file
+# Example : sdc_data -file /home/usr/test_work/sdc/constraint.sdc
+# Reading multiple SDC file representing different modes of the design
+# Example : sdc_data -file <Name/Path of a SDC file> -mode <mod_name>
+sdc_data -file ../../sdc/bit_slice.sdc 
+
+#---------------------------------------------------------------
+# PE/PR Related commands
+#---------------------------------------------------------------
+
+#------------ Specify design activity --------------------------
+
+################################################################
+# constraint: activity_data (Mandatory)
+################################################################
+# Purpose: To specify simulation files for vector-based Power Estimation.
+# Syntax : activity_data -format <vcd/fsdb/saif> -file <simulation-file-name>
+# [-sim_topname <simulation-top-name>] [-starttime <start-time>]
+# [-endtime <endtime>] [-instname <instance-name>] [-sim_rtl_design_nl]
+# To specify a RTL simulation file for RTL Power Estimation
+
+#VCD timescale is in ps
+# activity_data -format fsdb -sim_topname bitslice_top.dut -file ../vcs_nlp/outputsfromvcs/bit_slice_RTL_0.fsdb -starttime 25500  
+activity_data -format fsdb -sim_topname bitslice_top.dut -file ../vcs_nlp/outputsfromvcs/bit_slice_RTL_NOUPF.fsdb -starttime 25500  
+
+
+# constraint: memory_port (Recommended if design has memories)
+################################################################
+# To define the memory behavior for register and memory power reduction
+# Sample command for single port SRAM with read and write
+# This information needs to be derived from memory data sheets
+# Please refer SpyGlass PE/PR reference manual memory_port command details
+
+# Read1 operation
+memory_port -name "SRAM2RW16x4" \
+ -operation read \
+ -label syncread \
+ -posedge "CE1" \
+ -when "WEB1 & !CSB1" \
+ -address "A1" \
+ -data "O1" \
+# -retain_output yes \
+# -cycle_count 0
+
+# Read2 operation
+memory_port -name "SRAM2RW16x4" \
+ -operation read \
+ -label syncread \
+ -posedge "CE2" \
+ -when "WEB2 & !CSB2" \
+ -address "A2" \
+ -data "O2" \
+# -retain_output yes \
+# -cycle_count 0
+
+
+
+# Write operation
+memory_port -name "SRAM2RW16x4" \
+ -operation write \
+ -label syncwrite \
+ -posedge "CE1" \
+ -when "!WEB1 & !CSB1" \
+ -address "A1" \
+ -data "I1" \
+# -write_mask "BW*" \
+# -write_mask_value 0
+# Write operation
+
+memory_port -name "SRAM2RW16x4" \
+ -operation write \
+ -label syncwrite \
+ -posedge "CE2" \
+ -when "!WEB2 & !CSB2" \
+ -address "A2" \
+ -data "I2" \
+# -write_mask "BW*" \
+# -write_mask_value 0
+
+#--------------------------- End of file -----------------------

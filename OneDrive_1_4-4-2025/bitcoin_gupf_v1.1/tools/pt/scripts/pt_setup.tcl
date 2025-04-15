@@ -1,0 +1,14 @@
+#set link_library "* saed32hvt_tt0p78v125c.db saed32hvt_tt0p85v125c.db saed32hvt_tt1p05v125c.db saed32hvt_ulvl_tt0p78v125c_i0p78v.db saed32hvt_ulvl_tt0p85v125c_i0p85v.db saed32hvt_ulvl_tt1p05v125c_i0p78v.db saed32hvt_dlvl_tt0p78v125c_i0p78v.db saed32hvt_dlvl_tt0p85v125c_i0p85v.db saed32hvt_pg_tt0p78v125c.db saed32hvt_pg_tt0p85v125c.db saed32hvt_pg_tt1p05v125c.db   saed32rvt_tt0p78v125c.db saed32rvt_tt0p85v125c.db saed32rvt_tt1p05v125c.db saed32rvt_ulvl_tt0p78v125c_i0p78v.db saed32rvt_ulvl_tt0p85v125c_i0p85v.db saed32rvt_ulvl_tt1p05v125c_i0p78v.db saed32rvt_dlvl_tt0p78v125c_i0p78v.db saed32rvt_dlvl_tt0p85v125c_i0p85v.db saed32rvt_pg_tt0p78v125c.db saed32rvt_pg_tt0p85v125c.db saed32rvt_pg_tt1p05v125c.db saed32lvt_tt0p78v125c.db saed32lvt_tt0p85v125c.db saed32lvt_tt1p05v125c.db saed32lvt_ulvl_tt0p78v125c_i0p78v.db saed32lvt_ulvl_tt0p85v125c_i0p85v.db saed32lvt_ulvl_tt1p05v125c_i0p78v.db saed32lvt_dlvl_tt0p78v125c_i0p78v.db saed32lvt_dlvl_tt0p85v125c_i0p85v.db saed32lvt_pg_tt0p78v125c.db saed32lvt_pg_tt0p85v125c.db saed32lvt_pg_tt1p05v125c.db  sram2rw16x4_tt1p78v125c.db  sram2rw16x4_tt1p85v125c.db"
+set link_library "* saed32hvt_tt0p78v125c.db \
+ saed32hvt_ulvl_tt0p78v125c_i0p78v.db \
+ saed32hvt_dlvl_tt0p78v125c_i0p78v.db \
+ saed32hvt_pg_tt0p78v125c.db \
+ saed32rvt_tt0p78v125c.db \
+ saed32rvt_ulvl_tt0p78v125c_i0p78v.db \
+ saed32rvt_dlvl_tt0p78v125c_i0p78v.db \
+ saed32rvt_pg_tt0p78v125c.db \
+ saed32lvt_tt0p78v125c.db \
+ saed32lvt_ulvl_tt0p78v125c_i0p78v.db \
+ saed32lvt_dlvl_tt0p78v125c_i0p78v.db \
+ saed32lvt_pg_tt0p78v125c.db \
+ sram2rw16x4_tt1p78v125c.db"

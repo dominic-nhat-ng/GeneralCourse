@@ -1,0 +1,14 @@
+#!/bin/csh -f
+
+################################################################################
+# Run CDC with SpyGlass 
+################################################################################
+
+# RTL project file name
+set RTL_PRJ_FILE = ./bit_slice/rtl_sg_setup/bit_slice.prj
+
+########################################
+
+spyglass -project ${RTL_PRJ_FILE} -goals "cdc/cdc_verify_struct" $*
+
+########################################

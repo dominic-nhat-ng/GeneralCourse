@@ -1,0 +1,51 @@
+##In-Design Rail Analysis RM Makefile
+##See README.* file for RM details
+
+
+ICC_EXEC = icc_shell -64bit
+LOGS_DIR     = logs
+REPORTS_DIR = reports
+RESULTS_DIR = results
+PNA_OUTPUT_DIR = pna_output
+
+####Source Options
+OPTIONS = 
+
+##Optional: Specify design library if you want backup step and clean step to use it
+##CAUTION: if added, the clean step will delete it
+DESIGN_LIB = 
+
+
+################################################################################################################
+# ICC RM : In-Design Rail Analysis 
+################################################################################################################
+in-design_rail_analysis: 
+	mkdir -p $(REPORTS_DIR) $(RESULTS_DIR) $(LOGS_DIR)
+	$(ICC_EXEC) $(OPTIONS) -f rm_icc_scripts/in-design_rail_analysis.tcl |tee -i $(LOGS_DIR)/in-design_rail_analysis.log
+	date > in-design_rail_analysis 
+
+reliability: in-design_rail_analysis
+
+#############################################################################################################################
+# Utilities Section
+#
+#############################################################################################################################
+
+
+##Backup
+BACKUP  = BACKUP.`date "+%m_%d_%H_%M"`
+backup:
+	rm -rf $(BACKUP)
+	mkdir -p $(BACKUP)
+	cp -rf rm_icc_scripts rm_icc_scripts rm_icc_dp_scripts rm_setup $(DESIGN_LIB) $(REPORTS_DIR) $(RESULTS_DIR) $(LOGS_DIR) $(PNA_OUTPUT_DIR) $(BACKUP)
+
+
+##Clean
+
+clean_all:
+	rm  -f PrimeRail* primerail* in-design_rail_analysis reliability
+	rm -rf $(DESIGN_LIB) $(LOGS_DIR) $(RESULTS_DIR)/*sbpf* $(RESULTS_DIR)/*.def $(RESULTS_DIR)/*pg*  $(REPORTS_DIR)/place* $(REPORTS_DIR)/clock* $(REPORTS_DIR)/route* $(REPORTS_DIR)/sign* $(REPORTS_DIR)/chip*  *_map\.* \
+               net.acts *.attr .zr* Milkyway.cmd.*_*_*_* Milkyway.log.*_*_*_* \.vers* port_mapping.* pna_output
+	##ICC_RM-Info: "make clean" does not remove the design library unless you have specified it with the DESIGN_LIB variable in Makefile"
+
+clean: clean_all

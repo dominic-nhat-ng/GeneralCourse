@@ -1,0 +1,10 @@
+set_attribute [get_layers M1] routing_direction horizontal
+set_attribute [get_layers M2] routing_direction vertical
+set_attribute [get_layers M3] routing_direction horizontal
+set_attribute [get_layers M4] routing_direction vertical
+set_attribute [get_layers M5] routing_direction horizontal
+set_attribute [get_layers M6] routing_direction vertical
+set_attribute [get_layers M7] routing_direction horizontal
+set_attribute [get_layers M8] routing_direction vertical
+set_attribute [get_layers M9] routing_direction horizontal
+set_attribute [get_layers MRDL] routing_direction vertical

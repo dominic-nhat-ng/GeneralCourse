@@ -1,0 +1,93 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN bit_coin ;
+
+SCANCHAINS 4 ;
+
+- 1_SG10
++ START sync_hash_data/dut_sync/U28 Y
++ FLOATING lreset_sync/reset_sync_reg ( IN SI ) ( OUT Q )
+           lreset_sync/t_reset_sync_reg ( IN SI ) ( OUT Q )
++ PARTITION lclk_45_45_0.850000_TOP
++ STOP sync_hash_data/dut_sync/t_sync_out_reg_15_ SI ;
+
+- 1_SG15
++ START sync_hash_data/dut_sync/U30 Y
++ ORDERED sync_hash_data/dut_sync/t_sync_out_reg_12_ ( IN SI ) ( OUT Q )
+          sync_hash_data/dut_sync/sync_out_reg_12_ ( IN D ) ( OUT Q )
++ ORDERED sync_hash_data/dut_sync/t_sync_out_reg_5_ ( IN SI ) ( OUT Q )
+          sync_hash_data/dut_sync/sync_out_reg_5_ ( IN D ) ( OUT QN )
++ ORDERED sync_hash_data/dut_sync/t_sync_out_reg_3_ ( IN SI ) ( OUT Q )
+          sync_hash_data/dut_sync/sync_out_reg_3_ ( IN D ) ( OUT Q )
++ ORDERED sync_hash_data/dut_sync/t_sync_out_reg_10_ ( IN SI ) ( OUT Q )
+          sync_hash_data/dut_sync/sync_out_reg_10_ ( IN D ) ( OUT QN )
++ PARTITION lclk_45_45_0.850000_TOP
++ STOP sync_hash_data/dut_sync/t_sync_out_reg_1_ SI ;
+
+- 3_SG2
++ START hash_it/U164 Y
++ FLOATING hreset_sync/t_reset_sync_reg ( IN SI ) ( OUT Q )
+           hreset_sync/reset_sync_reg ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_8_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_12_ ( IN SI ) ( OUT QN )
+           hash_it/secure_data_out_reg_10_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_4_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_7_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_6_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_0_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_3_ ( IN SI ) ( OUT QN )
+           hash_it/secure_data_out_reg_2_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_1_ ( IN SI ) ( OUT QN )
+           hash_it/secure_data_out_reg_14_ ( IN SI ) ( OUT Q )
+           hash_it/secure_data_out_reg_11_ ( IN SI ) ( OUT QN )
+           hash_it/secure_data_out_reg_5_ ( IN SI ) ( OUT Q )
++ ORDERED sync_sout_0/dut_sync/t_sync_out_reg_1_ ( IN SI ) ( OUT Q )
+          sync_sout_0/dut_sync/sync_out_reg_1_ ( IN D ) ( OUT Q )
++ ORDERED sync_sout_0/dut_sync/t_sync_out_reg_0_ ( IN SI ) ( OUT Q )
+          sync_sout_0/dut_sync/sync_out_reg_0_ ( IN D ) ( OUT Q )
++ PARTITION hclk_45_45_0.850000_TOP
++ STOP hash_it/secure_data_out_reg_15_ SI ;
+
+- 4
++ START piso_secure_0/U60 Y
++ FLOATING piso_secure_0/temp_reg_4_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_0_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_3_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_1_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_2_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_6_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_5_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_12_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_7_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_11_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_10_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_13_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_9_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_12_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_11_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_14_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_8_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_2_ ( IN SI ) ( OUT QN )
+           piso_secure_0/temp_reg_13_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_1_ ( IN SI ) ( OUT QN )
+           piso_secure_1/temp_reg_0_ ( IN SI ) ( OUT QN )
+           piso_secure_0/temp_reg_10_ ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_9_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_3_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_4_ ( IN SI ) ( OUT QN )
+           piso_secure_0/temp_reg_14_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_15_ ( IN SI ) ( OUT Q )
+           piso_secure_1/dout_reg ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_8_ ( IN SI ) ( OUT QN )
+           piso_secure_0/dout_reg ( IN SI ) ( OUT Q )
+           piso_secure_0/temp_reg_15_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_5_ ( IN SI ) ( OUT Q )
+           piso_secure_1/temp_reg_6_ ( IN SI ) ( OUT Q )
++ PARTITION lclk_45_45_0.780000_PD_PISO_SECURE
++ STOP piso_secure_1/temp_reg_7_ SI ;
+
+END SCANCHAINS
+
+END DESIGN

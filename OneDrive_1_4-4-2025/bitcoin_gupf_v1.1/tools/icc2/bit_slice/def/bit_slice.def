@@ -1,0 +1,16 @@
+# 
+# IC Compiler II write_def
+# Release      : L-2016.03-SP5-PRE
+# User Name    : gmaben
+# Date         : Wed Oct  5 14:47:32 2016
+# 
+VERSION 5.7 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN bit_slice ;
+UNITS DISTANCE MICRONS 1000 ;
+COMPONENTS 2 ;
+ - nibble_0 SRAM2RW16x4 + FIXED ( 86238 3489 ) E ;
+ - nibble_1 SRAM2RW16x4 + FIXED ( 32934 3704 ) FE ;
+END COMPONENTS
+END DESIGN

@@ -1,0 +1,36 @@
+--------------------------------------------------
+To run VCLP for bitcoin:
+--------------------------------------------------
+First, source the main setup file to load tool, license, etc.
+
+source ../setup.csh
+
+RTL+UPF
+-------
+make bit_slice
+make bit_top
+make bit_coin
+
+OR
+
+make all_rtl
+
+NETLIST+UPF'
+------------
+make bit_slice_gate
+make bit_top_gate
+make bit_coin_gate
+
+OR
+
+make all_gate
+
+PG NETLIST+UPF"
+---------------
+make bit_slice_pg
+make bit_top_pg
+make bit_coin_pg
+
+OR
+
+make all_pg

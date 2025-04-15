@@ -1,0 +1,1608 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Ultra(TM) in topographical mode
+// Version   : M-2016.12-SP2
+// Date      : Mon Aug 21 17:22:14 2017
+/////////////////////////////////////////////////////////////
+
+
+module reset_sync ( reset, clk, reset_sync, bit_top_scan_enable_in, scan_in2, 
+        scan_in1, scan_out2, scan_out1 );
+  input reset, clk, bit_top_scan_enable_in, scan_in2, scan_in1;
+  output reset_sync, scan_out2, scan_out1;
+  wire   n6, t_reset_sync, n1, n15, n9, n10, n11, n12, n13, n14;
+
+  LSUPX8_HVT CLK_UPF_LS ( .A(clk), .Y(n1) );
+  NBUFFX32_HVT U6 ( .A(n6), .Y(reset_sync) );
+  NBUFFX2_HVT U9 ( .A(n15), .Y(scan_out1) );
+  NBUFFX2_HVT U10 ( .A(n13), .Y(scan_out2) );
+  OR2X1_HVT U3 ( .A1(n9), .A2(n15), .Y(n6) );
+  NBUFFX32_HVT U5 ( .A(bit_top_scan_enable_in), .Y(n9) );
+  SDFFARX1_RVT t_reset_sync_reg ( .D(1'b1), .SI(scan_in2), .SE(
+        bit_top_scan_enable_in), .CLK(n1), .RSTB(reset), .Q(t_reset_sync) );
+  SDFFARX1_RVT reset_sync_reg ( .D(n14), .SI(scan_in1), .SE(
+        bit_top_scan_enable_in), .CLK(n1), .RSTB(reset), .Q(n10) );
+  NBUFFX32_HVT U7 ( .A(t_reset_sync), .Y(n12) );
+  INVX1_HVT U8 ( .A(n10), .Y(n11) );
+  IBUFFX32_HVT U11 ( .A(n11), .Y(n15) );
+  NBUFFX2_HVT U12 ( .A(n12), .Y(n13) );
+  NBUFFX2_HVT U13 ( .A(t_reset_sync), .Y(n14) );
+endmodule
+
+
+module sipo_1 ( clk, reset, data_valid, sin, shut_down_signals, 
+        isolation_signals, retention_signals, pout, addr, wr, scan_in16, 
+        scan_in15, scan_in14, scan_in13, scan_in12, scan_in11, scan_in10, 
+        scan_in9, scan_in8, scan_in7, scan_in6, scan_in5, scan_in4, scan_in3, 
+        scan_in2, scan_in1, scan_out16, scan_out15, scan_out14, scan_out13, 
+        scan_out12, scan_out11, scan_out10, scan_out9, scan_out8, scan_out7, 
+        scan_out6, scan_out5, scan_out4, scan_out3, scan_out2, scan_out1, 
+        scan_enable );
+  output [15:0] pout;
+  output [3:0] addr;
+  input clk, reset, data_valid, sin, shut_down_signals, isolation_signals,
+         retention_signals, scan_in16, scan_in15, scan_in14, scan_in13,
+         scan_in12, scan_in11, scan_in10, scan_in9, scan_in8, scan_in7,
+         scan_in6, scan_in5, scan_in4, scan_in3, scan_in2, scan_in1,
+         scan_enable;
+  output wr, scan_out16, scan_out15, scan_out14, scan_out13, scan_out12,
+         scan_out11, scan_out10, scan_out9, scan_out8, scan_out7, scan_out6,
+         scan_out5, scan_out4, scan_out3, scan_out2, scan_out1;
+  wire   n58, n59, n122, n123, n125, scan_out16, wr0, tpout_14_, tpout_12_,
+         tpout_11_, tpout_10_, tpout_9_, tpout_8_, tpout_7_, tpout_6_,
+         tpout_5_, tpout_4_, tpout_3_, tpout_2_, tpout_1_, tpout_0_, count_2_,
+         count_1_, count_0_, twr_tmp, trd, rd, taddr_3_, wr_addr_3_,
+         wr_addr_2_, wr_addr_0_, wr_0, wr_1, N10, N11, N12, N14, N18, N19,
+         wr_tmp, n12, n16, n20, n23, n24, n27, n30, n33, n36, n39, n42, n45,
+         n48, n85, n88, n91, n94, n97, n100, n103, n106, n109, n112, n115,
+         n118, n121, n124, n127, n130, n133, n136, n139, n142, n1, n2, n5, n7,
+         n8, n10, n11, n13, n14, n15, n22, n25, n26, n28, n31, n32, n34, n35,
+         n37, n38, n40, n41, n43, n44, n46, n47, n49, n50, n51, n53, n54, n55,
+         n60, n62, n63, n64, n65, n68, n69, n70, n72, n73, n146, scan_out6,
+         n76, n77, n78, n79, n80, n81, n82, n83, n9, n86, n87, n89, n90, n6,
+         n17, n56, n67, n84, scan_out4, n98, n99, n102, n104, n119, n128, n129,
+         n131, n132, n134, n135, n138, n140, n141, n143, n144;
+  wire   [3:0] rd_addr;
+  assign addr[0] = scan_out16;
+  assign pout[15] = scan_out6;
+  assign wr = scan_out4;
+
+  RSDFFARX1_LVT count_reg_1_ ( .RETN(retention_signals), .D(n91), .SI(count_2_), .SE(n17), .CLK(clk), .RSTB(n63), .Q(count_1_), .QN(n132) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_LVT count_reg_2_ ( .RETN(retention_signals), .D(n88), .SI(
+        scan_in15), .SE(n17), .CLK(clk), .RSTB(n63), .Q(count_2_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  INVX1_HVT U28 ( .A(n23), .Y(n20) );
+  INVX1_HVT U31 ( .A(n27), .Y(n24) );
+  MUX21X1_HVT U44 ( .A1(scan_out4), .A2(wr_1), .S0(data_valid), .Y(n42) );
+  MUX21X1_HVT U47 ( .A1(wr_1), .A2(n143), .S0(data_valid), .Y(n45) );
+  MUX21X1_HVT U50 ( .A1(n143), .A2(wr_tmp), .S0(data_valid), .Y(n48) );
+  MUX21X1_HVT U90 ( .A1(count_2_), .A2(N19), .S0(data_valid), .Y(n88) );
+  MUX21X1_HVT U93 ( .A1(count_1_), .A2(N18), .S0(data_valid), .Y(n91) );
+  MUX21X1_HVT U96 ( .A1(count_0_), .A2(n131), .S0(data_valid), .Y(n94) );
+  MUX21X1_HVT U99 ( .A1(scan_out7), .A2(tpout_14_), .S0(data_valid), .Y(n97)
+         );
+  MUX21X1_HVT U102 ( .A1(tpout_14_), .A2(scan_out10), .S0(data_valid), .Y(n100) );
+  MUX21X1_HVT U105 ( .A1(scan_out10), .A2(tpout_12_), .S0(data_valid), .Y(n103) );
+  MUX21X1_HVT U108 ( .A1(tpout_12_), .A2(tpout_11_), .S0(data_valid), .Y(n106)
+         );
+  MUX21X1_HVT U111 ( .A1(tpout_11_), .A2(tpout_10_), .S0(data_valid), .Y(n109)
+         );
+  MUX21X1_HVT U114 ( .A1(tpout_10_), .A2(tpout_9_), .S0(data_valid), .Y(n112)
+         );
+  MUX21X1_HVT U117 ( .A1(n104), .A2(tpout_8_), .S0(data_valid), .Y(n115) );
+  MUX21X1_HVT U120 ( .A1(n82), .A2(n67), .S0(data_valid), .Y(n118) );
+  MUX21X1_HVT U123 ( .A1(n67), .A2(tpout_6_), .S0(data_valid), .Y(n121) );
+  MUX21X1_HVT U126 ( .A1(tpout_6_), .A2(tpout_5_), .S0(data_valid), .Y(n124)
+         );
+  MUX21X1_HVT U129 ( .A1(tpout_5_), .A2(tpout_4_), .S0(data_valid), .Y(n127)
+         );
+  MUX21X1_HVT U132 ( .A1(tpout_4_), .A2(tpout_3_), .S0(data_valid), .Y(n130)
+         );
+  MUX21X1_HVT U135 ( .A1(tpout_3_), .A2(tpout_2_), .S0(data_valid), .Y(n133)
+         );
+  MUX21X1_HVT U138 ( .A1(tpout_2_), .A2(n141), .S0(data_valid), .Y(n136) );
+  MUX21X1_HVT U141 ( .A1(tpout_1_), .A2(tpout_0_), .S0(data_valid), .Y(n139)
+         );
+  MUX21X1_HVT U144 ( .A1(tpout_0_), .A2(n59), .S0(data_valid), .Y(n142) );
+  LSDNSSX4_HVT sin_UPF_LS ( .A(sin), .Y(n59) );
+  AND2X1_HVT U3 ( .A1(count_0_), .A2(count_1_), .Y(n15) );
+  NAND2X0_HVT U4 ( .A1(n15), .A2(count_2_), .Y(n13) );
+  OA21X1_HVT U5 ( .A1(count_2_), .A2(n15), .A3(n13), .Y(N19) );
+  AND2X1_HVT U6 ( .A1(scan_out2), .A2(wr_addr_0_), .Y(n5) );
+  INVX1_HVT U7 ( .A(wr_addr_3_), .Y(n1) );
+  AND2X1_HVT U9 ( .A1(n1), .A2(wr_addr_2_), .Y(n2) );
+  INVX1_HVT U17 ( .A(n5), .Y(n8) );
+  AO21X1_HVT U20 ( .A1(n135), .A2(n8), .A3(n7), .Y(n10) );
+  INVX1_HVT U22 ( .A(scan_out14), .Y(n11) );
+  NAND2X0_HVT U23 ( .A1(n13), .A2(n11), .Y(n47) );
+  AND2X1_HVT U24 ( .A1(scan_out14), .A2(count_2_), .Y(n14) );
+  NAND2X0_HVT U25 ( .A1(n15), .A2(n14), .Y(n51) );
+  INVX1_HVT U26 ( .A(n51), .Y(twr_tmp) );
+  INVX1_HVT U27 ( .A(scan_out4), .Y(trd) );
+  AO22X1_HVT U37 ( .A1(count_0_), .A2(n132), .A3(n131), .A4(count_1_), .Y(N18)
+         );
+  AO22X1_HVT U40 ( .A1(rd_addr[0]), .A2(n90), .A3(n89), .A4(rd_addr[1]), .Y(
+        N14) );
+  AO22X1_HVT U43 ( .A1(scan_out13), .A2(n134), .A3(n62), .A4(scan_out2), .Y(
+        N10) );
+  NBUFFX4_HVT U46 ( .A(n43), .Y(n22) );
+  NBUFFX4_HVT U48 ( .A(n41), .Y(n25) );
+  OR2X1_HVT U49 ( .A1(n28), .A2(n26), .Y(n55) );
+  OR2X1_HVT U51 ( .A1(n87), .A2(n43), .Y(n28) );
+  MUX21X1_HVT U52 ( .A1(n89), .A2(rd_addr[0]), .S0(n22), .Y(n27) );
+  MUX21X1_HVT U53 ( .A1(n62), .A2(scan_out13), .S0(n22), .Y(n39) );
+  NAND2X0_HVT U54 ( .A1(n31), .A2(n87), .Y(n54) );
+  NAND2X0_HVT U55 ( .A1(n41), .A2(n53), .Y(n31) );
+  NAND2X0_HVT U56 ( .A1(n34), .A2(n32), .Y(n36) );
+  NAND2X0_HVT U57 ( .A1(n22), .A2(scan_out2), .Y(n32) );
+  NAND2X0_HVT U58 ( .A1(N10), .A2(n25), .Y(n34) );
+  NAND2X0_HVT U59 ( .A1(n37), .A2(n35), .Y(n23) );
+  NAND2X0_HVT U60 ( .A1(n22), .A2(rd_addr[1]), .Y(n35) );
+  NAND2X0_HVT U61 ( .A1(N14), .A2(n25), .Y(n37) );
+  AO21X1_HVT U62 ( .A1(N11), .A2(n25), .A3(n38), .Y(n33) );
+  AND2X1_HVT U63 ( .A1(n22), .A2(wr_addr_2_), .Y(n38) );
+  AO21X1_HVT U64 ( .A1(N12), .A2(n25), .A3(n40), .Y(n30) );
+  AND2X1_HVT U65 ( .A1(n22), .A2(wr_addr_3_), .Y(n40) );
+  INVX1_HVT U66 ( .A(n22), .Y(n41) );
+  OR2X1_HVT U67 ( .A1(n46), .A2(n44), .Y(n43) );
+  INVX8_HVT U68 ( .A(data_valid), .Y(n46) );
+  AO22X1_HVT U69 ( .A1(scan_out14), .A2(n50), .A3(n49), .A4(n47), .Y(n85) );
+  AND2X1_HVT U70 ( .A1(n51), .A2(data_valid), .Y(n49) );
+  INVX1_HVT U71 ( .A(data_valid), .Y(n50) );
+  XOR2X2_HVT U72 ( .A1(n55), .A2(rd_addr[3]), .Y(n12) );
+  NAND2X0_HVT U73 ( .A1(n55), .A2(n54), .Y(n16) );
+  INVX1_HVT U41 ( .A(scan_out13), .Y(n62) );
+  RSDFFARX2_RVT pout_reg_1_ ( .RETN(retention_signals), .D(n141), .SI(pout[7]), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(pout[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_13_ ( .RETN(retention_signals), .D(scan_out10), .SI(
+        scan_in7), .SE(n9), .CLK(clk), .RSTB(n64), .Q(pout[13]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_12_ ( .RETN(retention_signals), .D(n106), .SI(n81), 
+        .SE(n9), .CLK(clk), .RSTB(n64), .Q(tpout_12_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_tmp_reg ( .RETN(retention_signals), .D(twr_tmp), .SI(
+        tpout_4_), .SE(n17), .CLK(clk), .RSTB(n63), .Q(wr_tmp) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_13_ ( .RETN(retention_signals), .D(n103), .SI(
+        tpout_12_), .SE(n9), .CLK(clk), .RSTB(n64), .Q(scan_out10) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_8_ ( .RETN(retention_signals), .D(n118), .SI(scan_in14), .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_8_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  AO22X1_HVT U34 ( .A1(n119), .A2(rd_addr[3]), .A3(n60), .A4(wr_addr_3_), .Y(
+        taddr_3_) );
+  RSDFFARX2_RVT tmp_reg_6_ ( .RETN(retention_signals), .D(n124), .SI(tpout_3_), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_6_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_4_ ( .RETN(retention_signals), .D(n130), .SI(n69), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_4_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_9_ ( .RETN(retention_signals), .D(n104), .SI(n70), 
+        .SE(n9), .CLK(clk), .RSTB(n64), .Q(n81) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_3_ ( .RETN(retention_signals), .D(tpout_3_), .SI(
+        pout[1]), .SE(n17), .CLK(clk), .RSTB(n63), .Q(n69) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_0_ ( .RETN(retention_signals), .D(tpout_0_), .SI(
+        tpout_0_), .SE(n17), .CLK(clk), .RSTB(n63), .Q(n83) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_14_ ( .RETN(retention_signals), .D(tpout_14_), .SI(
+        pout[13]), .SE(n9), .CLK(clk), .RSTB(n64), .Q(n80) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  AO22X1_HVT U32 ( .A1(n119), .A2(rd_addr[1]), .A3(n60), .A4(scan_out2), .Y(
+        n73) );
+  AO22X1_HVT U33 ( .A1(n119), .A2(rd_addr[2]), .A3(n60), .A4(wr_addr_2_), .Y(
+        n72) );
+  NBUFFX2_HVT U18 ( .A(n146), .Y(addr[2]) );
+  NBUFFX4_HVT U78 ( .A(n70), .Y(pout[10]) );
+  NBUFFX4_HVT U79 ( .A(n69), .Y(pout[3]) );
+  NBUFFX4_HVT U80 ( .A(n81), .Y(pout[9]) );
+  NBUFFX4_HVT U82 ( .A(n83), .Y(pout[0]) );
+  NBUFFX2_HVT U89 ( .A(n79), .Y(addr[1]) );
+  LSDNSSX4_HVT scan_in1_UPF_LS ( .A(scan_in1), .Y(n6) );
+  NBUFFX32_HVT U45 ( .A(n9), .Y(n17) );
+  RSDFFARX2_LVT wr_addr_reg_1_ ( .RETN(retention_signals), .D(n36), .SI(n90), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(scan_out2), .QN(n134) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT addr_reg_2_ ( .RETN(retention_signals), .D(n65), .SI(scan_in5), 
+        .SE(n17), .CLK(clk), .RSTB(n64), .Q(n146) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_15_ ( .RETN(retention_signals), .D(n97), .SI(n80), 
+        .SE(n9), .CLK(clk), .RSTB(n64), .Q(scan_out7) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_2_ ( .RETN(retention_signals), .D(n136), .SI(n77), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_2_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_10_ ( .RETN(retention_signals), .D(n112), .SI(
+        tpout_11_), .SE(n9), .CLK(clk), .RSTB(n64), .Q(tpout_10_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_LVT count_reg_0_ ( .RETN(retention_signals), .D(n94), .SI(count_1_), .SE(n17), .CLK(clk), .RSTB(n63), .Q(count_0_), .QN(n131) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_0_ ( .RETN(retention_signals), .D(n142), .SI(count_0_), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_0_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_5_ ( .RETN(retention_signals), .D(scan_out1), .SI(
+        n144), .SE(n17), .CLK(clk), .RSTB(n63), .Q(pout[5]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_15_ ( .RETN(retention_signals), .D(scan_out7), .SI(
+        n102), .SE(n9), .CLK(clk), .RSTB(n64), .Q(scan_out6) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX8_HVT U83 ( .A(n77), .Y(pout[6]) );
+  LSDNSSX2_HVT reset_UPF_LS ( .A(reset), .Y(n58) );
+  RSDFFARX1_RVT pout_reg_2_ ( .RETN(retention_signals), .D(tpout_2_), .SI(n6), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(n125) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_1_reg ( .RETN(retention_signals), .D(n45), .SI(n104), .SE(
+        n17), .CLK(clk), .RSTB(n64), .Q(wr_1) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_9_ ( .RETN(retention_signals), .D(n115), .SI(tpout_10_), .SE(n9), .CLK(clk), .RSTB(n64), .Q(tpout_9_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_7_ ( .RETN(retention_signals), .D(n121), .SI(scan_in2), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_7_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  INVX0_LVT U21 ( .A(n10), .Y(N11) );
+  RSDFFARX1_RVT addr_reg_0_ ( .RETN(retention_signals), .D(n76), .SI(n140), 
+        .SE(n17), .CLK(clk), .RSTB(n64), .Q(n56) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_addr_reg_0_ ( .RETN(retention_signals), .D(n39), .SI(n86), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(wr_addr_0_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT rd_addr_reg_2_ ( .RETN(retention_signals), .D(n16), .SI(n89), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(n87), .QN(rd_addr[2]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX32_HVT U77 ( .A(n80), .Y(pout[14]) );
+  NBUFFX32_HVT U87 ( .A(n56), .Y(scan_out16) );
+  INVX4_HVT U94 ( .A(n98), .Y(scan_out3) );
+  NBUFFX4_HVT U95 ( .A(wr0), .Y(scan_out4) );
+  NBUFFX2_HVT U98 ( .A(tpout_7_), .Y(n67) );
+  NBUFFX4_HVT U104 ( .A(n122), .Y(n99) );
+  NBUFFX4_HVT U107 ( .A(n79), .Y(n102) );
+  NBUFFX4_HVT U121 ( .A(tpout_5_), .Y(scan_out1) );
+  NBUFFX2_HVT U91 ( .A(tpout_8_), .Y(n82) );
+  NBUFFX16_HVT U75 ( .A(n58), .Y(n64) );
+  AO22X1_RVT U8 ( .A1(n2), .A2(n5), .A3(n129), .A4(n128), .Y(N12) );
+  INVX1_HVT U10 ( .A(n1), .Y(n128) );
+  NAND2X0_HVT U11 ( .A1(n5), .A2(wr_addr_2_), .Y(n129) );
+  INVX1_HVT U12 ( .A(n26), .Y(n53) );
+  NBUFFX8_HVT U74 ( .A(n58), .Y(n63) );
+  AND2X1_HVT U88 ( .A1(n5), .A2(wr_addr_2_), .Y(n7) );
+  RSDFFARX2_RVT rd_addr_reg_3_ ( .RETN(retention_signals), .D(n12), .SI(n87), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(n86), .QN(rd_addr[3]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX4_HVT U84 ( .A(wr_addr_0_), .Y(scan_out13) );
+  RSDFFARX1_RVT rd_addr_reg_1_ ( .RETN(retention_signals), .D(n20), .SI(n84), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(n90), .QN(rd_addr[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  AO22X1_HVT U30 ( .A1(n119), .A2(rd_addr[0]), .A3(n60), .A4(scan_out13), .Y(
+        n76) );
+  RSDFFARX1_RVT rd_addr_reg_0_ ( .RETN(retention_signals), .D(n24), .SI(
+        scan_in13), .SE(n17), .CLK(clk), .RSTB(n63), .Q(n89), .QN(rd_addr[0])
+         ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_11_ ( .RETN(retention_signals), .D(tpout_11_), .SI(
+        tpout_14_), .SE(n9), .CLK(clk), .RSTB(n64), .Q(n78) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_12_ ( .RETN(retention_signals), .D(tpout_12_), .SI(
+        scan_in9), .SE(n9), .CLK(clk), .RSTB(n64), .Q(n122) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT addr_reg_1_ ( .RETN(retention_signals), .D(n73), .SI(scan_in6), 
+        .SE(n17), .CLK(clk), .RSTB(n64), .Q(n79) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_4_ ( .RETN(retention_signals), .D(tpout_4_), .SI(n83), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(n68) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT addr_reg_3_ ( .RETN(retention_signals), .D(taddr_3_), .SI(n99), 
+        .SE(n17), .CLK(clk), .RSTB(n64), .Q(addr[3]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_addr_reg_3_ ( .RETN(retention_signals), .D(n30), .SI(
+        wr_addr_2_), .SE(n17), .CLK(clk), .RSTB(n63), .Q(wr_addr_3_), .QN(n98)
+         ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_3_ ( .RETN(retention_signals), .D(n133), .SI(tpout_2_), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_3_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_14_ ( .RETN(retention_signals), .D(n100), .SI(n138), 
+        .SE(n9), .CLK(clk), .RSTB(n64), .Q(tpout_14_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_11_ ( .RETN(retention_signals), .D(n109), .SI(
+        scan_in12), .SE(n9), .CLK(clk), .RSTB(n64), .Q(tpout_11_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  INVX2_HVT U16 ( .A(n119), .Y(n60) );
+  RSDFFARX2_RVT tmp_reg_5_ ( .RETN(retention_signals), .D(n127), .SI(tpout_6_), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_5_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_LVT wr_addr_reg_2_ ( .RETN(retention_signals), .D(n33), .SI(
+        scan_in3), .SE(n17), .CLK(clk), .RSTB(n63), .Q(wr_addr_2_), .QN(n135)
+         ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT count_reg_3_ ( .RETN(retention_signals), .D(n85), .SI(n141), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(scan_out14) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_6_ ( .RETN(retention_signals), .D(tpout_6_), .SI(n125), .SE(n17), .CLK(clk), .RSTB(n63), .Q(n77) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_7_ ( .RETN(retention_signals), .D(n67), .SI(pout[5]), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(pout[7]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_10_ ( .RETN(retention_signals), .D(tpout_10_), .SI(
+        pout[8]), .SE(n9), .CLK(clk), .RSTB(n64), .Q(n70) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_8_ ( .RETN(retention_signals), .D(n82), .SI(scan_in10), .SE(n9), .CLK(clk), .RSTB(n64), .Q(n123) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX8_HVT U113 ( .A(n68), .Y(pout[4]) );
+  NBUFFX32_HVT U106 ( .A(n122), .Y(pout[12]) );
+  NBUFFX8_HVT U81 ( .A(n78), .Y(pout[11]) );
+  RSDFFARX1_RVT wr_0_reg ( .RETN(retention_signals), .D(n48), .SI(tpout_8_), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(wr_0) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_LVT wr_reg ( .RETN(retention_signals), .D(n42), .SI(scan_in4), 
+        .SE(n17), .CLK(clk), .RSTB(n64), .Q(wr0) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT rd_reg ( .RETN(retention_signals), .D(trd), .SI(scan_in11), 
+        .SE(n17), .CLK(clk), .RSTB(n64), .Q(rd) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NAND2X0_RVT U13 ( .A1(rd_addr[0]), .A2(rd_addr[1]), .Y(n26) );
+  RSDFFARX1_RVT tmp_reg_1_ ( .RETN(retention_signals), .D(n139), .SI(wr_tmp), 
+        .SE(n17), .CLK(clk), .RSTB(n63), .Q(tpout_1_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  INVX1_RVT U15 ( .A(wr0), .Y(n44) );
+  NBUFFX4_HVT U122 ( .A(rd), .Y(n119) );
+  NBUFFX2_HVT U118 ( .A(n125), .Y(pout[2]) );
+  NBUFFX4_HVT U109 ( .A(tpout_9_), .Y(n104) );
+  NBUFFX4_HVT U97 ( .A(n123), .Y(pout[8]) );
+  NBUFFX8_HVT U101 ( .A(addr[3]), .Y(scan_out9) );
+  NBUFFX8_HVT U103 ( .A(n68), .Y(scan_out15) );
+  NBUFFX2_RVT U85 ( .A(n72), .Y(n65) );
+  NBUFFX4_HVT U110 ( .A(n78), .Y(scan_out8) );
+  NBUFFX4_HVT U119 ( .A(wr_1), .Y(scan_out12) );
+  NBUFFX4_HVT U124 ( .A(rd), .Y(scan_out11) );
+  NBUFFX4_HVT U100 ( .A(tpout_7_), .Y(n84) );
+  LSDNSSX8_HVT scan_enable_UPF_LS ( .A(scan_enable), .Y(n9) );
+  NBUFFX2_HVT U14 ( .A(scan_in8), .Y(n138) );
+  NBUFFX8_HVT U19 ( .A(scan_in16), .Y(n140) );
+  NBUFFX2_HVT U29 ( .A(tpout_1_), .Y(n141) );
+  NBUFFX2_HVT U35 ( .A(wr_0), .Y(n143) );
+  NBUFFX2_HVT U36 ( .A(wr_0), .Y(n144) );
+  NBUFFX2_HVT U38 ( .A(n146), .Y(scan_out5) );
+endmodule
+
+
+module piso_1 ( din, clk, reset, load, shut_down_signals, isolation_signals, 
+        retention_signals, dout, scan_in5, scan_in4, scan_in3, scan_in2, 
+        scan_in1, scan_out5, scan_out4, scan_out3, scan_out2, scan_out1, 
+        scan_enable );
+  input [15:0] din;
+  input clk, reset, load, shut_down_signals, isolation_signals,
+         retention_signals, scan_in5, scan_in4, scan_in3, scan_in2, scan_in1,
+         scan_enable;
+  output dout, scan_out5, scan_out4, scan_out3, scan_out2, scan_out1;
+  wire   n6, n7, n51, temp_11_, temp_6_, temp_5_, temp_4_, temp_2_, temp_1_,
+         N4, N5, N6, N8, N9, N10, N17, N19, n4, n8, n10, n12, n15, n16, n17,
+         n19, n20, n22, n25, n26, n27, n28, n32, n33, n34, n35, n50, n1, n2,
+         n13, n14, n36, n38, n39, n43, n44, n45, n46, n47;
+
+  LSDNSSX8_HVT load_UPF_LS ( .A(load), .Y(n7) );
+  LSDNSSX8_HVT reset_UPF_LS ( .A(reset), .Y(n6) );
+  AO22X1_HVT U19 ( .A1(n7), .A2(n46), .A3(n8), .A4(n19), .Y(N19) );
+  AO22X1_HVT U21 ( .A1(n7), .A2(dout), .A3(n8), .A4(n51), .Y(n4) );
+  AND2X1_HVT U3 ( .A1(n7), .A2(din[0]), .Y(N4) );
+  RSDFFARX2_RVT temp_reg_4_ ( .RETN(retention_signals), .D(N8), .SI(scan_in5), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(temp_4_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_6_ ( .RETN(retention_signals), .D(N10), .SI(n2), .SE(
+        n1), .CLK(clk), .RSTB(n6), .Q(temp_6_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  AO22X1_HVT U10 ( .A1(n7), .A2(din[6]), .A3(n8), .A4(temp_5_), .Y(N10) );
+  AO22X1_HVT U9 ( .A1(n7), .A2(din[5]), .A3(n8), .A4(temp_4_), .Y(N9) );
+  AO22X1_HVT U6 ( .A1(n7), .A2(din[2]), .A3(n8), .A4(temp_1_), .Y(N6) );
+  AO22X1_HVT U17 ( .A1(n7), .A2(n45), .A3(n8), .A4(n33), .Y(N17) );
+  AO22X1_HVT U8 ( .A1(n7), .A2(din[4]), .A3(n8), .A4(n36), .Y(N8) );
+  AO22X1_HVT U7 ( .A1(n7), .A2(din[3]), .A3(n8), .A4(temp_2_), .Y(n25) );
+  AO22X1_HVT U16 ( .A1(n7), .A2(din[12]), .A3(n8), .A4(temp_11_), .Y(n28) );
+  AO22X1_HVT U14 ( .A1(n7), .A2(din[10]), .A3(n8), .A4(n26), .Y(n22) );
+  LSDNSSX8_HVT scan_enable_UPF_LS ( .A(scan_enable), .Y(n1) );
+  INVX8_HVT U4 ( .A(n7), .Y(n8) );
+  NBUFFX4_HVT U20 ( .A(scan_in4), .Y(n2) );
+  RSDFFARX2_RVT temp_reg_15_ ( .RETN(retention_signals), .D(N19), .SI(dout), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n51) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_13_ ( .RETN(retention_signals), .D(N17), .SI(n47), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(scan_out5) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_7_ ( .RETN(retention_signals), .D(n15), .SI(n32), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n35) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_14_ ( .RETN(retention_signals), .D(n10), .SI(n20), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n19) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_3_ ( .RETN(retention_signals), .D(n25), .SI(temp_6_), 
+        .SE(n13), .CLK(clk), .RSTB(n6), .Q(n20) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_10_ ( .RETN(retention_signals), .D(n22), .SI(n26), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n32) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT dout_reg ( .RETN(retention_signals), .D(n4), .SI(scan_in1), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(dout) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  NBUFFX2_HVT U27 ( .A(n34), .Y(temp_11_) );
+  NBUFFX2_HVT U33 ( .A(n20), .Y(n36) );
+  NBUFFX2_HVT U34 ( .A(n27), .Y(n38) );
+  NBUFFX4_HVT U36 ( .A(n33), .Y(n39) );
+  NBUFFX4_HVT U44 ( .A(temp_5_), .Y(scan_out4) );
+  AO22X1_HVT U5 ( .A1(n35), .A2(n8), .A3(din[8]), .A4(n7), .Y(n17) );
+  AO22X1_HVT U12 ( .A1(n50), .A2(n8), .A3(n43), .A4(n7), .Y(n12) );
+  AO22X1_HVT U13 ( .A1(temp_6_), .A2(n8), .A3(din[7]), .A4(n7), .Y(n15) );
+  AO22X1_HVT U15 ( .A1(n27), .A2(n8), .A3(din[1]), .A4(n7), .Y(N5) );
+  AO22X1_HVT U18 ( .A1(scan_out5), .A2(n8), .A3(din[14]), .A4(n7), .Y(n10) );
+  RSDFFARX1_RVT temp_reg_0_ ( .RETN(retention_signals), .D(N4), .SI(n39), .SE(
+        n1), .CLK(clk), .RSTB(n6), .Q(n27) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_1_ ( .RETN(retention_signals), .D(N5), .SI(temp_2_), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(temp_1_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_5_ ( .RETN(retention_signals), .D(N9), .SI(n19), .SE(
+        n1), .CLK(clk), .RSTB(n6), .Q(temp_5_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_2_ ( .RETN(retention_signals), .D(N6), .SI(scan_in2), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(temp_2_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_9_ ( .RETN(retention_signals), .D(n12), .SI(n14), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n26) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_11_ ( .RETN(retention_signals), .D(n16), .SI(n35), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n34) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  NBUFFX8_HVT U37 ( .A(n38), .Y(scan_out3) );
+  NBUFFX4_HVT U31 ( .A(n1), .Y(n13) );
+  AO22X2_HVT U11 ( .A1(n32), .A2(n8), .A3(n44), .A4(n7), .Y(n16) );
+  RSDFFARX2_RVT temp_reg_8_ ( .RETN(retention_signals), .D(n17), .SI(n34), 
+        .SE(n1), .CLK(clk), .RSTB(n6), .Q(n50) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_12_ ( .RETN(retention_signals), .D(n28), .SI(scan_in3), .SE(n13), .CLK(clk), .RSTB(n6), .Q(n33) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  NBUFFX4_HVT U32 ( .A(temp_1_), .Y(n14) );
+  NBUFFX2_HVT U22 ( .A(din[9]), .Y(n43) );
+  NBUFFX4_HVT U23 ( .A(din[15]), .Y(n46) );
+  NBUFFX4_HVT U24 ( .A(din[13]), .Y(n45) );
+  NBUFFX4_HVT U25 ( .A(din[11]), .Y(n44) );
+  NBUFFX2_HVT U26 ( .A(temp_4_), .Y(n47) );
+  NBUFFX2_HVT U28 ( .A(n50), .Y(scan_out2) );
+  NBUFFX2_HVT U29 ( .A(n51), .Y(scan_out1) );
+endmodule
+
+
+module sipo_0 ( clk, reset, data_valid, sin, shut_down_signals, 
+        isolation_signals, retention_signals, pout, addr, wr, scan_in15, 
+        scan_in14, scan_in13, scan_in12, scan_in11, scan_in10, scan_in9, 
+        scan_in8, scan_in7, scan_in6, scan_in5, scan_in4, scan_in3, scan_in2, 
+        scan_in1, scan_out13, scan_out12, scan_out11, scan_out10, scan_out9, 
+        scan_out8, scan_out7, scan_out6, scan_out5, scan_out4, scan_out3, 
+        scan_out2, scan_out1, scan_enable );
+  output [15:0] pout;
+  output [3:0] addr;
+  input clk, reset, data_valid, sin, shut_down_signals, isolation_signals,
+         retention_signals, scan_in15, scan_in14, scan_in13, scan_in12,
+         scan_in11, scan_in10, scan_in9, scan_in8, scan_in7, scan_in6,
+         scan_in5, scan_in4, scan_in3, scan_in2, scan_in1, scan_enable;
+  output wr, scan_out13, scan_out12, scan_out11, scan_out10, scan_out9,
+         scan_out8, scan_out7, scan_out6, scan_out5, scan_out4, scan_out3,
+         scan_out2, scan_out1;
+  wire   n92, n93, n94, n95, n112, count_2_, count_1_, twr_tmp, trd, rd, wr_0,
+         wr_1, N10, N11, N12, N14, N18, N19, n2, n5, n6, n11, n13, n14, n15,
+         n22, n25, n26, n28, n31, n32, n34, n35, n37, n38, n40, n41, n43, n44,
+         n46, n47, n49, n50, n51, n53, n54, n55, n58, n60, n61, n62, n63, n64,
+         n65, n66, n67, n68, n69, n70, n71, n72, n73, n74, n75, n76, n77, n78,
+         n79, n80, n81, n82, n83, n84, n85, n86, n87, n88, n89, n90, n91, n96,
+         n98, n99, n102, n104, n106, n108, n109, n110, n111, n7, n114, n115,
+         n8, n9, n10, n16, n20, n21, n23, n24, n27, n30, n39, n59, n100, n113,
+         n116, n118, n119, n120, n121, n122, n123;
+  wire   [15:0] tpout;
+  wire   [3:0] taddr;
+  wire   [3:0] rd_addr;
+  wire   [3:0] wr_addr;
+
+  RSDFFARX1_LVT rd_addr_reg_1_ ( .RETN(retention_signals), .D(n89), .SI(n115), 
+        .SE(n9), .CLK(clk), .RSTB(n99), .Q(n114), .QN(rd_addr[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  INVX1_HVT U28 ( .A(n88), .Y(n89) );
+  INVX1_HVT U31 ( .A(n86), .Y(n87) );
+  MUX21X1_HVT U44 ( .A1(wr), .A2(wr_1), .S0(data_valid), .Y(n81) );
+  MUX21X1_HVT U47 ( .A1(wr_1), .A2(wr_0), .S0(data_valid), .Y(n80) );
+  MUX21X1_HVT U50 ( .A1(wr_0), .A2(scan_out12), .S0(data_valid), .Y(n79) );
+  MUX21X1_HVT U90 ( .A1(scan_out2), .A2(N19), .S0(data_valid), .Y(n77) );
+  MUX21X1_HVT U93 ( .A1(count_1_), .A2(N18), .S0(data_valid), .Y(n76) );
+  MUX21X1_HVT U96 ( .A1(scan_out13), .A2(n116), .S0(data_valid), .Y(n75) );
+  MUX21X1_HVT U99 ( .A1(tpout[15]), .A2(n24), .S0(data_valid), .Y(n74) );
+  MUX21X1_HVT U102 ( .A1(n24), .A2(tpout[13]), .S0(data_valid), .Y(n73) );
+  MUX21X1_HVT U105 ( .A1(n20), .A2(tpout[12]), .S0(data_valid), .Y(n72) );
+  MUX21X1_HVT U108 ( .A1(tpout[12]), .A2(tpout[11]), .S0(data_valid), .Y(n71)
+         );
+  MUX21X1_HVT U111 ( .A1(tpout[11]), .A2(tpout[10]), .S0(data_valid), .Y(n70)
+         );
+  MUX21X1_HVT U114 ( .A1(tpout[10]), .A2(tpout[9]), .S0(data_valid), .Y(n69)
+         );
+  MUX21X1_HVT U117 ( .A1(scan_out8), .A2(tpout[8]), .S0(data_valid), .Y(n68)
+         );
+  MUX21X1_HVT U120 ( .A1(tpout[8]), .A2(tpout[7]), .S0(data_valid), .Y(n67) );
+  MUX21X1_HVT U123 ( .A1(tpout[7]), .A2(tpout[6]), .S0(data_valid), .Y(n66) );
+  MUX21X1_HVT U126 ( .A1(tpout[6]), .A2(n21), .S0(data_valid), .Y(n65) );
+  MUX21X1_HVT U129 ( .A1(n21), .A2(tpout[4]), .S0(data_valid), .Y(n64) );
+  MUX21X1_HVT U132 ( .A1(tpout[4]), .A2(tpout[3]), .S0(data_valid), .Y(n63) );
+  MUX21X1_HVT U135 ( .A1(tpout[3]), .A2(tpout[2]), .S0(data_valid), .Y(n62) );
+  MUX21X1_HVT U138 ( .A1(tpout[2]), .A2(tpout[1]), .S0(data_valid), .Y(n61) );
+  MUX21X1_HVT U141 ( .A1(tpout[1]), .A2(tpout[0]), .S0(data_valid), .Y(n60) );
+  MUX21X1_HVT U144 ( .A1(tpout[0]), .A2(n93), .S0(data_valid), .Y(n58) );
+  NAND2X0_HVT U4 ( .A1(n15), .A2(count_2_), .Y(n13) );
+  AND2X1_HVT U9 ( .A1(n120), .A2(wr_addr[2]), .Y(n2) );
+  NAND2X0_HVT U18 ( .A1(n5), .A2(wr_addr[2]), .Y(n6) );
+  INVX1_HVT U22 ( .A(scan_out1), .Y(n11) );
+  AND2X1_HVT U24 ( .A1(scan_out1), .A2(count_2_), .Y(n14) );
+  NAND2X0_HVT U25 ( .A1(n15), .A2(n14), .Y(n51) );
+  INVX1_HVT U26 ( .A(n51), .Y(twr_tmp) );
+  AO22X1_HVT U37 ( .A1(scan_out13), .A2(n118), .A3(n116), .A4(count_1_), .Y(
+        N18) );
+  AO22X1_HVT U40 ( .A1(rd_addr[0]), .A2(n114), .A3(n115), .A4(rd_addr[1]), .Y(
+        N14) );
+  AO22X1_HVT U43 ( .A1(wr_addr[0]), .A2(n96), .A3(n119), .A4(wr_addr[1]), .Y(
+        N10) );
+  NBUFFX4_HVT U46 ( .A(n43), .Y(n22) );
+  NBUFFX4_HVT U48 ( .A(n41), .Y(n25) );
+  OR2X1_HVT U49 ( .A1(n28), .A2(n26), .Y(n55) );
+  OR2X1_HVT U51 ( .A1(scan_out10), .A2(n43), .Y(n28) );
+  MUX21X1_HVT U52 ( .A1(n115), .A2(rd_addr[0]), .S0(n22), .Y(n86) );
+  MUX21X1_HVT U53 ( .A1(n119), .A2(wr_addr[0]), .S0(n22), .Y(n82) );
+  NAND2X0_HVT U54 ( .A1(n31), .A2(scan_out10), .Y(n54) );
+  NAND2X0_HVT U55 ( .A1(n41), .A2(n53), .Y(n31) );
+  NAND2X0_HVT U56 ( .A1(n34), .A2(n32), .Y(n83) );
+  NAND2X0_HVT U57 ( .A1(n22), .A2(wr_addr[1]), .Y(n32) );
+  NAND2X0_HVT U58 ( .A1(N10), .A2(n25), .Y(n34) );
+  NAND2X0_HVT U59 ( .A1(n37), .A2(n35), .Y(n88) );
+  NAND2X0_HVT U60 ( .A1(n22), .A2(rd_addr[1]), .Y(n35) );
+  NAND2X0_HVT U61 ( .A1(N14), .A2(n25), .Y(n37) );
+  AO21X1_HVT U62 ( .A1(N11), .A2(n25), .A3(n38), .Y(n84) );
+  AND2X1_HVT U63 ( .A1(n22), .A2(wr_addr[2]), .Y(n38) );
+  AO21X1_HVT U64 ( .A1(N12), .A2(n25), .A3(n40), .Y(n85) );
+  AND2X1_HVT U65 ( .A1(n22), .A2(wr_addr[3]), .Y(n40) );
+  INVX1_HVT U66 ( .A(n22), .Y(n41) );
+  OR2X1_HVT U67 ( .A1(n46), .A2(n44), .Y(n43) );
+  INVX8_HVT U68 ( .A(data_valid), .Y(n46) );
+  AO22X1_HVT U69 ( .A1(scan_out1), .A2(n50), .A3(n49), .A4(n47), .Y(n78) );
+  AND2X1_HVT U70 ( .A1(n51), .A2(data_valid), .Y(n49) );
+  INVX1_HVT U71 ( .A(data_valid), .Y(n50) );
+  XOR2X2_HVT U72 ( .A1(n55), .A2(rd_addr[3]), .Y(n91) );
+  NAND2X0_HVT U73 ( .A1(n55), .A2(n54), .Y(n90) );
+  INVX1_HVT U41 ( .A(scan_out3), .Y(n96) );
+  RSDFFARX2_RVT pout_reg_9_ ( .RETN(retention_signals), .D(scan_out8), .SI(
+        scan_in7), .SE(n8), .CLK(clk), .RSTB(n98), .Q(pout[9]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_3_ ( .RETN(retention_signals), .D(tpout[3]), .SI(
+        pout[9]), .SE(n8), .CLK(clk), .RSTB(n98), .Q(pout[3]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_1_reg ( .RETN(retention_signals), .D(n80), .SI(n114), .SE(
+        n9), .CLK(clk), .RSTB(n99), .Q(wr_1) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_6_ ( .RETN(retention_signals), .D(n65), .SI(n16), .SE(
+        n8), .CLK(clk), .RSTB(n98), .Q(tpout[6]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_3_ ( .RETN(retention_signals), .D(n62), .SI(tpout[12]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[3]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_2_ ( .RETN(retention_signals), .D(n61), .SI(n20), .SE(
+        n8), .CLK(clk), .RSTB(n98), .Q(tpout[2]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_12_ ( .RETN(retention_signals), .D(n71), .SI(tpout[4]), 
+        .SE(n8), .CLK(clk), .RSTB(n99), .Q(tpout[12]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  AO22X1_HVT U32 ( .A1(rd), .A2(rd_addr[1]), .A3(n10), .A4(wr_addr[1]), .Y(
+        taddr[1]) );
+  RSDFFARX2_RVT wr_addr_reg_2_ ( .RETN(retention_signals), .D(n84), .SI(
+        scan_in3), .SE(n9), .CLK(clk), .RSTB(n99), .Q(wr_addr[2]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_0_ ( .RETN(retention_signals), .D(n58), .SI(tpout[2]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[0]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  AO22X1_HVT U33 ( .A1(rd), .A2(rd_addr[2]), .A3(n10), .A4(wr_addr[2]), .Y(
+        taddr[2]) );
+  RSDFFARX2_RVT rd_reg ( .RETN(retention_signals), .D(trd), .SI(scan_in12), 
+        .SE(n9), .CLK(clk), .RSTB(n99), .Q(rd), .QN(n10) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  AND2X1_LVT U6 ( .A1(wr_addr[1]), .A2(wr_addr[0]), .Y(n5) );
+  RSDFFARX1_RVT pout_reg_15_ ( .RETN(retention_signals), .D(tpout[15]), .SI(
+        n30), .SE(n8), .CLK(clk), .RSTB(n98), .Q(n110) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX4_HVT U77 ( .A(n106), .Y(pout[4]) );
+  OA21X1_HVT U81 ( .A1(wr_addr[2]), .A2(n5), .A3(n6), .Y(N11) );
+  NBUFFX32_HVT U74 ( .A(n92), .Y(n98) );
+  RSDFFARX1_RVT wr_addr_reg_3_ ( .RETN(retention_signals), .D(n85), .SI(
+        wr_addr[2]), .SE(n9), .CLK(clk), .RSTB(n99), .Q(wr_addr[3]), .QN(n120)
+         ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  LSDNSSX1_HVT sin_UPF_LS ( .A(sin), .Y(n93) );
+  RSDFFARX2_RVT tmp_reg_1_ ( .RETN(retention_signals), .D(n60), .SI(pout[3]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_7_ ( .RETN(retention_signals), .D(n66), .SI(tpout[8]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[7]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_15_ ( .RETN(retention_signals), .D(n74), .SI(scan_in15), .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[15]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT count_reg_3_ ( .RETN(retention_signals), .D(n78), .SI(scan_in1), .SE(n9), .CLK(clk), .RSTB(n99), .Q(scan_out1) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_5_ ( .RETN(retention_signals), .D(n21), .SI(n94), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(n102) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT addr_reg_0_ ( .RETN(retention_signals), .D(taddr[0]), .SI(
+        scan_in5), .SE(n9), .CLK(clk), .RSTB(n98), .Q(addr[0]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_6_ ( .RETN(retention_signals), .D(tpout[6]), .SI(
+        pout[7]), .SE(n8), .CLK(clk), .RSTB(n98), .Q(pout[6]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_14_ ( .RETN(retention_signals), .D(n24), .SI(n110), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(n111) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_12_ ( .RETN(retention_signals), .D(tpout[12]), .SI(
+        n106), .SE(n8), .CLK(clk), .RSTB(n98), .Q(n109) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_13_ ( .RETN(retention_signals), .D(n20), .SI(pout[2]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(n108) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_4_ ( .RETN(retention_signals), .D(tpout[4]), .SI(
+        scan_in6), .SE(n8), .CLK(clk), .RSTB(n98), .Q(n106) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX32_HVT U21 ( .A(n108), .Y(pout[13]) );
+  NBUFFX32_HVT U19 ( .A(n110), .Y(pout[15]) );
+  NBUFFX4_HVT U76 ( .A(n102), .Y(pout[5]) );
+  RSDFFARX1_LVT wr_addr_reg_1_ ( .RETN(retention_signals), .D(n83), .SI(
+        wr_addr[3]), .SE(n9), .CLK(clk), .RSTB(n99), .Q(wr_addr[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_11_ ( .RETN(retention_signals), .D(n70), .SI(n23), 
+        .SE(n8), .CLK(clk), .RSTB(n99), .Q(tpout[11]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_11_ ( .RETN(retention_signals), .D(scan_out9), .SI(
+        n108), .SE(n8), .CLK(clk), .RSTB(n98), .Q(n94) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_10_ ( .RETN(retention_signals), .D(n123), .SI(n102), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(scan_out6) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_2_ ( .RETN(retention_signals), .D(tpout[2]), .SI(n109), .SE(n8), .CLK(clk), .RSTB(n98), .Q(n95) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_4_ ( .RETN(retention_signals), .D(n63), .SI(n39), .SE(
+        n8), .CLK(clk), .RSTB(n99), .Q(tpout[4]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_14_ ( .RETN(retention_signals), .D(n73), .SI(tpout[0]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[14]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_1_ ( .RETN(retention_signals), .D(tpout[1]), .SI(n27), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(pout[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_5_ ( .RETN(retention_signals), .D(n64), .SI(tpout[6]), 
+        .SE(n8), .CLK(clk), .RSTB(n99), .Q(tpout[5]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT count_reg_2_ ( .RETN(retention_signals), .D(n77), .SI(count_1_), .SE(n9), .CLK(clk), .RSTB(n99), .Q(count_2_) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_9_ ( .RETN(retention_signals), .D(n68), .SI(tpout[7]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[9]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT tmp_reg_13_ ( .RETN(retention_signals), .D(n72), .SI(tpout[3]), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[13]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  OA21X1_RVT U5 ( .A1(scan_out2), .A2(n15), .A3(n13), .Y(N19) );
+  NBUFFX2_HVT U89 ( .A(tpout[5]), .Y(n21) );
+  NBUFFX2_HVT U92 ( .A(tpout[14]), .Y(n24) );
+  NBUFFX2_HVT U94 ( .A(tpout[14]), .Y(n27) );
+  NBUFFX4_HVT U97 ( .A(n95), .Y(pout[2]) );
+  NBUFFX4_HVT U98 ( .A(addr[2]), .Y(scan_out4) );
+  NBUFFX4_HVT U103 ( .A(addr[3]), .Y(scan_out5) );
+  INVX1_RVT U15 ( .A(n112), .Y(n44) );
+  NBUFFX4_HVT U106 ( .A(tpout[11]), .Y(scan_out9) );
+  INVX1_HVT U27 ( .A(wr), .Y(trd) );
+  AO22X1_HVT U7 ( .A1(wr_addr[0]), .A2(n10), .A3(rd_addr[0]), .A4(rd), .Y(
+        taddr[0]) );
+  AO22X1_HVT U8 ( .A1(n5), .A2(n2), .A3(n113), .A4(n100), .Y(N12) );
+  INVX0_HVT U10 ( .A(n120), .Y(n100) );
+  NAND2X0_HVT U11 ( .A1(n5), .A2(wr_addr[2]), .Y(n113) );
+  AOI22X1_HVT U12 ( .A1(rd), .A2(rd_addr[3]), .A3(n10), .A4(wr_addr[3]), .Y(
+        n104) );
+  INVX1_HVT U13 ( .A(n26), .Y(n53) );
+  NBUFFX32_HVT U45 ( .A(n7), .Y(n8) );
+  RSDFFARX1_RVT rd_addr_reg_0_ ( .RETN(retention_signals), .D(n87), .SI(rd), 
+        .SE(n9), .CLK(clk), .RSTB(n99), .Q(n115), .QN(rd_addr[0]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_reg ( .RETN(retention_signals), .D(n81), .SI(wr_1), .SE(n9), 
+        .CLK(clk), .RSTB(n99), .Q(n112), .QN(n59) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT addr_reg_2_ ( .RETN(retention_signals), .D(taddr[2]), .SI(n111), .SE(n9), .CLK(clk), .RSTB(n98), .Q(addr[2]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT addr_reg_3_ ( .RETN(retention_signals), .D(taddr[3]), .SI(n122), .SE(n9), .CLK(clk), .RSTB(n98), .Q(addr[3]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT addr_reg_1_ ( .RETN(retention_signals), .D(taddr[1]), .SI(
+        scan_in8), .SE(n9), .CLK(clk), .RSTB(n98), .Q(addr[1]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  INVX2_HVT U82 ( .A(n104), .Y(taddr[3]) );
+  RSDFFARX1_RVT wr_0_reg ( .RETN(retention_signals), .D(n79), .SI(scan_in13), 
+        .SE(n9), .CLK(clk), .RSTB(n99), .Q(wr_0) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT count_reg_0_ ( .RETN(retention_signals), .D(n75), .SI(
+        scan_in14), .SE(n9), .CLK(clk), .RSTB(n99), .Q(scan_out13), .QN(n116)
+         ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT pout_reg_7_ ( .RETN(retention_signals), .D(tpout[7]), .SI(
+        tpout[1]), .SE(n8), .CLK(clk), .RSTB(n98), .Q(pout[7]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_tmp_reg ( .RETN(retention_signals), .D(twr_tmp), .SI(wr_0), 
+        .SE(n9), .CLK(clk), .RSTB(n99), .Q(scan_out12) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX1_RVT wr_addr_reg_0_ ( .RETN(retention_signals), .D(n82), .SI(
+        scan_in4), .SE(n9), .CLK(clk), .RSTB(n99), .Q(wr_addr[0]), .QN(n119)
+         ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT rd_addr_reg_2_ ( .RETN(retention_signals), .D(n90), .SI(
+        scan_in11), .SE(n9), .CLK(clk), .RSTB(n99), .Q(scan_out10), .QN(
+        rd_addr[2]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT tmp_reg_8_ ( .RETN(retention_signals), .D(n67), .SI(scan_in9), 
+        .SE(n8), .CLK(clk), .RSTB(n98), .Q(tpout[8]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT pout_reg_0_ ( .RETN(retention_signals), .D(tpout[0]), .SI(
+        tpout[15]), .SE(n8), .CLK(clk), .RSTB(n98), .Q(pout[0]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX32_HVT U104 ( .A(n94), .Y(pout[11]) );
+  NBUFFX32_HVT U78 ( .A(scan_out6), .Y(pout[10]) );
+  NBUFFX32_HVT U29 ( .A(n109), .Y(pout[12]) );
+  NBUFFX8_HVT U20 ( .A(n111), .Y(pout[14]) );
+  LSDNSSX2_HVT scan_enable_UPF_LS ( .A(scan_enable), .Y(n7) );
+  NBUFFX32_HVT U84 ( .A(n7), .Y(n9) );
+  NBUFFX32_HVT U75 ( .A(n92), .Y(n99) );
+  LSDNSSX4_HVT reset_UPF_LS ( .A(reset), .Y(n92) );
+  RSDFFARX1_RVT tmp_reg_10_ ( .RETN(retention_signals), .D(n69), .SI(scan_in10), .SE(n8), .CLK(clk), .RSTB(n99), .Q(tpout[10]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NAND2X0_LVT U23 ( .A1(n13), .A2(n11), .Y(n47) );
+  NAND2X0_LVT U14 ( .A1(rd_addr[0]), .A2(rd_addr[1]), .Y(n26) );
+  RSDFFARX1_RVT pout_reg_8_ ( .RETN(retention_signals), .D(tpout[8]), .SI(
+        pout[6]), .SE(n8), .CLK(clk), .RSTB(n98), .Q(n121) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX2_HVT U17 ( .A(n112), .Y(wr) );
+  RSDFFARX1_RVT count_reg_1_ ( .RETN(retention_signals), .D(n76), .SI(scan_in2), .SE(n9), .CLK(clk), .RSTB(n99), .Q(count_1_), .QN(n118) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  RSDFFARX2_RVT rd_addr_reg_3_ ( .RETN(retention_signals), .D(n91), .SI(n123), 
+        .SE(n9), .CLK(clk), .RSTB(n99), .Q(n16), .QN(rd_addr[3]) ); //synopsys retention_upf RET_SIPO_SLICE+PD_SIPO_SLICE
+  NBUFFX4_RVT U107 ( .A(wr_addr[1]), .Y(scan_out3) );
+  AND2X1_RVT U3 ( .A1(scan_out13), .A2(count_1_), .Y(n15) );
+  NBUFFX4_HVT U86 ( .A(count_2_), .Y(scan_out2) );
+  NBUFFX4_RVT U87 ( .A(tpout[9]), .Y(scan_out8) );
+  NBUFFX4_HVT U88 ( .A(tpout[13]), .Y(n20) );
+  INVX2_RVT U16 ( .A(n59), .Y(scan_out11) );
+  NBUFFX4_HVT U101 ( .A(addr[1]), .Y(scan_out7) );
+  NBUFFX4_HVT U91 ( .A(tpout[5]), .Y(n23) );
+  NBUFFX4_HVT U100 ( .A(wr_addr[0]), .Y(n39) );
+  NBUFFX4_HVT U95 ( .A(pout[1]), .Y(n30) );
+  NBUFFX8_HVT U30 ( .A(n121), .Y(pout[8]) );
+  NBUFFX2_HVT U34 ( .A(addr[0]), .Y(n122) );
+  NBUFFX4_HVT U35 ( .A(tpout[10]), .Y(n123) );
+endmodule
+
+
+module piso_0 ( din, clk, reset, load, shut_down_signals, isolation_signals, 
+        retention_signals, dout, scan_in5, scan_in4, scan_in3, scan_in2, 
+        scan_in1, scan_out5, scan_out4, scan_out3, scan_out2, scan_out1, 
+        scan_enable );
+  input [15:0] din;
+  input clk, reset, load, shut_down_signals, isolation_signals,
+         retention_signals, scan_in5, scan_in4, scan_in3, scan_in2, scan_in1,
+         scan_enable;
+  output dout, scan_out5, scan_out4, scan_out3, scan_out2, scan_out1;
+  wire   n8, n9, dout, temp_15_, temp_14_, temp_13_, temp_12_, temp_11_,
+         temp_10_, temp_9_, temp_8_, temp_7_, temp_6_, temp_5_, temp_3_,
+         temp_2_, temp_1_, temp_0_, N4, N5, N7, N8, N9, N10, N12, N13, N14,
+         N15, N16, N17, N18, N19, n7, n10, n12, n13, n14, n15, n1, n2, n3, n19,
+         n20, n21, n22, n23, n27, n28, n29, n30, n31, n32;
+  assign scan_out3 = dout;
+
+  LSDNSSX8_HVT load_UPF_LS ( .A(load), .Y(n9) );
+  LSDNSSX8_HVT reset_UPF_LS ( .A(reset), .Y(n8) );
+  AO22X1_HVT U5 ( .A1(n13), .A2(din[1]), .A3(n10), .A4(temp_0_), .Y(N5) );
+  AO22X1_HVT U9 ( .A1(n13), .A2(n30), .A3(n10), .A4(scan_out5), .Y(N9) );
+  AO22X1_HVT U12 ( .A1(n13), .A2(din[8]), .A3(n10), .A4(temp_7_), .Y(N12) );
+  AO22X1_HVT U15 ( .A1(n13), .A2(din[11]), .A3(n10), .A4(temp_10_), .Y(N15) );
+  AO22X1_HVT U16 ( .A1(n13), .A2(n27), .A3(n10), .A4(temp_11_), .Y(N16) );
+  AO22X1_HVT U17 ( .A1(n13), .A2(n3), .A3(n10), .A4(temp_12_), .Y(N17) );
+  AO22X1_HVT U18 ( .A1(n13), .A2(n28), .A3(n10), .A4(temp_13_), .Y(N18) );
+  AO22X1_HVT U21 ( .A1(n13), .A2(dout), .A3(n10), .A4(temp_15_), .Y(n7) );
+  AO22X1_HVT U11 ( .A1(n9), .A2(n29), .A3(n10), .A4(temp_6_), .Y(n14) );
+  AO22X1_HVT U13 ( .A1(n9), .A2(din[9]), .A3(n10), .A4(temp_8_), .Y(N13) );
+  AO22X1_HVT U14 ( .A1(n13), .A2(din[10]), .A3(n10), .A4(temp_9_), .Y(N14) );
+  RSDFFARX2_RVT temp_reg_11_ ( .RETN(retention_signals), .D(N15), .SI(temp_10_), .SE(n1), .CLK(clk), .RSTB(n15), .Q(temp_11_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  AO22X1_HVT U19 ( .A1(n9), .A2(n2), .A3(n10), .A4(temp_14_), .Y(N19) );
+  INVX16_HVT U4 ( .A(n9), .Y(n10) );
+  AO22X1_HVT U8 ( .A1(n13), .A2(n32), .A3(n10), .A4(temp_3_), .Y(N8) );
+  RSDFFARX1_RVT temp_reg_6_ ( .RETN(retention_signals), .D(N10), .SI(n22), 
+        .SE(n1), .CLK(clk), .RSTB(n15), .Q(temp_6_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_12_ ( .RETN(retention_signals), .D(N16), .SI(temp_8_), 
+        .SE(n1), .CLK(clk), .RSTB(n8), .Q(temp_12_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT dout_reg ( .RETN(retention_signals), .D(n7), .SI(scan_in3), 
+        .SE(n1), .CLK(clk), .RSTB(n8), .Q(dout) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  AO22X1_HVT U29 ( .A1(n10), .A2(temp_5_), .A3(n31), .A4(n13), .Y(N10) );
+  NBUFFX8_HVT U31 ( .A(n8), .Y(n15) );
+  LSDNSSX8_HVT scan_enable_UPF_LS ( .A(scan_enable), .Y(n1) );
+  NBUFFX32_HVT U30 ( .A(n9), .Y(n13) );
+  RSDFFARX1_RVT temp_reg_2_ ( .RETN(retention_signals), .D(n12), .SI(scan_in1), 
+        .SE(n19), .CLK(clk), .RSTB(n15), .Q(temp_2_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_8_ ( .RETN(retention_signals), .D(N12), .SI(temp_14_), 
+        .SE(n19), .CLK(clk), .RSTB(n8), .Q(temp_8_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_14_ ( .RETN(retention_signals), .D(N18), .SI(temp_13_), .SE(n19), .CLK(clk), .RSTB(n8), .Q(temp_14_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_4_ ( .RETN(retention_signals), .D(N8), .SI(temp_6_), 
+        .SE(n1), .CLK(clk), .RSTB(n15), .Q(scan_out5) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX2_RVT temp_reg_1_ ( .RETN(retention_signals), .D(N5), .SI(n20), .SE(
+        n19), .CLK(clk), .RSTB(n15), .Q(temp_1_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_13_ ( .RETN(retention_signals), .D(N17), .SI(temp_11_), .SE(n1), .CLK(clk), .RSTB(n15), .Q(temp_13_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  NBUFFX8_HVT U34 ( .A(n1), .Y(n19) );
+  NBUFFX2_HVT U35 ( .A(temp_1_), .Y(n21) );
+  NBUFFX4_HVT U36 ( .A(temp_1_), .Y(n22) );
+  NBUFFX4_HVT U37 ( .A(temp_0_), .Y(n23) );
+  NBUFFX4_HVT U38 ( .A(temp_5_), .Y(scan_out1) );
+  NBUFFX4_HVT U39 ( .A(temp_7_), .Y(scan_out4) );
+  NBUFFX4_HVT U40 ( .A(temp_15_), .Y(scan_out2) );
+  AND2X1_HVT U3 ( .A1(din[0]), .A2(n13), .Y(N4) );
+  AO22X1_HVT U6 ( .A1(din[2]), .A2(n13), .A3(n21), .A4(n10), .Y(n12) );
+  AO22X2_RVT U7 ( .A1(n13), .A2(din[3]), .A3(n10), .A4(temp_2_), .Y(N7) );
+  RSDFFARX1_RVT temp_reg_3_ ( .RETN(retention_signals), .D(N7), .SI(scan_in5), 
+        .SE(n19), .CLK(clk), .RSTB(n15), .Q(temp_3_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_0_ ( .RETN(retention_signals), .D(N4), .SI(temp_2_), 
+        .SE(n19), .CLK(clk), .RSTB(n15), .Q(temp_0_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_9_ ( .RETN(retention_signals), .D(N13), .SI(scan_in2), 
+        .SE(n1), .CLK(clk), .RSTB(n15), .Q(temp_9_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_15_ ( .RETN(retention_signals), .D(N19), .SI(temp_12_), .SE(n19), .CLK(clk), .RSTB(n15), .Q(temp_15_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_5_ ( .RETN(retention_signals), .D(N9), .SI(n23), .SE(
+        n19), .CLK(clk), .RSTB(n15), .Q(temp_5_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_7_ ( .RETN(retention_signals), .D(n14), .SI(scan_in4), 
+        .SE(n19), .CLK(clk), .RSTB(n8), .Q(temp_7_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  RSDFFARX1_RVT temp_reg_10_ ( .RETN(retention_signals), .D(N14), .SI(temp_9_), 
+        .SE(n19), .CLK(clk), .RSTB(n8), .Q(temp_10_) ); //synopsys retention_upf RET_PISO_SLICE+PD_PISO_SLICE
+  NBUFFX2_HVT U10 ( .A(din[15]), .Y(n2) );
+  NBUFFX2_HVT U20 ( .A(din[13]), .Y(n3) );
+  NBUFFX4_HVT U28 ( .A(temp_3_), .Y(n20) );
+  NBUFFX2_HVT U22 ( .A(din[5]), .Y(n30) );
+  NBUFFX2_HVT U23 ( .A(din[12]), .Y(n27) );
+  NBUFFX2_HVT U24 ( .A(din[14]), .Y(n28) );
+  NBUFFX4_HVT U25 ( .A(din[6]), .Y(n31) );
+  NBUFFX4_HVT U26 ( .A(din[7]), .Y(n29) );
+  NBUFFX4_HVT U27 ( .A(din[4]), .Y(n32) );
+endmodule
+
+
+module bit_top ( hclk, lclk, reset, data_in_serial, data_valid, memory_sleep, 
+        shut_down_signals, isolation_signals, retention_signals, scan_enable, 
+        sipo_scan_in, piso_scan_in, hv_scan_in, lv_scan_in, sipo_scan_out, 
+        piso_scan_out, hv_scan_out, lv_scan_out, sout, memory_address, 
+        memory_ack, PG_ack_signals );
+  input [1:0] shut_down_signals;
+  input [1:0] isolation_signals;
+  input [1:0] retention_signals;
+  output [1:0] sout;
+  output [3:0] memory_address;
+  output [3:0] PG_ack_signals;
+  input hclk, lclk, reset, data_in_serial, data_valid, memory_sleep,
+         scan_enable, sipo_scan_in, piso_scan_in, hv_scan_in, lv_scan_in;
+  output sipo_scan_out, piso_scan_out, hv_scan_out, lv_scan_out, memory_ack;
+  wire   N0, lreset, wr_0, load_data_from_memory_0, load_data_from_memory_1,
+         net2251, net2252, net2253, net2254, net2255, net2256, net2257,
+         net2258, net2259, net2260, net2261, net2262, n33, n34, n35, n36, n37,
+         n39, n40, n42, n43, n44, n45, n47, n48, n49, n51, n52, n53, n54, n57,
+         n58, n60, n61, n65, n66, n68, n69, n70, n72, n73, n74, n76, n78, n79,
+         n80, n82, n83, n84, n86, n87, n90, n93, n95, n97, n98, n99, n100,
+         n101, n103, n106, n107, n108, n110, n111, n113, n114, n115, n117,
+         n118, n120, n121, n123, n124, n125, n126, n128, n129, n130, n131,
+         n132, n134, n135, n137, n139, n140, n141, n142, n143, n144, n145,
+         n147, n148, n149, n150, n151, n152, n153, n154, n157, n158, n159,
+         n161, n163, n164, n165, n167, n168, n192, n199, n200, n201, n202,
+         n203, n204, n205, n206, n207, n208, n209, n210, n211, n212, n213,
+         n214, n215, n216, n217, n218, n219, n220, n221, n222, n223, n224,
+         n225, n226, n227, n228, n229, n230, n231, n232, n233, n234, n235,
+         n237, n243, n245, n246, n247, n248, n249, n250, n252, n253, n255,
+         n256, n257, n259, n260, n261, n262, n263, n264, n265, n266, n267,
+         n268, n270, n271, n272, n273, n274, n275, n277, n278, n279, n280,
+         n281, n282, n283, n284, n285, n286, n287, n288, n289, n290, n291,
+         n292, n293, n294, n295, n296, n297, n298, n299, n300, n301, n302,
+         n303, n304, n305, n306, n307, n309, n310, n311, n312, n313, n314,
+         n315, n316, n317, n318, n319, n320, n321, n322, n323, n324, n325,
+         n326, n327, n328, n329, n330, n331, n332, n333, n334, n335, n336,
+         n337, n338, n339, n340, n341, n342, n343, n344, n345, n346, n348,
+         n349, n350, n351, n352, n353, n354, n355, n356, n357, n358, n359,
+         n360, n361, n362, n363, n364, n365, n366, n367, n368, n369, n370,
+         n371, n372, n373, n374, n375, n376, n377, n378, n379, n380, n381,
+         n382, n383, n384, n385, n386, n387, n388, n389, n390, n391, n392,
+         n393, n394, n395, n510, n397, n398, n399, n400, n401, n402, n403,
+         n404, n405, n406, n407, n408, n409, n410, n411, n412, n413, n414,
+         n415, n416, n417, n418, n419, n420, n421, n422, n423, n424, n425,
+         n426, n427, n428, n429, n430, n431, n432, n433, n434, n435, n436,
+         n437, n438, n439, n440, n441, n442, n443, n444, n445, n446, n447,
+         n448, net335, net336, net2844, net2845, net2846, net2847, net2848,
+         net2849, net2850, net2851, net2852, net2853, net2854, net2855,
+         net2856, net2857, net2858, net2859, net2860, net2861, net2862,
+         net2863, net2864, net2865, net2866, net2867, net2868, net2869,
+         net2870, net2871, net2872, net2873, net2874, net2875, net2876,
+         net2877, net2878, net2879, net2880, net2881, net2882, net2883,
+         net2884, net2885, net2886, net2887, net2888, net2889, net2890,
+         net2891, net2892, net2893, net2894, net2895, net2896, net2897,
+         net2898, net2899, net2900, net2901, net2902, net2903, net2904,
+         net2905, net2906, net2907, net2908, net2909, net2910, net2911,
+         net2912, net2913, net2914, net2915, net2916, net2917, net2918,
+         net2919, net2920, net2921, net2922, net2923, net2924, net2925,
+         net2926, net2927, net2928, net2929, net2930, net2931, net2932,
+         net2933, net2934, net2935, net2936, net2937, net2938, net2939,
+         net2940, net2941, net2942, net2943, net2944, net2945, net2946,
+         net2947, net2948, net2949, net2950, net2951, net2952, net2953,
+         net2954, net2955, net2956, net2957, net2958, net2959, net2960,
+         net2961, net2962, net2963, net2964, net2965, net2966, net2967,
+         net2968, net2969, net2970, net2971, n450, n454, n455, n456, n457,
+         n458, n459, n460, n461, n462, n463, n464, n465, n467, n468, n469,
+         n470, n471, n472, n474, n475, n476, n477, n478, n480, n481, n482,
+         n484, n485, n486, n487, n488, n489, n490, n491, n492, n493, n494,
+         n495, n497, n500, n501, n502, n504, n505, n506, n507, n508, n509,
+         n522, n523, n526, n533, n536, n537, n538, n540, n541, n542, n543,
+         n544, n545, n546, n547, n548, n549, n550, n551, n552, n553, n554,
+         n555, n556, n557, n558, n559, n560, n561, n562, n563, n564, n565,
+         n566, n567, n568, n569, n570, n571;
+  wire   [3:0] pout_addr2mem_0;
+  wire   [3:0] pout_addr2mem_1;
+  wire   [63:0] t_ack_signals;
+  wire   [31:0] power_ack;
+  wire   [15:0] pout2slice_0_15;
+  wire   [15:0] pout2slice_16_31;
+  wire   [31:0] slice_out;
+
+  reset_sync lreset_sync ( .reset(n533), .clk(lclk), .reset_sync(lreset), 
+        .bit_top_scan_enable_in(n568), .scan_in2(n501), .scan_in1(n500), 
+        .scan_out2(piso_scan_out), .scan_out1(n510) );
+  sipo_1 sipo_slice_first ( .clk(lclk), .reset(lreset), .data_valid(data_valid), .sin(data_in_serial), .shut_down_signals(shut_down_signals[0]), 
+        .isolation_signals(isolation_signals[0]), .retention_signals(
+        retention_signals[0]), .pout(pout2slice_0_15), .addr({net2251, net2252, 
+        net2253, net2254}), .wr(net2255), .scan_in16(n509), .scan_in15(n320), 
+        .scan_in14(n322), .scan_in13(n324), .scan_in12(n326), .scan_in11(n328), 
+        .scan_in10(n330), .scan_in9(n332), .scan_in8(n506), .scan_in7(n335), 
+        .scan_in6(n337), .scan_in5(n339), .scan_in4(n341), .scan_in3(n343), 
+        .scan_in2(n345), .scan_in1(hv_scan_in), .scan_out16(n318), 
+        .scan_out15(n319), .scan_out14(n321), .scan_out13(n323), .scan_out12(
+        n325), .scan_out11(n327), .scan_out10(n329), .scan_out9(n331), 
+        .scan_out8(n333), .scan_out7(n334), .scan_out6(n336), .scan_out5(n338), 
+        .scan_out4(n340), .scan_out3(n342), .scan_out2(n344), .scan_out1(n346), 
+        .scan_enable(n450) );
+  sipo_0 sipo_slice_last ( .clk(lclk), .reset(lreset), .data_valid(data_valid), 
+        .sin(data_in_serial), .shut_down_signals(shut_down_signals[0]), 
+        .isolation_signals(isolation_signals[0]), .retention_signals(
+        retention_signals[0]), .pout(pout2slice_16_31), .addr({net2256, 
+        net2257, net2258, net2259}), .wr(net2260), .scan_in15(n319), 
+        .scan_in14(n321), .scan_in13(n323), .scan_in12(n325), .scan_in11(n327), 
+        .scan_in10(n329), .scan_in9(n331), .scan_in8(n333), .scan_in7(n334), 
+        .scan_in6(n336), .scan_in5(n338), .scan_in4(n340), .scan_in3(n342), 
+        .scan_in2(n344), .scan_in1(n346), .scan_out13(n320), .scan_out12(n322), 
+        .scan_out11(n324), .scan_out10(n326), .scan_out9(n328), .scan_out8(
+        n330), .scan_out7(n332), .scan_out6(n335), .scan_out5(n337), 
+        .scan_out4(n339), .scan_out3(n341), .scan_out2(n343), .scan_out1(n345), 
+        .scan_enable(n450) );
+  bit_slice slice_0 ( .hclk(hclk), .lclk(lclk), .reset(n536), .sin(
+        pout2slice_0_15[0]), .data_valid(data_valid), .memory_sleep(
+        memory_sleep), .shut_down_signals(shut_down_signals), 
+        .isolation_signals(isolation_signals), .retention_signals(
+        retention_signals), .scan_enable(n167), .sipo_scan_in(net2844), 
+        .piso_scan_in(net2845), .hv_scan_in(net2846), .lv_scan_in(net2847), 
+        .sipo_scan_out(n349), .piso_scan_out(n350), .hv_scan_out(n348), 
+        .lv_scan_out(lv_scan_out), .sout(slice_out[0]), .memory_ack(
+        power_ack[0]), .PG_ack_signals(t_ack_signals[1:0]) );
+  bit_slice slice_1 ( .hclk(hclk), .lclk(lclk), .reset(n536), .sin(
+        pout2slice_0_15[1]), .data_valid(data_valid), .memory_sleep(n497), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2848), .piso_scan_in(net2849), 
+        .hv_scan_in(net2850), .lv_scan_in(net2851), .sipo_scan_out(n352), 
+        .piso_scan_out(n353), .hv_scan_out(n351), .lv_scan_out(n277), .sout(
+        slice_out[1]), .memory_ack(power_ack[1]), .PG_ack_signals(
+        t_ack_signals[3:2]) );
+  bit_slice slice_2 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n224), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2852), .piso_scan_in(net2853), 
+        .hv_scan_in(net2854), .lv_scan_in(net2855), .sipo_scan_out(n385), 
+        .piso_scan_out(n386), .hv_scan_out(n384), .lv_scan_out(n288), .sout(
+        slice_out[2]), .memory_ack(power_ack[2]), .PG_ack_signals(
+        t_ack_signals[5:4]) );
+  bit_slice slice_3 ( .hclk(hclk), .lclk(lclk), .reset(n536), .sin(
+        pout2slice_0_15[3]), .data_valid(data_valid), .memory_sleep(n497), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2856), .piso_scan_in(net2857), 
+        .hv_scan_in(net2858), .lv_scan_in(net2859), .sipo_scan_out(n419), 
+        .piso_scan_out(n420), .hv_scan_out(n418), .lv_scan_out(n299), .sout(
+        slice_out[3]), .memory_ack(power_ack[3]), .PG_ack_signals(
+        t_ack_signals[7:6]) );
+  bit_slice slice_4 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n225), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2860), .piso_scan_in(net2861), 
+        .hv_scan_in(net2862), .lv_scan_in(net2863), .sipo_scan_out(n428), 
+        .piso_scan_out(n429), .hv_scan_out(n427), .lv_scan_out(n302), .sout(
+        slice_out[4]), .memory_ack(power_ack[4]), .PG_ack_signals(
+        t_ack_signals[9:8]) );
+  bit_slice slice_5 ( .hclk(hclk), .lclk(lclk), .reset(n536), .sin(n226), 
+        .data_valid(data_valid), .memory_sleep(n497), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n167), 
+        .sipo_scan_in(net2864), .piso_scan_in(net2865), .hv_scan_in(net2866), 
+        .lv_scan_in(net2867), .sipo_scan_out(n431), .piso_scan_out(n432), 
+        .hv_scan_out(n430), .lv_scan_out(n303), .sout(slice_out[5]), 
+        .memory_ack(power_ack[5]), .PG_ack_signals(t_ack_signals[11:10]) );
+  bit_slice slice_6 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n227), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2868), .piso_scan_in(net2869), 
+        .hv_scan_in(net2870), .lv_scan_in(net2871), .sipo_scan_out(n434), 
+        .piso_scan_out(n435), .hv_scan_out(n433), .lv_scan_out(n304), .sout(
+        slice_out[6]), .memory_ack(power_ack[6]), .PG_ack_signals(
+        t_ack_signals[13:12]) );
+  bit_slice slice_7 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n229), 
+        .data_valid(data_valid), .memory_sleep(n497), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n167), 
+        .sipo_scan_in(net2872), .piso_scan_in(net2873), .hv_scan_in(net2874), 
+        .lv_scan_in(net2875), .sipo_scan_out(n437), .piso_scan_out(n438), 
+        .hv_scan_out(n436), .lv_scan_out(n305), .sout(slice_out[7]), 
+        .memory_ack(power_ack[7]), .PG_ack_signals(t_ack_signals[15:14]) );
+  bit_slice slice_8 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(
+        pout2slice_0_15[8]), .data_valid(data_valid), .memory_sleep(n522), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2876), .piso_scan_in(net2877), 
+        .hv_scan_in(net2878), .lv_scan_in(net2879), .sipo_scan_out(n440), 
+        .piso_scan_out(n441), .hv_scan_out(n439), .lv_scan_out(n306), .sout(
+        slice_out[8]), .memory_ack(power_ack[8]), .PG_ack_signals(
+        t_ack_signals[17:16]) );
+  bit_slice slice_9 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(
+        pout2slice_0_15[9]), .data_valid(data_valid), .memory_sleep(
+        memory_sleep), .shut_down_signals(shut_down_signals), 
+        .isolation_signals(isolation_signals), .retention_signals(
+        retention_signals), .scan_enable(scan_enable), .sipo_scan_in(net2880), 
+        .piso_scan_in(net2881), .hv_scan_in(net2882), .lv_scan_in(net2883), 
+        .sipo_scan_out(n443), .piso_scan_out(n444), .hv_scan_out(n442), 
+        .lv_scan_out(n307), .sout(slice_out[9]), .memory_ack(power_ack[9]), 
+        .PG_ack_signals(t_ack_signals[19:18]) );
+  bit_slice slice_10 ( .hclk(hclk), .lclk(lclk), .reset(n192), .sin(
+        pout2slice_0_15[10]), .data_valid(data_valid), .memory_sleep(n522), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2884), .piso_scan_in(net2885), 
+        .hv_scan_in(net2886), .lv_scan_in(net2887), .sipo_scan_out(n355), 
+        .piso_scan_out(n356), .hv_scan_out(n354), .lv_scan_out(n278), .sout(
+        slice_out[10]), .memory_ack(power_ack[10]), .PG_ack_signals(
+        t_ack_signals[21:20]) );
+  bit_slice slice_11 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(
+        pout2slice_0_15[11]), .data_valid(data_valid), .memory_sleep(
+        memory_sleep), .shut_down_signals(shut_down_signals), 
+        .isolation_signals(isolation_signals), .retention_signals(
+        retention_signals), .scan_enable(scan_enable), .sipo_scan_in(net2888), 
+        .piso_scan_in(net2889), .hv_scan_in(net2890), .lv_scan_in(net2891), 
+        .sipo_scan_out(n358), .piso_scan_out(n359), .hv_scan_out(n357), 
+        .lv_scan_out(n279), .sout(slice_out[11]), .memory_ack(power_ack[11]), 
+        .PG_ack_signals(t_ack_signals[23:22]) );
+  bit_slice slice_12 ( .hclk(hclk), .lclk(lclk), .reset(n192), .sin(n230), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2892), .piso_scan_in(net2893), 
+        .hv_scan_in(net2894), .lv_scan_in(net2895), .sipo_scan_out(n361), 
+        .piso_scan_out(n362), .hv_scan_out(n360), .lv_scan_out(n280), .sout(
+        slice_out[12]), .memory_ack(power_ack[12]), .PG_ack_signals(
+        t_ack_signals[25:24]) );
+  bit_slice slice_13 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n231), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(scan_enable), .sipo_scan_in(net2896), .piso_scan_in(
+        net2897), .hv_scan_in(net2898), .lv_scan_in(net2899), .sipo_scan_out(
+        n364), .piso_scan_out(n365), .hv_scan_out(n363), .lv_scan_out(n281), 
+        .sout(slice_out[13]), .memory_ack(power_ack[13]), .PG_ack_signals(
+        t_ack_signals[27:26]) );
+  bit_slice slice_14 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n233), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n167), .sipo_scan_in(net2900), .piso_scan_in(net2901), 
+        .hv_scan_in(net2902), .lv_scan_in(net2903), .sipo_scan_out(n367), 
+        .piso_scan_out(n368), .hv_scan_out(n366), .lv_scan_out(n282), .sout(
+        slice_out[14]), .memory_ack(power_ack[14]), .PG_ack_signals(
+        t_ack_signals[29:28]) );
+  bit_slice slice_15 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n235), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(scan_enable), .sipo_scan_in(net2904), .piso_scan_in(
+        net2905), .hv_scan_in(net2906), .lv_scan_in(net2907), .sipo_scan_out(
+        n370), .piso_scan_out(n371), .hv_scan_out(n369), .lv_scan_out(n283), 
+        .sout(slice_out[15]), .memory_ack(power_ack[15]), .PG_ack_signals(
+        t_ack_signals[31:30]) );
+  bit_slice slice_16 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n199), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n567), .sipo_scan_in(net2908), .piso_scan_in(net2909), 
+        .hv_scan_in(net2910), .lv_scan_in(net2911), .sipo_scan_out(n373), 
+        .piso_scan_out(n374), .hv_scan_out(n372), .lv_scan_out(n284), .sout(
+        slice_out[16]), .memory_ack(power_ack[16]), .PG_ack_signals(
+        t_ack_signals[33:32]) );
+  bit_slice slice_17 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n200), 
+        .data_valid(data_valid), .memory_sleep(n526), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2912), .piso_scan_in(net2913), .hv_scan_in(net2914), 
+        .lv_scan_in(net2915), .sipo_scan_out(n376), .piso_scan_out(n377), 
+        .hv_scan_out(n375), .lv_scan_out(n285), .sout(slice_out[17]), 
+        .memory_ack(power_ack[17]), .PG_ack_signals(t_ack_signals[35:34]) );
+  bit_slice slice_18 ( .hclk(hclk), .lclk(lclk), .reset(n533), .sin(n201), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n568), .sipo_scan_in(net2916), .piso_scan_in(net2917), 
+        .hv_scan_in(net2918), .lv_scan_in(net2919), .sipo_scan_out(n379), 
+        .piso_scan_out(n380), .hv_scan_out(n378), .lv_scan_out(n286), .sout(
+        slice_out[18]), .memory_ack(power_ack[18]), .PG_ack_signals(
+        t_ack_signals[37:36]) );
+  bit_slice slice_19 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n202), 
+        .data_valid(data_valid), .memory_sleep(n523), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2920), .piso_scan_in(net2921), .hv_scan_in(net2922), 
+        .lv_scan_in(net2923), .sipo_scan_out(n382), .piso_scan_out(n383), 
+        .hv_scan_out(n381), .lv_scan_out(n287), .sout(slice_out[19]), 
+        .memory_ack(power_ack[19]), .PG_ack_signals(t_ack_signals[39:38]) );
+  bit_slice slice_20 ( .hclk(hclk), .lclk(lclk), .reset(n533), .sin(n204), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n570), .sipo_scan_in(net2924), .piso_scan_in(net2925), 
+        .hv_scan_in(net2926), .lv_scan_in(net2927), .sipo_scan_out(n388), 
+        .piso_scan_out(n389), .hv_scan_out(n387), .lv_scan_out(n289), .sout(
+        slice_out[20]), .memory_ack(power_ack[20]), .PG_ack_signals(
+        t_ack_signals[41:40]) );
+  bit_slice slice_21 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n206), 
+        .data_valid(data_valid), .memory_sleep(n523), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2928), .piso_scan_in(net2929), .hv_scan_in(net2930), 
+        .lv_scan_in(net2931), .sipo_scan_out(n391), .piso_scan_out(n392), 
+        .hv_scan_out(n390), .lv_scan_out(n290), .sout(slice_out[21]), 
+        .memory_ack(power_ack[21]), .PG_ack_signals(t_ack_signals[43:42]) );
+  bit_slice slice_22 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n209), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n566), .sipo_scan_in(net2932), .piso_scan_in(net2933), 
+        .hv_scan_in(net2934), .lv_scan_in(net2935), .sipo_scan_out(n394), 
+        .piso_scan_out(n395), .hv_scan_out(n393), .lv_scan_out(n291), .sout(
+        slice_out[22]), .memory_ack(power_ack[22]), .PG_ack_signals(
+        t_ack_signals[45:44]) );
+  bit_slice slice_23 ( .hclk(hclk), .lclk(lclk), .reset(reset), .sin(n211), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n168), .sipo_scan_in(net2936), .piso_scan_in(net2937), 
+        .hv_scan_in(net2938), .lv_scan_in(net2939), .sipo_scan_out(n398), 
+        .piso_scan_out(n399), .hv_scan_out(n397), .lv_scan_out(n292), .sout(
+        slice_out[23]), .memory_ack(power_ack[23]), .PG_ack_signals(
+        t_ack_signals[47:46]) );
+  bit_slice slice_24 ( .hclk(hclk), .lclk(lclk), .reset(n538), .sin(n212), 
+        .data_valid(data_valid), .memory_sleep(n540), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2940), .piso_scan_in(net2941), .hv_scan_in(net2942), 
+        .lv_scan_in(net2943), .sipo_scan_out(n401), .piso_scan_out(n402), 
+        .hv_scan_out(n400), .lv_scan_out(n293), .sout(slice_out[24]), 
+        .memory_ack(power_ack[24]), .PG_ack_signals(t_ack_signals[49:48]) );
+  bit_slice slice_25 ( .hclk(hclk), .lclk(lclk), .reset(n537), .sin(n213), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n168), .sipo_scan_in(net2944), .piso_scan_in(net2945), 
+        .hv_scan_in(net2946), .lv_scan_in(net2947), .sipo_scan_out(n404), 
+        .piso_scan_out(n405), .hv_scan_out(n403), .lv_scan_out(n294), .sout(
+        slice_out[25]), .memory_ack(power_ack[25]), .PG_ack_signals(
+        t_ack_signals[51:50]) );
+  bit_slice slice_26 ( .hclk(hclk), .lclk(lclk), .reset(n538), .sin(n214), 
+        .data_valid(data_valid), .memory_sleep(n540), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2948), .piso_scan_in(net2949), .hv_scan_in(net2950), 
+        .lv_scan_in(net2951), .sipo_scan_out(n407), .piso_scan_out(n408), 
+        .hv_scan_out(n406), .lv_scan_out(n295), .sout(slice_out[26]), 
+        .memory_ack(power_ack[26]), .PG_ack_signals(t_ack_signals[53:52]) );
+  bit_slice slice_27 ( .hclk(hclk), .lclk(lclk), .reset(n537), .sin(n215), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n168), .sipo_scan_in(net2952), .piso_scan_in(net2953), 
+        .hv_scan_in(net2954), .lv_scan_in(net2955), .sipo_scan_out(n410), 
+        .piso_scan_out(n411), .hv_scan_out(n409), .lv_scan_out(n296), .sout(
+        slice_out[27]), .memory_ack(power_ack[27]), .PG_ack_signals(
+        t_ack_signals[55:54]) );
+  bit_slice slice_28 ( .hclk(hclk), .lclk(lclk), .reset(n538), .sin(n217), 
+        .data_valid(data_valid), .memory_sleep(n540), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2956), .piso_scan_in(net2957), .hv_scan_in(net2958), 
+        .lv_scan_in(net2959), .sipo_scan_out(n413), .piso_scan_out(n414), 
+        .hv_scan_out(n412), .lv_scan_out(n297), .sout(slice_out[28]), 
+        .memory_ack(power_ack[28]), .PG_ack_signals(t_ack_signals[57:56]) );
+  bit_slice slice_29 ( .hclk(hclk), .lclk(lclk), .reset(n537), .sin(n219), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n168), .sipo_scan_in(net2960), .piso_scan_in(net2961), 
+        .hv_scan_in(net2962), .lv_scan_in(net2963), .sipo_scan_out(n416), 
+        .piso_scan_out(n417), .hv_scan_out(n415), .lv_scan_out(n298), .sout(
+        slice_out[29]), .memory_ack(power_ack[29]), .PG_ack_signals(
+        t_ack_signals[59:58]) );
+  bit_slice slice_30 ( .hclk(hclk), .lclk(lclk), .reset(n538), .sin(n221), 
+        .data_valid(data_valid), .memory_sleep(n540), .shut_down_signals(
+        shut_down_signals), .isolation_signals(isolation_signals), 
+        .retention_signals(retention_signals), .scan_enable(n168), 
+        .sipo_scan_in(net2964), .piso_scan_in(net2965), .hv_scan_in(net2966), 
+        .lv_scan_in(net2967), .sipo_scan_out(n422), .piso_scan_out(n423), 
+        .hv_scan_out(n421), .lv_scan_out(n300), .sout(slice_out[30]), 
+        .memory_ack(power_ack[30]), .PG_ack_signals(t_ack_signals[61:60]) );
+  bit_slice slice_31 ( .hclk(hclk), .lclk(lclk), .reset(n537), .sin(n223), 
+        .data_valid(data_valid), .memory_sleep(memory_sleep), 
+        .shut_down_signals(shut_down_signals), .isolation_signals(
+        isolation_signals), .retention_signals(retention_signals), 
+        .scan_enable(n168), .sipo_scan_in(net2968), .piso_scan_in(net2969), 
+        .hv_scan_in(net2970), .lv_scan_in(net2971), .sipo_scan_out(n425), 
+        .piso_scan_out(n426), .hv_scan_out(n424), .lv_scan_out(n301), .sout(
+        slice_out[31]), .memory_ack(power_ack[31]), .PG_ack_signals(
+        t_ack_signals[63:62]) );
+  piso_1 piso_slice_first ( .din({n95, n100, n103, n108, n110, n115, n117, 
+        n121, n126, n132, n137, n143, n148, n153, n159, n165}), .clk(lclk), 
+        .reset(lreset), .load(load_data_from_memory_0), .shut_down_signals(
+        shut_down_signals[1]), .isolation_signals(isolation_signals[1]), 
+        .retention_signals(retention_signals[1]), .dout(net2261), .scan_in5(
+        n310), .scan_in4(n312), .scan_in3(n314), .scan_in2(n316), .scan_in1(
+        n318), .scan_out5(n309), .scan_out4(n311), .scan_out3(n313), 
+        .scan_out2(n315), .scan_out1(n317), .scan_enable(n567) );
+  piso_0 piso_slice_last ( .din({n68, n70, n72, n74, slice_out[27:24], n79, 
+        n82, n83, n86, slice_out[19:16]}), .clk(lclk), .reset(lreset), .load(
+        n501), .shut_down_signals(shut_down_signals[1]), .isolation_signals(
+        isolation_signals[1]), .retention_signals(retention_signals[1]), 
+        .dout(net2262), .scan_in5(n309), .scan_in4(n311), .scan_in3(n313), 
+        .scan_in2(n315), .scan_in1(n317), .scan_out5(net335), .scan_out4(n310), 
+        .scan_out3(n312), .scan_out2(n314), .scan_out1(n316), .scan_enable(
+        n571) );
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0__0_ISO_SIPO_OUT ( 
+        .A(net2259), .EN(n65), .Y(n564) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPENX4_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wrISO_SIPO_OUT ( .A(
+        net2255), .EN(n65), .Y(n486) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1_ISO_SIPO_OUT ( .A(
+        net2253), .EN(n65), .Y(n492) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2_ISO_SIPO_OUT ( .A(
+        net2252), .EN(n65), .Y(n488) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPX8_HVT CLK_UPF_LS ( .A(lclk), .Y(n66) );
+  LSUPX1_HVT EN_UPF_LS ( .A(isolation_signals[0]), .Y(n65) );
+  NOR4X1_HVT U46 ( .A1(t_ack_signals[56]), .A2(t_ack_signals[58]), .A3(
+        t_ack_signals[60]), .A4(t_ack_signals[62]), .Y(n36) );
+  NOR4X1_HVT U47 ( .A1(t_ack_signals[48]), .A2(t_ack_signals[50]), .A3(
+        t_ack_signals[52]), .A4(t_ack_signals[54]), .Y(n245) );
+  NOR4X1_HVT U48 ( .A1(t_ack_signals[40]), .A2(t_ack_signals[42]), .A3(
+        t_ack_signals[44]), .A4(t_ack_signals[46]), .Y(n34) );
+  NOR4X1_HVT U49 ( .A1(t_ack_signals[32]), .A2(t_ack_signals[34]), .A3(
+        t_ack_signals[36]), .A4(t_ack_signals[38]), .Y(n33) );
+  NAND4X0_HVT U50 ( .A1(n36), .A2(n35), .A3(n34), .A4(n33), .Y(n42) );
+  NOR4X1_HVT U51 ( .A1(t_ack_signals[24]), .A2(t_ack_signals[26]), .A3(
+        t_ack_signals[28]), .A4(t_ack_signals[30]), .Y(n264) );
+  NOR4X1_HVT U52 ( .A1(t_ack_signals[16]), .A2(t_ack_signals[18]), .A3(
+        t_ack_signals[20]), .A4(t_ack_signals[22]), .Y(n255) );
+  NOR4X1_HVT U53 ( .A1(t_ack_signals[8]), .A2(t_ack_signals[10]), .A3(
+        t_ack_signals[12]), .A4(t_ack_signals[14]), .Y(n249) );
+  NOR4X1_HVT U54 ( .A1(t_ack_signals[0]), .A2(t_ack_signals[2]), .A3(
+        t_ack_signals[4]), .A4(t_ack_signals[6]), .Y(n37) );
+  NOR4X1_HVT U57 ( .A1(t_ack_signals[57]), .A2(t_ack_signals[59]), .A3(
+        t_ack_signals[61]), .A4(t_ack_signals[63]), .Y(n253) );
+  NOR4X1_HVT U58 ( .A1(t_ack_signals[49]), .A2(t_ack_signals[51]), .A3(
+        t_ack_signals[53]), .A4(t_ack_signals[55]), .Y(n45) );
+  NOR4X1_HVT U59 ( .A1(t_ack_signals[41]), .A2(t_ack_signals[43]), .A3(
+        t_ack_signals[45]), .A4(t_ack_signals[47]), .Y(n44) );
+  NOR4X1_HVT U60 ( .A1(t_ack_signals[33]), .A2(t_ack_signals[35]), .A3(
+        t_ack_signals[37]), .A4(t_ack_signals[39]), .Y(n43) );
+  NOR4X1_HVT U62 ( .A1(t_ack_signals[25]), .A2(t_ack_signals[27]), .A3(
+        t_ack_signals[29]), .A4(t_ack_signals[31]), .Y(n252) );
+  NOR4X1_HVT U63 ( .A1(t_ack_signals[17]), .A2(t_ack_signals[19]), .A3(
+        t_ack_signals[21]), .A4(t_ack_signals[23]), .Y(n49) );
+  NOR4X1_HVT U64 ( .A1(t_ack_signals[9]), .A2(t_ack_signals[11]), .A3(
+        t_ack_signals[13]), .A4(t_ack_signals[15]), .Y(n48) );
+  NOR4X1_HVT U65 ( .A1(t_ack_signals[1]), .A2(t_ack_signals[3]), .A3(
+        t_ack_signals[5]), .A4(t_ack_signals[7]), .Y(n47) );
+  NAND4X0_HVT U66 ( .A1(n252), .A2(n49), .A3(n48), .A4(n47), .Y(n51) );
+  AOBUFX4_RVT U87 ( .A(slice_out[30]), .Y(n70) );
+  AOBUFX4_RVT U91 ( .A(slice_out[28]), .Y(n74) );
+  NBUFFX2_HVT U93 ( .A(power_ack[26]), .Y(n76) );
+  NBUFFX2_HVT U95 ( .A(power_ack[24]), .Y(n78) );
+  AOBUFX4_RVT U96 ( .A(slice_out[23]), .Y(n79) );
+  AOBUFX4_RVT U100 ( .A(slice_out[21]), .Y(n83) );
+  AOBUFX2_RVT U116 ( .A(n98), .Y(n99) );
+  NBUFFX2_HVT U118 ( .A(power_ack[13]), .Y(n101) );
+  NBUFFX2_HVT U128 ( .A(power_ack[10]), .Y(n111) );
+  NBUFFX2_HVT U135 ( .A(power_ack[8]), .Y(n118) );
+  AOBUFX2_RVT U147 ( .A(n129), .Y(n130) );
+  AOBUFX4_RVT U148 ( .A(n130), .Y(n131) );
+  AOBUFX2_RVT U168 ( .A(n150), .Y(n151) );
+  AOBUFX2_RVT U180 ( .A(n161), .Y(n163) );
+  NBUFFX32_HVT U184 ( .A(n450), .Y(n167) );
+  NBUFFX32_HVT U185 ( .A(n570), .Y(n168) );
+  AOBUFX4_RVT U219 ( .A(pout2slice_16_31[3]), .Y(n202) );
+  AOBUFX4_RVT U230 ( .A(pout2slice_16_31[9]), .Y(n213) );
+  AOBUFX2_HVT U233 ( .A(pout2slice_16_31[12]), .Y(n216) );
+  AOBUFX4_RVT U237 ( .A(pout2slice_16_31[14]), .Y(n220) );
+  AOBUFX4_RVT U249 ( .A(pout2slice_0_15[14]), .Y(n232) );
+  AOBUFX4_HVT U247 ( .A(pout2slice_0_15[12]), .Y(n230) );
+  AOBUFX4_HVT U243 ( .A(pout2slice_0_15[5]), .Y(n226) );
+  AOBUFX4_HVT U241 ( .A(pout2slice_0_15[2]), .Y(n224) );
+  AOBUFX4_HVT U248 ( .A(pout2slice_0_15[13]), .Y(n231) );
+  AOBUFX4_HVT U218 ( .A(pout2slice_16_31[2]), .Y(n201) );
+  AOBUFX4_HVT U217 ( .A(pout2slice_16_31[1]), .Y(n200) );
+  AOBUFX4_HVT U89 ( .A(slice_out[29]), .Y(n72) );
+  AOBUFX4_HVT U170 ( .A(n152), .Y(n153) );
+  AOBUFX4_HVT U252 ( .A(n234), .Y(n235) );
+  AOBUFX4_HVT U156 ( .A(slice_out[4]), .Y(n139) );
+  AOBUFX4_HVT U166 ( .A(slice_out[2]), .Y(n149) );
+  AOBUFX4_LVT U112 ( .A(slice_out[15]), .Y(n95) );
+  AOBUFX4_RVT U115 ( .A(n97), .Y(n98) );
+  AOBUFX4_RVT U123 ( .A(slice_out[12]), .Y(n106) );
+  AOBUFX4_LVT U151 ( .A(slice_out[5]), .Y(n134) );
+  AOBUFX2_HVT U160 ( .A(n142), .Y(n143) );
+  AOBUFX4_HVT U152 ( .A(n134), .Y(n135) );
+  AOBUFX4_HVT U224 ( .A(pout2slice_16_31[6]), .Y(n207) );
+  LSUPENX4_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_wr_0_ISO_SIPO_OUT ( .A(
+        net2260), .EN(n65), .Y(n565) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPENX1_HVT snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_doutISO_PISO_OUT ( .A(
+        net2261), .EN(net336), .Y(n270) ); //synopsys isolation_upf ISO_PISO_OUT+PD_PISO_SLICE
+  LSUPENX1_HVT snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_dout_0_ISO_PISO_OUT ( .A(
+        net2262), .EN(net336), .Y(n272) ); //synopsys isolation_upf ISO_PISO_OUT+PD_PISO_SLICE
+  OR2X1_HVT U78 ( .A1(n462), .A2(n61), .Y(n257) );
+  AOBUFX2_HVT U169 ( .A(n151), .Y(n152) );
+  AOBUFX4_HVT U159 ( .A(n141), .Y(n142) );
+  NAND4X0_HVT U61 ( .A1(n253), .A2(n45), .A3(n44), .A4(n43), .Y(n259) );
+  AOBUFX4_HVT U174 ( .A(slice_out[1]), .Y(n157) );
+  AOBUFX4_HVT U175 ( .A(n157), .Y(n158) );
+  AOBUFX4_HVT U181 ( .A(n163), .Y(n164) );
+  AOBUFX4_HVT U134 ( .A(slice_out[9]), .Y(n117) );
+  AOBUFX4_HVT U164 ( .A(n145), .Y(n147) );
+  AOBUFX4_HVT U131 ( .A(n113), .Y(n114) );
+  AOBUFX4_HVT U142 ( .A(n124), .Y(n125) );
+  AOBUFX4_HVT U85 ( .A(slice_out[31]), .Y(n68) );
+  AOBUFX4_RVT U167 ( .A(n149), .Y(n150) );
+  AOBUFX4_RVT U157 ( .A(n139), .Y(n140) );
+  NBUFFX8_HVT U88 ( .A(n273), .Y(n57) );
+  NBUFFX2_HVT U102 ( .A(n264), .Y(n40) );
+  NBUFFX2_HVT U105 ( .A(n255), .Y(n39) );
+  NBUFFX8_HVT U106 ( .A(n247), .Y(wr_0) );
+  NBUFFX2_HVT U108 ( .A(n246), .Y(pout_addr2mem_1[2]) );
+  NBUFFX2_HVT U109 ( .A(n245), .Y(n35) );
+  NBUFFX2_HVT U111 ( .A(n248), .Y(pout_addr2mem_1[3]) );
+  NBUFFX2_HVT U129 ( .A(n259), .Y(n52) );
+  NBUFFX8_HVT U153 ( .A(n272), .Y(sout[1]) );
+  NBUFFX8_HVT U187 ( .A(n275), .Y(n58) );
+  LSUPX1_HVT EN_1_UPF_LS ( .A(isolation_signals[1]), .Y(net336) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR ( .A(n447), .Y(net2844) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR ( .A(n448), .Y(net2845) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR ( .A(n446), .Y(net2846) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR ( .A(n445), .Y(net2847) );
+  NBUFFX2_HVT sipo_scan_in_UPF_RPTR_0 ( .A(n353), .Y(net2848) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_0 ( .A(n354), .Y(net2849) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_0 ( .A(n352), .Y(net2850) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_0 ( .A(n278), .Y(net2851) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_1 ( .A(n386), .Y(net2852) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_1 ( .A(n387), .Y(net2853) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_1 ( .A(n385), .Y(net2854) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_1 ( .A(n289), .Y(net2855) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_2 ( .A(n420), .Y(net2856) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_2 ( .A(n421), .Y(net2857) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_2 ( .A(n419), .Y(net2858) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_3 ( .A(n429), .Y(net2860) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_3 ( .A(n430), .Y(net2861) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_3 ( .A(n428), .Y(net2862) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_4 ( .A(n432), .Y(net2864) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_4 ( .A(n431), .Y(net2866) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_4 ( .A(n304), .Y(net2867) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_5 ( .A(n435), .Y(net2868) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_5 ( .A(n434), .Y(net2870) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_6 ( .A(n438), .Y(net2872) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_6 ( .A(n439), .Y(net2873) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_6 ( .A(n437), .Y(net2874) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_7 ( .A(n441), .Y(net2876) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_7 ( .A(n440), .Y(net2878) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_8 ( .A(n444), .Y(net2880) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_8 ( .A(n443), .Y(net2882) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_9 ( .A(n356), .Y(net2884) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_9 ( .A(n355), .Y(net2886) );
+  NBUFFX2_HVT sipo_scan_in_UPF_RPTR_10 ( .A(n359), .Y(net2888) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_10 ( .A(n358), .Y(net2890) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_11 ( .A(n362), .Y(net2892) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_11 ( .A(n363), .Y(net2893) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_11 ( .A(n361), .Y(net2894) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_12 ( .A(n365), .Y(net2896) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_12 ( .A(n364), .Y(net2898) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_13 ( .A(n368), .Y(net2900) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_13 ( .A(n367), .Y(net2902) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_14 ( .A(n371), .Y(net2904) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_14 ( .A(n372), .Y(net2905) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_14 ( .A(n370), .Y(net2906) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_15 ( .A(n374), .Y(net2908) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_15 ( .A(n375), .Y(net2909) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_15 ( .A(n373), .Y(net2910) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_16 ( .A(n377), .Y(net2912) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_16 ( .A(n376), .Y(net2914) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_17 ( .A(n380), .Y(net2916) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_17 ( .A(n381), .Y(net2917) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_17 ( .A(n379), .Y(net2918) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_18 ( .A(n383), .Y(net2920) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_18 ( .A(n384), .Y(net2921) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_18 ( .A(n382), .Y(net2922) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_19 ( .A(n389), .Y(net2924) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_19 ( .A(n390), .Y(net2925) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_19 ( .A(n388), .Y(net2926) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_20 ( .A(n392), .Y(net2928) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_20 ( .A(n391), .Y(net2930) );
+  NBUFFX2_HVT sipo_scan_in_UPF_RPTR_21 ( .A(n395), .Y(net2932) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_21 ( .A(n394), .Y(net2934) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_22 ( .A(n399), .Y(net2936) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_22 ( .A(n400), .Y(net2937) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_22 ( .A(n398), .Y(net2938) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_23 ( .A(n402), .Y(net2940) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_23 ( .A(n403), .Y(net2941) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_23 ( .A(n401), .Y(net2942) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_24 ( .A(n405), .Y(net2944) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_24 ( .A(n404), .Y(net2946) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_24 ( .A(n295), .Y(net2947) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_25 ( .A(n408), .Y(net2948) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_25 ( .A(n409), .Y(net2949) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_25 ( .A(n407), .Y(net2950) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_26 ( .A(n411), .Y(net2952) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_26 ( .A(n410), .Y(net2954) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_26 ( .A(n297), .Y(net2955) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_27 ( .A(n414), .Y(net2956) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_27 ( .A(n415), .Y(net2957) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_27 ( .A(n413), .Y(net2958) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_28 ( .A(n417), .Y(net2960) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_28 ( .A(n416), .Y(net2962) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_29 ( .A(n423), .Y(net2964) );
+  NBUFFX2_HVT hv_scan_in_UPF_RPTR_29 ( .A(n422), .Y(net2966) );
+  NBUFFX4_HVT sipo_scan_in_UPF_RPTR_30 ( .A(n426), .Y(net2968) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_8 ( .A(lv_scan_in), .Y(net2883) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_8 ( .A(sipo_scan_in), .Y(net2881) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_21 ( .A(piso_scan_in), .Y(net2933) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_9 ( .A(n279), .Y(net2887) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_19 ( .A(n290), .Y(net2927) );
+  NBUFFX4_HVT hv_scan_in_UPF_RPTR_30 ( .A(n425), .Y(net2970) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_5 ( .A(n305), .Y(net2871) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_29 ( .A(n301), .Y(net2967) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_11 ( .A(n281), .Y(net2895) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_13 ( .A(n283), .Y(net2903) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_21 ( .A(n292), .Y(net2935) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_7 ( .A(n307), .Y(net2879) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_3 ( .A(n303), .Y(net2863) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_15 ( .A(n285), .Y(net2911) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_27 ( .A(n298), .Y(net2959) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_25 ( .A(n296), .Y(net2951) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_17 ( .A(n287), .Y(net2919) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_10 ( .A(n280), .Y(net2891) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_23 ( .A(n294), .Y(net2943) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_12 ( .A(n366), .Y(net2897) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_20 ( .A(n393), .Y(net2929) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_4 ( .A(n433), .Y(net2865) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_24 ( .A(n406), .Y(net2945) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_16 ( .A(n378), .Y(net2913) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_26 ( .A(n412), .Y(net2953) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_10 ( .A(n360), .Y(net2889) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_7 ( .A(n442), .Y(net2877) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_29 ( .A(n424), .Y(net2965) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_13 ( .A(n369), .Y(net2901) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_9 ( .A(n357), .Y(net2885) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_5 ( .A(n436), .Y(net2869) );
+  NBUFFX2_HVT piso_scan_in_UPF_RPTR_28 ( .A(n418), .Y(net2961) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_16 ( .A(n286), .Y(net2915) );
+  NBUFFX4_HVT piso_scan_in_UPF_RPTR_30 ( .A(n427), .Y(net2969) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_18 ( .A(n288), .Y(net2923) );
+  NBUFFX2_HVT lv_scan_in_UPF_RPTR_20 ( .A(n291), .Y(net2931) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_2 ( .A(n300), .Y(net2859) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_28 ( .A(n299), .Y(net2963) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_22 ( .A(n293), .Y(net2939) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_6 ( .A(n306), .Y(net2875) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_12 ( .A(n282), .Y(net2899) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_30 ( .A(n302), .Y(net2971) );
+  NBUFFX4_HVT lv_scan_in_UPF_RPTR_14 ( .A(n284), .Y(net2907) );
+  AOBUFX4_HVT U238 ( .A(n220), .Y(n221) );
+  AOBUFX4_HVT U228 ( .A(n210), .Y(n211) );
+  AOBUFX4_HVT U143 ( .A(n125), .Y(n126) );
+  AOBUFX4_HVT U232 ( .A(pout2slice_16_31[11]), .Y(n215) );
+  AOBUFX4_HVT U216 ( .A(n508), .Y(n199) );
+  AOBUFX4_HVT U244 ( .A(pout2slice_0_15[6]), .Y(n227) );
+  AOBUFX4_HVT U250 ( .A(n232), .Y(n233) );
+  AOBUFX4_HVT U240 ( .A(n222), .Y(n223) );
+  AOBUFX4_HVT U138 ( .A(n120), .Y(n121) );
+  AOBUFX4_HVT U226 ( .A(n208), .Y(n209) );
+  NBUFFX2_HVT U110 ( .A(power_ack[15]), .Y(n93) );
+  NBUFFX2_HVT U104 ( .A(power_ack[18]), .Y(n87) );
+  NBUFFX4_HVT U90 ( .A(power_ack[28]), .Y(n73) );
+  NBUFFX4_HVT U86 ( .A(power_ack[30]), .Y(n69) );
+  AOBUFX4_LVT U227 ( .A(pout2slice_16_31[7]), .Y(n210) );
+  NBUFFX8_HVT U119 ( .A(n266), .Y(pout_addr2mem_0[3]) );
+  NBUFFX8_HVT U122 ( .A(n250), .Y(pout_addr2mem_0[0]) );
+  AOBUFX4_LVT U130 ( .A(slice_out[10]), .Y(n113) );
+  AOBUFX4_LVT U127 ( .A(slice_out[11]), .Y(n110) );
+  AOBUFX4_LVT U114 ( .A(slice_out[14]), .Y(n97) );
+  AOBUFX4_LVT U225 ( .A(n207), .Y(n208) );
+  AOBUFX4_LVT U222 ( .A(pout2slice_16_31[5]), .Y(n205) );
+  AOBUFX4_LVT U220 ( .A(pout2slice_16_31[4]), .Y(n203) );
+  AOBUFX4_LVT U162 ( .A(slice_out[3]), .Y(n145) );
+  MUX21X2_HVT U200 ( .A1(sipo_scan_in), .A2(n350), .S0(n450), .Y(n447) );
+  NBUFFX8_HVT U155 ( .A(n270), .Y(sout[0]) );
+  AOBUFX4_LVT U251 ( .A(pout2slice_0_15[15]), .Y(n234) );
+  AOBUFX4_HVT U239 ( .A(pout2slice_16_31[15]), .Y(n222) );
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_1__0_ISO_SIPO_OUT ( 
+        .A(net2258), .EN(n65), .Y(n481) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_0_ISO_SIPO_OUT ( .A(
+        net2254), .EN(n65), .Y(n559) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  DFFARX2_RVT load_data_from_memory_0_reg ( .D(n256), .CLK(n66), .RSTB(lreset), 
+        .Q(load_data_from_memory_0) );
+  SDFFARX2_RVT temp_1_reg ( .D(n243), .SI(n348), .SE(scan_enable), .CLK(n66), 
+        .RSTB(lreset), .Q(n551) );
+  DFFARX1_RVT load_data_from_memory_1_reg ( .D(n262), .CLK(n66), .RSTB(lreset), 
+        .Q(load_data_from_memory_1) );
+  AOBUFX4_HVT U141 ( .A(n123), .Y(n124) );
+  AOBUFX4_RVT U145 ( .A(slice_out[6]), .Y(n128) );
+  NOR4X1_HVT U69 ( .A1(n78), .A2(power_ack[25]), .A3(n76), .A4(power_ack[27]), 
+        .Y(n463) );
+  NOR4X1_HVT U76 ( .A1(power_ack[0]), .A2(n154), .A3(power_ack[2]), .A4(n144), 
+        .Y(n458) );
+  NAND4X0_HVT U55 ( .A1(n40), .A2(n39), .A3(n249), .A4(n37), .Y(n471) );
+  OR2X1_HVT U67 ( .A1(n52), .A2(n51), .Y(n484) );
+  NBUFFX2_HVT U133 ( .A(n261), .Y(pout_addr2mem_1[0]) );
+  NBUFFX2_HVT U121 ( .A(n265), .Y(pout_addr2mem_1[1]) );
+  NBUFFX4_HVT U179 ( .A(n267), .Y(pout_addr2mem_0[1]) );
+  NBUFFX2_HVT U144 ( .A(n257), .Y(memory_ack) );
+  AOINVX4_HVT U150 ( .A(n507), .Y(n508) );
+  NBUFFX8_HVT U186 ( .A(n484), .Y(PG_ack_signals[1]) );
+  INVX4_RVT U188 ( .A(n491), .Y(n268) );
+  INVX1_HVT U191 ( .A(n459), .Y(n460) );
+  INVX1_HVT U194 ( .A(n475), .Y(n476) );
+  INVX1_HVT U196 ( .A(n477), .Y(n478) );
+  INVX2_HVT U198 ( .A(n472), .Y(n260) );
+  INVX8_HVT U201 ( .A(n493), .Y(n267) );
+  INVX8_HVT U204 ( .A(n489), .Y(pout_addr2mem_0[2]) );
+  INVX2_HVT U207 ( .A(n488), .Y(n489) );
+  INVX1_HVT U208 ( .A(n492), .Y(n493) );
+  NBUFFX2_HVT U255 ( .A(n468), .Y(n266) );
+  NBUFFX2_HVT U257 ( .A(n467), .Y(n246) );
+  INVX1_HVT U258 ( .A(n481), .Y(n482) );
+  INVX1_HVT U259 ( .A(n471), .Y(n472) );
+  NBUFFX2_HVT U260 ( .A(n456), .Y(n53) );
+  NBUFFX2_HVT U261 ( .A(n455), .Y(n54) );
+  NBUFFX2_HVT U263 ( .A(n458), .Y(n273) );
+  NBUFFX2_HVT U264 ( .A(n465), .Y(n275) );
+  IBUFFX32_HVT U266 ( .A(n495), .Y(hv_scan_out) );
+  INVX1_HVT U268 ( .A(n494), .Y(n495) );
+  INVX1_HVT U271 ( .A(n476), .Y(n448) );
+  INVX2_HVT U272 ( .A(n478), .Y(n446) );
+  NBUFFX32_HVT U276 ( .A(n457), .Y(n60) );
+  NBUFFX2_HVT U279 ( .A(n463), .Y(n274) );
+  NBUFFX2_HVT U280 ( .A(n461), .Y(n271) );
+  NBUFFX2_HVT U281 ( .A(n510), .Y(sipo_scan_out) );
+  NBUFFX32_HVT U283 ( .A(memory_sleep), .Y(n497) );
+  NBUFFX32_HVT U286 ( .A(load_data_from_memory_0), .Y(n500) );
+  AOINVX1_HVT U287 ( .A(pout2slice_16_31[8]), .Y(n502) );
+  AOINVX4_HVT U289 ( .A(pout2slice_16_31[8]), .Y(n504) );
+  INVX4_RVT U193 ( .A(n490), .Y(n491) );
+  AO22X2_HVT U79 ( .A1(n237), .A2(pout_addr2mem_1[1]), .A3(pout_addr2mem_0[1]), 
+        .A4(N0), .Y(memory_address[1]) );
+  AOI22X2_HVT U80 ( .A1(N0), .A2(pout_addr2mem_0[3]), .A3(pout_addr2mem_1[3]), 
+        .A4(n237), .Y(n474) );
+  AOI22X2_HVT U81 ( .A1(N0), .A2(pout_addr2mem_0[0]), .A3(pout_addr2mem_1[0]), 
+        .A4(n237), .Y(n480) );
+  NBUFFX32_HVT U211 ( .A(memory_sleep), .Y(n522) );
+  NBUFFX8_HVT U212 ( .A(memory_sleep), .Y(n523) );
+  NBUFFX8_HVT U284 ( .A(memory_sleep), .Y(n526) );
+  NBUFFX32_HVT U298 ( .A(reset), .Y(n536) );
+  NBUFFX32_HVT U299 ( .A(reset), .Y(n537) );
+  NBUFFX32_HVT U300 ( .A(reset), .Y(n538) );
+  NBUFFX32_HVT U302 ( .A(memory_sleep), .Y(n540) );
+  NBUFFX2_HVT U92 ( .A(n263), .Y(n61) );
+  AOBUFX2_HVT U231 ( .A(pout2slice_16_31[10]), .Y(n214) );
+  AOBUFX2_HVT U149 ( .A(n131), .Y(n132) );
+  AOBUFX4_HVT U182 ( .A(n164), .Y(n165) );
+  AOBUFX2_HVT U165 ( .A(n147), .Y(n148) );
+  AOBUFX4_HVT U223 ( .A(n205), .Y(n206) );
+  AOBUFX4_HVT U221 ( .A(n203), .Y(n204) );
+  AOBUFX4_HVT U176 ( .A(n158), .Y(n159) );
+  NBUFFX32_HVT U205 ( .A(load_data_from_memory_1), .Y(n501) );
+  AOBUFX4_HVT U154 ( .A(n135), .Y(n137) );
+  AOBUFX2_HVT U242 ( .A(pout2slice_0_15[4]), .Y(n225) );
+  AOBUFX4_HVT U229 ( .A(n505), .Y(n212) );
+  AOBUFX4_HVT U234 ( .A(n216), .Y(n217) );
+  AOINVX2_HVT U290 ( .A(pout2slice_16_31[0]), .Y(n507) );
+  AOBUFX2_HVT U236 ( .A(n218), .Y(n219) );
+  AOBUFX1_HVT U125 ( .A(n107), .Y(n108) );
+  AOBUFX4_HVT U132 ( .A(n114), .Y(n115) );
+  AOBUFX1_HVT U117 ( .A(n99), .Y(n100) );
+  AOBUFX2_HVT U246 ( .A(n228), .Y(n229) );
+  NBUFFX8_HVT U171 ( .A(power_ack[1]), .Y(n154) );
+  NBUFFX8_HVT U161 ( .A(power_ack[3]), .Y(n144) );
+  NBUFFX32_HVT U107 ( .A(power_ack[16]), .Y(n90) );
+  NBUFFX4_HVT U101 ( .A(power_ack[20]), .Y(n84) );
+  NBUFFX4_HVT U97 ( .A(power_ack[22]), .Y(n80) );
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3__0_ISO_SIPO_OUT ( 
+        .A(net2256), .EN(n65), .Y(n552) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  NBUFFX8_HVT U295 ( .A(reset), .Y(n533) );
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT ( .A(
+        net2251), .EN(n65), .Y(n554) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  LSUPENX1_HVT snps_PD_SIPO_SLICE__ISO_SIPO_OUT_snps_addr_2__0_ISO_SIPO_OUT ( 
+        .A(net2257), .EN(n65), .Y(n553) ); //synopsys isolation_upf ISO_SIPO_OUT+PD_SIPO_SLICE
+  NBUFFX8_HVT U209 ( .A(n533), .Y(n192) );
+  LSUPENX1_HVT snps_PD_PISO_SLICE__ISO_PISO_OUT_snps_scan_out5ISO_PISO_OUT ( 
+        .A(net335), .EN(net336), .Y(n558) ); //synopsys isolation_upf ISO_PISO_OUT+PD_PISO_SLICE
+  AOBUFX4_RVT U99 ( .A(slice_out[22]), .Y(n82) );
+  AOBUFX4_HVT U137 ( .A(slice_out[8]), .Y(n120) );
+  AOBUFX4_LVT U120 ( .A(slice_out[13]), .Y(n103) );
+  AOBUFX4_RVT U235 ( .A(pout2slice_16_31[13]), .Y(n218) );
+  AOBUFX4_RVT U178 ( .A(slice_out[0]), .Y(n161) );
+  AOBUFX4_HVT U158 ( .A(n140), .Y(n141) );
+  OR2X2_HVT U56 ( .A1(n42), .A2(n260), .Y(n485) );
+  AO22X1_HVT U82 ( .A1(N0), .A2(pout_addr2mem_0[2]), .A3(pout_addr2mem_1[2]), 
+        .A4(n237), .Y(n459) );
+  AOBUFX4_RVT U124 ( .A(n106), .Y(n107) );
+  NOR4X1_HVT U74 ( .A1(n118), .A2(power_ack[9]), .A3(n111), .A4(power_ack[11]), 
+        .Y(n549) );
+  NOR4X1_HVT U71 ( .A1(n90), .A2(power_ack[17]), .A3(n87), .A4(power_ack[19]), 
+        .Y(n547) );
+  NOR4X1_HVT U75 ( .A1(power_ack[4]), .A2(power_ack[5]), .A3(power_ack[6]), 
+        .A4(power_ack[7]), .Y(n546) );
+  NOR4X1_HVT U68 ( .A1(n73), .A2(power_ack[29]), .A3(n69), .A4(power_ack[31]), 
+        .Y(n545) );
+  AOINVX4_HVT U139 ( .A(n502), .Y(n506) );
+  AOINVX4_HVT U172 ( .A(n507), .Y(n509) );
+  AOINVX4_RVT U136 ( .A(n504), .Y(n505) );
+  SDFFARX2_RVT temp_0_reg ( .D(wr_0), .SI(n397), .SE(n571), .CLK(n66), .RSTB(
+        lreset), .Q(n256) );
+  AOBUFX4_RVT U140 ( .A(slice_out[7]), .Y(n123) );
+  AOBUFX4_RVT U245 ( .A(pout2slice_0_15[7]), .Y(n228) );
+  AOBUFX4_RVT U103 ( .A(slice_out[20]), .Y(n86) );
+  AOBUFX4_RVT U146 ( .A(n128), .Y(n129) );
+  NBUFFX8_HVT U265 ( .A(n485), .Y(PG_ack_signals[0]) );
+  NOR4X1_HVT U73 ( .A1(power_ack[12]), .A2(n101), .A3(power_ack[14]), .A4(n93), 
+        .Y(n550) );
+  NOR4X1_HVT U70 ( .A1(n84), .A2(power_ack[21]), .A3(n80), .A4(power_ack[23]), 
+        .Y(n548) );
+  NAND4X0_HVT U77 ( .A1(n60), .A2(n454), .A3(n58), .A4(n57), .Y(n543) );
+  MUX21X1_HVT U202 ( .A1(piso_scan_in), .A2(n351), .S0(n450), .Y(n561) );
+  INVX8_HVT U262 ( .A(n486), .Y(n487) );
+  NAND4X0_HVT U72 ( .A1(n271), .A2(n274), .A3(n54), .A4(n53), .Y(n541) );
+  MUX21X1_HVT U195 ( .A1(hv_scan_in), .A2(n349), .S0(n450), .Y(n563) );
+  MUX21X1_HVT U190 ( .A1(lv_scan_in), .A2(n277), .S0(n450), .Y(n556) );
+  NBUFFX8_HVT U253 ( .A(scan_enable), .Y(n450) );
+  INVX4_RVT U278 ( .A(n487), .Y(n247) );
+  INVX2_HVT U254 ( .A(wr_0), .Y(n237) );
+  NBUFFX4_HVT B_0 ( .A(wr_0), .Y(N0) );
+  NBUFFX2_HVT U273 ( .A(n464), .Y(n263) );
+  NBUFFX2_HVT U256 ( .A(n470), .Y(n261) );
+  NBUFFX2_HVT U215 ( .A(n469), .Y(n250) );
+  INVX1_HVT U275 ( .A(n482), .Y(n265) );
+  INVX2_HVT U269 ( .A(n474), .Y(memory_address[3]) );
+  INVX1_HVT U270 ( .A(n460), .Y(memory_address[2]) );
+  INVX1_HVT U267 ( .A(n480), .Y(memory_address[0]) );
+  NBUFFX4_HVT U173 ( .A(n268), .Y(n243) );
+  NBUFFX4_HVT U113 ( .A(n551), .Y(n262) );
+  INVX1_HVT U126 ( .A(n556), .Y(n557) );
+  INVX8_HVT U163 ( .A(n542), .Y(n462) );
+  NBUFFX2_HVT U177 ( .A(n552), .Y(n248) );
+  NBUFFX8_HVT U183 ( .A(n563), .Y(n477) );
+  INVX2_HVT U189 ( .A(n555), .Y(n468) );
+  INVX1_HVT U192 ( .A(n541), .Y(n542) );
+  INVX1_HVT U197 ( .A(n561), .Y(n562) );
+  NBUFFX2_HVT U199 ( .A(n553), .Y(n467) );
+  INVX1_HVT U203 ( .A(n559), .Y(n560) );
+  INVX1_HVT U206 ( .A(n554), .Y(n555) );
+  INVX1_HVT U210 ( .A(n543), .Y(n544) );
+  NBUFFX8_HVT U213 ( .A(n547), .Y(n456) );
+  NBUFFX2_HVT U214 ( .A(n550), .Y(n457) );
+  INVX4_HVT U274 ( .A(n557), .Y(n445) );
+  IBUFFX32_HVT U277 ( .A(n569), .Y(n571) );
+  NBUFFX4_HVT U282 ( .A(n558), .Y(n494) );
+  IBUFFX32_HVT U285 ( .A(n569), .Y(n567) );
+  IBUFFX32_HVT U288 ( .A(n569), .Y(n566) );
+  NBUFFX8_RVT U291 ( .A(n565), .Y(n490) );
+  IBUFFX32_HVT U292 ( .A(n569), .Y(n570) );
+  INVX4_HVT U293 ( .A(n562), .Y(n475) );
+  NBUFFX4_HVT U294 ( .A(n564), .Y(n470) );
+  INVX4_HVT U296 ( .A(n544), .Y(n464) );
+  INVX4_HVT U297 ( .A(n560), .Y(n469) );
+  IBUFFX32_HVT U301 ( .A(n569), .Y(n568) );
+  INVX4_HVT U303 ( .A(scan_enable), .Y(n569) );
+  NBUFFX4_HVT U304 ( .A(n545), .Y(n461) );
+  NBUFFX32_HVT U305 ( .A(n548), .Y(n455) );
+  NBUFFX32_HVT U306 ( .A(n549), .Y(n454) );
+  NBUFFX4_HVT U307 ( .A(n546), .Y(n465) );
+endmodule
+

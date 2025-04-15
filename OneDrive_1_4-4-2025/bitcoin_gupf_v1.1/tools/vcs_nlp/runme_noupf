@@ -1,0 +1,3 @@
+gmake LP=NOUPF;
+gmake PHASE=GLS LP=NOUPF; 
+gmake PHASE=PG LP=NOUPF;

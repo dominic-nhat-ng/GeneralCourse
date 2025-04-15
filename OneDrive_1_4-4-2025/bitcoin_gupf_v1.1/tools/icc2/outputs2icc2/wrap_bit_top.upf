@@ -1,0 +1,5 @@
+# Auto Generated Wrapper UPF for VG tools
+for {set i 0} {$i < 32} {incr i} {
+  load_upf -scope slice_${i} ../icc2/outputs2icc2/bit_slice.upf
+}
+load_upf ../icc2/outputs2icc2/bit_top.upf

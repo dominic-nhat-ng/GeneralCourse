@@ -1,0 +1,94 @@
+# 
+# IC Compiler II write_def
+# Release      : M-2016.12-SP1
+# User Name    : gmaben
+# Date         : Fri Feb 24 15:41:52 2017
+# 
+VERSION 5.7 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN bit_slice ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 200000 68000 ) ;
+COMPONENTS 2 ;
+ - nibble_0 SRAM2RW16x4 + FIXED ( 110541 5586 ) E ;
+ - nibble_1 SRAM2RW16x4 + FIXED ( 59686 5603 ) FE ;
+END COMPONENTS
+PINS 30 ;
+ - hclk + NET hclk + DIRECTION INPUT + USE CLOCK
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 196080 67944 ) N ;
+ - lclk + NET lclk + DIRECTION INPUT + USE CLOCK
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 196384 67944 ) N ;
+ - reset + NET reset + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 198208 67944 ) N ;
+ - sin + NET sin + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 2010 67944 ) N ;
+ - data_valid + NET data_valid + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 196688 67944 ) N ;
+ - memory_sleep + NET memory_sleep + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 184348 67944 ) N ;
+ - shut_down_signals[1] + NET shut_down_signals[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 196992 67944 ) N ;
+ - shut_down_signals[0] + NET shut_down_signals[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 197296 67944 ) N ;
+ - isolation_signals[1] + NET isolation_signals[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 2190 67944 ) N ;
+ - isolation_signals[0] + NET isolation_signals[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 2494 67944 ) N ;
+ - retention_signals[1] + NET retention_signals[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 197600 67944 ) N ;
+ - retention_signals[0] + NET retention_signals[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 197904 67944 ) N ;
+ - scan_enable + NET scan_enable + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 171580 67944 ) N ;
+ - sipo_scan_in + NET sipo_scan_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 3102 67944 ) N ;
+ - piso_scan_in + NET piso_scan_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 2010 67944 ) N ;
+ - hv_scan_in + NET hv_scan_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 142092 67944 ) N ;
+ - lv_scan_in + NET lv_scan_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 79924 67944 ) N ;
+ - sipo_scan_out + NET sipo_scan_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 198512 67944 ) N ;
+ - piso_scan_out + NET piso_scan_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 198804 67944 ) N ;
+ - hv_scan_out + NET hv_scan_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 12892 67944 ) N ;
+ - lv_scan_out + NET lv_scan_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 2798 67944 ) N ;
+ - sout + NET sout + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 133732 67944 ) N ;
+ - memory_ack + NET memory_ack + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 187236 67944 ) N ;
+ - PG_ack_signals[1] + NET PG_ack_signals[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 186932 67944 ) N ;
+ - PG_ack_signals[0] + NET PG_ack_signals[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M2 ( 0 0 ) ( 56 56 )
+   + PLACED ( 133428 67944 ) N ;
+END PINS
+END DESIGN

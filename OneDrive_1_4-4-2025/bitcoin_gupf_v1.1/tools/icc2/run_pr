@@ -1,0 +1,10 @@
+cd flat_place_and_route
+cd bit_slice
+make all
+
+cd ../bit_top
+make all
+cd ../bit_coin
+make all
+make export
+cd ../

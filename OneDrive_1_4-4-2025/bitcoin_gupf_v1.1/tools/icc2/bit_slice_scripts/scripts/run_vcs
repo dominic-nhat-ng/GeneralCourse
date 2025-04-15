@@ -1,0 +1,1 @@
+vcs -sverilog -debug_pp rtl/secure_data.v rtl/bit_coin.v rtl/bit_top.v  rtl/bit_slice.v rtl/piso.v  rtl/sipo.v  rtl/siso.v verification/SRAM2RW16x4.v  verification/tb_no_upf.v

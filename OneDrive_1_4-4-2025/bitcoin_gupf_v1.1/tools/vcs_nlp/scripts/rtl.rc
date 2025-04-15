@@ -1,0 +1,85 @@
+Magic 271485
+Revision Verdi3_L-2016.06-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1488 684 243 161
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 0 "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_DEBUG_UPF/dump.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 183899666.753075 185658749.381423
+cursor 45501.000000
+marker 214000.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 9
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_DEBUG_UPF/dump.fsdb"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/\$TOP "
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/bitcoin_top/dut/\$PD_PISO_SECURE "
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_DEBUG_UPF/dump.fsdb"
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 /bitcoin_top/dut/hclk
+addSignal -h 15 -UNSIGNED -HEX -holdScope isolation_signals[1:0]
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -holdScope lclk
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope retention_signals[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_in[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope secure_data_out[31:0]
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope sleep_signals[17:0]
+addSignal -h 15 -holdScope reset
+addSignal -c ID_CYAN3 -ls solid -lw 1 -h 15 -holdScope data_valid
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/global/gts_corpac2/bitcoin/users/karan/golden/bitcoin_v1.4/tools/vcs_nlp/logs/RTL_DEBUG_UPF/dump.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/_vcs_msglog"
+"/bitcoin_top"
+
+SCOPE_LIST_BEGIN
+"/_vcs_msglog"
+"/bitcoin_top/dut"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

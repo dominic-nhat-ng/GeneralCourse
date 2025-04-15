@@ -1,0 +1,3 @@
+SIGNOFF_IMAGE: /global/apps5/starrc_2016.12-SP1/bin/StarXtract
+CORNER_GRD_FILE: ./scripts/cornerGrd.mapping
+COMMAND_FILE: ./scripts/star.cmd

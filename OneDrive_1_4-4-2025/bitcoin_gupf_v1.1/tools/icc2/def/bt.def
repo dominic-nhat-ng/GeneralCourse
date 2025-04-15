@@ -1,0 +1,79 @@
+# 
+# IC Compiler II write_def
+# Release      : M-2016.12
+# User Name    : gmaben
+# Date         : Tue Dec 13 11:33:31 2016
+# 
+VERSION 5.7 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN bit_top ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 0 468816 ) ( 1638912 468816 ) ( 1638912 0 ) ;
+COMPONENTS 32 ;
+ - slice_0 bit_slice + FIXED ( 10000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_1 bit_slice + FIXED ( 210000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_2 bit_slice + FIXED ( 10000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_3 bit_slice + FIXED ( 210000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_4 bit_slice + FIXED ( 10000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_5 bit_slice + FIXED ( 210000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_6 bit_slice + FIXED ( 10000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_7 bit_slice + FIXED ( 210000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_8 bit_slice + FIXED ( 410000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_9 bit_slice + FIXED ( 610000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_10 bit_slice + FIXED ( 410000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_11 bit_slice + FIXED ( 610000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_12 bit_slice + FIXED ( 410000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_13 bit_slice + FIXED ( 610000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_14 bit_slice + FIXED ( 410000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_15 bit_slice + FIXED ( 610000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_16 bit_slice + FIXED ( 810000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_17 bit_slice + FIXED ( 1010000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_18 bit_slice + FIXED ( 810000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_19 bit_slice + FIXED ( 1010000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_20 bit_slice + FIXED ( 810000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_21 bit_slice + FIXED ( 1010000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_22 bit_slice + FIXED ( 810000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_23 bit_slice + FIXED ( 1010000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_24 bit_slice + FIXED ( 1210000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_25 bit_slice + FIXED ( 1410000 260000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_26 bit_slice + FIXED ( 1210000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_27 bit_slice + FIXED ( 1410000 192000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_28 bit_slice + FIXED ( 1210000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_29 bit_slice + FIXED ( 1410000 80000 ) N
+   + HALO 304 304 304 304 ;
+ - slice_30 bit_slice + FIXED ( 1210000 12000 ) FS
+   + HALO 304 304 304 304 ;
+ - slice_31 bit_slice + FIXED ( 1410000 12000 ) FS
+   + HALO 304 304 304 304 ;
+END COMPONENTS
+END DESIGN
