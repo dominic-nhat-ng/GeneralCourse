@@ -1,8 +1,9 @@
-Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
-Start time: 15:02:18 on Jan 04,2025
+QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+Start time: 23:09:13 on Apr 15,2025
 vlog -sv -f compile.f 
 -- Compiling module Full_Adder
-** Note: (vlog-2286) ../tb/testbench.sv(4): Using implicit +incdir+/home/nhat/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+** Note: (vlog-2286) ../tb/testbench.sv(4): Using implicit +incdir+/opt/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+** Warning: ../tb/testbench.sv(2): (vlog-13233) Design unit "testbench_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
 -- Compiling package testbench_sv_unit
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 -- Compiling interface add_intf
@@ -10,5 +11,5 @@ vlog -sv -f compile.f
 
 Top level modules:
 	testbench
-End time: 15:02:18 on Jan 04,2025, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
+End time: 23:09:13 on Apr 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 1

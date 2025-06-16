@@ -8,76 +8,23 @@ class apb_sequence extends uvm_sequence #(transaction);
         `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
     endfunction
 
-    function transaction randomize_all(transaction tx);
-        tx.P_addr = $urandom_range(0, 50);
-        tx.P_wdata = $urandom();
-        tx.type_trans = transaction::P_type'($urandom_range(0, 1));
-        return tx;
-    endfunction
-  
-endclass
+    task body();
+        transaction rw_trans;
+    //create 10 random APB read/write transaction and send to driver
+       // repeat (2) begin
+            rw_trans=new();
+            start_item(rw_trans);
+            rw_trans.randomize();
+            rw_trans.paddr = 5;
+            rw_trans.type_item = WRITE;
+            finish_item(rw_trans);
 
-class sequence_write extends apb_sequence;
-    `uvm_object_utils(sequence_write)
-    transaction tx;
-
-    function new(string name = "sequence_write");
-        super.new(name);
-        `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
-
-    endfunction
-
-    virtual task body();
-        tx = transaction::type_id::create("tx");
-        start_item(tx);
-        assert(randomize_all(tx));
-        tx.type_trans = transaction::WRITE;
-        `uvm_info(get_type_name(), "Sequence WRITE generated done", UVM_MEDIUM)
-        finish_item(tx);
-
-    endtask
-
-
-endclass
-
-class sequence_read extends apb_sequence;
-    `uvm_object_utils(sequence_read)
-    transaction tx;
-
-    function new(string name = "sequence_read");
-        super.new(name);
-        `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
-
-    endfunction
-
-    virtual task body();
-        tx = transaction::type_id::create("tx");
-        start_item(tx);
-        assert(randomize_all(tx));
-        tx.type_trans = transaction::READ;
-  //      $display("Address: %0h", tx.P_addr);
-        `uvm_info(get_type_name(), "Sequence READ generated done", UVM_MEDIUM)
-        finish_item(tx);
-
+            start_item(rw_trans);
+            rw_trans.randomize();
+            rw_trans.paddr = 5;
+            rw_trans.type_item = READ;
+            finish_item(rw_trans);
+       // end
     endtask
 endclass
 
-class random_sequence extends apb_sequence;
-    `uvm_object_utils(random_sequence)
-    transaction tx;
-
-    function new(string name = "random_sequence");
-        super.new(name);
-        `uvm_info(get_type_name(), "Constructor", UVM_MEDIUM);
-
-    endfunction
-
-    virtual task body();
-        tx = transaction::type_id::create("tx");
-        start_item(tx);
-        assert(randomize_all(tx));
-        `uvm_info(get_type_name(), "Sequence RANDOM generated done", UVM_MEDIUM)
-        finish_item(tx);
-    endtask
-
-endclass

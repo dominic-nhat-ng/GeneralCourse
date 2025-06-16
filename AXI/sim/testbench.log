@@ -1,13 +1,11 @@
 # vsim -debugDB -l testbench.log -voptargs="+acc" -assertdebug -c testbench -do "log -r /*;run -all;" 
-# Start time: 16:50:21 on Feb 06,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 16:46:50 on Apr 18,2025
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# //  Questa Intel Starter FPGA Edition-64
-# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
 # //
-# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  Copyright 1991-2021 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
 # //  QuestaSim and its associated documentation contain trade
@@ -19,13 +17,13 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading sv_std.std
-# Loading work.axi_if(fast)
 # Loading mtiUvm.uvm_pkg(fast)
 # Loading work.testbench_sv_unit(fast)
 # Loading mtiUvm.questa_uvm_pkg(fast)
 # Loading work.testbench(fast)
 # Loading work.axi_if(fast__2)
-# Loading /home/nhat/intelFPGA_pro/23.1/questa_fse/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# Loading work.axi_if(fast)
+# Loading /opt/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # log -r /*
 # run -all
@@ -82,238 +80,79 @@
 #     scoreboard             axi_scoreboard          -     @489 
 # --------------------------------------------------------------
 # UVM_INFO ../tb/sequence.sv(71) @ 50: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 50: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 50: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 50: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
 # Time arlen is giving on interface                   70
-# [DEBUG] Time item get arlen, arlen = 11 at time:                   70
+# [DEBUG] Time item get arlen, arlen =  1 at time:                   70
 # [DEBUG] Time at this point --- before loop :                  70
 # [DEBUG] Time at this point :                  70 at loop:           0
 # [DEBUG] Time at this point :                 170
 # [DEBUG] Time at this point :                 190 at loop:           1
 # [DEBUG] Time at this point :                 250
-# [DEBUG] Time at this point :                 270 at loop:           2
-# [DEBUG] Time at this point :                 330
-# [DEBUG] Time at this point :                 350 at loop:           3
-# [DEBUG] Time at this point :                 410
-# [DEBUG] Time at this point :                 430 at loop:           4
-# [DEBUG] Time at this point :                 490
-# [DEBUG] Time at this point :                 510 at loop:           5
-# [DEBUG] Time at this point :                 570
-# [DEBUG] Time at this point :                 590 at loop:           6
-# [DEBUG] Time at this point :                 650
-# [DEBUG] Time at this point :                 670 at loop:           7
-# [DEBUG] Time at this point :                 730
-# [DEBUG] Time at this point :                 750 at loop:           8
-# [DEBUG] Time at this point :                 810
-# [DEBUG] Time at this point :                 830 at loop:           9
-# [DEBUG] Time at this point :                 890
-# [DEBUG] Time at this point :                 910 at loop:          10
-# [DEBUG] Time at this point :                 970
-# [DEBUG] Time at this point :                 990 at loop:          11
-# [DEBUG] Time at this point :                1050
-# UVM_INFO ../tb/sequence.sv(71) @ 1070: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 1090
-# [DEBUG] Time item get arlen, arlen =  5 at time:                 1090
-# [DEBUG] Time at this point --- before loop :                1090
-# [DEBUG] Time at this point :                1090 at loop:           0
-# [DEBUG] Time at this point :                1190
-# [DEBUG] Time at this point :                1210 at loop:           1
-# [DEBUG] Time at this point :                1270
-# [DEBUG] Time at this point :                1290 at loop:           2
-# [DEBUG] Time at this point :                1350
-# [DEBUG] Time at this point :                1370 at loop:           3
-# [DEBUG] Time at this point :                1430
-# [DEBUG] Time at this point :                1450 at loop:           4
-# [DEBUG] Time at this point :                1510
-# [DEBUG] Time at this point :                1530 at loop:           5
-# [DEBUG] Time at this point :                1590
-# UVM_INFO ../tb/sequence.sv(71) @ 1610: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 1610: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 1630
-# [DEBUG] Time item get arlen, arlen =  4 at time:                 1630
-# [DEBUG] Time at this point --- before loop :                1630
-# [DEBUG] Time at this point :                1630 at loop:           0
+# UVM_INFO ../tb/sequence.sv(71) @ 270: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 270: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 270: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 270: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 270: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# Time arlen is giving on interface                  290
+# [DEBUG] Time item get arlen, arlen =  4 at time:                  290
+# [DEBUG] Time at this point --- before loop :                 290
+# [DEBUG] Time at this point :                 290 at loop:           0
+# [DEBUG] Time at this point :                 390
+# [DEBUG] Time at this point :                 410 at loop:           1
+# [DEBUG] Time at this point :                 470
+# [DEBUG] Time at this point :                 490 at loop:           2
+# [DEBUG] Time at this point :                 550
+# [DEBUG] Time at this point :                 570 at loop:           3
+# [DEBUG] Time at this point :                 630
+# [DEBUG] Time at this point :                 650 at loop:           4
+# [DEBUG] Time at this point :                 710
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# UVM_INFO ../tb/sequence.sv(71) @ 730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
+# Time arlen is giving on interface                  750
+# [DEBUG] Time item get arlen, arlen = 14 at time:                  750
+# [DEBUG] Time at this point --- before loop :                 750
+# [DEBUG] Time at this point :                 750 at loop:           0
+# [DEBUG] Time at this point :                 850
+# [DEBUG] Time at this point :                 870 at loop:           1
+# [DEBUG] Time at this point :                 930
+# [DEBUG] Time at this point :                 950 at loop:           2
+# [DEBUG] Time at this point :                1010
+# [DEBUG] Time at this point :                1030 at loop:           3
+# [DEBUG] Time at this point :                1090
+# [DEBUG] Time at this point :                1110 at loop:           4
+# [DEBUG] Time at this point :                1170
+# [DEBUG] Time at this point :                1190 at loop:           5
+# [DEBUG] Time at this point :                1250
+# [DEBUG] Time at this point :                1270 at loop:           6
+# [DEBUG] Time at this point :                1330
+# [DEBUG] Time at this point :                1350 at loop:           7
+# [DEBUG] Time at this point :                1410
+# [DEBUG] Time at this point :                1430 at loop:           8
+# [DEBUG] Time at this point :                1490
+# [DEBUG] Time at this point :                1510 at loop:           9
+# [DEBUG] Time at this point :                1570
+# [DEBUG] Time at this point :                1590 at loop:          10
+# [DEBUG] Time at this point :                1650
+# [DEBUG] Time at this point :                1670 at loop:          11
 # [DEBUG] Time at this point :                1730
-# [DEBUG] Time at this point :                1750 at loop:           1
+# [DEBUG] Time at this point :                1750 at loop:          12
 # [DEBUG] Time at this point :                1810
-# [DEBUG] Time at this point :                1830 at loop:           2
+# [DEBUG] Time at this point :                1830 at loop:          13
 # [DEBUG] Time at this point :                1890
-# [DEBUG] Time at this point :                1910 at loop:           3
+# [DEBUG] Time at this point :                1910 at loop:          14
 # [DEBUG] Time at this point :                1970
-# [DEBUG] Time at this point :                1990 at loop:           4
-# [DEBUG] Time at this point :                2050
-# UVM_INFO ../tb/sequence.sv(71) @ 2070: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 2070: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 2070: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 2090
-# [DEBUG] Time item get arlen, arlen = 13 at time:                 2090
-# [DEBUG] Time at this point --- before loop :                2090
-# [DEBUG] Time at this point :                2090 at loop:           0
-# [DEBUG] Time at this point :                2190
-# [DEBUG] Time at this point :                2210 at loop:           1
-# [DEBUG] Time at this point :                2270
-# [DEBUG] Time at this point :                2290 at loop:           2
-# [DEBUG] Time at this point :                2350
-# [DEBUG] Time at this point :                2370 at loop:           3
-# [DEBUG] Time at this point :                2430
-# [DEBUG] Time at this point :                2450 at loop:           4
-# [DEBUG] Time at this point :                2510
-# [DEBUG] Time at this point :                2530 at loop:           5
-# [DEBUG] Time at this point :                2590
-# [DEBUG] Time at this point :                2610 at loop:           6
-# [DEBUG] Time at this point :                2670
-# [DEBUG] Time at this point :                2690 at loop:           7
-# [DEBUG] Time at this point :                2750
-# [DEBUG] Time at this point :                2770 at loop:           8
-# [DEBUG] Time at this point :                2830
-# [DEBUG] Time at this point :                2850 at loop:           9
-# [DEBUG] Time at this point :                2910
-# [DEBUG] Time at this point :                2930 at loop:          10
-# [DEBUG] Time at this point :                2990
-# [DEBUG] Time at this point :                3010 at loop:          11
-# [DEBUG] Time at this point :                3070
-# [DEBUG] Time at this point :                3090 at loop:          12
-# [DEBUG] Time at this point :                3150
-# [DEBUG] Time at this point :                3170 at loop:          13
-# [DEBUG] Time at this point :                3230
-# UVM_INFO ../tb/sequence.sv(71) @ 3250: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 3270
-# [DEBUG] Time item get arlen, arlen =  3 at time:                 3270
-# [DEBUG] Time at this point --- before loop :                3270
-# [DEBUG] Time at this point :                3270 at loop:           0
-# [DEBUG] Time at this point :                3370
-# [DEBUG] Time at this point :                3390 at loop:           1
-# [DEBUG] Time at this point :                3450
-# [DEBUG] Time at this point :                3470 at loop:           2
-# [DEBUG] Time at this point :                3530
-# [DEBUG] Time at this point :                3550 at loop:           3
-# [DEBUG] Time at this point :                3610
-# UVM_INFO ../tb/sequence.sv(71) @ 3630: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 3630: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 3630: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 3650
-# [DEBUG] Time item get arlen, arlen =  3 at time:                 3650
-# [DEBUG] Time at this point --- before loop :                3650
-# [DEBUG] Time at this point :                3650 at loop:           0
-# [DEBUG] Time at this point :                3750
-# [DEBUG] Time at this point :                3770 at loop:           1
-# [DEBUG] Time at this point :                3830
-# [DEBUG] Time at this point :                3850 at loop:           2
-# [DEBUG] Time at this point :                3910
-# [DEBUG] Time at this point :                3930 at loop:           3
-# [DEBUG] Time at this point :                3990
-# UVM_INFO ../tb/sequence.sv(71) @ 4010: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 4010: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 4030
-# [DEBUG] Time item get arlen, arlen = 15 at time:                 4030
-# [DEBUG] Time at this point --- before loop :                4030
-# [DEBUG] Time at this point :                4030 at loop:           0
-# [DEBUG] Time at this point :                4130
-# [DEBUG] Time at this point :                4150 at loop:           1
-# [DEBUG] Time at this point :                4210
-# [DEBUG] Time at this point :                4230 at loop:           2
-# [DEBUG] Time at this point :                4290
-# [DEBUG] Time at this point :                4310 at loop:           3
-# [DEBUG] Time at this point :                4370
-# [DEBUG] Time at this point :                4390 at loop:           4
-# [DEBUG] Time at this point :                4450
-# [DEBUG] Time at this point :                4470 at loop:           5
-# [DEBUG] Time at this point :                4530
-# [DEBUG] Time at this point :                4550 at loop:           6
-# [DEBUG] Time at this point :                4610
-# [DEBUG] Time at this point :                4630 at loop:           7
-# [DEBUG] Time at this point :                4690
-# [DEBUG] Time at this point :                4710 at loop:           8
-# [DEBUG] Time at this point :                4770
-# [DEBUG] Time at this point :                4790 at loop:           9
-# [DEBUG] Time at this point :                4850
-# [DEBUG] Time at this point :                4870 at loop:          10
-# [DEBUG] Time at this point :                4930
-# [DEBUG] Time at this point :                4950 at loop:          11
-# [DEBUG] Time at this point :                5010
-# [DEBUG] Time at this point :                5030 at loop:          12
-# [DEBUG] Time at this point :                5090
-# [DEBUG] Time at this point :                5110 at loop:          13
-# [DEBUG] Time at this point :                5170
-# [DEBUG] Time at this point :                5190 at loop:          14
-# [DEBUG] Time at this point :                5250
-# [DEBUG] Time at this point :                5270 at loop:          15
-# [DEBUG] Time at this point :                5330
-# UVM_INFO ../tb/sequence.sv(71) @ 5350: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 5350: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 5350: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO ../tb/sequence.sv(71) @ 5350: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 5370
-# [DEBUG] Time item get arlen, arlen =  3 at time:                 5370
-# [DEBUG] Time at this point --- before loop :                5370
-# [DEBUG] Time at this point :                5370 at loop:           0
-# [DEBUG] Time at this point :                5470
-# [DEBUG] Time at this point :                5490 at loop:           1
-# [DEBUG] Time at this point :                5550
-# [DEBUG] Time at this point :                5570 at loop:           2
-# [DEBUG] Time at this point :                5630
-# [DEBUG] Time at this point :                5650 at loop:           3
-# [DEBUG] Time at this point :                5710
-# UVM_INFO ../tb/sequence.sv(71) @ 5730: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 5750
-# [DEBUG] Time item get arlen, arlen = 13 at time:                 5750
-# [DEBUG] Time at this point --- before loop :                5750
-# [DEBUG] Time at this point :                5750 at loop:           0
-# [DEBUG] Time at this point :                5850
-# [DEBUG] Time at this point :                5870 at loop:           1
-# [DEBUG] Time at this point :                5930
-# [DEBUG] Time at this point :                5950 at loop:           2
-# [DEBUG] Time at this point :                6010
-# [DEBUG] Time at this point :                6030 at loop:           3
-# [DEBUG] Time at this point :                6090
-# [DEBUG] Time at this point :                6110 at loop:           4
-# [DEBUG] Time at this point :                6170
-# [DEBUG] Time at this point :                6190 at loop:           5
-# [DEBUG] Time at this point :                6250
-# [DEBUG] Time at this point :                6270 at loop:           6
-# [DEBUG] Time at this point :                6330
-# [DEBUG] Time at this point :                6350 at loop:           7
-# [DEBUG] Time at this point :                6410
-# [DEBUG] Time at this point :                6430 at loop:           8
-# [DEBUG] Time at this point :                6490
-# [DEBUG] Time at this point :                6510 at loop:           9
-# [DEBUG] Time at this point :                6570
-# [DEBUG] Time at this point :                6590 at loop:          10
-# [DEBUG] Time at this point :                6650
-# [DEBUG] Time at this point :                6670 at loop:          11
-# [DEBUG] Time at this point :                6730
-# [DEBUG] Time at this point :                6750 at loop:          12
-# [DEBUG] Time at this point :                6810
-# [DEBUG] Time at this point :                6830 at loop:          13
-# [DEBUG] Time at this point :                6890
-# UVM_INFO ../tb/sequence.sv(71) @ 6910: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# Time arlen is giving on interface                 6930
-# [DEBUG] Time item get arlen, arlen = 11 at time:                 6930
-# [DEBUG] Time at this point --- before loop :                6930
-# [DEBUG] Time at this point :                6930 at loop:           0
-# [DEBUG] Time at this point :                7030
-# [DEBUG] Time at this point :                7050 at loop:           1
-# [DEBUG] Time at this point :                7110
-# [DEBUG] Time at this point :                7130 at loop:           2
-# [DEBUG] Time at this point :                7190
-# [DEBUG] Time at this point :                7210 at loop:           3
-# [DEBUG] Time at this point :                7270
-# [DEBUG] Time at this point :                7290 at loop:           4
-# [DEBUG] Time at this point :                7350
-# [DEBUG] Time at this point :                7370 at loop:           5
-# [DEBUG] Time at this point :                7430
-# [DEBUG] Time at this point :                7450 at loop:           6
-# [DEBUG] Time at this point :                7510
-# [DEBUG] Time at this point :                7530 at loop:           7
-# [DEBUG] Time at this point :                7590
-# [DEBUG] Time at this point :                7610 at loop:           8
-# [DEBUG] Time at this point :                7670
-# [DEBUG] Time at this point :                7690 at loop:           9
-# [DEBUG] Time at this point :                7750
-# [DEBUG] Time at this point :                7770 at loop:          10
-# [DEBUG] Time at this point :                7830
-# [DEBUG] Time at this point :                7850 at loop:          11
-# [DEBUG] Time at this point :                7910
-# UVM_INFO ../tb/sequence.sv(71) @ 7930: uvm_test_top.environment.agent.sequencer@@seq [Sequence] Starting sequence_fixed generate done
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 7930: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1990: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
@@ -330,7 +169,7 @@
 # [Sequence]    20
 # [TEST_DONE]     1
 # [Test class]     1
-# ** Note: $finish    : /home/nhat/intelFPGA_pro/23.1/questa_fse/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 7930 ns  Iteration: 73  Instance: /testbench
-# End time: 16:50:23 on Feb 06,2025, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 1
+# ** Note: $finish    : /opt/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1990 ns  Iteration: 61  Instance: /testbench
+# End time: 16:46:54 on Apr 18,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0

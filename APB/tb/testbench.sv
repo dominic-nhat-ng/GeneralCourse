@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ns/1ps
 import uvm_pkg::*;
 
 `include "uvm_macros.svh"
@@ -29,30 +29,30 @@ module testbench;
         rst = 0;
     end
 
-    apb_intf intf(.clk(clk), .rst(rst));
+    dut_if intf(.pclk(clk), .presetn(rst));
 
     initial begin
-        uvm_config_db#(virtual apb_intf)::set(null, "*", "intf", intf);
+        uvm_config_db#(virtual dut_if)::set(null, "*", "intf", intf);
     end
 
     AMBA_APB apb_ip(
         //common input
-        .P_clk(intf.clk),
-        .P_rst(intf.rst),
+        .P_clk(clk),
+        .P_rst(rst),
         //input of ip
-        .P_addr(intf.P_addr),
-        .P_enable(intf.P_enable),
-        .P_selx(intf.P_selx),
-        .P_write(intf.P_write),
-        .P_wdata(intf.P_wdata),
+        .P_addr(intf.paddr),
+        .P_enable(intf.penable),
+        .P_selx(intf.psel),
+        .P_write(intf.pwrite),
+        .P_wdata(intf.pwdata),
         //output of ip
-        .P_ready(intf.P_ready),
-        .P_slverr(intf.P_slverr),
-        .P_rdata(intf.P_rdata)
+        .P_ready(intf.pready),
+        .P_slverr(intf.pslverr),
+        .P_rdata(intf.prdata)
     );
 
     initial begin
-        run_test("random_test");
+        run_test("apb_test");
         // run_test("write_test");
         // run_test("read_test");
     end

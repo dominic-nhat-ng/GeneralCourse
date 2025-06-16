@@ -4,7 +4,7 @@ class apb_env extends uvm_env; // uvm_test is a base test class
   
   // standard constructor
   
-    apb_agent agent;
+    apb_agent agt;
     apb_scoreboard scb;
   
     function new (string name = "apb_env", uvm_component parent);
@@ -19,7 +19,7 @@ class apb_env extends uvm_env; // uvm_test is a base test class
     
         super.build_phase(phase);
     
-        agent = apb_agent::type_id::create("agent", this);
+        agt = apb_agent::type_id::create("agent", this);
         scb = apb_scoreboard::type_id::create("scb", this);
     
     
@@ -30,7 +30,7 @@ class apb_env extends uvm_env; // uvm_test is a base test class
     
         super.connect_phase(phase);
         `uvm_info(get_type_name(), "Connect phase", UVM_MEDIUM);
-        agent.monitor.transfer_item.connect(scb.received_data);
+        agt.monitor.transfer_item.connect(scb.received_data);
     
     endfunction
   
